@@ -1,3 +1,5 @@
-# ytpa
+# YouTube Play-Along Webapp
 
-See https://ytpa.ch
+Will be deployed on https://ytpa.ch.
+
+In progress..
