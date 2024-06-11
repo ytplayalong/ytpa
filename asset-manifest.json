@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ytpa.ch/static/css/main.5781ea65.css",
+    "main.js": "/ytpa.ch/static/js/main.1d14a478.js",
+    "static/js/453.492431f5.chunk.js": "/ytpa.ch/static/js/453.492431f5.chunk.js",
+    "index.html": "/ytpa.ch/index.html",
+    "main.5781ea65.css.map": "/ytpa.ch/static/css/main.5781ea65.css.map",
+    "main.1d14a478.js.map": "/ytpa.ch/static/js/main.1d14a478.js.map",
+    "453.492431f5.chunk.js.map": "/ytpa.ch/static/js/453.492431f5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5781ea65.css",
+    "static/js/main.1d14a478.js"
+  ]
+}
