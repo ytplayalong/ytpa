@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ytpa.ch/static/css/main.5781ea65.css",
-    "main.js": "/ytpa.ch/static/js/main.1d14a478.js",
-    "static/js/453.492431f5.chunk.js": "/ytpa.ch/static/js/453.492431f5.chunk.js",
-    "index.html": "/ytpa.ch/index.html",
-    "main.5781ea65.css.map": "/ytpa.ch/static/css/main.5781ea65.css.map",
-    "main.1d14a478.js.map": "/ytpa.ch/static/js/main.1d14a478.js.map",
-    "453.492431f5.chunk.js.map": "/ytpa.ch/static/js/453.492431f5.chunk.js.map"
+    "main.css": "/static/css/main.5781ea65.css",
+    "main.js": "/static/js/main.23d27450.js",
+    "static/js/453.492431f5.chunk.js": "/static/js/453.492431f5.chunk.js",
+    "index.html": "/index.html",
+    "main.5781ea65.css.map": "/static/css/main.5781ea65.css.map",
+    "main.23d27450.js.map": "/static/js/main.23d27450.js.map",
+    "453.492431f5.chunk.js.map": "/static/js/453.492431f5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5781ea65.css",
-    "static/js/main.1d14a478.js"
+    "static/js/main.23d27450.js"
   ]
 }
