@@ -8,6 +8,7 @@ function App() {
         <h1>YouTube Play-Along</h1>
       </header>
       <p>Play along YouTube videos.</p>
+      <h2>Work in progress, updates will follow...</h2>
     </div>
   );
 }
