@@ -10,6 +10,7 @@ const navbarLinks = [
   { url: "/help", name: "Help" },
 ].reverse();
 
+const imgH = "45px";
 const linkStyle: any = {
   float: "right",
   color: Constants.navTextCol,
@@ -17,7 +18,8 @@ const linkStyle: any = {
   padding: "14px 16px",
   textDecoration: "none",
   fontSize: "17px",
-  height: "100%",
+  lineHeight: imgH,
+  height: imgH,
 };
 
 const navStyle = {
@@ -32,32 +34,43 @@ export default function NavigationBar() {
     currentActiveLink.length > 0 ? currentActiveLink[0].name : "Play-Along";
 
   const navLogo = (
-    <Link href={home.url} style={{ ...linkStyle, float: "left" }}>
-      <img src="/YTPALogo.svg" height={"45px"} alt="Youtube Play Along logo" />
+    <Link
+      href={home.url}
+      style={{
+        ...linkStyle,
+        float: "left",
+        margin: 0,
+        paddingLeft: 0,
+        paddingRight: 0,
+      }}
+    >
+      <img src="/YTPALogo.svg" height={imgH} alt="Youtube Play Along logo" />
     </Link>
   );
 
   return (
     <header className="topnav" style={navStyle}>
-      {navLogo}
-      <div style={{ ...linkStyle, float: "left" }}>{label}</div>
+      <div className="container">
+        {navLogo}
+        <div style={{ ...linkStyle, float: "left" }}>{label}</div>
 
-      {navbarLinks.map((el) => {
-        const backgroundColor =
-          el.url === currentPage
-            ? Constants.navActiveBGCol
-            : navStyle.backgroundColor;
-        return (
-          <Link
-            href={el.url}
-            key={el.url}
-            className="hoverlink"
-            style={{ ...linkStyle, backgroundColor }}
-          >
-            {el.name}
-          </Link>
-        );
-      })}
+        {navbarLinks.map((el) => {
+          const backgroundColor =
+            el.url === currentPage
+              ? Constants.navActiveBGCol
+              : navStyle.backgroundColor;
+          return (
+            <Link
+              href={el.url}
+              key={el.url}
+              className="hoverlink"
+              style={{ ...linkStyle, backgroundColor }}
+            >
+              {el.name}
+            </Link>
+          );
+        })}
+      </div>
     </header>
   );
 }

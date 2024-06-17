@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className} style={{ margin: 0, padding: 0 }}>
         <NavigationBar />
-        {children}
+        <div className="container">{children}</div>
       </body>
     </html>
   );
