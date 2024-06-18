@@ -14,8 +14,13 @@ class SettingsManager {
   fingeringKey = "fingering";
   fingeringOptions = ["fingerNone", "fingerThreeValves", "fingerTrombone"];
 
+  /** This is needed for pre-rendering pages. */
+  private getStorage() {
+    return typeof window !== "undefined" ? window.localStorage : null;
+  }
+
   private get(key: string, values: string[]) {
-    const ret = localStorage.getItem(key);
+    const ret = this.getStorage()?.getItem(key);
     return ret ? ret : values[0];
   }
 
@@ -25,7 +30,7 @@ class SettingsManager {
   }
 
   private setClef(newClef: string) {
-    localStorage.setItem(this.clefKey, newClef);
+    this.getStorage()?.setItem(this.clefKey, newClef);
   }
 
   getClefOptions(t: any) {
