@@ -3,11 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Constants } from "../constants";
+import { MdHelp, MdSettings } from "react-icons/md";
 
 const home = { url: "/", name: "Home" };
+const buttSize = 26;
+const iconProps = { size: buttSize, style: { marginRight: "0.5em" } };
 const navbarLinks = [
-  { url: "/settings", name: "Settings" },
-  { url: "/help", name: "Help" },
+  { url: "/settings", name: "Settings", icon: <MdSettings {...iconProps} /> },
+  { url: "/help", name: "Help", icon: <MdHelp {...iconProps} /> },
 ].reverse();
 
 const imgH = "45px";
@@ -20,6 +23,8 @@ const linkStyle: any = {
   fontSize: "17px",
   lineHeight: imgH,
   height: imgH,
+  alignItems: "center",
+  display: "flex",
 };
 
 const navStyle = {
@@ -66,6 +71,7 @@ export default function NavigationBar() {
               className="hoverlink"
               style={{ ...linkStyle, backgroundColor }}
             >
+              {el.icon}
               {el.name}
             </Link>
           );
