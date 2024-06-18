@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../app/globals.css";
 import NavigationBar from "./components/navbar";
+import CookieConsentBanner from "./components/cookie";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} style={{ margin: 0, padding: 0 }}>
+        <CookieConsentBanner />
         <NavigationBar />
         <div className="container">{children}</div>
       </body>
