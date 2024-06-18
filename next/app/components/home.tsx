@@ -1,22 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { handleButtonClick } from "../analytics";
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
 import { Trans } from "react-i18next";
 import usePathTranslation from "@/i18n/hook";
+import { NewestScores } from "./recentScores";
+import { getScoreInfo } from "../util/transposition";
 
 const TRACKING_ID = "G-42SMWF6LRM";
 
 const Home = () => {
   ReactGA.initialize(TRACKING_ID);
-
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   }, []);
 
-  const nScores = "?";
+  const nScores = getScoreInfo().length;
   const { t, getLink } = usePathTranslation();
   const parInfo = {
     num: <>{`${nScores}`}</>,
@@ -25,16 +25,14 @@ const Home = () => {
   };
   const secondPar = <Trans i18nKey={"allScoresTxt"} components={parInfo} m />;
 
-  const clickHandler = () => handleButtonClick("click", "button");
   return (
     <div>
       <p>{t("intro")}</p>
       <h4>{t("allScores")}</h4>
       <p>{secondPar}</p>
-      <h2>Work in progress, updates will follow...</h2>
-      <button onClick={clickHandler}>Button</button>
+      <NewestScores nMostRecentSongs={10} />
 
-      <Link href={getLink("/help")}>Help</Link>
+      <h2>Work in progress, updates will follow...</h2>
     </div>
   );
 };

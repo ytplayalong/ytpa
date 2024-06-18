@@ -21,6 +21,7 @@ const navbarLinks = [
   },
   { url: "/help", key: "helpTitle", icon: <MdHelp {...iconProps} /> },
 ].reverse();
+const defaultPageTitle = "YouTube Play-Along";
 
 const flexCentered: any = {
   display: "flex",
@@ -51,7 +52,7 @@ export default function NavigationBar() {
   const { t, getLink, currentLang } = usePathTranslation();
   const currentActiveLink = navbarLinks.filter((el) => el.url === currentPage);
   const label =
-    currentActiveLink.length > 0 ? currentActiveLink[0].key : "Play-Along";
+    currentActiveLink.length > 0 ? currentActiveLink[0].key : defaultPageTitle;
 
   const navLogo = (
     <Link
