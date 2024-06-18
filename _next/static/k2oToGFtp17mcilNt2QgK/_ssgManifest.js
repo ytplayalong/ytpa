@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F[locale]","\u002F[locale]\u002Fhelp","\u002F[locale]\u002Flistall","\u002F[locale]\u002Fpiece\u002F[id]","\u002F[locale]\u002Fsettings"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
