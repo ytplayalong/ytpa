@@ -2,11 +2,7 @@
 
 import usePathTranslation from "@/i18n/hook";
 import { useForm, ValidationError } from "@formspree/react";
-
-const twoColumns: any = {
-  float: "left",
-  width: "50%",
-};
+import { twoColumns } from "../util/styles";
 
 const inputStyle: any = {
   boxSizing: "border-box",

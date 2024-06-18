@@ -24,18 +24,13 @@ const Home = () => {
     random: <Link href={`/random`}>{t("randomScore")}</Link>,
   };
   const secondPar = <Trans i18nKey={"allScoresTxt"} components={parInfo} m />;
-  const scoreComp = (
-    <>
-      <p>{t("intro")}</p>
-      <h4>{t("allScores")}</h4>
-      <p>{secondPar}</p>
-    </>
-  );
 
   const clickHandler = () => handleButtonClick("click", "button");
   return (
     <div>
-      {scoreComp}
+      <p>{t("intro")}</p>
+      <h4>{t("allScores")}</h4>
+      <p>{secondPar}</p>
       <h2>Work in progress, updates will follow...</h2>
       <button onClick={clickHandler}>Button</button>
 
