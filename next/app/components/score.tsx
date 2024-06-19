@@ -12,7 +12,11 @@ export const YtScore = () => {
   const scoreInfoCand = fullScoreInfo.filter((el) => el.videoId === scoreId);
   if (scoreInfoCand.length === 0) {
     // No match for score ID found in list.
-    return <h3>YouTube score with ID '{scoreId}' not found :(</h3>;
+    return (
+      <h3>
+        YouTube score with ID <b>{scoreId}</b> not found :(
+      </h3>
+    );
   }
   const scoreInfo = scoreInfoCand[0];
   return <FoundYtScore scoreInfo={scoreInfo} />;
