@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import cookie from "js-cookie";
+import { buttonStyle } from "../util/styles";
 
 const CookieConsentBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -37,7 +38,9 @@ const CookieConsentBanner = () => {
       <div className="container">
         <p>This website uses cookies to improve your browsing experience.</p>
         <p>Please click Accept to continue.</p>
-        <button onClick={handleAccept}>Accept</button>
+        <button onClick={handleAccept} style={buttonStyle}>
+          Accept
+        </button>
       </div>
     </div>
   );

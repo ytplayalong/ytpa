@@ -1,9 +1,10 @@
 import usePathTranslation from "@/i18n/hook";
 import Link from "next/link";
 import { useState } from "react";
+import { buttonStyle } from "./styles";
 
 const ddStyle: any = { position: "relative", display: "inline-block" };
-const ddButtonStyle: any = { border: "none", cursor: "pointer" };
+
 const ddContentStyle: any = { position: "absolute", zIndex: 1 };
 const elementStyle = { textDecoration: "none", display: "block" };
 
@@ -19,7 +20,7 @@ export const useDropDown = (label: any, options: DDItem[]) => {
 
   return (
     <div style={ddStyle}>
-      <button style={ddButtonStyle} onClick={onClick}>
+      <button style={buttonStyle} onClick={onClick}>
         {label} ▾
       </button>
       <div style={contStyle}>

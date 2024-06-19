@@ -2,7 +2,7 @@
 
 import usePathTranslation from "@/i18n/hook";
 import { useForm, ValidationError } from "@formspree/react";
-import { twoColumns } from "../util/styles";
+import { buttonStyle, twoColumns } from "../util/styles";
 
 const inputStyle: any = {
   boxSizing: "border-box",
@@ -35,7 +35,9 @@ export default function ContactForm() {
           <div style={twoColumns}>
             <input style={inputStyle} type="text" name="name" id="name" />
           </div>
+        </div>
 
+        <div className="row" style={{ marginTop: "0.5em" }}>
           <div style={twoColumns}>
             <label htmlFor="email">{t("email")}</label>
             <ValidationError
@@ -47,7 +49,9 @@ export default function ContactForm() {
           <div style={twoColumns}>
             <input style={inputStyle} type="email" name="email" id="email" />
           </div>
+        </div>
 
+        <div className="row" style={{ marginTop: "0.5em" }}>
           <div style={twoColumns}>
             <label style={twoColumns} htmlFor="message">
               {t("message")}
@@ -65,8 +69,15 @@ export default function ContactForm() {
               id="message"
             />
           </div>
+        </div>
 
-          <button type="submit" formMethod="POST" disabled={state.submitting}>
+        <div className="row" style={{ marginTop: "0.5em" }}>
+          <button
+            type="submit"
+            formMethod="POST"
+            disabled={state.submitting}
+            style={buttonStyle}
+          >
             {t("submit")}
           </button>
           <ValidationError errors={state.errors} />
