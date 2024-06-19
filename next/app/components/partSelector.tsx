@@ -84,19 +84,9 @@ export const getParts = (xml: Document) => {
   return parts;
 };
 
-const pitchStorageKey = "pitch";
-
 /** Load pitch information from localStorage. */
 const getPitch = () => {
-  const pitch = localStorage.getItem(pitchStorageKey);
-  if (pitch === null || !transposeKeys.includes(pitch)) {
-    return transposeKeys[0];
-  }
-  return pitch;
-};
-
-const setPitch = (pitch: string) => {
-  localStorage.setItem(pitchStorageKey, pitch);
+  return settingsManager.getInstrumentKey();
 };
 
 /** The moving sheet music including the part selector and the player. */
@@ -140,8 +130,6 @@ export const PartSelector = ({
   if (origXmlAndParts !== null) {
     const currPitch = origXmlAndParts.pitch;
     const currPartIdx = origXmlAndParts.currPartIdx;
-    const allParts = origXmlAndParts.parts;
-    const currPart = allParts[currPartIdx];
     const currOctave = origXmlAndParts.octave;
 
     // Part changer
