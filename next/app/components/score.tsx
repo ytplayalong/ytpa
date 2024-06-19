@@ -25,11 +25,13 @@ export const YtScore = () => {
 const FoundYtScore = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
   const player = useYoutubePlayer(scoreInfo.videoId);
   const fileName = `/mxl/${scoreInfo.fileName}.musicxml`;
+  const mscComUrl = `https://musescore.com/user/83726533/scores/${scoreInfo.source}`
   const partSel = (
     <PartSelector
       measureMap={scoreInfo.measureMap}
       player={player}
       fileName={fileName}
+      mscComUrl={mscComUrl}
     ></PartSelector>
   );
 

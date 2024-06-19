@@ -28,6 +28,11 @@ def extract_info(xml: Path):
         if "drum" not in name.lower():
             used_part_ids.append(id)
 
+    # Find source
+    sources = root.findall(".//identification/source")
+    assert len(sources) > 0, "No source specified!"
+    msc_score_id = sources[0].text.split("/")[-1]
+
     # Find keys, exclude drum parts
     all_keys = []
     for part_id in used_part_ids:
@@ -52,7 +57,7 @@ def extract_info(xml: Path):
     if len(times) == 0:
         warnings.warn(f"No time signature: {xml.name}")
 
-    return {"keys": all_keys, "times": times}
+    return {"keys": all_keys, "times": times, "source": msc_score_id}
 
 
 def extract_all_information():

@@ -1,36 +1,27 @@
 [
   {
-    "videoId": "DinJw_QZa-o",
-    "measureMap": {
-      "5": 1,
-      "12": 5,
-      "53": 28,
-      "112": 61
-    },
-    "fileName": "Nikodem",
-    "artist": "Warszawska Orkiestra Sentymentalna",
-    "name": "Nikodem",
-    "language": "polish",
     "keys": [-1],
     "times": [
       [4, 4],
       [2, 4]
-    ]
+    ],
+    "source": "18236494",
+    "videoId": "DinJw_QZa-o",
+    "measureMap": { "5": 1, "12": 5, "53": 28, "112": 61 },
+    "fileName": "Nikodem",
+    "name": "Nikodem",
+    "artist": "Warszawska Orkiestra Sentymentalna",
+    "language": "polish"
   },
   {
+    "keys": [-1],
+    "times": [[3, 4]],
+    "source": "18237109",
     "videoId": "vm4aLTZ3Y3s",
-    "measureMap": {
-      "33": 33,
-      "86": 85
-    },
+    "measureMap": { "33": 33, "86": 85 },
     "fileName": "El_vals_del_circo",
-    "artist": "Paté de Fuá",
     "name": "El Vals del Circo",
-    "language": "spanish",
-    "keys": [0],
-    "times": [
-      [4, 4],
-      [2, 4]
-    ]
+    "artist": "Pat\u00e9 de Fu\u00e1",
+    "language": "spanish"
   }
 ]

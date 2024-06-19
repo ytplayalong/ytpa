@@ -37,6 +37,7 @@ export const RESSOURCES = {
         "If you have any questions, need assistance, or want to provide us with helpful feedback, please don't hesitate to use the following contact form.",
       intro:
         "Welcome to our sheet music website! We are pleased to offer a wide variety of sheet music for a variety of musical styles and instruments. Our website features interactive sheet music that is synced with corresponding music videos, allowing you to play along with the video as you practice.",
+      viewSheetsOn: "View sheet music on",
     },
   },
   es: {
@@ -76,6 +77,7 @@ export const RESSOURCES = {
         "Si tiene alguna pregunta, necesita ayuda o desea brindarnos comentarios útiles, no dude en utilizar el siguiente formulario de contacto.",
       intro:
         "¡Bienvenido a nuestro sitio web de partituras! Nos complace ofrecer una amplia variedad de partituras para una variedad de estilos e instrumentos musicales. Nuestro sitio web presenta partituras interactivas que se sincronizan con los videos musicales correspondientes, lo que le permite reproducir el video mientras practica.",
+      viewSheetsOn: "Ver partitura en",
     },
   },
   de: {
@@ -115,6 +117,7 @@ export const RESSOURCES = {
         "Wenn Sie Fragen haben, Hilfe benötigen oder uns hilfreiches Feedback geben möchten, nutzen Sie bitte das folgende Kontaktformular.",
       intro:
         "Willkommen auf unserer Noten-Website! Wir freuen uns, eine große Auswahl an Noten für verschiedene Musikstile und Instrumente anbieten zu können. Auf unserer Website finden Sie interaktive Noten, die mit entsprechenden Musikvideos synchronisiert sind, so dass Sie beim Üben zum Video mitspielen können.",
+      viewSheetsOn: "Schauen Sie sich die Noten an auf",
     },
   },
 };

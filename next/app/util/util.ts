@@ -17,6 +17,7 @@ export type ScoreInfo = {
   measureMap: MeasureMap;
   fileName: string;
   artist: string;
+  source: string;
   name: string;
   language: string;
   keys: number[];

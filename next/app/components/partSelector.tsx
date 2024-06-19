@@ -12,6 +12,7 @@ import {
 import { settingsManager } from "./settings";
 import { DropdownComp } from "../util/dropdown";
 import { distributedStyle, flexCentered } from "../util/styles";
+import usePathTranslation from "@/i18n/hook";
 
 type PartSelectorState = {
   xml: Document;
@@ -103,11 +104,14 @@ export const PartSelector = ({
   measureMap,
   player,
   fileName,
+  mscComUrl,
 }: {
   measureMap: MeasureMap;
   player: Player;
   fileName: string;
+  mscComUrl: string;
 }) => {
+  const { t } = usePathTranslation();
   const [origXmlAndParts, setOrigXmlAndParts] =
     useState<null | PartSelectorState>(null);
 
@@ -168,19 +172,6 @@ export const PartSelector = ({
     };
 
     // Only add part chooser dropdown if there are at least two parts.
-    const options = allParts.map((el, idx) => {
-      return {
-        name: el.name,
-        onClick: () => setPart(idx, currPitch, currOctave),
-        key: el.name,
-      };
-    });
-    const partChooser =
-      allParts.length <= 1 ? null : (
-        <DropdownComp options={options}>{"Select Part"}</DropdownComp>
-      );
-
-    // Only add part chooser dropdown if there are at least two parts.
     const octToStr = (el: number) => (el > 0 ? `+${el}` : `${el}`);
     const octTitle =
       currOctave === 0 ? "Octave" : `Octave ${octToStr(currOctave)}`;
@@ -213,7 +204,6 @@ export const PartSelector = ({
     // (Part and) pitch selector dropdowns
     const partSelectorDD = (
       <div style={flexCentered}>
-        {partChooser}
         {pitchSelector}
         {octaveChooser}
       </div>
@@ -238,7 +228,13 @@ export const PartSelector = ({
           margin: "auto",
         }}
       >
-        <h4>Part: {currPart.name}</h4>
+        <h4>
+          {t("viewSheetsOn")}
+          <br></br>
+          <a href={mscComUrl} target="_blank">
+            MuseScore.com
+          </a>
+        </h4>
         {partSelectorDD}
       </div>
     );
@@ -252,5 +248,5 @@ export const PartSelector = ({
       </>
     );
   }
-  return <div>Something did not work out!</div>;
+  return <div className="container">Loading...</div>;
 };
