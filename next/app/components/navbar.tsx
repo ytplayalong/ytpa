@@ -8,6 +8,7 @@ import usePathTranslation from "@/i18n/hook";
 import { useState } from "react";
 import { LANGUAGES } from "@/i18n";
 import { getFlag } from "@/i18n/flags";
+import { flexCentered } from "../util/styles";
 
 const home = { url: "/", name: "Home" };
 const buttSize = 26;
@@ -22,13 +23,6 @@ const navbarLinks = [
   { url: "/help", key: "helpTitle", icon: <MdHelp {...iconProps} /> },
 ].reverse();
 const defaultPageTitle = "YouTube Play-Along";
-
-const flexCentered: any = {
-  display: "flex",
-  justifyContent: "center",
-  textAlign: "center",
-  alignItems: "center",
-};
 
 const imgH = "45px";
 const linkStyle: any = {

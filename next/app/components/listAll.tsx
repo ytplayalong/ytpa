@@ -5,7 +5,7 @@ import { strLatinise } from "../util/sorting";
 import TimeSignatures from "../timeSignatures.json";
 import usePathTranslation from "@/i18n/hook";
 import { ScoreTable } from "./scoreTable";
-import { twoColumns } from "../util/styles";
+import { distributedStyle, inputStyle, twoColumns } from "../util/styles";
 import { ScoreInfo, SortBy, getScoreInfo } from "../util/util";
 
 type SortSetting = { by: SortBy; ascending: boolean };
@@ -19,6 +19,7 @@ const useScoreFilter = (placeholder: string) => {
       placeholder={placeholder}
       onChange={(ev: { target: any }) => setFilterS(ev.target.value)}
       value={filterS}
+      style={inputStyle}
     ></input>
   );
   return [filterS, filterForm] as const;
@@ -63,11 +64,16 @@ const useSortedScores = () => {
   return { sortFun, sortClick, ...sortSetting };
 };
 
+const checkBoxStyle = {
+  minWidth: "18px",
+  minHeight: "18px",
+};
+
 const useTimeSignatureFilter = () => {
   const initTimes = TimeSignatures.map(() => true);
   const [chosenTimes, setChosenTimes] = useState<boolean[]>(initTimes);
   const comp = (
-    <div className="d-flex justify-content-between">
+    <div style={distributedStyle}>
       {TimeSignatures.map((el, idx) => (
         <Fragment key={`time-${el}`}>
           <label htmlFor={`time-${el}`}>{`${el[0]}/${el[1]}`}</label>
@@ -80,6 +86,7 @@ const useTimeSignatureFilter = () => {
               newTimes[idx] = !newTimes[idx];
               setChosenTimes(newTimes);
             }}
+            style={checkBoxStyle}
           />
         </Fragment>
       ))}
@@ -112,7 +119,7 @@ const useKeyFilter = () => {
   };
   const comp = (
     <div>
-      <div className="d-flex justify-content-between">
+      <div style={distributedStyle}>
         <label htmlFor="none">{`0 #`}</label>
         <input
           type="checkbox"
@@ -120,6 +127,7 @@ const useKeyFilter = () => {
           id={`none`}
           checked={sharpIsSet(0)}
           onChange={() => setSharp(0)}
+          style={checkBoxStyle}
         />
         {sharps.map((el) => (
           <Fragment key={`sharp-${el}`}>
@@ -128,11 +136,12 @@ const useKeyFilter = () => {
               type="checkbox"
               checked={sharpIsSet(el)}
               onChange={() => setSharp(el)}
+              style={checkBoxStyle}
             />
           </Fragment>
         ))}
       </div>
-      <div className="d-flex justify-content-between">
+      <div style={distributedStyle}>
         {flats.map((el) => (
           <Fragment key={`flat-${el}`}>
             <label htmlFor={`flat-${el}`}>{`${el} ♭`}</label>
@@ -140,6 +149,7 @@ const useKeyFilter = () => {
               type="checkbox"
               checked={sharpIsSet(-el)}
               onChange={() => setSharp(-el)}
+              style={checkBoxStyle}
             />
           </Fragment>
         ))}

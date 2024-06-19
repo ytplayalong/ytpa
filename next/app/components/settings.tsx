@@ -87,11 +87,15 @@ const SettingsComp = () => {
   return (
     <>
       <h4>{t("settingsTitle")}</h4>
-      <div className="row">
+      <div className="row" style={{ marginBottom: "0.2em" }}>
         <div style={twoColumns}>{t("instrumentKey")}</div>
         <div style={twoColumns}>{keyDD}</div>
+      </div>
+      <div className="row" style={{ marginBottom: "0.2em" }}>
         <div style={twoColumns}>{t("clef")}</div>
         <div style={twoColumns}>{clefDD}</div>
+      </div>
+      <div className="row" style={{ marginBottom: "0.2em" }}>
         <div style={twoColumns}>{t("fingering")}</div>
         <div style={twoColumns}>{fingerDD}</div>
       </div>

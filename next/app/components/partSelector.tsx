@@ -11,6 +11,7 @@ import {
 } from "../util/util";
 import { settingsManager } from "./settings";
 import { DropdownComp } from "../util/dropdown";
+import { distributedStyle, flexCentered } from "../util/styles";
 
 type PartSelectorState = {
   xml: Document;
@@ -211,7 +212,7 @@ export const PartSelector = ({
 
     // (Part and) pitch selector dropdowns
     const partSelectorDD = (
-      <div>
+      <div style={flexCentered}>
         {partChooser}
         {pitchSelector}
         {octaveChooser}
@@ -231,11 +232,14 @@ export const PartSelector = ({
     // Info about current part and pitch and dropdown for changing
     const partInfo = (
       <div
-        className="d-flex justify-content-between mt-1 mb-1"
-        style={{ width: playerSizePx.width, margin: "auto" }}
+        style={{
+          ...distributedStyle,
+          width: playerSizePx.width,
+          margin: "auto",
+        }}
       >
         <h4>Part: {currPart.name}</h4>
-        <div className="d-flex">{partSelectorDD}</div>
+        {partSelectorDD}
       </div>
     );
 
@@ -248,5 +252,5 @@ export const PartSelector = ({
       </>
     );
   }
-  return <></>;
+  return <div>Something did not work out!</div>;
 };

@@ -3,7 +3,7 @@ import { getStaticLocaleParams } from "@/i18n";
 
 export default function Help() {
   return (
-    <div>
+    <div className="container">
       <ContactForm />
     </div>
   );

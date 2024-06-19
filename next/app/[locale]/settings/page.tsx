@@ -2,6 +2,10 @@ import SettingsComp from "@/app/components/settings";
 import { getStaticLocaleParams } from "@/i18n";
 
 export default function Settings() {
-  return <SettingsComp />;
+  return (
+    <div className="container">
+      <SettingsComp />
+    </div>
+  );
 }
 export const generateStaticParams = getStaticLocaleParams;

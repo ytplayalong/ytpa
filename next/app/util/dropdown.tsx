@@ -6,7 +6,12 @@ import { buttonStyle } from "./styles";
 const ddStyle: any = { position: "relative", display: "inline-block" };
 
 const ddContentStyle: any = { position: "absolute", zIndex: 1 };
-const elementStyle = { textDecoration: "none", display: "block" };
+const elementStyle = {
+  ...buttonStyle,
+  textDecoration: "none",
+  display: "block",
+  borderRadius: 0,
+};
 
 type DDItem = { name: any; key: string; url?: string; onClick?: VoidFunction };
 type DdProps = { options: DDItem[] };

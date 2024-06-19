@@ -2,12 +2,7 @@
 
 import usePathTranslation from "@/i18n/hook";
 import { useForm, ValidationError } from "@formspree/react";
-import { buttonStyle, twoColumns } from "../util/styles";
-
-const inputStyle: any = {
-  boxSizing: "border-box",
-  width: "100%",
-};
+import { buttonStyle, inputStyle, twoColumns } from "../util/styles";
 
 /** Form spree contact form component.
  *
