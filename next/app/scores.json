@@ -1,5 +1,38 @@
 [
   {
+    "keys": [-5],
+    "times": [[2, 4]],
+    "source": "18241966",
+    "videoId": "pyGJfRl39Rw",
+    "measureMap": { "3": 3, "239": 177 },
+    "fileName": "Bas_Aut",
+    "name": "Bas Aut",
+    "artist": "Pat\u00e9 de Fu\u00e1",
+    "language": "instrumental"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "18242404",
+    "videoId": "fbChSuSQIo4",
+    "measureMap": { "11": 8, "235": 156 },
+    "fileName": "An_Tagen_wie_diesen",
+    "name": "An Tagen wie diesen",
+    "artist": "Fettes Brot",
+    "language": "german"
+  },
+  {
+    "keys": [-5],
+    "times": [[4, 4]],
+    "source": "18242371",
+    "videoId": "tmPws7eXcVk",
+    "measureMap": { "2": 1, "177": 103 },
+    "fileName": "Desenchantee",
+    "name": "D\u00e9senchant\u00e9e",
+    "artist": "Kate Ryan",
+    "language": "french"
+  },
+  {
     "keys": [-1],
     "times": [
       [4, 4],
