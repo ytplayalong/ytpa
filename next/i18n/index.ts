@@ -1,4 +1,3 @@
-
 export const RESSOURCES = {
   en: {
     translation: {
@@ -19,9 +18,9 @@ export const RESSOURCES = {
       totScores: "Number of pieces: {{num}}",
       filter: "Filter",
       txtFilterDefault: "Enter keyword(s)",
-      allScores: "All Scores",
+      allScores: "All Pieces",
       allScoresTxt:
-        "There is a total of <num /> scores available for playing along including the corresponding sheet music. They all can be accessed under <all/>. Or just jump right in and choose a <random />",
+        "There is a total of <num /> pieces of music available for playing along including the corresponding sheet music. They all can be accessed under <all/>. Or just jump right in and choose a <random />",
       randomScore: "Random Piece",
       recentScores: "Recently Added Pieces",
       recentTxt:

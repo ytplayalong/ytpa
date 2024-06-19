@@ -6,7 +6,7 @@ import ReactGA from "react-ga4";
 import { Trans } from "react-i18next";
 import usePathTranslation from "@/i18n/hook";
 import { NewestScores } from "./recentScores";
-import { fullScoreInfo } from "../util/util";
+import { fullScoreInfo, getRandomScore } from "../util/util";
 
 const TRACKING_ID = "G-42SMWF6LRM";
 
@@ -18,10 +18,15 @@ const Home = () => {
 
   const nScores = fullScoreInfo.length;
   const { t, getLink } = usePathTranslation();
+  const randScore = getRandomScore();
   const parInfo = {
     num: <>{`${nScores}`}</>,
     all: <Link href={getLink("/listall")}> {t("allScores")}</Link>,
-    random: <Link href={`/random`}>{t("randomScore")}</Link>,
+    random: (
+      <Link href={getLink(`/piece/${randScore.videoId}`)}>
+        {t("randomScore")}
+      </Link>
+    ),
   };
   const secondPar = <Trans i18nKey={"allScoresTxt"} components={parInfo} m />;
 
