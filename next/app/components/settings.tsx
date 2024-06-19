@@ -3,7 +3,7 @@
 import usePathTranslation from "@/i18n/hook";
 import { twoColumns } from "../util/styles";
 import { useDropDown } from "../util/dropdown";
-import { transposeKeys } from "../util/transposition";
+import { FingerType, transposeKeys } from "../util/util";
 
 class SettingsManager {
   clefOptions = ["trebleClef", "bassClef"];
@@ -56,7 +56,7 @@ class SettingsManager {
 
   /** Handling fingering selection. */
   getFingering() {
-    return this.get(this.fingeringKey, this.fingeringOptions);
+    return this.get(this.fingeringKey, this.fingeringOptions) as FingerType;
   }
   private setFingering(newf: string) {
     localStorage.setItem(this.fingeringKey, newf);
@@ -68,7 +68,7 @@ class SettingsManager {
   }
 }
 
-const settingsManager = new SettingsManager();
+export const settingsManager = new SettingsManager();
 
 const SettingsComp = () => {
   const { t } = usePathTranslation();

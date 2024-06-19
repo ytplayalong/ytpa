@@ -1,12 +1,12 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { ScoreInfo, SortBy, getScoreInfo } from "../util/transposition";
 import { strLatinise } from "../util/sorting";
 import TimeSignatures from "../timeSignatures.json";
 import usePathTranslation from "@/i18n/hook";
 import { ScoreTable } from "./scoreTable";
 import { twoColumns } from "../util/styles";
+import { ScoreInfo, SortBy, getScoreInfo } from "../util/util";
 
 type SortSetting = { by: SortBy; ascending: boolean };
 type ScoreNameArtist = { name: string; artist: string };

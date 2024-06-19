@@ -1,6 +1,6 @@
-import { ScoreInfo, SortBy, intToKey, sortBy } from "../util/transposition";
 import usePathTranslation from "@/i18n/hook";
 import { useRouter } from "next/navigation";
+import { ScoreInfo, SortBy, sortBy, intToKey } from "../util/util";
 
 export const ScoreTable = ({
   scores,
