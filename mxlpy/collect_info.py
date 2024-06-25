@@ -72,7 +72,10 @@ def extract_all_information():
 
         file_path = yt_xml_dir / f"{file_name}.musicxml"
         auto_extracted = extract_auto_info(file_path)
-        generated_info.append({**auto_extracted, **score})
+        if auto_extracted:
+            generated_info.append({**auto_extracted, **score})
+        else:
+            print(f"Did not find file {file_name}")
 
     _write_generated(generated_info)
 
@@ -84,7 +87,8 @@ def extract_auto_info(score_path: Path):
     """
 
     # Check file exists
-    assert score_path.exists(), f"Did not find file at {score_path}"
+    if not score_path.exists():
+        return None
 
     # Check correct capitalization which is important on linux.
     actual_name = score_path.resolve().stem
