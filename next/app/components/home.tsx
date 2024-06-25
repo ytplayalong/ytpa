@@ -35,7 +35,7 @@ const Home = () => {
       <p>{t("intro")}</p>
       <h4>{t("allScores")}</h4>
       <p>{secondPar}</p>
-      <NewestScores nMostRecentSongs={10} />
+      <NewestScores nMostRecentSongs={20} />
     </div>
   );
 };
