@@ -7,7 +7,7 @@
     "measureMap": { "3": 3, "239": 177 },
     "fileName": "Bas_Aut",
     "name": "Bas Aut",
-    "artist": "Pat\u00e9 de Fu\u00e1",
+    "artist": "Paté de Fuá",
     "language": "instrumental"
   },
   {
@@ -22,15 +22,59 @@
     "language": "german"
   },
   {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18674656",
+    "videoId": "dGWQqRyO8gA",
+    "measureMap": { "5": 1, "142": 92 },
+    "fileName": "Empty_Walls",
+    "name": "Empty Walls",
+    "artist": "Serj Tankian",
+    "language": "english"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "18674653",
+    "videoId": "GwTgGrM3tFg",
+    "measureMap": { "13": 8, "157": 85 },
+    "fileName": "Trampolin",
+    "name": "Trampolin",
+    "artist": "Fäaschtbänkler",
+    "language": "german"
+  },
+  {
     "keys": [-5],
     "times": [[4, 4]],
     "source": "18242371",
     "videoId": "tmPws7eXcVk",
     "measureMap": { "2": 1, "177": 103 },
     "fileName": "Desenchantee",
-    "name": "D\u00e9senchant\u00e9e",
+    "name": "Désenchantée",
     "artist": "Kate Ryan",
     "language": "french"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18674632",
+    "videoId": "8lF4YcIHKa8",
+    "measureMap": { "5": 3, "231": 99 },
+    "fileName": "SAT",
+    "name": "SAT",
+    "artist": "Boban Markovic Orkestar",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18674605",
+    "videoId": "KNZwqmEb004",
+    "measureMap": { "6": 3, "292": 97 },
+    "fileName": "Revolution_of_Two",
+    "name": "Revolution of Two",
+    "artist": "Avatar",
+    "language": "english"
   },
   {
     "keys": [-1],
@@ -47,6 +91,53 @@
     "language": "polish"
   },
   {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "18674581",
+    "videoId": "GOxDTGGV_5Q",
+    "measureMap": { "13": 9, "63": 41, "154": 99 },
+    "fileName": "Ciganka",
+    "name": "Ciganka / Ciganočka",
+    "artist": "Skupina Belin",
+    "language": "slovenian"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "18674533",
+    "videoId": "GM2tH3_FysI",
+    "measureMap": { "2": 2, "51": 40, "82": 64 },
+    "fileName": "Lets_Call_It",
+    "name": "Let's Call It",
+    "artist": "Sick Leave",
+    "language": "english"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "18674518",
+    "videoId": "Vij2l_G-4ok",
+    "measureMap": { "5": 3, "106": 45 },
+    "fileName": "Txikia",
+    "name": "Txikia",
+    "artist": "Arene 6",
+    "language": "spanish"
+  },
+  {
+    "keys": [-4],
+    "times": [
+      [4, 4],
+      [2, 4]
+    ],
+    "source": "18674500",
+    "videoId": "nE_5BCzLZhw",
+    "measureMap": { "13": 7, "80": 35 },
+    "fileName": "El_Tren_De_La_Alegria",
+    "name": "El Tren De La Alegría",
+    "artist": "Paté de Fuá",
+    "language": "spanish"
+  },
+  {
     "keys": [-1],
     "times": [[3, 4]],
     "source": "18237109",
@@ -54,7 +145,21 @@
     "measureMap": { "33": 33, "86": 85 },
     "fileName": "El_vals_del_circo",
     "name": "El Vals del Circo",
-    "artist": "Pat\u00e9 de Fu\u00e1",
+    "artist": "Paté de Fuá",
     "language": "spanish"
+  },
+  {
+    "keys": [0],
+    "times": [
+      [4, 4],
+      [2, 4]
+    ],
+    "source": "18674482",
+    "videoId": "li6rgm1_MR0",
+    "measureMap": { "6": 4, "20": 12, "79": 44 },
+    "fileName": "Makam_Dub",
+    "name": "Makam Dub",
+    "artist": "Youthie & Kino Doscun",
+    "language": "instrumental"
   }
 ]
