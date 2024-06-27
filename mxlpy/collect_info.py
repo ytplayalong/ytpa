@@ -30,7 +30,7 @@ def extract_info(xml: Path):
 
     # Find source
     sources = root.findall(".//identification/source")
-    assert len(sources) > 0, "No source specified!"
+    assert len(sources) > 0, f"No source specified in {xml.name}"
     msc_score_id = sources[0].text.split("/")[-1]
 
     # Find keys, exclude drum parts
@@ -64,11 +64,16 @@ def extract_all_information():
     """Collect information from all scores in the given list."""
 
     score_info = read_json(Paths.SCORE_INFO_FILE)
+    private_scores = set(read_json(Paths.PRIVATE_SCORES_FILE))
 
     generated_info: list[dict] = []
     yt_xml_dir = Paths.XML_SCORES_PATH
     for score in tqdm(score_info):
         file_name = score["fileName"]
+
+        if score["videoId"] in private_scores:
+            print(f"Private: {file_name}")
+            continue
 
         file_path = yt_xml_dir / f"{file_name}.musicxml"
         auto_extracted = extract_auto_info(file_path)

@@ -1,5 +1,640 @@
 [
   {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18847744",
+    "videoId": "-ZYEkBO05vM",
+    "measureMap": { "6": 1, "70": 25, "275": 102 },
+    "fileName": "Norse_Legends",
+    "name": "Norse Legends Come To Life",
+    "artist": "Wildpath",
+    "language": "english"
+  },
+  {
+    "keys": [3],
+    "times": [[4, 4]],
+    "source": "18847594",
+    "videoId": "3SgcaZCLJFk",
+    "measureMap": { "5": 2, "270": 191 },
+    "fileName": "Danza_Dell_Autunno_Rosa",
+    "name": "Danza dell'Autunno Rosa",
+    "artist": "Talco",
+    "language": "italian"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18847588",
+    "videoId": "_DoxQkaMNkc",
+    "measureMap": { "19": 1, "200": 105 },
+    "fileName": "Aukera_Berriak",
+    "name": "Aukera Berriak",
+    "artist": "En Tol Sarmiento",
+    "language": "spanish"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18847387",
+    "videoId": "euVmi2nWXds",
+    "measureMap": { "2": 1, "210": 120 },
+    "fileName": "Geordie",
+    "name": "Geordie",
+    "artist": "Gabry Ponte",
+    "language": "italian"
+  },
+  {
+    "keys": [-6],
+    "times": [[4, 4]],
+    "source": "18847372",
+    "videoId": "g6JYzOjglBs",
+    "measureMap": { "3": 1, "11": 5, "207": 109, "228": 120 },
+    "fileName": "Aufstehn",
+    "name": "Aufstehn",
+    "artist": "Seeed",
+    "language": "german"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18847366",
+    "videoId": "l68QxDXOVbk",
+    "measureMap": { "2": 2, "25": 15, "124": 70 },
+    "fileName": "Smidje",
+    "name": "'t Smidje",
+    "artist": "Lais",
+    "language": "dutch"
+  },
+  {
+    "keys": [-6],
+    "times": [[4, 4]],
+    "source": "18847351",
+    "videoId": "-S2QB1emWZo",
+    "measureMap": { "5": 3, "169": 85 },
+    "fileName": "Alle_Jlaeser",
+    "name": "Alle Jläser Huh",
+    "artist": "Kasalla",
+    "language": "german"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "18847165",
+    "videoId": "UhZwKNqDXwE",
+    "measureMap": {
+      "5": 1,
+      "88": 49,
+      "157": 89,
+      "181": 103,
+      "187": 105,
+      "212": 120
+    },
+    "fileName": "Nie_Mehr_Fastelovend",
+    "name": "Nie mehr Fastelovend",
+    "artist": "Querbeat",
+    "language": "german"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "18847156",
+    "videoId": "FT10d7tiKsM",
+    "measureMap": { "3": 2, "30": 18, "205": 120 },
+    "fileName": "Figli",
+    "name": "Figli di Pitagora",
+    "artist": "Gabry Ponte ft. Little Tony",
+    "language": "italian"
+  },
+  {
+    "keys": [-4],
+    "times": [[4, 4]],
+    "source": "18847144",
+    "videoId": "oBf7otSstlw",
+    "measureMap": { "13": 13, "162": 147 },
+    "fileName": "Puttin_On_The_Ritz",
+    "name": "Puttin' On The Ritz",
+    "artist": "Irving Berlin",
+    "language": "english"
+  },
+  {
+    "keys": [-4],
+    "times": [[4, 4]],
+    "source": "18847123",
+    "videoId": "LzIMvHZXjcU",
+    "measureMap": { "15": 1, "29": 9, "202": 104 },
+    "fileName": "Al_Pacino",
+    "name": "Al Pacino",
+    "artist": "Timmy Trumpet & Krunk!",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-4],
+    "times": [
+      [4, 4],
+      [3, 4]
+    ],
+    "source": "18847114",
+    "videoId": "yduNsJeia7k",
+    "measureMap": { "5": 1, "160": 108, "168": 112, "202": 144 },
+    "fileName": "Koelsch",
+    "name": "Kölsch statt Käsch",
+    "artist": "Miljö",
+    "language": "german"
+  },
+  {
+    "keys": [-4],
+    "times": [[4, 4]],
+    "source": "18846925",
+    "videoId": "O4irXQhgMqg",
+    "measureMap": { "5": 4, "8": 5, "87": 57 },
+    "fileName": "Paint_It_Black",
+    "name": "Paint It, Black",
+    "artist": "The Rolling Stones",
+    "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18846913",
+    "videoId": "jpZHGYrxj9A",
+    "measureMap": { "1": 1, "272": 121 },
+    "fileName": "Bello_E_Impossibile",
+    "name": "Bello e impossibile",
+    "artist": "Gianna Nannini",
+    "language": "italian"
+  },
+  {
+    "keys": [1],
+    "times": [[2, 2]],
+    "source": "18846901",
+    "videoId": "r3HLHf71vK0",
+    "measureMap": { "7": 2, "101": 90, "108": 96 },
+    "fileName": "Eine_Insel",
+    "name": "Eine Insel mit zwei Bergen",
+    "artist": "Jim Knopf & Lukas",
+    "language": "german"
+  },
+  {
+    "keys": [2, 3, -1],
+    "times": [[2, 4]],
+    "source": "18846706",
+    "videoId": "4DNGMoMNLRY",
+    "measureMap": { "5": 1, "67": 67, "117": 117, "134": 135 },
+    "fileName": "Toreadors",
+    "name": "Les Toréadors",
+    "artist": "Georges Bizet",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-5],
+    "times": [[4, 4]],
+    "source": "18846700",
+    "videoId": "tINyMbNZytI",
+    "measureMap": { "3": 1, "135": 69 },
+    "fileName": "Comment_Dire_Adieu",
+    "name": "Comment te dire adieu",
+    "artist": "Françoise Hardy",
+    "language": "french"
+  },
+  {
+    "keys": [-4],
+    "times": [[4, 4]],
+    "source": "18847360",
+    "videoId": "ZckaCTKFBXU",
+    "measureMap": { "10": 1, "178": 88 },
+    "fileName": "Clap_Your_Hands",
+    "name": "Clap Your Hands",
+    "artist": "Kungs",
+    "language": "english"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "18846490",
+    "videoId": "IsUxZC9dUgo",
+    "measureMap": { "24": 1, "81": 32 },
+    "fileName": "Lipka",
+    "name": "Lipka",
+    "artist": "Rokiczanka",
+    "language": "polish"
+  },
+  {
+    "keys": [4],
+    "times": [[4, 4]],
+    "source": "18846484",
+    "videoId": "zpzdgmqIHOQ",
+    "measureMap": { "6": 1, "211": 172 },
+    "fileName": "La_Isla",
+    "name": "La Isla Bonita",
+    "artist": "Madonna",
+    "language": "english"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18846481",
+    "videoId": "pUiAhclmvfE",
+    "measureMap": { "9": 1, "57": 35, "139": 93 },
+    "fileName": "African_Beat",
+    "name": "African Beat",
+    "artist": "Bert Kaempfert",
+    "language": "instrumental"
+  },
+  {
+    "keys": [0, 3, -2],
+    "times": [[4, 4]],
+    "source": "18846475",
+    "videoId": "bDygS0a6Tgo",
+    "measureMap": { "13": 2, "227": 93 },
+    "fileName": "The_Riddle",
+    "name": "The Riddle",
+    "artist": "Nik Kershaw",
+    "language": "english"
+  },
+  {
+    "keys": [1, 3, -4],
+    "times": [[4, 4]],
+    "source": "18846292",
+    "videoId": "zL3DVhH21h0",
+    "measureMap": { "5": 4, "184": 130 },
+    "fileName": "Quellkartoffel",
+    "name": "Quellkartoffel und Dupp Dupp",
+    "artist": "Adam & Die Mickys",
+    "language": "german"
+  },
+  {
+    "keys": [0, -1],
+    "times": [[4, 4]],
+    "source": "18846286",
+    "videoId": "_osKWtnL8sU",
+    "measureMap": { "16": 10, "256": 145 },
+    "fileName": "Tobogan",
+    "name": "Tobogan",
+    "artist": "Zoo",
+    "language": "spanish"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18846277",
+    "videoId": "Qq4j1LtCdww",
+    "measureMap": { "9": 1, "83": 37, "183": 86, "252": 121 },
+    "fileName": "Poison",
+    "name": "Poison",
+    "artist": "Alice Cooper",
+    "language": "english"
+  },
+  {
+    "keys": [0, -2],
+    "times": [[2, 4]],
+    "source": "18846268",
+    "videoId": "JatPVNqLm-A",
+    "measureMap": { "4": 1, "136": 120 },
+    "fileName": "Scotland_The_Brave",
+    "name": "Scotland The Brave",
+    "artist": "John McDermott",
+    "language": "english"
+  },
+  {
+    "keys": [-5, 5, -2],
+    "times": [[2, 4]],
+    "source": "18846073",
+    "videoId": "m2tQUKg90dg",
+    "measureMap": { "8": 9, "199": 215 },
+    "fileName": "Viva_Espana",
+    "name": "Y Viva Espana",
+    "artist": "Los Altos Barcelona",
+    "language": "spanish"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "18846064",
+    "videoId": "odWKEfp2QMY",
+    "measureMap": { "16": 1, "20": 3, "249": 127 },
+    "fileName": "The_Lonliest",
+    "name": "The Lonliest",
+    "artist": "Måneskin",
+    "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18846061",
+    "videoId": "pIgZ7gMze7A",
+    "measureMap": { "1": 2, "200": 137 },
+    "fileName": "Wake_Me_Up",
+    "name": "Wake Me Up Before You Go Go",
+    "artist": "Wham!",
+    "language": "english"
+  },
+  {
+    "keys": [-4, 4],
+    "times": [[4, 4]],
+    "source": "18846055",
+    "videoId": "OMOGaugKpzs",
+    "measureMap": { "5": 3, "83": 41, "179": 88, "220": 108 },
+    "fileName": "Every_Breath_You_Take",
+    "name": "Every Breath You Take",
+    "artist": "The Police",
+    "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18845863",
+    "videoId": "5mU-240ogJE",
+    "measureMap": { "4": 3, "120": 95, "191": 151, "202": 160 },
+    "fileName": "Feel_Alive",
+    "name": "Feel Alive",
+    "artist": "Re-Style ft. Cammie Robinson",
+    "language": "english"
+  },
+  {
+    "keys": [-6],
+    "times": [[4, 4]],
+    "source": "18845848",
+    "videoId": "n3I5qjTbpww",
+    "measureMap": { "4": 3, "188": 118 },
+    "fileName": "Trinity_Till_Infinity",
+    "name": "Trinity Till Infinity",
+    "artist": "Sub Zero Project & Devin Wild",
+    "language": "english"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18845635",
+    "videoId": "nyRcYvxiJnE",
+    "measureMap": { "2": 2, "180": 96 },
+    "fileName": "Helele",
+    "name": "Helele",
+    "artist": "Safri Duo",
+    "language": "zulu"
+  },
+  {
+    "keys": [3],
+    "times": [[4, 4]],
+    "source": "18845617",
+    "videoId": "-GmGgiCzNzY",
+    "measureMap": { "2": 2, "203": 116 },
+    "fileName": "Drei_Weisse_Tauben",
+    "name": "Drei Weisse Tauben",
+    "artist": "EAV",
+    "language": "german"
+  },
+  {
+    "keys": [2, -1],
+    "times": [[6, 8]],
+    "source": "18845605",
+    "videoId": "VISZZ4DwQbI",
+    "measureMap": { "2": 2, "171": 96, "175": 98 },
+    "fileName": "Une_Fleur",
+    "name": "Une fleur dans le cœur",
+    "artist": "Therion",
+    "language": "french"
+  },
+  {
+    "keys": [2, -6],
+    "times": [[4, 4]],
+    "source": "18845596",
+    "videoId": "yCC_b5WHLX0",
+    "measureMap": { "4": 2, "216": 78 },
+    "fileName": "Listen_To_Your_Heart",
+    "name": "Listen To Your Heart",
+    "artist": "Roxette",
+    "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18845392",
+    "videoId": "ZmUdd8G0ToA",
+    "measureMap": { "14": 8, "60": 31, "149": 75 },
+    "fileName": "Sway",
+    "name": "Sway",
+    "artist": "Dean Martin",
+    "language": "english"
+  },
+  {
+    "keys": [1],
+    "times": [[2, 4]],
+    "source": "18845188",
+    "videoId": "0gdYwKDQKq0",
+    "measureMap": { "3": 3, "87": 97 },
+    "fileName": "Pinocchio",
+    "name": "Pinocchio: Viaggio In Groppa Al Tonno",
+    "artist": "Fiorenzo Carpi",
+    "language": "instrumental"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "18845182",
+    "videoId": "FenKVtzRr0I",
+    "measureMap": { "5": 4, "225": 132 },
+    "fileName": "Freedom",
+    "name": "Freedom",
+    "artist": "Dj BoBo",
+    "language": "english"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18845176",
+    "videoId": "mT__1G54qNo",
+    "measureMap": { "5": 1, "149": 78 },
+    "fileName": "Humpa_Humpa",
+    "name": "Humpa Humpa",
+    "artist": "Fäaschtbänkler",
+    "language": "german"
+  },
+  {
+    "keys": [-3],
+    "times": [
+      [4, 4],
+      [2, 4]
+    ],
+    "source": "18845167",
+    "videoId": "W8d46CCOlyU",
+    "measureMap": { "5": 3, "148": 64, "259": 112, "324": 140 },
+    "fileName": "Marinero",
+    "name": "Marinero",
+    "artist": "Milva",
+    "language": "spanish"
+  },
+  {
+    "keys": [1],
+    "times": [[2, 4]],
+    "source": "18844978",
+    "videoId": "Sj1PwJO15j4",
+    "measureMap": { "5": 5, "185": 191 },
+    "fileName": "Poland",
+    "name": "Poland",
+    "artist": "Derek Fiechter",
+    "language": "instrumental"
+  },
+  {
+    "keys": [1, 3],
+    "times": [[4, 4]],
+    "source": "18844969",
+    "videoId": "UvmWtbY6z5g",
+    "measureMap": { "1": 2, "190": 105 },
+    "fileName": "Handjes",
+    "name": "Handjes Draaien",
+    "artist": "K3",
+    "language": "dutch"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18844960",
+    "videoId": "Zp40yUFNXqs",
+    "measureMap": { "1": 2, "251": 158 },
+    "fileName": "Entre_Poetas_Y_Presos",
+    "name": "Entre Poetas y Presos",
+    "artist": "La Raíz",
+    "language": "spanish"
+  },
+  {
+    "keys": [3],
+    "times": [[4, 4]],
+    "source": "18844732",
+    "videoId": "bnLgP-Ge6CI",
+    "measureMap": { "2": 2, "194": 102 },
+    "fileName": "Goeschene_Airolo",
+    "name": "Göschene Airolo",
+    "artist": "Stubete Gäng",
+    "language": "german"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18844549",
+    "videoId": "ZUtAe5PUKtE",
+    "measureMap": { "11": 5, "171": 63 },
+    "fileName": "Mad_World",
+    "name": "Mad World",
+    "artist": "Gary Jules",
+    "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18844528",
+    "videoId": "GcG4vXi4eqc",
+    "measureMap": { "3": 2, "199": 115 },
+    "fileName": "Rumadai",
+    "name": "Rumadai",
+    "artist": "Arsenium",
+    "language": "romanian"
+  },
+  {
+    "keys": [-4],
+    "times": [[4, 4]],
+    "source": "18844342",
+    "videoId": "7cjL-31ZQRA",
+    "measureMap": { "20": 2, "231": 121 },
+    "fileName": "Lets_Talk",
+    "name": "Let's Talk About A Man",
+    "artist": "Prezioso ft. Marvin",
+    "language": "english"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18844336",
+    "videoId": "XZVpR3Pk-r8",
+    "measureMap": { "7": 6, "139": 85 },
+    "fileName": "Tainted_Love",
+    "name": "Tainted Love",
+    "artist": "Soft Cell",
+    "language": "english"
+  },
+  {
+    "keys": [-5],
+    "times": [[4, 4]],
+    "source": "18844327",
+    "videoId": "t72sFTaIQwM",
+    "measureMap": { "2": 1, "192": 101 },
+    "fileName": "Johnny_Blue",
+    "name": "Johnny Blue",
+    "artist": "Gestört aber GeiL",
+    "language": "german"
+  },
+  {
+    "keys": [-5],
+    "times": [
+      [4, 4],
+      [2, 4]
+    ],
+    "source": "18740146",
+    "videoId": "JiqDOoghs50",
+    "measureMap": { "12": 1, "83": 24, "85": 25, "211": 66 },
+    "fileName": "Life_Goes_On",
+    "name": "Life Goes On",
+    "artist": "Ed Sheeran",
+    "language": "english"
+  },
+  {
+    "keys": [-5, -4],
+    "times": [[2, 4]],
+    "source": "18740125",
+    "videoId": "vFKr2k5gYzM",
+    "measureMap": { "10": 13, "53": 67, "133": 167, "181": 227 },
+    "fileName": "Vogelwiese_Hbz",
+    "name": "Auf Der Vogelwiese (Oktoberfest Remix)",
+    "artist": "HBz",
+    "language": "german"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18739921",
+    "videoId": "Zowt0s4Vsxc",
+    "measureMap": { "25": 8, "226": 64 },
+    "fileName": "Lux_Aeterna",
+    "name": "Lux Aeterna (Requiem for a Dream)",
+    "artist": "Clint Mansell",
+    "language": "instrumental"
+  },
+  {
+    "keys": [0],
+    "times": [[6, 8]],
+    "source": "18739900",
+    "videoId": "4-43lLKaqBQ",
+    "measureMap": { "10": 9, "95": 67 },
+    "fileName": "House_of_the_Rising_Sun",
+    "name": "House of the Rising Sun",
+    "artist": "The Animals",
+    "language": "english"
+  },
+  {
+    "keys": [2],
+    "times": [
+      [4, 4],
+      [2, 4]
+    ],
+    "source": "18739897",
+    "videoId": "QWpsNlc3420",
+    "measureMap": { "9": 5, "29": 15, "61": 31, "128": 66 },
+    "fileName": "Dont_Let_Me_Be_Misunderstood",
+    "name": "Don't Let Me Be Misunderstood",
+    "artist": "The Animals",
+    "language": "english"
+  },
+  {
+    "keys": [-4],
+    "times": [[4, 4]],
+    "source": "18739699",
+    "videoId": "RDRj1tx7N4Y",
+    "measureMap": { "16": 9, "172": 88 },
+    "fileName": "Canto_del_Pilon",
+    "name": "Canto del Pilón",
+    "artist": "Milk & Sugar ft. Maria Marquez",
+    "language": "spanish"
+  },
+  {
     "keys": [3],
     "times": [[4, 4]],
     "source": "18732409",
@@ -292,17 +927,6 @@
     "fileName": "USA",
     "name": "U.S.A.",
     "artist": "Dubioza kolektiv",
-    "language": "english"
-  },
-  {
-    "keys": [3],
-    "times": [[4, 4]],
-    "source": "18730921",
-    "videoId": "q0hyYWKXF0Q",
-    "measureMap": { "15": 1, "221": 85 },
-    "fileName": "Dance_Monkey",
-    "name": "Dance Monkey",
-    "artist": "Tones And I",
     "language": "english"
   },
   {
@@ -610,17 +1234,6 @@
     "name": "Just Over In The Gloryland",
     "artist": "Craig Duncan",
     "language": "instrumental"
-  },
-  {
-    "keys": [-1],
-    "times": [[4, 4]],
-    "source": "18729895",
-    "videoId": "azdwsXLmrHE",
-    "measureMap": { "24": 1, "62": 19, "319": 139 },
-    "fileName": "Radio_Gaga",
-    "name": "Radio Ga Ga",
-    "artist": "Queen",
-    "language": "english"
   },
   {
     "keys": [0],
@@ -1242,20 +1855,6 @@
   },
   {
     "keys": [0],
-    "times": [
-      [4, 4],
-      [3, 4]
-    ],
-    "source": "18727708",
-    "videoId": "wtHra9tFISY",
-    "measureMap": { "1": 2, "26": 25, "54": 52, "95": 92, "120": 108 },
-    "fileName": "Hedwigs_Theme",
-    "name": "Hedwig's Theme",
-    "artist": "John Williams",
-    "language": "instrumental"
-  },
-  {
-    "keys": [0],
     "times": [[4, 4]],
     "source": "18727414",
     "videoId": "mV_E2p-YWfs",
@@ -1574,25 +2173,6 @@
     "fileName": "Bad_Blood",
     "name": "Bad Blood",
     "artist": "Bastille",
-    "language": "english"
-  },
-  {
-    "keys": [-1],
-    "times": [[4, 4]],
-    "source": "18725497",
-    "videoId": "Sv6dMFF_yts",
-    "measureMap": {
-      "25": 13,
-      "42": 21,
-      "49.5": 24,
-      "91": 40,
-      "234": 95,
-      "239": 97,
-      "245": 99
-    },
-    "fileName": "We_Are_Young",
-    "name": "We Are Young",
-    "artist": "Fun. ft. Janelle Monáe",
     "language": "english"
   },
   {

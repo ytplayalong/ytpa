@@ -24,6 +24,7 @@ class Paths:
     TIME_SIGNATURES_FILE = NEXT_APP_PATH / "timeSignatures.json"
 
     SCORE_INFO_FILE = YTPA_BASE_PATH / "files.json"
+    PRIVATE_SCORES_FILE = YTPA_BASE_PATH / "private.json"
 
     assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
     assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
