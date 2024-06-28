@@ -2,6 +2,409 @@
   {
     "keys": [-3],
     "times": [[4, 4]],
+    "source": "18893797",
+    "videoId": "sZn1GXdzY9g",
+    "measureMap": { "7": 6, "57": 37, "118": 75, "123": 78 },
+    "fileName": "El_Cumbanchero",
+    "name": "El Cumbanchero",
+    "artist": "Daniel Santos",
+    "language": "spanish"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18893785",
+    "videoId": "p3l7fgvrEKM",
+    "measureMap": { "13": 9, "80": 45, "205": 112 },
+    "fileName": "Freed",
+    "name": "Freed From Desire",
+    "artist": "Gala",
+    "language": "english"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "18893611",
+    "videoId": "JYIaWeVL1JM",
+    "measureMap": {
+      "2": 3,
+      "31": 18,
+      "62": 34,
+      "108": 58,
+      "201": 106,
+      "215": 113
+    },
+    "fileName": "Rhythm_Is_A_Dancer",
+    "name": "Rhythm Is A Dancer",
+    "artist": "Snap!",
+    "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18893587",
+    "videoId": "xat1GVnl8-k",
+    "measureMap": { "17": 3, "242": 118, "110.5": 51 },
+    "fileName": "The_Bad_Touch",
+    "name": "The Bad Touch",
+    "artist": "Bloodhound Gang",
+    "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18893575",
+    "videoId": "ZbZSe6N_BXs",
+    "measureMap": { "7": 2, "100": 64 },
+    "fileName": "Happy",
+    "name": "Happy",
+    "artist": "Pharrell Williams",
+    "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18893383",
+    "videoId": "k85mRPqvMbE",
+    "measureMap": { "7": 2, "75": 41, "160": 90 },
+    "fileName": "Crazy_Frog",
+    "name": "Axel F",
+    "artist": "Crazy Frog",
+    "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[12, 8]],
+    "source": "18893005",
+    "videoId": "w8KQmps-Sog",
+    "measureMap": { "6": 2, "107": 56 },
+    "fileName": "Uprising",
+    "name": "Uprising",
+    "artist": "Muse",
+    "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18892924",
+    "videoId": "BERFZja9wb0",
+    "measureMap": { "11": 5, "150": 69, "226": 104 },
+    "fileName": "Cambodia",
+    "name": "Cambodia",
+    "artist": "Kim Wilde",
+    "language": "english"
+  },
+  {
+    "keys": [-5],
+    "times": [[2, 4]],
+    "source": "18892798",
+    "videoId": "EwqhI5xaXSQ",
+    "measureMap": { "11": 9, "157": 154 },
+    "fileName": "Ievan_Polkka",
+    "name": "Ievan Polkka",
+    "artist": "Loituma",
+    "language": "finnish"
+  },
+  {
+    "keys": [1],
+    "times": [[2, 4]],
+    "source": "18892588",
+    "videoId": "qYyaKNvcKEA",
+    "measureMap": { "12": 3, "56": 45, "104": 91 },
+    "fileName": "Santiano",
+    "name": "Santiano",
+    "artist": "Les Marins D'Iroise",
+    "language": "french"
+  },
+  {
+    "keys": [-1],
+    "times": [
+      [4, 4],
+      [3, 4]
+    ],
+    "source": "18892579",
+    "videoId": "aSO5fQTmHNY",
+    "measureMap": {
+      "3": 3,
+      "94": 38,
+      "128": 51,
+      "141": 56,
+      "151": 59,
+      "193": 90,
+      "197": 93
+    },
+    "fileName": "Les_Choristes",
+    "name": "Les Choristes",
+    "artist": "Bruno Coulais",
+    "language": "french"
+  },
+  {
+    "keys": [-4],
+    "times": [
+      [4, 4],
+      [12, 8]
+    ],
+    "source": "18892573",
+    "videoId": "kijpcUv-b8M",
+    "measureMap": {
+      "7": 2,
+      "18": 6,
+      "26": 8,
+      "33": 10,
+      "56": 17,
+      "95": 29,
+      "129": 39
+    },
+    "fileName": "Somebody_To_Love",
+    "name": "Somebody To Love",
+    "artist": "Queen",
+    "language": "english"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "18892564",
+    "videoId": "Bkj3IVIO2Os",
+    "measureMap": { "6": 2, "167": 88, "201": 106, "210": 111 },
+    "fileName": "Die_Immer_Lacht",
+    "name": "Die Immer Lacht",
+    "artist": "Stereoact ft. Kerstin Ott",
+    "language": "german"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18892558",
+    "videoId": "CVbTtJ2tbyg",
+    "measureMap": { "5": 5, "101": 81 },
+    "fileName": "Love_On_Rave",
+    "name": "Love On Rave",
+    "artist": "ДЕТИ RAVE",
+    "language": "russian"
+  },
+  {
+    "keys": [2],
+    "times": [[12, 8]],
+    "source": "18892546",
+    "videoId": "x-64CaD8GXw",
+    "measureMap": { "10": 3, "47": 23 },
+    "fileName": "Shipping_Up",
+    "name": "I'm Shipping Up To Boson",
+    "artist": "Dropkick Murphys",
+    "language": "english"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "18892522",
+    "videoId": "1rPAnxsSk40",
+    "measureMap": { "2": 2, "107": 57 },
+    "fileName": "Ku_Ku_Jodel",
+    "name": "Ku Ku Jodel",
+    "artist": "Oesch's die Dritten",
+    "language": "german"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "18892516",
+    "videoId": "YyolLXRWsxc",
+    "measureMap": { "54": 3, "110": 35, "175": 72 },
+    "fileName": "Kirschen",
+    "name": "Kirschenblüten Jodler",
+    "artist": "Takeo Ischi & Rudy Schneyder",
+    "language": "german"
+  },
+  {
+    "keys": [-5],
+    "times": [[4, 4]],
+    "source": "18892492",
+    "videoId": "wji4kNKfX-U",
+    "measureMap": { "2": 1, "59": 37, "77": 48, "115": 72 },
+    "fileName": "People_Shit",
+    "name": "People Equals Shit",
+    "artist": "Richard Cheese",
+    "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18892453",
+    "videoId": "2SjAexwwtBA",
+    "measureMap": { "6": 5, "145": 99, "178": 121 },
+    "fileName": "Confetti",
+    "name": "Confetti in m'n Sokken",
+    "artist": "Gekkenhuys ft. Fleur",
+    "language": "dutch"
+  },
+  {
+    "keys": [1, 3],
+    "times": [[4, 4]],
+    "source": "18892450",
+    "videoId": "6fMwrdWmExg",
+    "measureMap": { "12": 6, "113": 51, "205": 92 },
+    "fileName": "Luchtballon",
+    "name": "10.000 Luchtballonnen",
+    "artist": "K3",
+    "language": "dutch"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18892435",
+    "videoId": "aQUlA8Hcv4s",
+    "measureMap": { "22": 2, "91": 52, "231": 156, "237": 160 },
+    "fileName": "Mr_Blue_Sky",
+    "name": "Mr. Blue Sky",
+    "artist": "Electric Light Orchestra",
+    "language": "english"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "18891124",
+    "videoId": "aNgjX8y_HHU",
+    "measureMap": { "15": 1, "50": 16, "134.5": 53 },
+    "fileName": "Chlini",
+    "name": "Chlini Händ",
+    "artist": "Kunz",
+    "language": "german"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18891118",
+    "videoId": "TR3Vdo5etCQ",
+    "measureMap": { "30": 1, "235": 66 },
+    "fileName": "Dont_Speak",
+    "name": "Don't Speak",
+    "artist": "No Doubt",
+    "language": "english"
+  },
+  {
+    "keys": [3],
+    "times": [[4, 4]],
+    "source": "18891082",
+    "videoId": "y8ndu0CYwGU",
+    "measureMap": { "64": 2, "120": 46 },
+    "fileName": "Feeling_Good",
+    "name": "Feeling Good",
+    "artist": "Ibrahim Maalouf & Dear Silas",
+    "language": "english"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "18890878",
+    "videoId": "KQRaj1vcnrs",
+    "measureMap": { "6": 5, "159": 109 },
+    "fileName": "Major_Tom",
+    "name": "Major Tom",
+    "artist": "Peter Schilling",
+    "language": "german"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18890860",
+    "videoId": "9BXNKyoW_Ow",
+    "measureMap": { "8": 5, "51": 27, "94": 49, "141": 73, "180": 93 },
+    "fileName": "Fallen_Leaves",
+    "name": "Fallen Leaves",
+    "artist": "Billy Talent",
+    "language": "english"
+  },
+  {
+    "keys": [1, -2],
+    "times": [[4, 4]],
+    "source": "18890857",
+    "videoId": "lLocq-Yulro",
+    "measureMap": { "3": 3, "12": 8, "79": 40 },
+    "fileName": "Gigue",
+    "name": "Water Music in G: Gigue",
+    "artist": "G. F. Händel",
+    "language": "instrumental"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "18890662",
+    "videoId": "9d8SzG4FPyM",
+    "measureMap": { "3": 1, "90": 40 },
+    "fileName": "Rose_Tattoo",
+    "name": "Rose Tattoo",
+    "artist": "Dropkick Murphys",
+    "language": "english"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "18890644",
+    "videoId": "RAOnUF8t20w",
+    "measureMap": { "12": 5, "240": 88 },
+    "fileName": "Rusted",
+    "name": "Rusted From The Rain",
+    "artist": "Billy Talent",
+    "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "18890461",
+    "videoId": "luodBWXwneg",
+    "measureMap": { "20": 1, "299": 181 },
+    "fileName": "Raging_Shadows",
+    "name": "Raging Shadows",
+    "artist": "JDX ft. Alizay",
+    "language": "english"
+  },
+  {
+    "keys": [2],
+    "times": [[3, 4]],
+    "source": "18890440",
+    "videoId": "4VQwQzoGF_o",
+    "measureMap": { "2": 4, "116": 160 },
+    "fileName": "La_Valse_des_Monstres",
+    "name": "La Valse des Monstres",
+    "artist": "Yann Tiersen",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-3, -2],
+    "times": [[12, 8]],
+    "source": "18891226",
+    "videoId": "JGCsyshUU-A",
+    "measureMap": { "4": 3, "149": 79, "212": 112 },
+    "fileName": "Shadows",
+    "name": "Shadows",
+    "artist": "Lindsey Stirling",
+    "language": "instrumental"
+  },
+  {
+    "keys": [1],
+    "times": [[6, 8]],
+    "source": "18890140",
+    "videoId": "okE6M78TL_0",
+    "measureMap": { "14": 11, "92": 71 },
+    "fileName": "La_Noyee",
+    "name": "La Noyée",
+    "artist": "Yann Tiersen",
+    "language": "instrumental"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "18890038",
+    "videoId": "A6VV7__LaHU",
+    "measureMap": { "16": 9, "104": 56, "179": 96 },
+    "fileName": "Firebird",
+    "name": "Tale of the Firebird",
+    "artist": "Derek Fiechter",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
     "source": "18853639",
     "videoId": "qP-7GNoDJ5c",
     "measureMap": { "3": 2, "71": 29, "151": 61 },
@@ -176,28 +579,6 @@
     "name": "Music for the Royal Firework: La réjouissance",
     "artist": "G. F. Händel",
     "language": "instrumental"
-  },
-  {
-    "keys": [-4],
-    "times": [[4, 4]],
-    "source": "18851614",
-    "videoId": "QGJuMBdaqIw",
-    "measureMap": { "7": 1, "216": 109, "228": 115 },
-    "fileName": "Firework",
-    "name": "Firework",
-    "artist": "Katy Perry",
-    "language": "english"
-  },
-  {
-    "keys": [-2],
-    "times": [[4, 4]],
-    "source": "18851605",
-    "videoId": "98WtmW-lfeE",
-    "measureMap": { "4": 3, "218": 110 },
-    "fileName": "Teenage_Dream",
-    "name": "Teenage Dream",
-    "artist": "Katy Perry",
-    "language": "english"
   },
   {
     "keys": [-2],
@@ -791,17 +1172,6 @@
     "name": "Kölsch statt Käsch",
     "artist": "Miljö",
     "language": "german"
-  },
-  {
-    "keys": [-4],
-    "times": [[4, 4]],
-    "source": "18846925",
-    "videoId": "O4irXQhgMqg",
-    "measureMap": { "5": 4, "8": 5, "87": 57 },
-    "fileName": "Paint_It_Black",
-    "name": "Paint It, Black",
-    "artist": "The Rolling Stones",
-    "language": "english"
   },
   {
     "keys": [-3],
