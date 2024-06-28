@@ -2618,6 +2618,7 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2626,6 +2627,8 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="72">
@@ -2929,6 +2932,9 @@
         <rest measure="yes" />
         <duration>24</duration>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="86">
       <harmony print-frame="no">
