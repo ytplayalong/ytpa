@@ -127,7 +127,7 @@
   {
     "videoId": "lDQ7hXMLxGc",
     "measureMap": { "0": 1, "12": 7, "95": 49, "158": 81 },
-    "fileName": "soviet_march",
+    "fileName": "Soviet_March",
     "name": "Soviet March",
     "artist": "Red Alert 3 Theme",
     "language": "russian"
@@ -173,7 +173,7 @@
       "245": 105
     },
     "fileName": "Kannibalenlied",
-    "name": "Kannibalenlied",
+    "name": "Das Kannibalenlied",
     "artist": "K.I.Z.",
     "language": "german"
   },
@@ -471,7 +471,7 @@
     "measureMap": { "6": 2, "65": 19, "110": 32, "115": 33 },
     "fileName": "Ukrainian_Anthem",
     "name": "Ukrainian National Anthem",
-    "artist": "",
+    "artist": "Mykhailo Verbytsky",
     "language": "ukrainian"
   },
   {
@@ -567,7 +567,7 @@
     "measureMap": { "12": 5, "41": 44, "81": 98, "104": 129 },
     "fileName": "Can_Can",
     "name": "Can Can",
-    "artist": "Offenbach",
+    "artist": "Jacques Offenbach",
     "language": "instrumental"
   },
   {
@@ -678,8 +678,8 @@
       "149.5": 79
     },
     "fileName": "Sweet_Dreams",
-    "name": "Sweet Dreams",
-    "artist": "Eurhythmics",
+    "name": "Sweet Dreams (Are Made of This)",
+    "artist": "Eurythmics",
     "language": "english"
   },
   {
@@ -687,7 +687,7 @@
     "measureMap": { "6": 7, "142": 118 },
     "fileName": "Chicken_Dance",
     "name": "The Chicken Dance",
-    "artist": "",
+    "artist": "#1 Party Band",
     "language": "instrumental"
   },
   {
