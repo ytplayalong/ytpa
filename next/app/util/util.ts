@@ -34,8 +34,9 @@ export type Player = {
 };
 
 export const playerSizePx = {
+  width: "100%",
   height: "390px",
-  width: "640px",
+  maxWidth: "640px",
 };
 
 export const DEBUG = false;

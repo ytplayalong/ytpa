@@ -25,20 +25,27 @@ const navbarLinks = [
 const defaultPageTitle = "YouTube Play-Along";
 
 const imgH = "45px";
-const linkStyle: any = {
-  float: "right",
+const padLeftRight = "14px";
+const padTopBot = "16px";
+const baseNavEl = {
   color: Constants.navTextCol,
-  padding: "14px 16px",
+  padding: `${padLeftRight} ${padTopBot}`,
   textDecoration: "none",
   fontSize: "17px",
   lineHeight: imgH,
   height: imgH,
+};
+const linkStyle: any = {
+  ...baseNavEl,
+  float: "right",
+  pointer: "cursor",
   ...flexCentered,
 };
 
 const navStyle = {
   backgroundColor: Constants.navBGCol,
   overflow: "hidden",
+  padding: 0,
 };
 
 export default function NavigationBar() {
@@ -70,6 +77,7 @@ export default function NavigationBar() {
     backgroundColor: "white",
     padding: "10px",
     textDecoration: "none",
+    minWidth: "50px",
     ...flexCentered,
   };
 
@@ -78,56 +86,67 @@ export default function NavigationBar() {
       const link = "/" + loc + currentPage.slice(3);
       return (
         <Link className="hoverlink" href={link} style={ddLinkStyle} key={loc}>
+          <div style={{ marginRight: "1em" }}>{loc.toUpperCase()}</div>{" "}
           {getFlag(loc)}
         </Link>
       );
     }
   );
-  const languageSelector = (
-    <>
-      <div className="hoverlink" style={{ ...linkStyle }}>
-        <div onClick={() => setDDShown(!langDDShown)} style={flexCentered}>
+  const contentStyle: any = {
+    display: langDDShown ? "block" : "none",
+    position: "absolute",
+  };
+  const ddClicked = () => setDDShown(!langDDShown);
+
+  const ddStyle: any = {
+    float: "right",
+    ...baseNavEl,
+    overflow: "hidden",
+    pointer: "cursor",
+  };
+
+  const newNav = (
+    <nav className="container" style={navStyle}>
+      {navLogo}
+      <div style={{ ...baseNavEl, float: "left" }}>{label}</div>
+      <div className="hoverlink" style={ddStyle}>
+        <div onClick={ddClicked} style={{ ...flexCentered, cursor: "pointer" }}>
           <MdLanguage {...iconProps} /> {getFlag(currentLang)} {"▾"}
         </div>
-        <div className="dropdown" style={{ display: "relative" }}>
-          <div
-            style={{
-              display: langDDShown ? "block" : "none",
-              position: "absolute",
-            }}
-          >
-            {ddElements}
-          </div>
+        <div
+          className="dropdown"
+          style={{
+            display: "relative",
+            paddingTop: padLeftRight,
+            marginLeft: `-${padTopBot}`,
+          }}
+        >
+          <div style={contentStyle}>{ddElements}</div>
         </div>
       </div>
-    </>
+      {navbarLinks.map((el) => {
+        const backgroundColor =
+          el.url === currentPage
+            ? Constants.navActiveBGCol
+            : navStyle.backgroundColor;
+        return (
+          <Link
+            href={getLink(el.url)}
+            key={el.url}
+            className="hoverlink"
+            style={{ ...linkStyle, backgroundColor }}
+          >
+            {el.icon}
+            {t(el.key)}
+          </Link>
+        );
+      })}
+    </nav>
   );
 
   return (
     <header className="topnav" style={navStyle}>
-      <nav className="container">
-        {navLogo}
-        <div style={{ ...linkStyle, float: "left" }}>{label}</div>
-
-        {languageSelector}
-        {navbarLinks.map((el) => {
-          const backgroundColor =
-            el.url === currentPage
-              ? Constants.navActiveBGCol
-              : navStyle.backgroundColor;
-          return (
-            <Link
-              href={getLink(el.url)}
-              key={el.url}
-              className="hoverlink"
-              style={{ ...linkStyle, backgroundColor }}
-            >
-              {el.icon}
-              {t(el.key)}
-            </Link>
-          );
-        })}
-      </nav>
+      {newNav}
     </header>
   );
 }

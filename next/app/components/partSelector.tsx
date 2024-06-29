@@ -213,6 +213,7 @@ export const PartSelector = ({
         style={{
           ...distributedStyle,
           width: playerSizePx.width,
+          maxWidth: playerSizePx.maxWidth,
           margin: "auto",
         }}
       >
