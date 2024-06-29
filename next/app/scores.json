@@ -5041,5 +5041,16 @@
     "name": "Husaren-Attacke",
     "artist": "Max Oscheit",
     "language": "instrumental"
+  },
+  {
+    "keys": [-4],
+    "times": [[4, 4]],
+    "source": "18984229",
+    "videoId": "40O07IGWuFM",
+    "measureMap": { "2": 2, "95": 57 },
+    "fileName": "Pyrotechnik",
+    "name": "Pyrotechnik",
+    "artist": "Der Balkonultra & Marc Eggers & Ikke Hüftgold",
+    "language": "german"
   }
 ]
