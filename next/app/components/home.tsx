@@ -28,7 +28,7 @@ const Home = () => {
       </Link>
     ),
   };
-  const secondPar = <Trans i18nKey={"allScoresTxt"} components={parInfo} m />;
+  const secondPar = <Trans i18nKey={"allScoresTxt"} components={parInfo} />;
 
   return (
     <div>
