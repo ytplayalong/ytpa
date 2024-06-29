@@ -20,7 +20,11 @@ export default function RootLayout({
         {children}
         <div
           className="container"
-          style={{ margin: 0, textAlign: "center", padding: "2em 0 2em 0" }}
+          style={{
+            textAlign: "center",
+            paddingTop: "2em",
+            paddingBottom: "2em",
+          }}
         >
           <MdCopyright /> <a href="https://ytpa.ch">YTPA.ch</a> {currentYear}
         </div>

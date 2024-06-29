@@ -40,9 +40,5 @@ const YoutubePlayer = ({
     ref: playerRef,
     onReady: () => console.log(`I'm ready, loaded ${videoId}!`),
   });
-  return (
-    <div style={{ ...playerSizePx, margin: "auto", marginTop: "0.5em" }}>
-      {yt}
-    </div>
-  );
+  return <div style={{ ...playerSizePx, margin: "auto" }}>{yt}</div>;
 };

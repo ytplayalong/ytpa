@@ -3,6 +3,7 @@ import { MovingSheet } from "./movingSheet";
 import {
   MeasureMap,
   Player,
+  ScoreInfo,
   getSingleXml,
   parseXml,
   playerSizePx,
@@ -91,16 +92,15 @@ const getPitch = () => {
 
 /** The moving sheet music including the part selector and the player. */
 export const PartSelector = ({
-  measureMap,
+  scoreInfo,
   player,
-  fileName,
-  mscComUrl,
 }: {
-  measureMap: MeasureMap;
+  scoreInfo: ScoreInfo;
   player: Player;
-  fileName: string;
-  mscComUrl: string;
 }) => {
+  const fileName = `/mxl/${scoreInfo.fileName}.musicxml`;
+  const mscComUrl = `https://musescore.com/user/83726533/scores/${scoreInfo.source}`;
+
   const { t } = usePathTranslation();
   const [origXmlAndParts, setOrigXmlAndParts] =
     useState<null | PartSelectorState>(null);
@@ -201,7 +201,7 @@ export const PartSelector = ({
     const score = (
       <MovingSheet
         xml={origXmlAndParts.xml}
-        measureMap={measureMap}
+        measureMap={scoreInfo.measureMap}
         getTime={player.getTime}
         key={fileName}
       ></MovingSheet>
@@ -228,9 +228,25 @@ export const PartSelector = ({
       </div>
     );
 
+    const pieceInfo = (
+      <div
+        style={{
+          ...distributedStyle,
+          width: playerSizePx.width,
+          maxWidth: playerSizePx.maxWidth,
+          margin: "auto",
+        }}
+      >
+        <h3>{scoreInfo.name}</h3>
+        <h3>-</h3>
+        <h3>{scoreInfo.artist}</h3>
+      </div>
+    );
+
     // Put all together
     return (
       <>
+        {pieceInfo}
         {player.comp}
         {partInfo}
         {score}
