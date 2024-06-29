@@ -3772,5 +3772,21 @@
     "name": "Saraiman",
     "artist": "LADANIVA",
     "language": "romanian"
+  },
+  {
+    "videoId": "tFG_5PBl2K8",
+    "measureMap": { "2": 2, "152": 87 },
+    "fileName": "Animals_Muse",
+    "name": "Animals",
+    "artist": "Muse",
+    "language": "english"
+  },
+  {
+    "videoId": "pt5-IYqp3tM",
+    "measureMap": { "10": 3, "13": 5, "133": 90 },
+    "fileName": "Maedchen_auf_dem_Pferd",
+    "name": "Mädchen auf dem Pferd",
+    "artist": "Luca-Dante Spadafora",
+    "language": "german"
   }
 ]
