@@ -7,6 +7,7 @@ import { Trans } from "react-i18next";
 import usePathTranslation from "@/i18n/hook";
 import { NewestScores } from "./recentScores";
 import { fullScoreInfo, getRandomScore } from "../util/util";
+import { containerInner } from "../util/styles";
 
 const TRACKING_ID = "G-42SMWF6LRM";
 
@@ -31,12 +32,12 @@ const Home = () => {
   const secondPar = <Trans i18nKey={"allScoresTxt"} components={parInfo} />;
 
   return (
-    <div>
+    <>
       <p>{t("intro")}</p>
       <h4>{t("allScores")}</h4>
       <p>{secondPar}</p>
       <NewestScores nMostRecentSongs={20} />
-    </div>
+    </>
   );
 };
 export default Home;

@@ -18,15 +18,16 @@ export default function RootLayout({
         <CookieConsentBanner />
         <NavigationBar />
         {children}
-        <div
-          className="container"
-          style={{
-            textAlign: "center",
-            paddingTop: "2em",
-            paddingBottom: "2em",
-          }}
-        >
-          <MdCopyright /> <a href="https://ytpa.ch">YTPA.ch</a> {currentYear}
+        <div className="container">
+          <div
+            style={{
+              textAlign: "center",
+              paddingTop: "2em",
+              paddingBottom: "2em",
+            }}
+          >
+            <MdCopyright /> <a href="https://ytpa.ch">YTPA.ch</a> {currentYear}
+          </div>
         </div>
       </body>
     </html>

@@ -1,10 +1,13 @@
 import ContactForm from "@/app/components/contactForm";
+import { containerInner } from "@/app/util/styles";
 import { getStaticLocaleParams } from "@/i18n";
 
 export default function Help() {
   return (
     <div className="container">
-      <ContactForm />
+      <div style={containerInner}>
+        <ContactForm />
+      </div>
     </div>
   );
 }

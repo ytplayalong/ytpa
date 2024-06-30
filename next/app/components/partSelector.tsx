@@ -12,7 +12,7 @@ import {
 } from "../util/util";
 import { settingsManager } from "./settings";
 import { DropdownComp } from "../util/dropdown";
-import { distributedStyle, flexCentered } from "../util/styles";
+import { containerInner, distributedStyle, flexCentered } from "../util/styles";
 import usePathTranslation from "@/i18n/hook";
 
 type PartSelectorState = {
@@ -211,35 +211,37 @@ export const PartSelector = ({
     const partInfo = (
       <div
         style={{
-          ...distributedStyle,
           width: playerSizePx.width,
           maxWidth: playerSizePx.maxWidth,
           margin: "auto",
         }}
       >
-        <h4>
-          {t("viewSheetsOn")}
-          <br></br>
-          <a href={mscComUrl} target="_blank">
-            MuseScore.com
-          </a>
-        </h4>
-        {partSelectorDD}
+        <div style={{ ...containerInner, ...distributedStyle }}>
+          <h4>
+            {t("viewSheetsOn")}
+            <br></br>
+            <a href={mscComUrl} target="_blank">
+              MuseScore.com
+            </a>
+          </h4>
+          {partSelectorDD}
+        </div>
       </div>
     );
 
     const pieceInfo = (
       <div
         style={{
-          ...distributedStyle,
           width: playerSizePx.width,
           maxWidth: playerSizePx.maxWidth,
           margin: "auto",
         }}
       >
-        <h3>{scoreInfo.name}</h3>
-        <h3>-</h3>
-        <h3>{scoreInfo.artist}</h3>
+        <div style={{ ...containerInner, ...distributedStyle }}>
+          <h3>{scoreInfo.name}</h3>
+          <h3>-</h3>
+          <h3>{scoreInfo.artist}</h3>
+        </div>
       </div>
     );
 
@@ -253,5 +255,9 @@ export const PartSelector = ({
       </>
     );
   }
-  return <div className="container">Loading...</div>;
+  return (
+    <div className="container">
+      <div style={containerInner}>Loading...</div>
+    </div>
+  );
 };

@@ -28,3 +28,7 @@ export const flexCentered: any = {
   textAlign: "center",
   alignItems: "center",
 };
+
+export const containerInner: any = {
+  padding: "6px",
+};

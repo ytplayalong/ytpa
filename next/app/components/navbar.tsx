@@ -8,7 +8,7 @@ import usePathTranslation from "@/i18n/hook";
 import { useState } from "react";
 import { LANGUAGES } from "@/i18n";
 import { getFlag } from "@/i18n/flags";
-import { flexCentered } from "../util/styles";
+import { containerInner, flexCentered } from "../util/styles";
 
 const home = { url: "/", name: "Home" };
 const buttSize = 26;
@@ -107,40 +107,45 @@ export default function NavigationBar() {
 
   const newNav = (
     <nav className="container" style={navStyle}>
-      {navLogo}
-      <div style={{ ...baseNavEl, float: "left" }}>{label}</div>
-      <div className="hoverlink" style={ddStyle}>
-        <div onClick={ddClicked} style={{ ...flexCentered, cursor: "pointer" }}>
-          <MdLanguage {...iconProps} /> {getFlag(currentLang)} {"▾"}
-        </div>
-        <div
-          className="dropdown"
-          style={{
-            display: "relative",
-            paddingTop: padLeftRight,
-            marginLeft: `-${padTopBot}`,
-          }}
-        >
-          <div style={contentStyle}>{ddElements}</div>
-        </div>
-      </div>
-      {navbarLinks.map((el) => {
-        const backgroundColor =
-          el.url === currentPage
-            ? Constants.navActiveBGCol
-            : navStyle.backgroundColor;
-        return (
-          <Link
-            href={getLink(el.url)}
-            key={el.url}
-            className="hoverlink"
-            style={{ ...linkStyle, backgroundColor }}
+      <div style={containerInner}>
+        {navLogo}
+        <div style={{ ...baseNavEl, float: "left" }}>{label}</div>
+        <div className="hoverlink" style={ddStyle}>
+          <div
+            onClick={ddClicked}
+            style={{ ...flexCentered, cursor: "pointer" }}
           >
-            {el.icon}
-            {t(el.key)}
-          </Link>
-        );
-      })}
+            <MdLanguage {...iconProps} /> {getFlag(currentLang)} {"▾"}
+          </div>
+          <div
+            className="dropdown"
+            style={{
+              display: "relative",
+              paddingTop: padLeftRight,
+              marginLeft: `-${padTopBot}`,
+            }}
+          >
+            <div style={contentStyle}>{ddElements}</div>
+          </div>
+        </div>
+        {navbarLinks.map((el) => {
+          const backgroundColor =
+            el.url === currentPage
+              ? Constants.navActiveBGCol
+              : navStyle.backgroundColor;
+          return (
+            <Link
+              href={getLink(el.url)}
+              key={el.url}
+              className="hoverlink"
+              style={{ ...linkStyle, backgroundColor }}
+            >
+              {el.icon}
+              {t(el.key)}
+            </Link>
+          );
+        })}
+      </div>
     </nav>
   );
 

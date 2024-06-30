@@ -1,6 +1,7 @@
 import YouTube from "react-youtube";
 import React, { useCallback, useRef } from "react";
 import { Player, playerSizePx } from "./util";
+import { containerInner } from "./styles";
 
 /** YouTube player hook. */
 export const useYoutubePlayer = (videoId: string) => {
@@ -40,5 +41,9 @@ const YoutubePlayer = ({
     ref: playerRef,
     onReady: () => console.log(`I'm ready, loaded ${videoId}!`),
   });
-  return <div style={{ ...playerSizePx, margin: "auto" }}>{yt}</div>;
+  return (
+    <div style={{ ...playerSizePx, margin: "auto" }}>
+      <div style={containerInner}>{yt}</div>
+    </div>
+  );
 };
