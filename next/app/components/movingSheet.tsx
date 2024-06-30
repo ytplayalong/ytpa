@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
 import MonotonicCubicSpline from "../util/cubicSpline";
 import { MeasureMap } from "../util/util";
+import useWindowDimensions from "../hooks/windowSize";
 
 const fullW = 40000;
 const screenAnchorFactor = 0.3;
 const osmdId = "osmd";
+const baseHeight = 260;
 
 class MyOSMD extends OpenSheetMusicDisplay {
   setup() {
@@ -17,7 +19,12 @@ class MyOSMD extends OpenSheetMusicDisplay {
 }
 
 /** Load the score from the xml. */
-const loadOsmd = async (xml: Document) => {
+const loadOsmd = async (
+  xml: Document,
+  width: number,
+  height: number,
+  zoomFac: number
+) => {
   const osmd = new MyOSMD(osmdId, {
     drawCredits: false,
     drawPartNames: false,
@@ -26,7 +33,8 @@ const loadOsmd = async (xml: Document) => {
   osmd.setup();
 
   await osmd.load(xml);
-  osmd.setCustomPageFormat(fullW, 2000);
+  osmd.setCustomPageFormat(width, height);
+  osmd.Zoom = zoomFac;
   osmd.render();
   return osmd;
 };
@@ -84,9 +92,9 @@ const getInterpolator = (
 
   // Create a Spline object
   const spline = new MonotonicCubicSpline(secs, xVals);
-  return (val: number) => {
+  return (val: number, fac: number) => {
     const offset = screenAnchorFactor * window.innerWidth;
-    return Math.max(0, spline.interpolate(val) - offset);
+    return Math.max(0, spline.interpolate(val) * fac - offset);
   };
 };
 
@@ -98,14 +106,22 @@ export const MovingSheet = (props: {
 }) => {
   const [currXPos, setCurrXPos] = useState(0);
   const [ipOrNull, setIpOrNull] = useState<{
-    ip: (n: number) => number;
+    ip: (n: number, fac: number) => number;
   } | null>(null);
+
+  // Height based on window height
+  const { height } = useWindowDimensions();
+  const sheetHeightPerc = 0.2;
+  const sheetHeigthPx = Math.max(100, sheetHeightPerc * height);
+  const zoomFac = Math.max(Math.min(1, sheetHeigthPx / baseHeight), 0.5);
+  const acutalSheetHeight = sheetHeigthPx * zoomFac;
+  const sheetWidth = fullW * acutalSheetHeight;
 
   const { getTime, measureMap, xml } = props;
   useEffect(() => {
     // Load the sheet music display and create interpolator.
     const loadLocal = async () => {
-      const osmd = await loadOsmd(xml);
+      const osmd = await loadOsmd(xml, sheetWidth, sheetHeigthPx, zoomFac);
       const ipObj = getInterpolator(osmd, measureMap);
       setIpOrNull({ ip: ipObj });
     };
@@ -115,15 +131,13 @@ export const MovingSheet = (props: {
     };
   }, [xml, measureMap]);
 
-  const marginRight = Math.round(fullW - currXPos - window.innerWidth);
-
   useEffect(() => {
     // Register callback that adjusts the sheet according to the video
     if (ipOrNull !== null) {
       const ipObj = ipOrNull.ip;
       const interval = setInterval(async () => {
         const elapsedSec = await getTime();
-        const xPos = ipObj(elapsedSec);
+        const xPos = ipObj(elapsedSec, zoomFac);
         setCurrXPos(xPos);
       }, 20); // ms refresh.
 
@@ -138,10 +152,9 @@ export const MovingSheet = (props: {
       <div
         id={osmdId}
         style={{
-          height: "250px",
-          width: `${fullW}px`,
+          height: `${sheetHeigthPx}px`,
+          width: `${sheetWidth}px`,
           marginLeft: `-${currXPos}px`,
-          marginRight: `-${marginRight}px`,
         }}
       ></div>
     </div>
