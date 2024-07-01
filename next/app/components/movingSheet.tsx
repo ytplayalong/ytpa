@@ -112,7 +112,7 @@ export const MovingSheet = (props: {
   // Height based on window height
   const { height } = useWindowDimensions();
   const sheetHeightPerc = 0.2;
-  const sheetHeigthPx = Math.max(100, sheetHeightPerc * height);
+  const sheetHeigthPx = Math.max(150, sheetHeightPerc * height);
   const zoomFac = Math.max(Math.min(1, sheetHeigthPx / baseHeight), 0.5);
   const acutalSheetHeight = sheetHeigthPx * zoomFac;
   const sheetWidth = fullW * acutalSheetHeight;
