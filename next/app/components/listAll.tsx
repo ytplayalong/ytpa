@@ -229,7 +229,7 @@ export const ListScores = () => {
   return (
     <>
       {comp}
-      <div style={{ paddingTop: "1em" }}>{totScores}</div>
+      <div style={{ paddingTop: "2em", paddingBottom: "1em" }}>{totScores}</div>
       {scoreTable}
     </>
   );
