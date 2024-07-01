@@ -171,20 +171,19 @@ const useProcessedScores = () => {
   const comp = (
     <>
       <div className="row" style={rowStyle}>
-        <div style={twoColumns}>{t("search")}</div>
-        <div style={twoColumns}>{filterForm}</div>
+        <div className="twocols">{t("search")}</div>
+        <div className="twocols rightcol">{filterForm}</div>
       </div>
       <div className="row" style={rowStyle}>
-        <div style={twoColumns}>{t("filter")}</div>
-        <div style={twoColumns}></div>
+        <div className="twocols">{t("filter")}</div>
       </div>
       <div className="row" style={rowStyle}>
-        <div style={twoColumns}>{t("songKey")}</div>
-        <div style={twoColumns}>{keyFilterComp}</div>
+        <div className="twocols">{t("songKey")}</div>
+        <div className="twocols rightcol">{keyFilterComp}</div>
       </div>
       <div className="row" style={rowStyle}>
-        <div style={twoColumns}>{t("timeSignature")}</div>
-        <div style={twoColumns}>{timeFilterComp}</div>
+        <div className="twocols">{t("timeSignature")}</div>
+        <div className="twocols rightcol">{timeFilterComp}</div>
       </div>
     </>
   );

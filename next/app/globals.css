@@ -46,3 +46,22 @@
   display: table;
   clear: both;
 }
+
+/** ------------------- Responsive two column layout ------------------- **/
+.twocols {
+  float: left;
+  width: 100%;
+}
+.rightcol {
+  padding-top: 0.5em;
+}
+@media (min-width: 992px) {
+  .twocols {
+    float: left;
+    width: 50%;
+  }
+  .rightcol {
+    padding-top: 0;
+  }
+  
+}
