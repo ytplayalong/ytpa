@@ -40,13 +40,6 @@
   }
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 /** ------------------- Responsive two column layout ------------------- **/
 .twocols {
   float: left;
@@ -62,6 +55,12 @@
   }
   .rightcol {
     padding-top: 0;
-  }
-  
+  }  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

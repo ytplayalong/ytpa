@@ -5,7 +5,7 @@ import { strLatinise } from "../util/sorting";
 import TimeSignatures from "../timeSignatures.json";
 import usePathTranslation from "@/i18n/hook";
 import { ScoreTable } from "./scoreTable";
-import { distributedStyle, inputStyle, twoColumns } from "../util/styles";
+import { distributedStyle, inputStyle } from "../util/styles";
 import { ScoreInfo, SortBy, getScoreInfo } from "../util/util";
 
 type SortSetting = { by: SortBy; ascending: boolean };

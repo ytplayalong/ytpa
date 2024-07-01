@@ -1,8 +1,3 @@
-export const twoColumns: any = {
-  float: "left",
-  width: "50%",
-};
-
 export const buttonStyle: any = {
   border: "none",
   cursor: "pointer",

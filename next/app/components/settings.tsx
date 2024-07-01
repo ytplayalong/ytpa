@@ -1,7 +1,6 @@
 "use client";
 
 import usePathTranslation from "@/i18n/hook";
-import { twoColumns } from "../util/styles";
 import { useDropDown } from "../util/dropdown";
 import { FingerType, transposeKeys } from "../util/util";
 
@@ -88,16 +87,16 @@ const SettingsComp = () => {
     <>
       <h4>{t("settingsTitle")}</h4>
       <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div style={twoColumns}>{t("instrumentKey")}</div>
-        <div style={twoColumns}>{keyDD}</div>
+        <div className="twocols">{t("instrumentKey")}</div>
+        <div className="twocols rightcol">{keyDD}</div>
       </div>
       <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div style={twoColumns}>{t("clef")}</div>
-        <div style={twoColumns}>{clefDD}</div>
+        <div className="twocols">{t("clef")}</div>
+        <div className="twocols rightcol">{clefDD}</div>
       </div>
       <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div style={twoColumns}>{t("fingering")}</div>
-        <div style={twoColumns}>{fingerDD}</div>
+        <div className="twocols">{t("fingering")}</div>
+        <div className="twocols rightcol">{fingerDD}</div>
       </div>
     </>
   );
