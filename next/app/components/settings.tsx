@@ -13,14 +13,17 @@ class SettingsManager {
   fingeringKey = "fingering";
   fingeringOptions = ["fingerNone", "fingerThreeValves", "fingerTrombone"];
 
+  scaleKey = "sheetZoom";
+  scaleOptions = [0.5, 0.75, 1, 1.5, 2.0];
+
   /** This is needed for pre-rendering pages. */
   private getStorage() {
     return typeof window !== "undefined" ? window.localStorage : null;
   }
 
-  private get(key: string, values: string[]) {
+  private get(key: string, values: string[], defaultPos = 0) {
     const ret = this.getStorage()?.getItem(key);
-    return ret ? ret : values[0];
+    return ret ? ret : values[defaultPos];
   }
 
   /** Handling clef selection. */
@@ -65,6 +68,23 @@ class SettingsManager {
       return { name: t(el), onClick: () => this.setFingering(el), key: el };
     });
   }
+
+  /** Handling fingering selection. */
+  private zoomOpts() {
+    return this.scaleOptions.map((el) => `${el}`);
+  }
+  getZoom() {
+    const zoomFacStr = this.get(this.scaleKey, this.zoomOpts(), 2);
+    return Number(zoomFacStr);
+  }
+  private setZoom(newZoom: string) {
+    localStorage.setItem(this.scaleKey, newZoom);
+  }
+  getZoomOptions(t: any) {
+    return this.zoomOpts().map((el) => {
+      return { name: t(el), onClick: () => this.setZoom(el), key: el };
+    });
+  }
 }
 
 export const settingsManager = new SettingsManager();
@@ -83,6 +103,10 @@ const SettingsComp = () => {
   const currFingerName = t(settingsManager.getFingering());
   const fingerDD = useDropDown(currFingerName, fingerOptions);
 
+  const zoomOptions = settingsManager.getZoomOptions(t);
+  const currZoom = settingsManager.getZoom();
+  const zoomDD = useDropDown(currZoom, zoomOptions);
+
   return (
     <>
       <h4>{t("settingsTitle")}</h4>
@@ -97,6 +121,10 @@ const SettingsComp = () => {
       <div className="row" style={{ marginBottom: "0.2em" }}>
         <div className="twocols">{t("fingering")}</div>
         <div className="twocols rightcol">{fingerDD}</div>
+      </div>
+      <div className="row" style={{ marginBottom: "0.2em" }}>
+        <div className="twocols">{t(settingsManager.scaleKey)}</div>
+        <div className="twocols rightcol">{zoomDD}</div>
       </div>
     </>
   );

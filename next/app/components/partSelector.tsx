@@ -161,8 +161,9 @@ export const PartSelector = ({
 
     // Only add part chooser dropdown if there are at least two parts.
     const octToStr = (el: number) => (el > 0 ? `+${el}` : `${el}`);
+    const octTxt = t("octave");
     const octTitle =
-      currOctave === 0 ? "Octave" : `Octave ${octToStr(currOctave)}`;
+      currOctave === 0 ? octTxt : `${octTxt}: ${octToStr(currOctave)}`;
     const octaveOptions = allOctaves.map((el) => {
       return {
         name: octToStr(el),
@@ -183,10 +184,11 @@ export const PartSelector = ({
         key: el,
       };
     });
+    const keyTxt = t("instrumentKeyShort");
     const pitchSelector = (
       <DropdownComp
         options={pitchOptions}
-      >{`Pitch: ${currPitch}`}</DropdownComp>
+      >{`${keyTxt}: ${currPitch}`}</DropdownComp>
     );
 
     // (Part and) pitch selector dropdowns

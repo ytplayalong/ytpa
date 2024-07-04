@@ -3,6 +3,7 @@ import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
 import MonotonicCubicSpline from "../util/cubicSpline";
 import { MeasureMap } from "../util/util";
 import useWindowDimensions from "../hooks/windowSize";
+import { settingsManager } from "./settings";
 
 const fullW = 40000;
 const screenAnchorFactor = 0.3;
@@ -111,9 +112,11 @@ export const MovingSheet = (props: {
 
   // Height based on window height
   const { height } = useWindowDimensions();
+  const userZoom = settingsManager.getZoom();
   const sheetHeightPerc = 0.2;
   const sheetHeigthPx = Math.max(150, sheetHeightPerc * height);
-  const zoomFac = Math.max(Math.min(1, sheetHeigthPx / baseHeight), 0.5);
+  const zoomFac =
+    Math.max(Math.min(1, sheetHeigthPx / baseHeight), 0.5) * userZoom;
   const acutalSheetHeight = sheetHeigthPx * zoomFac;
   const sheetWidth = fullW * acutalSheetHeight;
 
@@ -121,7 +124,12 @@ export const MovingSheet = (props: {
   useEffect(() => {
     // Load the sheet music display and create interpolator.
     const loadLocal = async () => {
-      const osmd = await loadOsmd(xml, sheetWidth, sheetHeigthPx, zoomFac);
+      const osmd = await loadOsmd(
+        xml,
+        sheetWidth,
+        sheetHeigthPx * userZoom,
+        zoomFac
+      );
       const ipObj = getInterpolator(osmd, measureMap);
       setIpOrNull({ ip: ipObj });
     };
@@ -152,7 +160,7 @@ export const MovingSheet = (props: {
       <div
         id={osmdId}
         style={{
-          height: `${sheetHeigthPx}px`,
+          height: `${sheetHeigthPx * userZoom}px`,
           width: `${sheetWidth}px`,
           marginLeft: `-${currXPos}px`,
         }}
