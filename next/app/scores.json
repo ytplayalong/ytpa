@@ -5088,5 +5088,16 @@
     "name": "Marignan",
     "artist": "Jean Daetwyler",
     "language": "instrumental"
+  },
+  {
+    "keys": [5, -1],
+    "times": [[4, 4]],
+    "source": "19388095",
+    "videoId": "ygVgxGSQIsw",
+    "measureMap": { "8": 5, "73": 51 },
+    "fileName": "Mack_the_Knife",
+    "name": "Mack the Knife",
+    "artist": "Bobby Darin",
+    "language": "english"
   }
 ]
