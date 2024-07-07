@@ -14,9 +14,10 @@
     </identification>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no">Voice</part-name>
+      <part-name>Piano</part-name>
+      <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
-        <instrument-name>Voice</instrument-name>
+        <instrument-name>Piano</instrument-name>
         </score-instrument>
       </score-part>
     </part-list>

@@ -1661,6 +1661,13 @@
         </note>
       </measure>
     <measure number="31">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>B</step>
