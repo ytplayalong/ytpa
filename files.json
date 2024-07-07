@@ -3868,5 +3868,21 @@
     "name": "Polka, Polka, Polka",
     "artist": "Brings",
     "language": "german"
+  },
+  {
+    "videoId": "iaGjz4dtr3o",
+    "measureMap": {
+      "22": 2,
+      "31": 6,
+      "40": 10,
+      "49": 14,
+      "55": 17,
+      "73": 26,
+      "195": 88
+    },
+    "fileName": "Baiana",
+    "name": "Baianá",
+    "artist": "Bakermat",
+    "language": "portuguese"
   }
 ]
