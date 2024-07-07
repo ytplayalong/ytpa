@@ -3852,5 +3852,21 @@
     "name": "Love The Way You Move (LTWYM)",
     "artist": "Slightly Left of Centre",
     "language": "english"
+  },
+  {
+    "videoId": "VLHlYnR1A2A",
+    "measureMap": { "49": 2, "54": 5, "105": 37 },
+    "fileName": "Ride",
+    "name": "Ride",
+    "artist": "Refuzion ft. LXCPR",
+    "language": "english"
+  },
+  {
+    "videoId": "00W44I0ti-Q",
+    "measureMap": { "1": 2, "16": 17, "172.5": 179 },
+    "fileName": "Polka_Polka_Polka",
+    "name": "Polka, Polka, Polka",
+    "artist": "Brings",
+    "language": "german"
   }
 ]
