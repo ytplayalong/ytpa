@@ -3900,5 +3900,13 @@
     "name": "What Is Love",
     "artist": "Haddaway",
     "language": "english"
+  },
+  {
+    "videoId": "oSKtjSSrRqE",
+    "measureMap": { "3": 3, "120": 83 },
+    "fileName": "Demain_demain",
+    "name": "Demain, demain",
+    "artist": "Luiza",
+    "language": "french"
   }
 ]
