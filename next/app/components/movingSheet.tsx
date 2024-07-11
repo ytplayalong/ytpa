@@ -137,7 +137,7 @@ export const MovingSheet = (props: {
     return () => {
       setIpOrNull(null);
     };
-  }, [xml, measureMap]);
+  }, [xml, measureMap, sheetHeigthPx, userZoom, sheetWidth]);
 
   useEffect(() => {
     // Register callback that adjusts the sheet according to the video
@@ -153,7 +153,7 @@ export const MovingSheet = (props: {
         clearInterval(interval);
       };
     }
-  }, [getTime, ipOrNull]);
+  }, [getTime, ipOrNull, zoomFac]);
 
   return (
     <div style={{ overflow: "hidden" }}>
