@@ -5253,5 +5253,27 @@
     "name": "На дискотеку",
     "artist": "Султан Ураган",
     "language": "russian"
+  },
+  {
+    "keys": [-5],
+    "times": [[4, 4]],
+    "source": "19697713",
+    "videoId": "2xcx26_z4As",
+    "measureMap": { "54": 2, "132": 43 },
+    "fileName": "Already_Gone",
+    "name": "Already Gone",
+    "artist": "Jason Cross",
+    "language": "english"
+  },
+  {
+    "keys": [5],
+    "times": [[4, 4]],
+    "source": "19697923",
+    "videoId": "BXJgACSylMY",
+    "measureMap": { "4": 4, "76": 58 },
+    "fileName": "Bier_Aus_Dem_Schlauch",
+    "name": "Bier Aus Dem Schlauch Trinken",
+    "artist": "Tommy Trichter",
+    "language": "german"
   }
 ]
