@@ -3924,5 +3924,21 @@
     "name": "LokMizurka",
     "artist": "Tri O' Divi & The Minahouet Orkestra",
     "language": "breton"
+  },
+  {
+    "videoId": "UB74LkRkiks",
+    "measureMap": { "8": 2, "87": 66 },
+    "fileName": "Ar_vuhez",
+    "name": "Ar vuhez ?",
+    "artist": "War-sav",
+    "language": "breton"
+  },
+  {
+    "videoId": "CVapfTG2Z_s",
+    "measureMap": { "18": 3, "111": 65 },
+    "fileName": "Na_diskoteku",
+    "name": "На дискотеку",
+    "artist": "Султан Ураган",
+    "language": "russian"
   }
 ]
