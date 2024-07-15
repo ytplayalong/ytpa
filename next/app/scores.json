@@ -5286,5 +5286,41 @@
     "name": "Toukassé",
     "artist": "Shanguy",
     "language": "french"
+  },
+  {
+    "keys": [0],
+    "times": [
+      [2, 4],
+      [3, 4]
+    ],
+    "source": "19736026",
+    "videoId": "jGokAEHXB4M",
+    "measureMap": { "6": 5, "64": 43, "78": 52, "84": 56 },
+    "fileName": "Suda_dziesma",
+    "name": "Sūda dziesma",
+    "artist": "Auļi",
+    "language": "latvian"
+  },
+  {
+    "keys": [3],
+    "times": [[2, 4]],
+    "source": "19736338",
+    "videoId": "4E_3lfS3HTo",
+    "measureMap": { "1.5": 2, "86": 87 },
+    "fileName": "Katioucha",
+    "name": "Katioucha",
+    "artist": "Boris Alexandrov",
+    "language": "russian"
+  },
+  {
+    "keys": [-5],
+    "times": [[4, 4]],
+    "source": "19736494",
+    "videoId": "Nkr2BH3EHYc",
+    "measureMap": { "10": 2, "81": 40 },
+    "fileName": "Polyushko_pole",
+    "name": "Polyushko-pole",
+    "artist": "Vladimir Alexandrov",
+    "language": "russian"
   }
 ]
