@@ -1106,15 +1106,8 @@
     "language": "instrumental"
   },
   {
-    "videoId": "EPdn9_h2dCY",
-    "measureMap": {
-      "4": 3,
-      "99": 55,
-      "100": 56,
-      "180": 100,
-      "181": 101,
-      "262": 146
-    },
+    "videoId": "lyuFLU2Zqz0",
+    "measureMap": { "2": 2, "103": 58, "192": 107, "266": 148 },
     "fileName": "Moskau",
     "name": "Moskau",
     "artist": "Dschingis Khan",
@@ -3255,7 +3248,7 @@
   },
   {
     "videoId": "aGSKrC7dGcY",
-    "measureMap": { "1": 1, "232": 109 },
+    "measureMap": { "1": 1, "232": 110 },
     "fileName": "Enjoy_The_Silence",
     "name": "Enjoy The Silence",
     "artist": "Depeche Mode",
