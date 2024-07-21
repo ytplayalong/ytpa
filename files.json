@@ -1,5 +1,13 @@
 [
   {
+    "videoId": "BXJgACSylMY",
+    "measureMap": { "4": 4, "76": 58 },
+    "fileName": "Bier_Aus_Dem_Schlauch",
+    "name": "Bier Aus Dem Schlauch Trinken",
+    "artist": "Tommy Trichter",
+    "language": "german"
+  },
+  {
     "videoId": "5AWltYjY1y4",
     "measureMap": {
       "1": 2,
@@ -3941,14 +3949,6 @@
     "name": "Already Gone",
     "artist": "Jason Cross",
     "language": "english"
-  },
-  {
-    "videoId": "BXJgACSylMY",
-    "measureMap": { "4": 4, "76": 58 },
-    "fileName": "Bier_Aus_Dem_Schlauch",
-    "name": "Bier Aus Dem Schlauch Trinken",
-    "artist": "Tommy Trichter",
-    "language": "german"
   },
   {
     "videoId": "aIEuhYx-p6g",

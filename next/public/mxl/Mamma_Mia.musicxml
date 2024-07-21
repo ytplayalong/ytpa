@@ -7428,6 +7428,9 @@
           <slur type="stop" number="1" />
           </notations>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="111">
       <harmony print-frame="no">
