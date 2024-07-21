@@ -50,8 +50,8 @@ const getInterpolator = (
 
   let mmEntries = Object.entries(measureMap);
   const lastEntry = mmEntries[mmEntries.length - 1];
-  const idxNr = parseInt(lastEntry[0]);
-  const endEntries: [string, number][] = [1, 2, 3, 4, 5].map((el) => {
+  const idxNr = parseFloat(lastEntry[0]);
+  const endEntries: [string, number][] = [1, 2].map((el) => {
     return [`${idxNr + el * 5}`, lastEntry[1]];
   });
   const start: [string, number] = ["0", 0];
