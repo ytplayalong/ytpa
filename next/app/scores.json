@@ -5337,5 +5337,16 @@
     "name": "Kakukk",
     "artist": "Papírhold",
     "language": "hungarian"
+  },
+  {
+    "keys": [1],
+    "times": [[3, 4]],
+    "source": "19822606",
+    "videoId": "Ki2gM-NKX-w",
+    "measureMap": { "4.5": 5, "95.5": 99 },
+    "fileName": "Serenata_de_Acordeones",
+    "name": "Serenata de Acordeones",
+    "artist": "Tabaré Arapí",
+    "language": "spanish"
   }
 ]
