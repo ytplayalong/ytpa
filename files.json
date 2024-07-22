@@ -4029,5 +4029,21 @@
     "name": "Venzinadiko",
     "artist": "PAK! Orkestar",
     "language": "instrumental"
+  },
+  {
+    "videoId": "c5rgLigaAog",
+    "measureMap": { "11": 7, "140": 79 },
+    "fileName": "Minnamoro_di_te",
+    "name": "M'innamoro di te",
+    "artist": "Ricchi E Poveri",
+    "language": "italian"
+  },
+  {
+    "videoId": "xjAouiB-0JA",
+    "measureMap": { "3": 2, "94": 38 },
+    "fileName": "Come_vorrei",
+    "name": "Come vorrei",
+    "artist": "Ricchi E Poveri",
+    "language": "italian"
   }
 ]
