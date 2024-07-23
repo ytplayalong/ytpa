@@ -5417,5 +5417,16 @@
     "name": "L'été indien",
     "artist": "Joe Dassin",
     "language": "french"
+  },
+  {
+    "keys": [3, -4],
+    "times": [[4, 4]],
+    "source": "19854394",
+    "videoId": "WCHJ4DEcCxc",
+    "measureMap": { "1.5": 2, "157": 80 },
+    "fileName": "Buonanotte",
+    "name": "Buonanotte",
+    "artist": "Toto Cutugno",
+    "language": "italian"
   }
 ]
