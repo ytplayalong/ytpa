@@ -5406,5 +5406,16 @@
     "name": "Come vorrei",
     "artist": "Ricchi E Poveri",
     "language": "italian"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "19853983",
+    "videoId": "tQb4eWCAq8c",
+    "measureMap": { "16.5": 5, "132": 34 },
+    "fileName": "Lete_indien",
+    "name": "L'été indien",
+    "artist": "Joe Dassin",
+    "language": "french"
   }
 ]
