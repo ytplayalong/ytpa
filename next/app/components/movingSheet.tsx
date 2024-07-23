@@ -48,26 +48,27 @@ const getInterpolator = (
   const measureList = osmd.GraphicSheet.MeasureList;
   const measureXList = measureList.map((el) => (el[0] as any)?.stave.x);
 
-  let mmEntries = Object.entries(measureMap);
-  const lastEntry = mmEntries[mmEntries.length - 1];
-  const idxNr = parseFloat(lastEntry[0]);
-  const endEntries: [string, number][] = [1, 2].map((el) => {
-    return [`${idxNr + el * 5}`, lastEntry[1]];
-  });
-  const start: [string, number] = ["0", 0];
-  mmEntries = [start].concat(mmEntries).concat(endEntries);
+  const mmEntries = Object.entries(measureMap);
+  let numEntries = mmEntries.map(
+    (timeAndBar) => [parseFloat(timeAndBar[0]), timeAndBar[1]] as const
+  );
+  numEntries.sort();
 
-  const nEntries = mmEntries.length;
-  const getFromEntry = (idx: number) => {
-    const [secStr, measIdx] = mmEntries[idx];
-    return [parseFloat(secStr), measIdx];
-  };
-  let [currSec, currMeasIdx] = getFromEntry(0);
+  // Add start and end entries
+  const lastEntry = numEntries[numEntries.length - 1];
+  const endEntries = [1, 2].map((el) => {
+    return [lastEntry[0] + el * 5, lastEntry[1]] as const;
+  });
+  const start = [0, 0] as readonly [number, number];
+  numEntries = [start].concat(numEntries).concat(endEntries);
+
+  const nEntries = numEntries.length;
+  let [currSec, currMeasIdx] = numEntries[0];
 
   const secs = [];
   const xVals = [];
   for (let k = 0; k < nEntries - 1; ++k) {
-    let [nextSec, nextMeasIdx] = getFromEntry(k + 1);
+    let [nextSec, nextMeasIdx] = numEntries[k + 1];
     const nextX = measureXList[nextMeasIdx - 1];
     if (nextX === undefined) {
       continue;
@@ -121,6 +122,7 @@ export const MovingSheet = (props: {
   const sheetWidth = fullW * acutalSheetHeight;
 
   const { getTime, measureMap, xml } = props;
+
   useEffect(() => {
     // Load the sheet music display and create interpolator.
     const loadLocal = async () => {
