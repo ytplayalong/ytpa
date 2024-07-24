@@ -52,7 +52,7 @@ const getInterpolator = (
   let numEntries = mmEntries.map(
     (timeAndBar) => [parseFloat(timeAndBar[0]), timeAndBar[1]] as const
   );
-  numEntries.sort();
+  numEntries.sort((a, b) => a[0] - b[0]);
 
   // Add start and end entries
   const lastEntry = numEntries[numEntries.length - 1];
