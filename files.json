@@ -4061,5 +4061,21 @@
     "name": "Buonanotte",
     "artist": "Toto Cutugno",
     "language": "italian"
+  },
+  {
+    "videoId": "C6wLq_iMDJg",
+    "measureMap": { "7": 2, "66": 34 },
+    "fileName": "Je_Reviens",
+    "name": "Je Reviens",
+    "artist": "Let Dzur",
+    "language": "french"
+  },
+  {
+    "videoId": "zqLX3t9G6CA",
+    "measureMap": { "6": 4, "74": 43 },
+    "fileName": "Nguya_na_ngai",
+    "name": "Nguya na ngai",
+    "artist": "Kolinga",
+    "language": "lingala"
   }
 ]
