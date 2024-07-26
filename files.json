@@ -3938,7 +3938,7 @@
     "videoId": "CVapfTG2Z_s",
     "measureMap": { "18": 3, "111": 65 },
     "fileName": "Na_diskoteku",
-    "name": "На дискотеку",
+    "name": "Ha дискотеку",
     "artist": "Султан Ураган",
     "language": "russian"
   },
@@ -4081,9 +4081,17 @@
   {
     "videoId": "eAGXQLim75w",
     "measureMap": { "2": 2, "167": 88 },
-    "fileName": "Kieveleсtro",
+    "fileName": "Kievelectro",
     "name": "Гуляй славяне",
     "artist": "Киевэлектро",
     "language": "russian"
+  },
+  {
+    "videoId": "Rwbm281DTYc",
+    "measureMap": { "3": 2, "100": 52 },
+    "fileName": "Lola",
+    "name": "Lola",
+    "artist": "Superbus",
+    "language": "french"
   }
 ]
