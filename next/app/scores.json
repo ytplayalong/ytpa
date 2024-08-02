@@ -5472,5 +5472,27 @@
     "name": "La Sandunga",
     "artist": "Tempus Quartet",
     "language": "spanish"
+  },
+  {
+    "keys": [5],
+    "times": [[4, 4]],
+    "source": "19987786",
+    "videoId": "JvkIhSLgi6Y",
+    "measureMap": { "4": 4, "38": 24 },
+    "fileName": "Sola",
+    "name": "(sola)",
+    "artist": "Paloma Morphy",
+    "language": "spanish"
+  },
+  {
+    "keys": [-6],
+    "times": [[4, 4]],
+    "source": "19990063",
+    "videoId": "zitbKNi-Hxw",
+    "measureMap": { "2": 2, "60": 33 },
+    "fileName": "Czerwone_Jagody",
+    "name": "Czerwone Jagody",
+    "artist": "Traditional",
+    "language": "polish"
   }
 ]
