@@ -5538,5 +5538,27 @@
     "name": "Kawałek do Tańca",
     "artist": "Poparzeni Kawą Trzy",
     "language": "polish"
+  },
+  {
+    "keys": [4],
+    "times": [[4, 4]],
+    "source": "20056453",
+    "videoId": "BbH2hU9XaUE",
+    "measureMap": { "4": 3, "56": 32 },
+    "fileName": "De_wereld_vergaat",
+    "name": "De wereld vergaat",
+    "artist": "Lais",
+    "language": "dutch"
+  },
+  {
+    "keys": [-1],
+    "times": [[2, 4]],
+    "source": "20071318",
+    "videoId": "IsM6fFJvtCU",
+    "measureMap": { "12": 3, "90": 70 },
+    "fileName": "Laid_mamina_istaba",
+    "name": "Laid m​ā​mi​ņ​a istabā",
+    "artist": "Auļi feat. Katr​ī​na Dimanta",
+    "language": "latvian"
   }
 ]
