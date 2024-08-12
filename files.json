@@ -4165,5 +4165,21 @@
     "name": "A по камушкам",
     "artist": "Ансамбль Воскресение",
     "language": "russian"
+  },
+  {
+    "videoId": "ilIwgE4pauk",
+    "measureMap": { "3": 3, "10": 8, "16": 10, "118": 136 },
+    "fileName": "Le_Capitaine_de_la_Barrique",
+    "name": "Le Capitaine de la Barrique",
+    "artist": "La Rue Ketanou",
+    "language": "french"
+  },
+  {
+    "videoId": "5O1KjIjCq8s",
+    "measureMap": { "10": 4, "79": 32 },
+    "fileName": "Herr_Mannelig",
+    "name": "Herr Mannelig",
+    "artist": "Szelindek",
+    "language": "swedish"
   }
 ]
