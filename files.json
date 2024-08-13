@@ -4189,5 +4189,21 @@
     "name": "Io Non Sono Come Te",
     "artist": "Bambole di Pezza",
     "language": "italian"
+  },
+  {
+    "videoId": "6J1UhxrlQSM",
+    "measureMap": { "1": 2, "73": 32 },
+    "fileName": "Trip_to_Espana",
+    "name": "Trip to España",
+    "artist": "Dr. Peacock & Broken Minds",
+    "language": "spanish"
+  },
+  {
+    "videoId": "AI7UoJC1l34",
+    "measureMap": { "1": 2, "79.5": 41 },
+    "fileName": "Meitli_tanz",
+    "name": "Meitli tanz",
+    "artist": "Rusch Büeblä",
+    "language": "german"
   }
 ]
