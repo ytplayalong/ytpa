@@ -5629,5 +5629,19 @@
     "name": "Meitli tanz",
     "artist": "Rusch Büeblä",
     "language": "german"
+  },
+  {
+    "keys": [-1],
+    "times": [
+      [6, 8],
+      [3, 4]
+    ],
+    "source": "20136862",
+    "videoId": "FcKHMcz1hjY",
+    "measureMap": { "4": 5, "28": 34, "34": 37, "94": 109 },
+    "fileName": "Hes_A_Pirate_Save_Me",
+    "name": "He's A Pirate (Save Me)",
+    "artist": "Gabry Ponte, Steve Aoki, KEL",
+    "language": "english"
   }
 ]
