@@ -4237,5 +4237,21 @@
     "name": "I Like the Flowers",
     "artist": "Beat Boppers",
     "language": "english"
+  },
+  {
+    "videoId": "vxzOdDsrtNA",
+    "measureMap": { "5": 3, "97": 44 },
+    "fileName": "Krip",
+    "name": "Krip",
+    "artist": "Go_A",
+    "language": "ukrainian"
+  },
+  {
+    "videoId": "jTuBnZrLbq0",
+    "measureMap": { "3": 3, "41": 32, "61": 47, "91": 70 },
+    "fileName": "Tri_Martolod",
+    "name": "Tri Martolod",
+    "artist": "Nolwenn Leroy",
+    "language": "breton"
   }
 ]
