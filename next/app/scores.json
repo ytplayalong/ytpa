@@ -5712,5 +5712,16 @@
     "name": "Ohé la vie",
     "artist": "Šuma Čovjek",
     "language": ["bosnian", "french"]
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "20317162",
+    "videoId": "QqJvqMeaDtU",
+    "measureMap": { "41": 5, "48": 7, "197": 53 },
+    "fileName": "El_Condor_Pasa",
+    "name": "El Condor Pasa",
+    "artist": "Paul Simon & Garfunkel",
+    "language": "english"
   }
 ]
