@@ -4269,5 +4269,13 @@
     "name": "El Condor Pasa",
     "artist": "Paul Simon & Garfunkel",
     "language": "english"
+  },
+  {
+    "videoId": "wvUQcnfwUUM",
+    "measureMap": { "5": 3, "53": 36 },
+    "fileName": "In_The_Summertime",
+    "name": "In The Summertime",
+    "artist": "Mungo Jerry",
+    "language": "english"
   }
 ]
