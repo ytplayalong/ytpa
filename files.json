@@ -4285,5 +4285,13 @@
     "name": "La Cucaracha",
     "artist": "Mariachi Arriba Juarez",
     "language": "spanish"
+  },
+  {
+    "videoId": "9w1CgZ9RqOc",
+    "measureMap": { "3": 3, "63.5": 65 },
+    "fileName": "Adios_Muchachos",
+    "name": "Adios Muchachos",
+    "artist": "Alfred Hause",
+    "language": "instrumental"
   }
 ]
