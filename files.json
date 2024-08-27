@@ -4277,5 +4277,13 @@
     "name": "In The Summertime",
     "artist": "Mungo Jerry",
     "language": "english"
+  },
+  {
+    "videoId": "Ibj18JifH8c",
+    "measureMap": { "1": 2, "59": 65 },
+    "fileName": "La_Cucaracha",
+    "name": "La Cucaracha",
+    "artist": "Mariachi Arriba Juarez",
+    "language": "spanish"
   }
 ]
