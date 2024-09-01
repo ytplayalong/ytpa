@@ -4293,5 +4293,37 @@
     "name": "Adios Muchachos",
     "artist": "Alfred Hause",
     "language": "instrumental"
+  },
+  {
+    "videoId": "Z6TaPy48l4s",
+    "measureMap": { "3": 3, "52": 43 },
+    "fileName": "La_Pulga_de_Agua",
+    "name": "La Pulga de Agua",
+    "artist": "Angelo Branduardi",
+    "language": "spanish"
+  },
+  {
+    "videoId": "mZr0t3vZYb0",
+    "measureMap": { "17": 3, "104": 56 },
+    "fileName": "Chiki_Chichka",
+    "name": "Chiki Chichka",
+    "artist": "Luiku",
+    "language": "polish"
+  },
+  {
+    "videoId": "ibc3bFHNbdg",
+    "measureMap": { "4": 2, "153": 86 },
+    "fileName": "A_ya_na_mori",
+    "name": "A я на морі",
+    "artist": "Mad Heads",
+    "language": "ukrainian"
+  },
+  {
+    "videoId": "2ZxAVUsuE4Y",
+    "measureMap": { "3": 2, "74": 97 },
+    "fileName": "Swallowtail_Jig",
+    "name": "Swallowtail Jig",
+    "artist": "Katy Adelson",
+    "language": "instrumental"
   }
 ]
