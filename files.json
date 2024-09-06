@@ -4365,5 +4365,21 @@
     "name": "Кацапи",
     "artist": "TIK",
     "language": "russian"
+  },
+  {
+    "videoId": "vyCG2CTH6O8",
+    "measureMap": { "7": 3, "133": 40 },
+    "fileName": "My_Romance",
+    "name": "My Romance",
+    "artist": "Ella Fitzgerald",
+    "language": "english"
+  },
+  {
+    "videoId": "pquhYpGHrlw",
+    "measureMap": { "3": 3, "98": 64 },
+    "fileName": "She_Moves_In_Her_Own_Way",
+    "name": "She Moves In Her Own Way",
+    "artist": "The Kooks",
+    "language": "english"
   }
 ]
