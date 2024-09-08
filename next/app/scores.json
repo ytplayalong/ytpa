@@ -5888,5 +5888,16 @@
     "name": "Donna Donna",
     "artist": "Joan Baez",
     "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "20526739",
+    "videoId": "dXEdfWcb8PE",
+    "measureMap": { "2": 2, "90": 45 },
+    "fileName": "Black_Orpheus",
+    "name": "Black Orpheus",
+    "artist": "Connie Evingson",
+    "language": "english"
   }
 ]
