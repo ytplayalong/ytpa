@@ -5899,5 +5899,16 @@
     "name": "Black Orpheus",
     "artist": "Connie Evingson",
     "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "20593084",
+    "videoId": "GooweFfEPNA",
+    "measureMap": { "3": 2, "70": 49 },
+    "fileName": "Dwa_Dubki",
+    "name": "Дубки (Ой на гopi два дубки)",
+    "artist": "Mad Heads",
+    "language": "ukrainian"
   }
 ]
