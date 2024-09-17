@@ -5921,5 +5921,30 @@
     "name": "RiTiTi Polka",
     "artist": "Crazy Accordeons",
     "language": "dutch"
+  },
+  {
+    "keys": [-4, -2],
+    "times": [
+      [4, 4],
+      [2, 4]
+    ],
+    "source": "20675068",
+    "videoId": "3aOUoFV0aUc",
+    "measureMap": { "4": 2, "98": 34, "176": 62 },
+    "fileName": "Stal_Himmel",
+    "name": "Stål Himmel",
+    "artist": "Alan Fernie",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "20697127",
+    "videoId": "FCIFB30-HiA",
+    "measureMap": { "1": 2, "67": 55 },
+    "fileName": "Schachoret",
+    "name": "Schachoret",
+    "artist": "Adon Olam",
+    "language": "instrumental"
   }
 ]
