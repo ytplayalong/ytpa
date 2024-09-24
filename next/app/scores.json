@@ -3745,17 +3745,6 @@
     "language": "german"
   },
   {
-    "keys": [-4],
-    "times": [[4, 4]],
-    "source": "18727393",
-    "videoId": "Soa3gO7tL-c",
-    "measureMap": { "26": 1, "282": 90 },
-    "fileName": "Boulevard_Of_Broken_Dreams",
-    "name": "Boulevard Of Broken Dreams",
-    "artist": "Green Day",
-    "language": "english"
-  },
-  {
     "keys": [2],
     "times": [[4, 4]],
     "source": "18727087",
@@ -5946,5 +5935,16 @@
     "name": "Schachoret",
     "artist": "Adon Olam",
     "language": "instrumental"
+  },
+  {
+    "keys": [4],
+    "times": [[3, 4]],
+    "source": "20770717",
+    "videoId": "yHQ7xqQnAAc",
+    "measureMap": { "19": 2, "26": 9, "73": 56 },
+    "fileName": "Babena",
+    "name": "Babeņa",
+    "artist": "Solversija",
+    "language": "latvian"
   }
 ]
