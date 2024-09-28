@@ -5946,5 +5946,27 @@
     "name": "Babeņa",
     "artist": "Solversija",
     "language": "latvian"
+  },
+  {
+    "keys": [0],
+    "times": [[6, 8]],
+    "source": "20876809",
+    "videoId": "XmE8RX-obxc",
+    "measureMap": { "2.5": 3, "48.5": 49 },
+    "fileName": "La_Buena_Pipa",
+    "name": "La Buena Pipa",
+    "artist": "Paté de Fuá",
+    "language": "instrumental"
+  },
+  {
+    "keys": [1],
+    "times": [[6, 8]],
+    "source": "20877034",
+    "videoId": "M_cZVO-Cp1g",
+    "measureMap": { "9": 3, "101": 101 },
+    "fileName": "Brighter_Days_Come",
+    "name": "Brighter Days Come",
+    "artist": "Patty Gurdy",
+    "language": "english"
   }
 ]
