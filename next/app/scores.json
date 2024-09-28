@@ -5968,5 +5968,16 @@
     "name": "Brighter Days Come",
     "artist": "Patty Gurdy",
     "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "20884429",
+    "videoId": "wh-07BzfgYY",
+    "measureMap": { "5": 3, "142": 80 },
+    "fileName": "Beautiful_Life",
+    "name": "Beautiful Life",
+    "artist": "Ace of Base",
+    "language": "english"
   }
 ]
