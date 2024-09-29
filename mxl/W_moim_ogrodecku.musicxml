@@ -46,6 +46,14 @@
           </root>
         <kind text="m">minor</kind>
         </harmony>
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>quarter</beat-unit>
+            <per-minute>130</per-minute>
+            </metronome>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>D</step>
