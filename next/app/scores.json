@@ -5979,5 +5979,16 @@
     "name": "Beautiful Life",
     "artist": "Ace of Base",
     "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[7, 8]],
+    "source": "20890648",
+    "videoId": "rlPkuzSmvLI",
+    "measureMap": { "1": 2, "77": 88 },
+    "fileName": "Traka_Traka",
+    "name": "Traka Traka",
+    "artist": "Ecaterine & Dimitri Band",
+    "language": "romanian"
   }
 ]
