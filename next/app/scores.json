@@ -6056,5 +6056,27 @@
     "name": "Quién Será",
     "artist": "Danny Frank",
     "language": "spanish"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "21073405",
+    "videoId": "fM3khtqTl9A",
+    "measureMap": { "2": 2, "98": 56 },
+    "fileName": "Quien_Sera_Pablo_Ruiz",
+    "name": "Quién Será",
+    "artist": "Pablo Beltrán Ruiz",
+    "language": "instrumental"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "21073987",
+    "videoId": "p0x1V4gY8RA",
+    "measureMap": { "3": 2, "80": 35 },
+    "fileName": "Moliendo_Cafe",
+    "name": "Moliendo Café",
+    "artist": "Hugo Blanco y su Conjunto",
+    "language": "instrumental"
   }
 ]
