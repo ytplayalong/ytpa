@@ -4541,5 +4541,13 @@
     "name": "Hava Nagila",
     "artist": "The Barry Sisters",
     "language": ["yiddish", "english"]
+  },
+  {
+    "videoId": "5YjFLD2jzH4",
+    "measureMap": { "2.5": 2, "98.5": 52 },
+    "fileName": "La_Cumparsita",
+    "name": "La Cumparsita",
+    "artist": "Orquesta de la Plata",
+    "language": "instrumental"
   }
 ]
