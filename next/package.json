@@ -13,13 +13,13 @@
   "dependencies": {
     "@formspree/react": "^2.5.1",
     "js-cookie": "^3.0.5",
-    "next": "14.2.5",
+    "next": "14.2.15",
     "opensheetmusicdisplay": "^1.8.9",
     "react": "^18",
     "react-dom": "^18",
     "react-ga4": "^2.1.0",
-    "react-i18next": "^14.1.2",
-    "react-icons": "^5.2.1",
+    "react-i18next": "^15.0.2",
+    "react-icons": "^5.3.0",
     "react-youtube": "^10.1.0"
   },
   "devDependencies": {
@@ -28,7 +28,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "eslint-config-next": "14.2.15",
     "gh-pages": "^6.1.1",
     "typescript": "^5"
   }
