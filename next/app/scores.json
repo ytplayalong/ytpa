@@ -6078,5 +6078,16 @@
     "name": "Moliendo Café",
     "artist": "Hugo Blanco y su Conjunto",
     "language": "instrumental"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "21097846",
+    "videoId": "ELrNDUGV-yo",
+    "measureMap": { "2": 2, "127": 78 },
+    "fileName": "Hava_Nagila",
+    "name": "Hava Nagila",
+    "artist": "The Barry Sisters",
+    "language": ["yiddish", "english"]
   }
 ]
