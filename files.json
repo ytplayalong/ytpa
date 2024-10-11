@@ -4549,5 +4549,21 @@
     "name": "La Cumparsita",
     "artist": "Orquesta de la Plata",
     "language": "instrumental"
+  },
+  {
+    "videoId": "KBMO_4Nj4HQ",
+    "measureMap": { "3": 2, "144": 46 },
+    "fileName": "Canon_In_D_Hardstyle",
+    "name": "Canon In D (Jatimatic Hardstyle Bootleg)",
+    "artist": "Johann Pachelbel",
+    "language": "instrumental"
+  },
+  {
+    "videoId": "Eh8OZq5M3Sg",
+    "measureMap": { "8": 5, "171": 87 },
+    "fileName": "Mamma_Mia_Mentissa",
+    "name": "Mamma Mia",
+    "artist": "Mentissa",
+    "language": "french"
   }
 ]
