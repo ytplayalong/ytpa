@@ -105,7 +105,7 @@ def extract_auto_info(score_path: Path):
 
 
 def _write_generated(info: list[dict]) -> None:
-    write_json(Paths.GENERATED_SCORE_INFO_FILE, info)
+    _write_score_file(info)
 
     all_time_signatures = set()
     for score_info in info:
@@ -113,3 +113,28 @@ def _write_generated(info: list[dict]) -> None:
             all_time_signatures.add(tuple(ts))
     sorted_times = list(sorted(all_time_signatures))
     write_json(Paths.TIME_SIGNATURES_FILE, sorted_times)
+
+
+def _write_score_file(info: list[dict]):
+    """Write the score JSON with custom indentation.
+
+    Only adds indentation up to the second level.
+    """
+    indent = "  "
+    json_dict_strings = []
+    for item in info:
+        score_dict_list = []
+        for k, v in item.items():
+            dumped = json.dumps(v, ensure_ascii=False)
+            entry = f'{indent}{indent}"{k}": {dumped}'
+            score_dict_list.append(entry)
+        all_item_string = ",\n".join(score_dict_list)
+        json_string = f"{indent}{{\n{all_item_string}\n{indent}}}"
+        json_dict_strings.append(json_string)
+        pass
+
+    json_string = ",\n".join(json_dict_strings)
+    json_list = f"[\n{json_string}\n]\n"
+    with open(Paths.GENERATED_SCORE_INFO_FILE, "w", encoding="UTF-8") as f:
+        f.write(json_list)
+    pass
