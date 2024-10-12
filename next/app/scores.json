@@ -6080,11 +6080,14 @@
     "language": "instrumental"
   },
   {
-    "keys": [1],
-    "times": [[4, 4]],
+    "keys": [0, 1],
+    "times": [
+      [4, 4],
+      [2, 4]
+    ],
     "source": "21097846",
     "videoId": "ELrNDUGV-yo",
-    "measureMap": { "2": 2, "127": 78 },
+    "measureMap": { "2": 2, "131.3": 81, "165": 102 },
     "fileName": "Hava_Nagila",
     "name": "Hava Nagila",
     "artist": "The Barry Sisters",
@@ -6095,7 +6098,7 @@
     "times": [[4, 4]],
     "source": "21098377",
     "videoId": "5YjFLD2jzH4",
-    "measureMap": { "2.5": 2, "98.5": 52 },
+    "measureMap": { "2.5": 2, "98.5": 52, "183": 96 },
     "fileName": "La_Cumparsita",
     "name": "La Cumparsita",
     "artist": "Orquesta de la Plata",
