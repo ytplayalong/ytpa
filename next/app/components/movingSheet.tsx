@@ -46,7 +46,41 @@ const getInterpolator = (
   measureMap: MeasureMap
 ) => {
   const measureList = osmd.GraphicSheet.MeasureList;
-  const measureXList = measureList.map((el) => (el[0] as any)?.stave.x);
+  let measureXList = measureList.map((el) => (el[0] as any)?.stave.x);
+
+  if (!settingsManager.isHorizontalMode()) {
+    let measureYList = measureList.map((el) => (el[0] as any)?.stave.y);
+    const defaultYOffset = measureYList[0];
+    measureYList = measureYList.map((el) => el - defaultYOffset);
+
+    let infoList: { [key: number]: number } = {};
+    let currCt = 0;
+    let currEl = measureYList[0];
+    measureYList.forEach((el) => {
+      if (el === currEl) {
+        currCt += 1;
+      } else {
+        infoList[currEl] = currCt;
+        currEl = el;
+        currCt = 1;
+      }
+    });
+
+    currEl = measureYList[0];
+    let currNum = infoList[currEl];
+    let currHeight = 0;
+    let lastBreakIdx = 0;
+    measureYList.forEach((el, ct) => {
+      if (el !== currEl) {
+        lastBreakIdx = ct - 1;
+        currHeight = el - currEl;
+        currEl = el;
+      }
+      measureYList[ct] -=
+        ((currNum - ct + lastBreakIdx + 1) * currHeight) / (currNum + 1);
+    });
+    measureXList = measureYList;
+  }
 
   const mmEntries = Object.entries(measureMap);
   let numEntries = mmEntries.map(
@@ -92,10 +126,15 @@ const getInterpolator = (
   secs.push(currSec);
   xVals.push(measureXList[currMeasIdx - 1]);
 
+  console.log(secs, xVals);
+  const anchorFactor = settingsManager.isHorizontalMode()
+    ? screenAnchorFactor
+    : 0;
+
   // Create a Spline object
   const spline = new MonotonicCubicSpline(secs, xVals);
   return (val: number, fac: number) => {
-    const offset = screenAnchorFactor * window.innerWidth;
+    const offset = anchorFactor * window.innerWidth;
     return Math.max(0, spline.interpolate(val) * fac - offset);
   };
 };
@@ -106,7 +145,7 @@ export const MovingSheet = (props: {
   measureMap: MeasureMap;
   getTime: () => Promise<number>;
 }) => {
-  const [currXPos, setCurrXPos] = useState(0);
+  const [currPos, setCurrPos] = useState({ x: 0, y: 0 });
   const [ipOrNull, setIpOrNull] = useState<{
     ip: (n: number, fac: number) => number;
   } | null>(null);
@@ -119,19 +158,19 @@ export const MovingSheet = (props: {
   const zoomFac =
     Math.max(Math.min(1, sheetHeigthPx / baseHeight), 0.5) * userZoom;
   const acutalSheetHeight = sheetHeigthPx * zoomFac;
-  const sheetWidth = fullW * acutalSheetHeight;
+  const sheetWidth = settingsManager.isHorizontalMode()
+    ? fullW * acutalSheetHeight
+    : window.innerWidth;
 
   const { getTime, measureMap, xml } = props;
 
   useEffect(() => {
     // Load the sheet music display and create interpolator.
     const loadLocal = async () => {
-      const osmd = await loadOsmd(
-        xml,
-        sheetWidth,
-        sheetHeigthPx * userZoom,
-        zoomFac
-      );
+      const osmdPageHeight = settingsManager.isHorizontalMode()
+        ? sheetHeigthPx * userZoom
+        : 100000;
+      const osmd = await loadOsmd(xml, sheetWidth, osmdPageHeight, zoomFac);
       const ipObj = getInterpolator(osmd, measureMap);
       setIpOrNull({ ip: ipObj });
     };
@@ -147,8 +186,11 @@ export const MovingSheet = (props: {
       const ipObj = ipOrNull.ip;
       const interval = setInterval(async () => {
         const elapsedSec = await getTime();
-        const xPos = ipObj(elapsedSec, zoomFac);
-        setCurrXPos(xPos);
+        const position = ipObj(elapsedSec, zoomFac);
+        const posObj = settingsManager.isHorizontalMode()
+          ? { x: position, y: 0 }
+          : { x: 0, y: position };
+        setCurrPos(posObj);
       }, 20); // ms refresh.
 
       return () => {
@@ -157,14 +199,18 @@ export const MovingSheet = (props: {
     }
   }, [getTime, ipOrNull, zoomFac]);
 
+  const componentHeight = settingsManager.isHorizontalMode()
+    ? sheetHeigthPx * userZoom
+    : 800;
   return (
     <div style={{ overflow: "hidden" }}>
       <div
         id={osmdId}
         style={{
-          height: `${sheetHeigthPx * userZoom}px`,
+          height: `${componentHeight + currPos.y}px`,
           width: `${sheetWidth}px`,
-          marginLeft: `-${currXPos}px`,
+          marginLeft: `-${currPos.x}px`,
+          marginTop: `-${currPos.y}px`,
         }}
       ></div>
     </div>

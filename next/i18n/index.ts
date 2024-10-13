@@ -41,6 +41,9 @@ export const RESSOURCES = {
       intro:
         "Welcome to our sheet music website! We are pleased to offer a wide variety of sheet music for a variety of musical styles and instruments. Our website features interactive sheet music that is synced with corresponding music videos, allowing you to play along with the video as you practice.",
       viewSheetsOn: "View sheet music on",
+      sheetMoveMode: "Synchronization mode",
+      horizontalMode: "Horizontal",
+      verticalMode: "Vertical",
     },
   },
   es: {
@@ -84,6 +87,9 @@ export const RESSOURCES = {
       intro:
         "¡Bienvenido a nuestro sitio web de partituras! Nos complace ofrecer una amplia variedad de partituras para una variedad de estilos e instrumentos musicales. Nuestro sitio web presenta partituras interactivas que se sincronizan con los videos musicales correspondientes, lo que le permite reproducir el video mientras practica.",
       viewSheetsOn: "Ver partitura en",
+      sheetMoveMode: "Modo de sincronización",
+      horizontalMode: "Horizontal",
+      verticalMode: "Vertical",
     },
   },
   de: {
@@ -127,6 +133,9 @@ export const RESSOURCES = {
       intro:
         "Willkommen auf unserer Noten-Website! Wir freuen uns, eine große Auswahl an Noten für verschiedene Musikstile und Instrumente anbieten zu können. Auf unserer Website finden Sie interaktive Noten, die mit entsprechenden Musikvideos synchronisiert sind, so dass Sie beim Üben zum Video mitspielen können.",
       viewSheetsOn: "Schauen Sie sich die Noten an auf",
+      sheetMoveMode: "Synchronisierungsmodus",
+      horizontalMode: "Horizontal",
+      verticalMode: "Vertikal",
     },
   },
 };

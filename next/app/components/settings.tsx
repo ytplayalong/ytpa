@@ -13,6 +13,9 @@ class SettingsManager {
   fingeringKey = "fingering";
   fingeringOptions = ["fingerNone", "fingerThreeValves", "fingerTrombone"];
 
+  sheetModeKey = "sheetMoveMode";
+  sheetModeOptions = ["horizontalMode", "verticalMode"];
+
   scaleKey = "sheetZoom";
   scaleOptions = [0.5, 0.75, 1, 1.5, 2.0];
 
@@ -85,8 +88,25 @@ class SettingsManager {
       return { name: t(el), onClick: () => this.setZoom(el), key: el };
     });
   }
+
+  /** Handling sheet view mode */
+  getSheetMode() {
+    return this.get(this.sheetModeKey, this.sheetModeOptions);
+  }
+  private setSheetMode(newMode: string) {
+    localStorage.setItem(this.sheetModeKey, newMode);
+  }
+  getSheetOptions(t: any) {
+    return this.sheetModeOptions.map((el) => {
+      return { name: t(el), onClick: () => this.setSheetMode(el), key: el };
+    });
+  }
+  isHorizontalMode() {
+    return this.getSheetMode() === "horizontalMode";
+  }
 }
 
+// Setting manager singleton instance.
 export const settingsManager = new SettingsManager();
 
 const SettingsComp = () => {
@@ -107,6 +127,10 @@ const SettingsComp = () => {
   const currZoom = settingsManager.getZoom();
   const zoomDD = useDropDown(currZoom, zoomOptions);
 
+  const sheetOptions = settingsManager.getSheetOptions(t);
+  const currSheetMode = t(settingsManager.getSheetMode());
+  const sheetDD = useDropDown(currSheetMode, sheetOptions);
+
   return (
     <>
       <h4>{t("settingsTitle")}</h4>
@@ -125,6 +149,10 @@ const SettingsComp = () => {
       <div className="row" style={{ marginBottom: "0.2em" }}>
         <div className="twocols">{t(settingsManager.scaleKey)}</div>
         <div className="twocols rightcol">{zoomDD}</div>
+      </div>
+      <div className="row" style={{ marginBottom: "0.2em" }}>
+        <div className="twocols">{t(settingsManager.sheetModeKey)}</div>
+        <div className="twocols rightcol">{sheetDD}</div>
       </div>
     </>
   );
