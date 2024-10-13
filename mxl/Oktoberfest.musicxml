@@ -72,7 +72,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -215,7 +215,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -262,7 +262,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -310,7 +310,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -405,7 +405,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -455,7 +455,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -503,7 +503,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -598,7 +598,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -689,7 +689,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -849,7 +849,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1169,7 +1169,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1312,7 +1312,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1439,7 +1439,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1687,7 +1687,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="7">dominant</kind>
         </harmony>
       <note>
         <pitch>
@@ -1811,7 +1811,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1938,7 +1938,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind text="7">dominant</kind>
         </harmony>
       <note>
         <pitch>
@@ -2186,7 +2186,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="7">dominant</kind>
         </harmony>
       <note>
         <pitch>
@@ -2360,7 +2360,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -2487,7 +2487,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind text="7">dominant</kind>
         </harmony>
       <note>
         <pitch>
@@ -2735,7 +2735,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="7">dominant</kind>
         </harmony>
       <note>
         <pitch>
@@ -2864,7 +2864,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -2991,7 +2991,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3239,7 +3239,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="7">dominant</kind>
         </harmony>
       <note>
         <pitch>
@@ -3368,7 +3368,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3495,7 +3495,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind text="7">dominant</kind>
         </harmony>
       <note>
         <pitch>
@@ -3743,7 +3743,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind text="7">dominant</kind>
         </harmony>
       <note>
         <pitch>

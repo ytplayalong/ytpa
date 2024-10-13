@@ -699,13 +699,6 @@
         </note>
       </measure>
     <measure number="8">
-      <direction placement="below">
-        <direction-type>
-          <dynamics relative-x="1.32">
-            <f />
-            </dynamics>
-          </direction-type>
-        </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -1188,13 +1181,6 @@
           <tied type="start" />
           </notations>
         </note>
-      <harmony print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          </root>
-        <kind text="7">dominant</kind>
-        <offset>4</offset>
-        </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1436,13 +1422,6 @@
           <tied type="start" />
           </notations>
         </note>
-      <harmony print-frame="no">
-        <root>
-          <root-step>D</root-step>
-          </root>
-        <kind text="m6">minor-sixth</kind>
-        <offset>4</offset>
-        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2760,12 +2739,6 @@
           <tied type="start" />
           </notations>
         </note>
-      <harmony print-frame="no">
-        <root>
-          <root-step>D</root-step>
-          </root>
-        <kind text="m6">minor-sixth</kind>
-        </harmony>
       <note dynamics="88.89">
         <pitch>
           <step>F</step>
@@ -3200,13 +3173,6 @@
           <tied type="start" />
           </notations>
         </note>
-      <harmony print-frame="no">
-        <root>
-          <root-step>D</root-step>
-          </root>
-        <kind text="m6">minor-sixth</kind>
-        <offset>4</offset>
-        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -3670,13 +3636,6 @@
         <duration>2</duration>
         <type>eighth</type>
         </note>
-      <harmony print-frame="no">
-        <root>
-          <root-step>D</root-step>
-          </root>
-        <kind text="m6">minor-sixth</kind>
-        <offset>4</offset>
-        </harmony>
       <note>
         <pitch>
           <step>C</step>
