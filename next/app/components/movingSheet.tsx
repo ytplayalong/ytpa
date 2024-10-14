@@ -89,19 +89,16 @@ const getInterpolator = (
     measureXList = measureYList;
   }
 
+  // Retrieve anchors from json
   const mmEntries = Object.entries(measureMap);
   let numEntries = mmEntries.map(
     (timeAndBar) => [parseFloat(timeAndBar[0]), timeAndBar[1]] as const
   );
   numEntries.sort((a, b) => a[0] - b[0]);
 
-  // Add start and end entries
-  const lastEntry = numEntries[numEntries.length - 1];
-  const endEntries = [1, 2].map((el) => {
-    return [lastEntry[0] + el * 5, lastEntry[1]] as const;
-  });
+  // Add start entries
   const start = [0, 0] as readonly [number, number];
-  numEntries = [start].concat(numEntries).concat(endEntries);
+  numEntries = [start].concat(numEntries);
 
   const nEntries = numEntries.length;
   let [currSec, currMeasIdx] = numEntries[0];
@@ -114,7 +111,7 @@ const getInterpolator = (
     if (nextX === undefined) {
       continue;
     }
-    // Do stuff
+    // Interpolate each bar linearly between anchors
     for (let i = currMeasIdx; i < nextMeasIdx; ++i) {
       const x = measureXList[i - 1];
       if (x !== undefined) {
@@ -132,6 +129,12 @@ const getInterpolator = (
   }
   secs.push(currSec);
   xVals.push(measureXList[currMeasIdx - 1]);
+
+  // Constant extension, makes sheet stop gracefully
+  [1, 2].forEach((ct) => {
+    secs.push(currSec + ct * 5);
+    xVals.push(measureXList[currMeasIdx - 1]);
+  });
 
   const anchorFactor = settingsManager.isHorizontalMode()
     ? screenAnchorFactor
