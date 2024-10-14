@@ -49,6 +49,7 @@ const getInterpolator = (
   let measureXList = measureList.map((el) => (el[0] as any)?.stave.x);
 
   if (!settingsManager.isHorizontalMode()) {
+    // Move the sheet upwards
     let measureYList = measureList.map((el) => (el[0] as any)?.stave.y);
     const defaultYOffset = measureYList[0];
     measureYList = measureYList.map((el) => el - defaultYOffset);
@@ -56,8 +57,12 @@ const getInterpolator = (
     let infoList: { [key: number]: number } = {};
     let currCt = 0;
     let currEl = measureYList[0];
-    measureYList.forEach((el) => {
-      if (el === currEl) {
+    measureYList.forEach((el, ct) => {
+      if (isNaN(el)) {
+        // Replace NaNs with previous values (e.g. multibar rests)
+        currCt += 1;
+        measureYList[ct] = currEl;
+      } else if (el === currEl) {
         currCt += 1;
       } else {
         infoList[currEl] = currCt;
@@ -76,6 +81,8 @@ const getInterpolator = (
         currHeight = el - currEl;
         currEl = el;
       }
+      // Linearly interpolate
+      // TODO: Use X values for smoother interpolation
       measureYList[ct] -=
         ((currNum - ct + lastBreakIdx + 1) * currHeight) / (currNum + 1);
     });
@@ -126,7 +133,6 @@ const getInterpolator = (
   secs.push(currSec);
   xVals.push(measureXList[currMeasIdx - 1]);
 
-  console.log(secs, xVals);
   const anchorFactor = settingsManager.isHorizontalMode()
     ? screenAnchorFactor
     : 0;
