@@ -46,18 +46,28 @@ def extract_info(xml: Path):
         if key > 6 or key < -6:
             warnings.warn(f"Bad key signature {key} in {xml.name}")
 
-    # Find time signatures
+    # Find all measures with time signatures
     times = []
-    time_els = root.findall(".//*/time")
-    for time_el in time_els:
+    time_meas = root.findall(".//*/time/../..")
+    meas_to_time_dict = {}
+    for meas in time_meas:
+        meas_number = int(meas.attrib["number"])
+        time_el = meas.find("attributes").find("time")
         n_beats = int(time_el.find("beats").text)
         beat_type = int(time_el.find("beat-type").text)
-        times.append((n_beats, beat_type))
+        time_tuple = (n_beats, beat_type)
+        times.append(time_tuple)
+        meas_to_time_dict[meas_number] = time_tuple
     times = _make_unique(times)
     if len(times) == 0:
         warnings.warn(f"No time signature: {xml.name}")
 
-    return {"keys": all_keys, "times": times, "source": msc_score_id}
+    return {
+        "keys": all_keys,
+        "times": times,
+        "source": msc_score_id,
+        "meas_to_time": meas_to_time_dict,
+    }
 
 
 def extract_all_information():
@@ -78,6 +88,10 @@ def extract_all_information():
         file_path = yt_xml_dir / f"{file_name}.musicxml"
         auto_extracted = extract_auto_info(file_path)
         if auto_extracted:
+            meas_to_time = auto_extracted.pop("meas_to_time")
+            if len(meas_to_time) > 1:
+                meas_map = score["measureMap"]
+                print(f"TODO: {meas_map}")
             generated_info.append({**auto_extracted, **score})
         else:
             print(f"Did not find file {file_name}")
