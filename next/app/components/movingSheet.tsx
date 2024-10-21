@@ -40,6 +40,11 @@ const loadOsmd = async (
   return osmd;
 };
 
+const range = (start: number, stop: number, nElements: number) => {
+  const arr = new Array(nElements);
+  return [...arr].map((_, ct) => start + ((stop - start) * ct) / nElements);
+};
+
 /** Creates an interpolator function that maps from seconds to x position. */
 const getInterpolator = (
   osmd: OpenSheetMusicDisplay,
@@ -48,57 +53,55 @@ const getInterpolator = (
   const measureList = osmd.GraphicSheet.MeasureList;
   let measureXList = measureList.map((el) => (el[0] as any)?.stave.x);
 
-  if (!settingsManager.isHorizontalMode()) {
-    // Move the sheet upwards
-    let measureYList = measureList.map((el) => (el[0] as any)?.stave.y);
-    const defaultYOffset = measureYList[0];
-    measureYList = measureYList.map((el) => el - defaultYOffset);
-
-    let infoList: { [key: number]: number } = {};
-    let currCt = 0;
-    let currEl = measureYList[0];
-    measureYList.forEach((el, ct) => {
-      if (isNaN(el)) {
-        // Replace NaNs with previous values (e.g. multibar rests)
-        currCt += 1;
-        measureYList[ct] = currEl;
-      } else if (el === currEl) {
-        currCt += 1;
-      } else {
-        infoList[currEl] = currCt;
-        currEl = el;
-        currCt = 1;
-      }
-    });
-
-    currEl = measureYList[0];
-    let currNum = infoList[currEl];
-    let currHeight = 0;
-    let lastBreakIdx = 0;
-    measureYList.forEach((el, ct) => {
-      if (el !== currEl) {
-        lastBreakIdx = ct - 1;
-        currHeight = el - currEl;
-        currEl = el;
-      }
-      // Linearly interpolate
-      // TODO: Use X values for smoother interpolation
-      measureYList[ct] -=
-        ((currNum - ct + lastBreakIdx + 1) * currHeight) / (currNum + 1);
-    });
-    measureXList = measureYList;
-  }
-
   // Retrieve anchors from json
   const mmEntries = Object.entries(measureMap);
   let numEntries = mmEntries.map(
     (timeAndBar) => [parseFloat(timeAndBar[0]), timeAndBar[1]] as const
   );
   numEntries.sort((a, b) => a[0] - b[0]);
-
-  // Add start entries
   const start = [0, 0] as readonly [number, number];
-  numEntries = [start].concat(numEntries);
+  numEntries = [start].concat(numEntries); // Add start entries
+
+  if (!settingsManager.isHorizontalMode()) {
+    // Move the sheet upwards
+    let measureYList = measureList.map((el) => (el[0] as any)?.stave.y);
+    const defaultYOffset = measureYList[0];
+    measureYList = measureYList.map((el) => el - defaultYOffset);
+
+    // Choose anchors, first bars of the lines
+    let prevVal = 0;
+    let lineAnchors: any = [[0, 0]];
+    let yValBetter: number[] = [];
+    measureYList.forEach((el, ct) => {
+      if (isNaN(el)) {
+        return; // Ignore
+      }
+      if (el != prevVal) {
+        const prevAnchor = lineAnchors[lineAnchors.length - 1];
+        const newRange = range(prevAnchor[1], prevVal, ct - prevAnchor[0]);
+        yValBetter = yValBetter.concat(newRange);
+        lineAnchors.push([ct, prevVal]);
+      }
+      prevVal = el;
+    });
+
+    // Handle end separately
+    const lastAnchor = lineAnchors[lineAnchors.length - 1];
+    const lastMeasIdx = measureYList.length - 1;
+    if (lastAnchor[0] != lastMeasIdx) {
+      lineAnchors.push([lastMeasIdx, prevVal]);
+      const newRange = range(
+        lastAnchor[1],
+        prevVal,
+        lastMeasIdx - lastAnchor[0]
+      );
+      yValBetter = yValBetter.concat(newRange);
+      yValBetter.push(prevVal);
+    }
+
+    // Todo: Interpolate lines linearly regardless of bars.
+    measureXList = yValBetter;
+  }
 
   const nEntries = numEntries.length;
   let [currSec, currMeasIdx] = numEntries[0];
