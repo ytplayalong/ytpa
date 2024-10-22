@@ -70,6 +70,61 @@ def extract_info(xml: Path):
     }
 
 
+def _check_measure_map(
+    meas_to_time: dict[int, tuple[int, int]], meas_map: dict[str, int]
+):
+    curr_meas_to_sec_idx = 0
+
+    sorted_meas_to_sec = list(sorted(meas_map.items(), key=lambda el: (el[1], el[0])))
+    sorted_meas_to_time = list(sorted(meas_to_time.items()))
+
+    meas_to_sec_size = len(sorted_meas_to_sec)
+
+    while curr_meas_to_sec_idx < meas_to_sec_size - 1:
+        curr_meas_to_sec = sorted_meas_to_sec[curr_meas_to_sec_idx]
+        next_meas_to_sec = sorted_meas_to_sec[curr_meas_to_sec_idx + 1]
+
+        # Current interval measure numbers
+        curr_anchor = curr_meas_to_sec[1]
+        next_anchor = next_meas_to_sec[1]
+
+        prev_time_sig = None
+        prev_time_sig_measure_idx = -1
+        required_time_sigs = []
+        for meas_idx, time_sig in sorted_meas_to_time:
+            if meas_idx <= curr_anchor:
+                prev_time_sig_measure_idx = meas_idx
+                prev_time_sig = time_sig
+
+            if meas_idx > curr_anchor and meas_idx < next_anchor:
+                weight = (meas_idx - curr_anchor) * prev_time_sig[0] / prev_time_sig[1]
+                required_time_sigs.append((meas_idx, weight))
+                prev_time_sig_measure_idx = meas_idx
+                prev_time_sig = time_sig
+            if meas_idx >= next_anchor and prev_time_sig is not None:
+                weight = (
+                    (next_anchor - prev_time_sig_measure_idx)
+                    * prev_time_sig[0]
+                    / prev_time_sig[1]
+                )
+                required_time_sigs.append((next_anchor, weight))
+                break
+
+        if len(required_time_sigs) > 1:
+            end_sec = float(next_meas_to_sec[0])
+            start_sec = float(curr_meas_to_sec[0])
+            tot_len_s = end_sec - start_sec
+            weight_sum = sum(el[1] for el in required_time_sigs)
+            for el in required_time_sigs[:-1]:
+                sec = start_sec + el[1] * tot_len_s / weight_sum
+                print(f"Entry: Bar: {el[0]}, Second: {sec:.2f}")
+                meas_map[f"{sec:.2f}"] = el[0]
+
+        curr_meas_to_sec_idx += 1
+
+    return meas_map
+
+
 def extract_all_information():
     """Collect information from all scores in the given list."""
 
@@ -91,7 +146,7 @@ def extract_all_information():
             meas_to_time = auto_extracted.pop("meas_to_time")
             if len(meas_to_time) > 1:
                 meas_map = score["measureMap"]
-                print(f"TODO: {meas_map}")
+                _check_measure_map(meas_to_time, meas_map)
             generated_info.append({**auto_extracted, **score})
         else:
             print(f"Did not find file {file_name}")
