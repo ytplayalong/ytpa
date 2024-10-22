@@ -73,6 +73,12 @@ def extract_info(xml: Path):
 def _check_measure_map(
     meas_to_time: dict[int, tuple[int, int]], meas_map: dict[str, int]
 ):
+    """Checks for time signature changes and updates the measure map.
+
+    If a time signature change happens in a bar that is not
+    annotated with a time, it will be computed (by linear interpolation)
+    and added to the measure map.
+    """
     curr_meas_to_sec_idx = 0
 
     sorted_meas_to_sec = list(sorted(meas_map.items(), key=lambda el: (el[1], el[0])))
