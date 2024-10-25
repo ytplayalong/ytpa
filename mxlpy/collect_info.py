@@ -72,7 +72,7 @@ def extract_info(xml: Path):
 
 
 def _check_measure_map(
-    meas_to_time: dict[int, tuple[int, int]], meas_map: dict[str, int], name: str
+    meas_to_time: dict[int, tuple[int, int]], meas_map: dict[str, int]
 ):
     """Checks for time signature changes and updates the measure map.
 
@@ -122,7 +122,6 @@ def _check_measure_map(
                 break
 
         if len(required_time_sigs) > 1:
-            added_ = []
             cum_weight_sum = 0
             end_sec = float(next_meas_to_sec[0])
             start_sec = float(curr_meas_to_sec[0])
@@ -133,11 +132,7 @@ def _check_measure_map(
                 cum_weight_sum += curr_weight
                 assert cum_weight_sum <= weight_sum
                 sec = start_sec + cum_weight_sum * tot_len_s / weight_sum
-                added_.append((sec, el[0]))
                 meas_map[f"{sec:.2f}"] = el[0]
-            if name == "Moskau":
-                print(f"Added: {added_}")
-                print(required_time_sigs)
 
         curr_meas_to_sec_idx += 1
 
@@ -149,10 +144,6 @@ def _check_measure_map(
         float(entries[i][0]) <= float(entries[i + 1][0])
         for i in range(len(entries) - 1)
     )
-    if not all_sorted or name == "Moskau":
-        print(sorted_meas_to_time)
-        print(f"Original: {sorted_meas_to_sec}")
-        print(f"New {new_meas_map}")
     assert all_sorted, "Algorithm is flawed!"
 
     return new_meas_map
@@ -180,7 +171,7 @@ def extract_all_information():
             if len(meas_to_time) > 1:
                 meas_map = score["measureMap"]
                 name = score["name"]
-                score["measureMap"] = _check_measure_map(meas_to_time, meas_map, name)
+                score["measureMap"] = _check_measure_map(meas_to_time, meas_map)
             generated_info.append({**auto_extracted, **score})
         else:
             print(f"Did not find file {file_name}")
