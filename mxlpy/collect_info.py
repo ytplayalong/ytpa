@@ -4,6 +4,7 @@ import json
 import warnings
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from collections import OrderedDict
 
 from tqdm import tqdm
 
@@ -71,7 +72,7 @@ def extract_info(xml: Path):
 
 
 def _check_measure_map(
-    meas_to_time: dict[int, tuple[int, int]], meas_map: dict[str, int]
+    meas_to_time: dict[int, tuple[int, int]], meas_map: dict[str, int], name: str
 ):
     """Checks for time signature changes and updates the measure map.
 
@@ -97,13 +98,17 @@ def _check_measure_map(
         prev_time_sig = None
         prev_time_sig_measure_idx = -1
         required_time_sigs = []
-        for meas_idx, time_sig in sorted_meas_to_time:
+        for meas_idx, time_sig in sorted_meas_to_time + [(next_anchor, [0, 0])]:
             if meas_idx <= curr_anchor:
-                prev_time_sig_measure_idx = meas_idx
+                prev_time_sig_measure_idx = curr_anchor
                 prev_time_sig = time_sig
 
-            if meas_idx > curr_anchor and meas_idx < next_anchor:
-                weight = (meas_idx - curr_anchor) * prev_time_sig[0] / prev_time_sig[1]
+            if curr_anchor < meas_idx < next_anchor:
+                weight = (
+                    (meas_idx - prev_time_sig_measure_idx)
+                    * prev_time_sig[0]
+                    / prev_time_sig[1]
+                )
                 required_time_sigs.append((meas_idx, weight))
                 prev_time_sig_measure_idx = meas_idx
                 prev_time_sig = time_sig
@@ -117,18 +122,40 @@ def _check_measure_map(
                 break
 
         if len(required_time_sigs) > 1:
+            added_ = []
+            cum_weight_sum = 0
             end_sec = float(next_meas_to_sec[0])
             start_sec = float(curr_meas_to_sec[0])
             tot_len_s = end_sec - start_sec
             weight_sum = sum(el[1] for el in required_time_sigs)
             for el in required_time_sigs[:-1]:
-                sec = start_sec + el[1] * tot_len_s / weight_sum
-                print(f"Entry: Bar: {el[0]}, Second: {sec:.2f}")
+                curr_weight = el[1]
+                cum_weight_sum += curr_weight
+                assert cum_weight_sum <= weight_sum
+                sec = start_sec + cum_weight_sum * tot_len_s / weight_sum
+                added_.append((sec, el[0]))
                 meas_map[f"{sec:.2f}"] = el[0]
+            if name == "Moskau":
+                print(f"Added: {added_}")
+                print(required_time_sigs)
 
         curr_meas_to_sec_idx += 1
 
-    return meas_map
+    # Order dict to get consistent JSON
+    entries = list(sorted(meas_map.items(), key=lambda el: el[1]))
+    new_meas_map = OrderedDict(entries)
+
+    all_sorted = all(
+        float(entries[i][0]) <= float(entries[i + 1][0])
+        for i in range(len(entries) - 1)
+    )
+    if not all_sorted or name == "Moskau":
+        print(sorted_meas_to_time)
+        print(f"Original: {sorted_meas_to_sec}")
+        print(f"New {new_meas_map}")
+    assert all_sorted, "Algorithm is flawed!"
+
+    return new_meas_map
 
 
 def extract_all_information():
@@ -152,7 +179,8 @@ def extract_all_information():
             meas_to_time = auto_extracted.pop("meas_to_time")
             if len(meas_to_time) > 1:
                 meas_map = score["measureMap"]
-                _check_measure_map(meas_to_time, meas_map)
+                name = score["name"]
+                score["measureMap"] = _check_measure_map(meas_to_time, meas_map, name)
             generated_info.append({**auto_extracted, **score})
         else:
             print(f"Did not find file {file_name}")
@@ -163,7 +191,7 @@ def extract_all_information():
 def extract_auto_info(score_path: Path):
     """Automatically extracts information from mscz files.
 
-    Also checcks the path name's capitalization.
+    Also checks the path name's capitalization.
     """
 
     # Check file exists
