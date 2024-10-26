@@ -1,5 +1,6 @@
-# YouTube Play-Along Webapp
+# YouTube Play-Along Webapp (YTPA)
 
-Will be deployed on https://ytpa.ch.
+Deployed on https://ytpa.ch.
 
-In progress..
+The website features interactive sheet music that is synced with corresponding YouTube music videos, 
+allowing you to play along with the video as you practice.
