@@ -4629,5 +4629,21 @@
     "name": "El Choclo",
     "artist": "The Mexicali Brass",
     "language": "instrumental"
+  },
+  {
+    "videoId": "xJrICIYQ0R4",
+    "measureMap": { "1": 2, "79": 48 },
+    "fileName": "I_Am_Your_Gummy_Bear",
+    "name": "I Am Your Gummy Bear",
+    "artist": "Fanfare Ciocarlia",
+    "language": "instrumental"
+  },
+  {
+    "videoId": "vSwDVi9QtNo",
+    "measureMap": { "20": 19, "71": 63, "86": 77 },
+    "fileName": "Manea",
+    "name": "Manea",
+    "artist": "Fanfare Ciocarlia",
+    "language": "instrumental"
   }
 ]
