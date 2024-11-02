@@ -4645,5 +4645,13 @@
     "name": "Manea",
     "artist": "Fanfare Ciocarlia",
     "language": "instrumental"
+  },
+  {
+    "videoId": "hCab6JLOgDw",
+    "measureMap": { "1": 2, "149": 82 },
+    "fileName": "Guantanamera",
+    "name": "Guantanamera",
+    "artist": "The Mariachis",
+    "language": "spanish"
   }
 ]
