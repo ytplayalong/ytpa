@@ -4653,5 +4653,21 @@
     "name": "Guantanamera",
     "artist": "The Mariachis",
     "language": "spanish"
+  },
+  {
+    "videoId": "q_qRaMuc_iY",
+    "measureMap": { "8": 5, "68.5": 36 },
+    "fileName": "Its_A_Good_Day",
+    "name": "It's A Good Day",
+    "artist": "Peggy Lee",
+    "language": "english"
+  },
+  {
+    "videoId": "YEKYG-zvQvA",
+    "measureMap": { "3": 2, "95": 71 },
+    "fileName": "Bubamara",
+    "name": "Bubamara",
+    "artist": "Tzupati Orchestra",
+    "language": "instrumental"
   }
 ]
