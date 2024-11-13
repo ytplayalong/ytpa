@@ -4591,7 +4591,7 @@
     "times": [[4, 4], [2, 4]],
     "source": "18674500",
     "videoId": "nE_5BCzLZhw",
-    "measureMap": {"13": 7, "78.78": 34, "80": 35},
+    "measureMap": {"13": 7, "78.78": 34, "80": 35, "106.89": 46, "108.11": 47, "127.67": 55, "128.89": 56, "146": 63},
     "fileName": "El_Tren_De_La_Alegria",
     "name": "El Tren De La Alegría",
     "artist": "Paté de Fuá",
@@ -5883,5 +5883,27 @@
     "name": "Bubamara",
     "artist": "Tzupati Orchestra",
     "language": "instrumental"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "21674188",
+    "videoId": "qmcq4BFNUnc",
+    "measureMap": {"5": 5, "54": 48},
+    "fileName": "Branle_de_lOfficial",
+    "name": "Branle de l'Official",
+    "artist": "Broadside Band",
+    "language": "instrumental"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "21760942",
+    "videoId": "cMcQY2KdvKM",
+    "measureMap": {"9": 5, "111": 51},
+    "fileName": "Si_Muero_Algun_Dia",
+    "name": "Si Muero Algún Día",
+    "artist": "Paté de Fuá",
+    "language": "spanish"
   }
 ]
