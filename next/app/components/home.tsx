@@ -24,7 +24,7 @@ const Home = () => {
     num: <>{`${nScores}`}</>,
     all: <Link href={getLink("/listall")}> {t("allScores")}</Link>,
     random: (
-      <Link href={getLink(`/piece/${randScore.videoId}`)}>
+      <Link href={getLink(`/piece?scoreId=${randScore.videoId}`)}>
         {t("randomScore")}
       </Link>
     ),

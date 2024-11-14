@@ -1,20 +1,20 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { ScoreInfo, fullScoreInfo } from "../util/util";
 import { PartSelector } from "./partSelector";
 import { useYoutubePlayer } from "../util/player";
+import { useRouter, useSearchParams } from "next/navigation";
+import usePathTranslation from "@/i18n/hook";
 
-export const YtScore = () => {
-  const pathname = usePathname();
-  const scoreId = pathname.split("/")[3];
-
-  const scoreInfoCand = fullScoreInfo.filter((el) => el.videoId === scoreId);
+export const YtScore = (props: { scoreId: string }) => {
+  const scoreInfoCand = fullScoreInfo.filter(
+    (el) => el.videoId === props.scoreId
+  );
   if (scoreInfoCand.length === 0) {
     // No match for score ID found in list.
     return (
       <h3>
-        YouTube score with ID <b>{scoreId}</b> not found :(
+        YouTube score with ID <b>{props.scoreId}</b> not found :(
       </h3>
     );
   }
@@ -29,6 +29,19 @@ const FoundYtScore = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
   );
 
   return partSel;
+};
+
+export const QueryScore = () => {
+  const searchParams = useSearchParams();
+  const scoreId = searchParams.get("scoreId"); // Get the 'id' query parameter
+  const router = useRouter();
+  const { getLink } = usePathTranslation();
+
+  if (scoreId === undefined || typeof scoreId !== "string") {
+    router.push(getLink(`/404`));
+    return <></>;
+  }
+  return <YtScore scoreId={scoreId} />;
 };
 
 export default YtScore;
