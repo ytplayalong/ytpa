@@ -190,7 +190,7 @@ export const MovingSheet = (props: {
     return () => {
       setIpOrNull(null);
     };
-  }, [xml, measureMap, sheetHeigthPx, userZoom, sheetWidth]);
+  }, [xml, measureMap, sheetHeigthPx, userZoom, zoomFac, sheetWidth]);
 
   useEffect(() => {
     // Register callback that adjusts the sheet according to the video
