@@ -3,8 +3,8 @@
 import { ScoreInfo, fullScoreInfo } from "../util/util";
 import { PartSelector } from "./partSelector";
 import { useYoutubePlayer } from "../util/player";
-import { useRouter, useSearchParams } from "next/navigation";
-import usePathTranslation from "@/i18n/hook";
+import { useSearchParams } from "next/navigation";
+import { To404 } from "./to404";
 
 export const YtScore = (props: { scoreId: string }) => {
   const scoreInfoCand = fullScoreInfo.filter(
@@ -34,12 +34,9 @@ const FoundYtScore = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
 export const QueryScore = () => {
   const searchParams = useSearchParams();
   const scoreId = searchParams.get("scoreId"); // Get the 'id' query parameter
-  const router = useRouter();
-  const { getLink } = usePathTranslation();
 
   if (scoreId === undefined || typeof scoreId !== "string") {
-    router.push(getLink(`/404`));
-    return <></>;
+    return <To404 />;
   }
   return <YtScore scoreId={scoreId} />;
 };
