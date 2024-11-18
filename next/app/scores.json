@@ -5905,5 +5905,27 @@
     "name": "Si Muero Algún Día",
     "artist": "Paté de Fuá",
     "language": "spanish"
+  },
+  {
+    "keys": [-6],
+    "times": [[4, 4]],
+    "source": "21840088",
+    "videoId": "At4Kccy9Zog",
+    "measureMap": {"4": 3, "49": 36},
+    "fileName": "You_Are_My_Sunshine",
+    "name": "You Are My Sunshine",
+    "artist": "Norman Blake",
+    "language": "english"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "21856762",
+    "videoId": "At4Kccy9Zog",
+    "measureMap": {"6": 3, "74": 52},
+    "fileName": "You_Are_My_Sunshine_Chicken",
+    "name": "You Are My Sunshine",
+    "artist": "Little Chicken",
+    "language": "english"
   }
 ]

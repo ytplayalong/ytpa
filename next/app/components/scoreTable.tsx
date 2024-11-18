@@ -77,7 +77,7 @@ export const ScoreTable = ({
                       <div
                         style={{
                           height: tableRowHeight,
-                          lineHeight: tableRowHeight,
+                          alignContent: "center",
                         }}
                       >
                         {el[field]?.trim()}
