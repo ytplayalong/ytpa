@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { buttonStyle, inputStyle } from "../../util/styles";
+import { buttonAttrs, inputStyle } from "../../util/styles";
 import usePathTranslation from "@/i18n/hook";
+import { errorBackground } from "@/app/util/colors";
 
 export const validateEmail = (email: string) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format validation
@@ -89,7 +90,13 @@ export function UserDataForm<AddStateT>(props: {
   let errorComp = <></>;
   if (errors != null) {
     errorComp = (
-      <div style={{ backgroundColor: "red", marginTop: 10 }}>
+      <div
+        style={{
+          backgroundColor: errorBackground,
+          marginTop: 10,
+          ...inputStyle,
+        }}
+      >
         <h3 style={{ padding: 10 }}>{errors}</h3>
       </div>
     );
@@ -124,7 +131,7 @@ export function UserDataForm<AddStateT>(props: {
         })}
 
         <div className="row" style={{ marginTop: "0.5em" }}>
-          <button type="submit" style={buttonStyle}>
+          <button type="submit" {...buttonAttrs}>
             {t("submit")}
           </button>
         </div>

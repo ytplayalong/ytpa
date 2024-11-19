@@ -2,7 +2,8 @@
 
 import usePathTranslation from "@/i18n/hook";
 import { useForm, ValidationError } from "@formspree/react";
-import { buttonStyle, inputStyle } from "../util/styles";
+import { buttonAttrs, inputStyle } from "../util/styles";
+import { errorBackground } from "../util/colors";
 
 /** Form spree contact form component.
  *
@@ -15,6 +16,19 @@ export default function ContactForm() {
   if (state.succeeded) {
     return <p>Thanks for your submission!</p>;
   }
+
+  const errorComp = state.errors ? (
+    <div
+      style={{
+        backgroundColor: errorBackground,
+        marginTop: 10,
+        alignContent: "center",
+        ...inputStyle,
+      }}
+    >
+      <ValidationError errors={state.errors} style={{ padding: 10 }} />
+    </div>
+  ) : undefined;
 
   return (
     <>
@@ -70,11 +84,11 @@ export default function ContactForm() {
             type="submit"
             formMethod="POST"
             disabled={state.submitting}
-            style={buttonStyle}
+            {...buttonAttrs}
           >
             {t("submit")}
           </button>
-          <ValidationError errors={state.errors} />
+          {errorComp}
         </div>
       </form>
     </>
