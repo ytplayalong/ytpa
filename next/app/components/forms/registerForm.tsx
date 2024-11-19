@@ -2,6 +2,7 @@
 
 import usePathTranslation from "@/i18n/hook";
 import { FormFieldData, LoginData, UserDataForm } from "./util";
+import firebaseManager from "@/app/firebase";
 
 /** New user registration form. */
 export default function RegisterForm() {
@@ -16,8 +17,8 @@ export default function RegisterForm() {
     },
   ];
 
-  const registerUser = (data: LoginData) => {
-    console.log(data);
+  const registerUser = async (data: LoginData) => {
+    return await firebaseManager.signUp(data.email, data.password);
   };
   return (
     <UserDataForm

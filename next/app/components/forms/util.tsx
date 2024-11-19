@@ -48,7 +48,7 @@ export function UserDataForm<AddStateT>(props: {
   title: string;
   initState: AddStateT;
   addForms?: FormFieldData[];
-  onSubmit: (formData: FullState<LoginData>) => void;
+  onSubmit: (formData: FullState<LoginData>) => Promise<string | null>;
 }) {
   const { t } = usePathTranslation();
   const [formData, setFormData] = useState<FullState<LoginData>>({
@@ -56,21 +56,25 @@ export function UserDataForm<AddStateT>(props: {
     password: "",
     ...props.initState,
   });
-  const [errors, setErrors] = useState<{ email?: string }>({}); // Store validation errors
+  const [errors, setErrors] = useState<string | null>(null); // Store validation errors
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     console.log("Form Data:", formData);
     e.preventDefault();
 
     // Validate email before submission
     if (!validateEmail(formData.email)) {
-      setErrors({ email: "Please enter a valid email address." });
+      setErrors("Please enter a valid email address.");
       return; // Stop submission if validation fails
     }
 
     // More validation?
-
-    props.onSubmit(formData);
+    const err = await props.onSubmit(formData);
+    if (err != null) {
+      // Reset password field
+      setErrors(err);
+      setFormData((prevData) => ({ ...prevData, password: "" }));
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,10 +87,10 @@ export function UserDataForm<AddStateT>(props: {
   };
 
   let errorComp = <></>;
-  if (errors.email) {
+  if (errors != null) {
     errorComp = (
-      <div style={{ backgroundColor: "red" }}>
-        <h3>Invalid email.</h3>
+      <div style={{ backgroundColor: "red", marginTop: 10 }}>
+        <h3 style={{ padding: 10 }}>{errors}</h3>
       </div>
     );
   }
@@ -116,7 +120,7 @@ export function UserDataForm<AddStateT>(props: {
             onChange: handleChange,
             value: (formData as any)[el.name],
           };
-          return <FormField {...newFormAttrs} />;
+          return <FormField {...newFormAttrs} key={el.name} />;
         })}
 
         <div className="row" style={{ marginTop: "0.5em" }}>
