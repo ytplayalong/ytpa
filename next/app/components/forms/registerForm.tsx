@@ -3,11 +3,19 @@
 import usePathTranslation from "@/i18n/hook";
 import { FormFieldData, LoginData, UserDataForm } from "./util";
 import firebaseManager from "@/app/firebase";
+import Link from "next/link";
 
 /** New user registration form. */
 export default function RegisterForm() {
-  const { t } = usePathTranslation();
+  const { t, getLink } = usePathTranslation();
   const addForms: FormFieldData[] = [
+    {
+      type: "password",
+      name: "repeat_password",
+      label: t("repeat_password"),
+      value: "",
+      onChange: (e: any) => {},
+    },
     {
       type: "text",
       name: "name",
@@ -21,11 +29,17 @@ export default function RegisterForm() {
     return await firebaseManager.signUp(data.email, data.password);
   };
   return (
-    <UserDataForm
-      title={t("register")}
-      initState={{ name: "" }}
-      addForms={addForms}
-      onSubmit={registerUser}
-    />
+    <>
+      <UserDataForm
+        title={t("register")}
+        initState={{ name: "" }}
+        addForms={addForms}
+        onSubmit={registerUser}
+      />
+      <p>
+        Alread have an account?{" "}
+        <Link href={getLink("/login")}>Log in here.</Link>
+      </p>
+    </>
   );
 }

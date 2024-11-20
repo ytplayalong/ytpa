@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { buttonAttrs, inputStyle } from "../../util/styles";
 import usePathTranslation from "@/i18n/hook";
-import { errorBackground } from "@/app/util/colors";
+import { errorBackground, successBackground } from "@/app/util/colors";
 
 export const validateEmail = (email: string) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format validation
   return emailRegex.test(email);
 };
 
+export type ResponseData = {
+  error?: string;
+  info?: string;
+};
 export type FormFieldData = {
   type: "password" | "text";
   name: string;
@@ -49,7 +53,7 @@ export function UserDataForm<AddStateT>(props: {
   title: string;
   initState: AddStateT;
   addForms?: FormFieldData[];
-  onSubmit: (formData: FullState<LoginData>) => Promise<string | null>;
+  onSubmit: (formData: FullState<LoginData>) => Promise<ResponseData>;
 }) {
   const { t } = usePathTranslation();
   const [formData, setFormData] = useState<FullState<LoginData>>({
@@ -57,30 +61,29 @@ export function UserDataForm<AddStateT>(props: {
     password: "",
     ...props.initState,
   });
-  const [errors, setErrors] = useState<string | null>(null); // Store validation errors
+  const [errors, setErrors] = useState<ResponseData>({}); // Store validation errors
 
   const handleSubmit = async (e: React.FormEvent) => {
-    console.log("Form Data:", formData);
+    console.log("Submitting:", formData);
     e.preventDefault();
 
     // Validate email before submission
     if (!validateEmail(formData.email)) {
-      setErrors("Please enter a valid email address.");
+      setErrors({ error: "Please enter a valid email address." });
       return; // Stop submission if validation fails
     }
 
     // More validation?
     const err = await props.onSubmit(formData);
-    if (err != null) {
+    if (err.error) {
       // Reset password field
-      setErrors(err);
       setFormData((prevData) => ({ ...prevData, password: "" }));
     }
+    setErrors(err);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -88,7 +91,7 @@ export function UserDataForm<AddStateT>(props: {
   };
 
   let errorComp = <></>;
-  if (errors != null) {
+  if (errors.error) {
     errorComp = (
       <div
         style={{
@@ -97,7 +100,22 @@ export function UserDataForm<AddStateT>(props: {
           ...inputStyle,
         }}
       >
-        <h3 style={{ padding: 10 }}>{errors}</h3>
+        <h3 style={{ padding: 10 }}>{errors.error}</h3>
+      </div>
+    );
+  }
+
+  let infoComp = <></>;
+  if (errors.info) {
+    infoComp = (
+      <div
+        style={{
+          backgroundColor: successBackground,
+          marginTop: 10,
+          ...inputStyle,
+        }}
+      >
+        <h3 style={{ padding: 10 }}>{errors.info}</h3>
       </div>
     );
   }
@@ -137,6 +155,7 @@ export function UserDataForm<AddStateT>(props: {
         </div>
       </form>
       {errorComp}
+      {infoComp}
     </>
   );
 }

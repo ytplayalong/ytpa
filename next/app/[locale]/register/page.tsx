@@ -1,10 +1,10 @@
-import LoginForm from "@/app/components/forms/loginForm";
+import RegisterForm from "@/app/components/forms/registerForm";
 import { getStaticLocaleParams } from "@/i18n";
 
-export default function Login() {
+export default function Register() {
   return (
     <div className="container">
-      <LoginForm />
+      <RegisterForm />
     </div>
   );
 }
