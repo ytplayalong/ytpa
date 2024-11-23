@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
+    "firebase": "^11.0.1",
     "js-cookie": "^3.0.5",
     "next": "14.2.15",
     "opensheetmusicdisplay": "^1.8.9",
