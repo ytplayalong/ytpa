@@ -6,7 +6,7 @@ import firebaseManager from "../firebase";
 import { fullScoreInfo } from "../util/util";
 import { ScoreTable } from "./scoreTable";
 import usePathTranslation from "@/i18n/hook";
-import { LoginRequired, useLoginRequired } from "./loginRequired";
+import { useLoginRequired } from "./loginRequired";
 
 type FavoritesState = {
   loadingStatus: "loading" | "succeeded" | "failed";
