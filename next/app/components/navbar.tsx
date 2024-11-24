@@ -3,13 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Constants } from "../constants";
-import {
-  MdHelp,
-  MdLanguage,
-  MdList,
-  MdSettings,
-  MdFavorite,
-} from "react-icons/md";
+import { MdLanguage, MdList, MdSettings, MdFavorite } from "react-icons/md";
 import usePathTranslation from "@/i18n/hook";
 import { useState } from "react";
 import { LANGUAGES } from "@/i18n";
@@ -27,7 +21,6 @@ const navbarLinks = [
     key: "settingsTitle",
     icon: <MdSettings {...iconProps} />,
   },
-  { url: "/help", key: "helpTitle", icon: <MdHelp {...iconProps} /> },
 ].reverse();
 const defaultPageTitle = "YouTube Play-Along";
 

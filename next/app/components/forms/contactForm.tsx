@@ -72,7 +72,7 @@ export default function ContactForm() {
           </div>
           <div className="twocols rightcol">
             <textarea
-              style={{ ...inputStyle, resize: "vertical" }}
+              style={{ ...inputStyle, resize: "vertical", minHeight: "80px" }}
               name="message"
               id="message"
             />
