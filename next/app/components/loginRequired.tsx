@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+
 import usePathTranslation from "@/i18n/hook";
+
 import firebaseManager from "../firebase";
 
 /** Checks if the user is logged-in and returns a component that can be rendered

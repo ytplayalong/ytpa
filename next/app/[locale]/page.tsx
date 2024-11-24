@@ -1,4 +1,5 @@
 import { getStaticLocaleParams } from "@/i18n";
+
 import Home from "../components/home";
 import { containerInner } from "../util/styles";
 

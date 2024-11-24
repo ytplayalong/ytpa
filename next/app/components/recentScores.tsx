@@ -1,8 +1,9 @@
 "use client";
 
 import usePathTranslation from "@/i18n/hook";
-import { ScoreTable } from "./scoreTable";
+
 import { fullScoreInfo } from "../util/util";
+import { ScoreTable } from "./scoreTable";
 
 export const NewestScores = ({
   nMostRecentSongs,

@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { containerInner } from "../util/styles";
-import firebaseManager from "../firebase";
-import { fullScoreInfo } from "../util/util";
-import { ScoreTable } from "./scoreTable";
+
 import usePathTranslation from "@/i18n/hook";
+
+import firebaseManager from "../firebase";
+import { containerInner } from "../util/styles";
+import { fullScoreInfo } from "../util/util";
 import { useLoginRequired } from "./loginRequired";
+import { ScoreTable } from "./scoreTable";
 
 type FavoritesState = {
   loadingStatus: "loading" | "succeeded" | "failed";
@@ -31,14 +33,12 @@ export const Favorites = () => {
   };
   const wrap = (el: any) => {
     return (
-      <>
-        <div className="container">
-          <div style={containerInner}>
-            <h4>{t("favorites")}</h4>
-            {el}
-          </div>
+      <div className="container">
+        <div style={containerInner}>
+          <h4>{t("favorites")}</h4>
+          {el}
         </div>
-      </>
+      </div>
     );
   };
 

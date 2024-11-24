@@ -1,8 +1,9 @@
 "use client";
 
-import usePathTranslation from "@/i18n/hook";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+
+import usePathTranslation from "@/i18n/hook";
 
 /** Component that just redirects to the 404 page. */
 export const To404 = () => {

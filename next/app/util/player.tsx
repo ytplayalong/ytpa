@@ -1,7 +1,8 @@
-import YouTube from "react-youtube";
 import React, { useCallback, useRef } from "react";
-import { Player, playerSizePx } from "./util";
+import YouTube from "react-youtube";
+
 import { containerInner } from "./styles";
+import { Player, playerSizePx } from "./util";
 
 /** YouTube player hook. */
 export const useYoutubePlayer = (videoId: string) => {

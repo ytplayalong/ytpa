@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
+import { useEffect, useState } from "react";
+
+import useWindowDimensions from "../hooks/windowSize";
 import MonotonicCubicSpline from "../util/cubicSpline";
 import { MeasureMap } from "../util/util";
-import useWindowDimensions from "../hooks/windowSize";
 import { settingsManager } from "./settings";
 
 const fullW = 40000;

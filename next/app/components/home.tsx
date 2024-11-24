@@ -4,10 +4,12 @@ import Link from "next/link";
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
 import { Trans } from "react-i18next";
+
 import usePathTranslation from "@/i18n/hook";
-import { NewestScores } from "./recentScores";
-import { fullScoreInfo, getRandomScore } from "../util/util";
+
 import { containerInner } from "../util/styles";
+import { fullScoreInfo, getRandomScore } from "../util/util";
+import { NewestScores } from "./recentScores";
 
 const TRACKING_ID = "G-42SMWF6LRM";
 

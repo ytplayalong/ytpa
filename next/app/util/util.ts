@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+
 import { settingsManager } from "../components/settings";
 import scoreInfoJson from "../scores.json";
 

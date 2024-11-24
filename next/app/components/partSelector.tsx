@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { MovingSheet } from "./movingSheet";
+
+import usePathTranslation from "@/i18n/hook";
+
+import { DropdownComp } from "../util/dropdown";
+import { containerInner, distributedStyle, flexCentered } from "../util/styles";
 import {
-  MeasureMap,
-  Player,
-  ScoreInfo,
   getSingleXml,
+  MeasureMap,
   parseXml,
+  Player,
   playerSizePx,
+  ScoreInfo,
   transpose,
   transposeKeys,
 } from "../util/util";
+import { MovingSheet } from "./movingSheet";
 import { settingsManager } from "./settings";
-import { DropdownComp } from "../util/dropdown";
-import { containerInner, distributedStyle, flexCentered } from "../util/styles";
-import usePathTranslation from "@/i18n/hook";
 
 type PartSelectorState = {
   xml: Document;

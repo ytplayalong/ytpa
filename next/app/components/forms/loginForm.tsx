@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import usePathTranslation from "@/i18n/hook";
-import { LoginData, UserDataForm } from "./util";
+
 import firebaseManager from "@/app/firebase";
+import usePathTranslation from "@/i18n/hook";
+
+import { LoginData, UserDataForm } from "./util";
 
 /** New user registration form. */
 export default function LoginForm() {

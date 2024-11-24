@@ -1,4 +1,5 @@
 import "./globals.css";
+
 import { baseMetadata } from "./util/meta";
 
 export const metadata = baseMetadata;

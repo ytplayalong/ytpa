@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import cookie from "js-cookie";
+import React, { useEffect, useState } from "react";
+
 import { buttonAttrs, containerInner } from "../util/styles";
 
 const CookieConsentBanner = () => {

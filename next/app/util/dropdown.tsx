@@ -1,6 +1,8 @@
-import usePathTranslation from "@/i18n/hook";
 import Link from "next/link";
 import { useState } from "react";
+
+import usePathTranslation from "@/i18n/hook";
+
 import { borderRadius, buttonAttrs, buttonAttrsClass } from "./styles";
 
 const ddStyle: any = { position: "relative", display: "inline-block" };

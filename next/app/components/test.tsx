@@ -1,6 +1,7 @@
 "use client";
-import firebaseManager from "@/app/firebase";
 import { useEffect } from "react";
+
+import firebaseManager from "@/app/firebase";
 
 async function task() {
   const email = "test@test.com";

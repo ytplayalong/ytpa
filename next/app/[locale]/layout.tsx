@@ -1,8 +1,10 @@
+import { Inter } from "next/font/google";
+import { MdCopyright } from "react-icons/md";
+
 import CookieConsentBanner from "@/app/components/cookie";
 import NavigationBar from "@/app/components/navbar";
-import { Inter } from "next/font/google";
+
 import { baseMetadata } from "../util/meta";
-import { MdCopyright } from "react-icons/md";
 
 const inter = Inter({ subsets: ["latin"] });
 

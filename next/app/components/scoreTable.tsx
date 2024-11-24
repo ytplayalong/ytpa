@@ -1,7 +1,9 @@
-import usePathTranslation from "@/i18n/hook";
-import { ScoreInfo, SortBy, sortBy, intToKey } from "../util/util";
 import { MdMoreVert } from "react-icons/md";
+
+import usePathTranslation from "@/i18n/hook";
+
 import { useMultiDropDown } from "../util/dropdown";
+import { intToKey,ScoreInfo, SortBy, sortBy } from "../util/util";
 
 const tableRowHeight = "80px";
 const tableRowMargin = "6px";
@@ -65,7 +67,7 @@ export const ScoreTable = ({
 }) => {
   const { t, getLink } = usePathTranslation();
 
-  const definedOptions = options ? options : [];
+  const definedOptions = options || [];
   const optionDdItems = definedOptions.map((el) => {
     return { key: el.name, ...el };
   });
@@ -79,6 +81,7 @@ export const ScoreTable = ({
         alignItems: "center",
         justifyContent: "center",
       }}
+      role="button"
     >
       {el}
     </div>

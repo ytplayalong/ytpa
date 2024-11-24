@@ -1,9 +1,10 @@
 "use client";
 
-import { ScoreInfo, fullScoreInfo } from "../util/util";
-import { PartSelector } from "./partSelector";
-import { useYoutubePlayer } from "../util/player";
 import { useSearchParams } from "next/navigation";
+
+import { useYoutubePlayer } from "../util/player";
+import { fullScoreInfo,ScoreInfo } from "../util/util";
+import { PartSelector } from "./partSelector";
 import { To404 } from "./to404";
 
 export const YtScore = (props: { scoreId: string }) => {

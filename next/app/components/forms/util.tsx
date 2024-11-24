@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { buttonAttrs, inputStyle } from "../../util/styles";
-import usePathTranslation from "@/i18n/hook";
+
 import { errorBackground, successBackground } from "@/app/util/colors";
+import usePathTranslation from "@/i18n/hook";
+
+import { buttonAttrs, inputStyle } from "../../util/styles";
 
 export const validateEmail = (email: string) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format validation

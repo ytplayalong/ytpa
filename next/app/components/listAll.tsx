@@ -1,14 +1,16 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { strLatinise } from "../util/sorting";
-import TimeSignatures from "../timeSignatures.json";
+
 import usePathTranslation from "@/i18n/hook";
-import { ScoreTable } from "./scoreTable";
-import { distributedStyle, inputStyle } from "../util/styles";
-import { ScoreInfo, SortBy, getScoreInfo } from "../util/util";
-import useOverlay from "../util/overlay";
+
 import firebaseManager from "../firebase";
+import TimeSignatures from "../timeSignatures.json";
+import useOverlay from "../util/overlay";
+import { strLatinise } from "../util/sorting";
+import { distributedStyle, inputStyle } from "../util/styles";
+import { getScoreInfo,ScoreInfo, SortBy } from "../util/util";
+import { ScoreTable } from "./scoreTable";
 
 type SortSetting = { by: SortBy; ascending: boolean };
 type ScoreNameArtist = { name: string; artist: string };
