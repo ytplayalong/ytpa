@@ -1,13 +1,7 @@
-import { LoginRequired } from "@/app/components/loginRequired";
-import { containerInner } from "@/app/util/styles";
+import { Favorites } from "@/app/components/favorites";
 import { getStaticLocaleParams } from "@/i18n";
 
-export default function Favorites() {
-  const defaultComponent = (
-    <div className="container">
-      <div style={containerInner}>Not implemented.</div>
-    </div>
-  );
-  return <LoginRequired defaultComp={defaultComponent} />;
+export default function FavoritesPage() {
+  return <Favorites />;
 }
 export const generateStaticParams = getStaticLocaleParams;

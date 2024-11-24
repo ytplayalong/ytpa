@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Constants } from "../constants";
-import { MdHelp, MdLanguage, MdList, MdSettings } from "react-icons/md";
+import {
+  MdHelp,
+  MdLanguage,
+  MdList,
+  MdSettings,
+  MdFavorite,
+} from "react-icons/md";
 import usePathTranslation from "@/i18n/hook";
 import { useState } from "react";
 import { LANGUAGES } from "@/i18n";
@@ -14,6 +20,7 @@ const home = { url: "/", name: "Home" };
 const buttSize = 26;
 const iconProps = { size: buttSize, style: { marginRight: "0.5em" } };
 const navbarLinks = [
+  { url: "/favorites", key: "favorites", icon: <MdFavorite {...iconProps} /> },
   { url: "/listall", key: "allScores", icon: <MdList {...iconProps} /> },
   {
     url: "/settings",

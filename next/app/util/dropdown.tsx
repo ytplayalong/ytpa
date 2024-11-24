@@ -42,8 +42,8 @@ export const useDropDown = (
         {options.map((el, idx) => {
           let usedStyle = { ...elementStyle, style: { ...elementStyle.style } };
           if (idx === options.length - 1) {
-            usedStyle.style["border-bottom-left-radius"] = borderRadius;
-            usedStyle.style["border-bottom-right-radius"] = borderRadius;
+            usedStyle.style["borderBottomLeftRadius"] = borderRadius;
+            usedStyle.style["borderBottomRightRadius"] = borderRadius;
           } else {
             usedStyle.style["borderBottom"] = "3px solid #ccc";
           }

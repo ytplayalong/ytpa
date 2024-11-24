@@ -8,12 +8,11 @@ export const LoginRequired = (props: { defaultComp: any }) => {
   const { t, getLink } = usePathTranslation();
 
   const isLoggedIn = firebaseManager.userLoggedIn();
-  console.log(isLoggedIn);
   if (isLoggedIn) {
     return props.defaultComp;
   }
   return (
-    <div className="container">
+    <>
       <p>
         You need to log in to access this page.{" "}
         <Link href={getLink("/login")}>Log in here.</Link>
@@ -21,6 +20,6 @@ export const LoginRequired = (props: { defaultComp: any }) => {
       <p>
         No account yet? <Link href={getLink("/register")}>Register here.</Link>
       </p>
-    </div>
+    </>
   );
 };
