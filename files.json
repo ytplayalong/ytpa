@@ -4717,5 +4717,21 @@
     "name": "Combat circus",
     "artist": "Talco",
     "language": "instrumental"
+  },
+  {
+    "videoId": "8j9YzYZyEK8",
+    "measureMap": { "19": 6, "139": 58 },
+    "fileName": "El_Farol",
+    "name": "El Farol",
+    "artist": "Santana",
+    "language": "instrumental"
+  },
+  {
+    "videoId": "CZ-zGADsFSw",
+    "measureMap": { "2": 2, "79": 45 },
+    "fileName": "Potra_salvaje",
+    "name": "Potra salvaje",
+    "artist": "Isabel Aaiún",
+    "language": "spanish"
   }
 ]
