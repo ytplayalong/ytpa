@@ -229,7 +229,6 @@ export const ListScores = () => {
     if (!firebaseManager.userLoggedIn()) {
       overlay.open();
     }
-    console.log(`Want to favorite: ${scoreId}`);
     firebaseManager.addFavorite(scoreId);
   };
   const options = [{ name: "add to favorites", onClick: addToFavorites }];

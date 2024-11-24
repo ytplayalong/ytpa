@@ -4,14 +4,14 @@ import Link from "next/link";
 import usePathTranslation from "@/i18n/hook";
 import firebaseManager from "../firebase";
 
-export const LoginRequired = (props: { defaultComp: any }) => {
+/** Checks if the user is logged-in and returns a component that can be rendered
+ * if the user is not.
+ */
+export const useLoginRequired = () => {
   const { t, getLink } = usePathTranslation();
 
   const isLoggedIn = firebaseManager.userLoggedIn();
-  if (isLoggedIn) {
-    return props.defaultComp;
-  }
-  return (
+  const component = (
     <>
       <p>
         You need to log in to access this page.{" "}
@@ -22,4 +22,15 @@ export const LoginRequired = (props: { defaultComp: any }) => {
       </p>
     </>
   );
+
+  return { component, isLoggedIn };
+};
+
+/** Not used probably */
+export const LoginRequired = (props: { defaultComp: any }) => {
+  const { component, isLoggedIn } = useLoginRequired();
+  if (isLoggedIn) {
+    return props.defaultComp;
+  }
+  return component;
 };

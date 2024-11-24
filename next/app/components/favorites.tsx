@@ -6,7 +6,7 @@ import firebaseManager from "../firebase";
 import { fullScoreInfo } from "../util/util";
 import { ScoreTable } from "./scoreTable";
 import usePathTranslation from "@/i18n/hook";
-import { LoginRequired } from "./loginRequired";
+import { LoginRequired, useLoginRequired } from "./loginRequired";
 
 type FavoritesState = {
   loadingStatus: "loading" | "succeeded" | "failed";
@@ -20,11 +20,14 @@ const initStatus: FavoritesState = {
 
 export const Favorites = () => {
   const { t } = usePathTranslation();
+
+  const loginRequired = useLoginRequired();
   const [favorites, setFavorites] = useState<FavoritesState>(initStatus);
 
   const loadFavs = async () => {
     const loadedFavorites = await firebaseManager.getFavorites();
     setFavorites({ loadingStatus: "succeeded", favorites: loadedFavorites });
+    console.log("Loaded favorites");
   };
   const wrap = (el: any) => {
     return (
@@ -32,7 +35,7 @@ export const Favorites = () => {
         <div className="container">
           <div style={containerInner}>
             <h4>{t("favorites")}</h4>
-            <LoginRequired defaultComp={el} />
+            {el}
           </div>
         </div>
       </>
@@ -40,8 +43,15 @@ export const Favorites = () => {
   };
 
   useEffect(() => {
-    loadFavs();
+    if (loginRequired.isLoggedIn) {
+      loadFavs();
+    }
   }, [favorites.loadingStatus]);
+
+  if (!loginRequired.isLoggedIn) {
+    console.log("Loading favorites");
+    return wrap(loginRequired.component);
+  }
 
   if (favorites.loadingStatus == "loading") {
     return wrap("Loading");
