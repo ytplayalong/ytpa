@@ -27,7 +27,7 @@ class SettingsManager {
 
   private get(key: string, values: string[], defaultPos = 0) {
     const ret = this.getStorage()?.getItem(key);
-    return ret ? ret : values[defaultPos];
+    return ret ?? values[defaultPos];
   }
 
   /** Handling clef selection. */

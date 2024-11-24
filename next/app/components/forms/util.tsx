@@ -51,12 +51,14 @@ export const FormField = (props: FormFieldData) => {
 
 export type FullState<T> = T & LoginData;
 
-export function UserDataForm<AddStateT>(props: {
-  title: string;
-  initState: AddStateT;
-  addForms?: FormFieldData[];
-  onSubmit: (formData: FullState<LoginData>) => Promise<ResponseData>;
-}) {
+export function UserDataForm<AddStateT>(
+  props: Readonly<{
+    title: string;
+    initState: AddStateT;
+    addForms?: FormFieldData[];
+    onSubmit: (formData: FullState<LoginData>) => Promise<ResponseData>;
+  }>
+) {
   const { t } = usePathTranslation();
   const [formData, setFormData] = useState<FullState<LoginData>>({
     email: "",

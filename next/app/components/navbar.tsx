@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { MdFavorite,MdLanguage, MdList, MdSettings } from "react-icons/md";
+import { MdFavorite, MdLanguage, MdList, MdSettings } from "react-icons/md";
 
 import { LANGUAGES } from "@/i18n";
 import { getFlag } from "@/i18n/flags";

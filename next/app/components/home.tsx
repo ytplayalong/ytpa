@@ -7,7 +7,6 @@ import { Trans } from "react-i18next";
 
 import usePathTranslation from "@/i18n/hook";
 
-import { containerInner } from "../util/styles";
 import { fullScoreInfo, getRandomScore } from "../util/util";
 import { NewestScores } from "./recentScores";
 

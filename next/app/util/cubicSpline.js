@@ -1,6 +1,6 @@
 export default class MonotonicCubicSpline {
   constructor(x, y) {
-    var alpha,
+    let alpha,
       beta,
       delta,
       dist,
@@ -80,7 +80,7 @@ export default class MonotonicCubicSpline {
     this.m = m;
   }
   interpolate(x) {
-    var h, h00, h01, h10, h11, i, t, t2, t3, y, _ref;
+    let h, h00, h01, h10, h11, i, t, t2, t3, y, _ref;
     for (
       i = _ref = this.x.length - 2;
       _ref <= 0 ? i <= 0 : i >= 0;

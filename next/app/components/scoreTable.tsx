@@ -3,7 +3,7 @@ import { MdMoreVert } from "react-icons/md";
 import usePathTranslation from "@/i18n/hook";
 
 import { useMultiDropDown } from "../util/dropdown";
-import { intToKey,ScoreInfo, SortBy, sortBy } from "../util/util";
+import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
 
 const tableRowHeight = "80px";
 const tableRowMargin = "6px";
@@ -81,7 +81,6 @@ export const ScoreTable = ({
         alignItems: "center",
         justifyContent: "center",
       }}
-      role="button"
     >
       {el}
     </div>

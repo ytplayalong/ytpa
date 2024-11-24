@@ -123,7 +123,7 @@ const getScaleUpdate = (measure: any, fifths: number) => {
     return null;
   }
   const fifthsEl = fifthsEls[0];
-  const fifthsNum = parseInt(fifthsEl.textContent!);
+  const fifthsNum = parseInt(fifthsEl.textContent);
   let newFifths = fifthsNum + fifths;
 
   // Use scale with least sharps / flats
@@ -190,8 +190,8 @@ export const transpose = (
   // Change to bass clef if selected in settings
   if (clef === "Bass") {
     octave = octave - 1; // Set score one octave lower for bass clef
-    for (let k = 0; k < clefEl.children.length; ++k) {
-      const childEl = clefEl.children[k];
+    for (const element of clefEl.children) {
+      const childEl = element;
       const currTag = childEl.tagName;
       if (currTag === "sign") {
         childEl.textContent = "F";
@@ -203,8 +203,8 @@ export const transpose = (
   // TODO: Also change to treble if the current clef is a bass clef.
 
   let usedScale = null;
-  for (let measI = 0; measI < measures.length; ++measI) {
-    const currMeas = measures[measI];
+  for (const element of measures) {
+    const currMeas = element;
     const newScaleOrNull = getScaleUpdate(currMeas, fifths);
     if (newScaleOrNull !== null) {
       usedScale = newScaleOrNull;
@@ -212,8 +212,8 @@ export const transpose = (
     console.assert(usedScale !== null, "Invalid scale!");
 
     const elements = currMeas.getElementsByTagName("note");
-    for (let i = 0; i < elements.length; ++i) {
-      const noteEl = elements[i];
+    for (const element of elements) {
+      const noteEl = element;
       const el = noteEl.getElementsByTagName("pitch")[0];
       if (!el) {
         continue;
@@ -221,10 +221,10 @@ export const transpose = (
       const step = el.getElementsByTagName("step")[0];
       const oct = el.getElementsByTagName("octave")[0];
       const alter = el.getElementsByTagName("alter")[0];
-      const alterNum = alter ? Number.parseInt(alter.textContent!) : 0;
-      const octNum = Number.parseInt(oct.textContent!);
+      const alterNum = alter ? Number.parseInt(alter.textContent) : 0;
+      const octNum = Number.parseInt(oct.textContent);
       const [newPitch, newAlter, newOct] = increase(
-        step.textContent!,
+        step.textContent,
         octNum + octave,
         alterNum,
         chrom,
@@ -285,7 +285,7 @@ const addFingering = (xml: Document, noteEl: Element, val: string) => {
     noteEl.appendChild(lyric);
   } else {
     const notFound = noteEl.getElementsByTagName("notations")[0];
-    const notation = notFound ? notFound : xml.createElement("notations");
+    const notation = notFound || xml.createElement("notations");
     const tech = xml.createElement("technical");
     const fing = xml.createElement("fingering");
 
