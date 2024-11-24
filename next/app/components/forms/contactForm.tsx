@@ -1,9 +1,9 @@
 "use client";
 
+import { errorBackground } from "@/app/util/colors";
+import { buttonAttrs, inputStyle } from "@/app/util/styles";
 import usePathTranslation from "@/i18n/hook";
 import { useForm, ValidationError } from "@formspree/react";
-import { buttonAttrs, inputStyle } from "../util/styles";
-import { errorBackground } from "../util/colors";
 
 /** Form spree contact form component.
  *

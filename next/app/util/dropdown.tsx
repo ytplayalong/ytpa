@@ -16,7 +16,19 @@ const elementStyle = buttonAttrsClass({
 type DDItem = { name: any; key: string; url?: string; onClick?: VoidFunction };
 type DdProps = { options: DDItem[] };
 
-export const useDropDown = (label: any, options: DDItem[]) => {
+const defaultWrapper = (el: React.ReactElement, onClick: VoidFunction) => {
+  return (
+    <button {...buttonAttrs} onClick={onClick}>
+      {el} ▾
+    </button>
+  );
+};
+
+export const useDropDown = (
+  label: any,
+  options: DDItem[],
+  wrapper = defaultWrapper
+) => {
   const [isShown, setIsShown] = useState(false);
   const { getLink } = usePathTranslation();
 
@@ -25,9 +37,7 @@ export const useDropDown = (label: any, options: DDItem[]) => {
 
   return (
     <div style={ddStyle}>
-      <button {...buttonAttrs} onClick={onClick}>
-        {label} ▾
-      </button>
+      {wrapper(label, onClick)}
       <div style={contStyle}>
         {options.map((el, idx) => {
           let usedStyle = { ...elementStyle, style: { ...elementStyle.style } };
@@ -57,6 +67,63 @@ export const useDropDown = (label: any, options: DDItem[]) => {
       </div>
     </div>
   );
+};
+
+type MultiDDItem = {
+  name: any;
+  key: string;
+  onClick: (key: string) => void;
+};
+
+/** Multi-use dropdown menu.
+ *
+ * Returns a function that takes a key and creates a dropdown component.
+ * This key is passed to the onClick handlers.
+ * Using this function, many dropdowns can be created and used in the same component.
+ */
+export const useMultiDropDown = (
+  label: any,
+  options: MultiDDItem[],
+  wrapper = defaultWrapper,
+  baseElementStyle: any = {}
+) => {
+  const [isShown, setIsShown] = useState<string | null>(null);
+
+  return (key: string) => {
+    const toggleDd = () => setIsShown(isShown == key ? null : key);
+    const contStyle = {
+      ...ddContentStyle,
+      display: isShown == key ? "block" : "none",
+    };
+    return (
+      <div style={{ ...ddStyle, ...baseElementStyle }}>
+        {wrapper(label, toggleDd)}
+        <div style={contStyle}>
+          {options.map((el, idx) => {
+            let usedStyle = {
+              ...elementStyle,
+              style: { ...elementStyle.style },
+            };
+            if (idx === options.length - 1) {
+              usedStyle.style["border-bottom-left-radius"] = borderRadius;
+              usedStyle.style["border-bottom-right-radius"] = borderRadius;
+            } else {
+              usedStyle.style["borderBottom"] = "3px solid #ccc";
+            }
+            const onClick = () => {
+              el.onClick(key);
+              setIsShown(null);
+            };
+            return (
+              <button {...usedStyle} onClick={onClick} key={el.key}>
+                {el.name}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
 };
 
 export const DropdownComp = (props: React.PropsWithChildren<DdProps>) => {

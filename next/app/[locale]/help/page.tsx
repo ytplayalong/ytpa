@@ -1,4 +1,4 @@
-import ContactForm from "@/app/components/contactForm";
+import ContactForm from "@/app/components/forms/contactForm";
 import { containerInner } from "@/app/util/styles";
 import { getStaticLocaleParams } from "@/i18n";
 

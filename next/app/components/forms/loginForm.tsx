@@ -18,9 +18,6 @@ export default function LoginForm() {
       <p>
         No account yet? <Link href={getLink("/register")}>Register here.</Link>
       </p>
-      <p>
-        <Link href={getLink("/favorites")}>Favorites.</Link>
-      </p>
     </>
   );
 }
