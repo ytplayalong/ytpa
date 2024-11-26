@@ -6026,5 +6026,16 @@
     "name": "Same Kind of People",
     "artist": "Bukahara",
     "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "22023067",
+    "videoId": "HXr-1lBZun0",
+    "measureMap": {"1": 1, "111.5": 60},
+    "fileName": "Love_Anthem",
+    "name": "Love Anthem",
+    "artist": "Ibrahim Maalouf",
+    "language": "instrumental"
   }
 ]
