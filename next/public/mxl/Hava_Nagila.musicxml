@@ -5600,6 +5600,16 @@
         <type>whole</type>
         <accidental>sharp</accidental>
         </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>16</duration>
+        <type>whole</type>
+        </note>
       </measure>
     <measure number="99">
       <harmony print-frame="no">
@@ -5611,6 +5621,20 @@
       <note>
         <pitch>
           <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="start" />
+        <type>half</type>
+        <dot />
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>G</step>
           <octave>4</octave>
           </pitch>
         <duration>12</duration>
@@ -5635,6 +5659,19 @@
           </notations>
         </note>
       <note>
+        <chord />
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>2</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5642,6 +5679,15 @@
         <duration>2</duration>
         <type>eighth</type>
         <beam number="1">end</beam>
+        </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>2</duration>
+        <type>eighth</type>
         </note>
       </measure>
     <measure number="100">
@@ -5655,6 +5701,15 @@
         <pitch>
           <step>F</step>
           <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>16</duration>
+        <type>whole</type>
+        </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>A</step>
           <octave>4</octave>
           </pitch>
         <duration>16</duration>

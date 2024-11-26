@@ -3661,6 +3661,9 @@
         <duration>2</duration>
         <type>quarter</type>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="51">
       <attributes>

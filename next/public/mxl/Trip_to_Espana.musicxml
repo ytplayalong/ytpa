@@ -1755,6 +1755,9 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="26">
       <harmony print-frame="no">

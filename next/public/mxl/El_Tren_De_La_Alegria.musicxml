@@ -3707,13 +3707,9 @@
         </note>
       <note>
         <rest />
-        <duration>2</duration>
+        <duration>3</duration>
         <type>eighth</type>
-        </note>
-      <note>
-        <rest />
-        <duration>1</duration>
-        <type>16th</type>
+        <dot />
         </note>
       <note>
         <pitch>

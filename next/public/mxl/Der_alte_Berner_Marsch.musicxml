@@ -45,6 +45,14 @@
           </root>
         <kind>major</kind>
         </harmony>
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>quarter</beat-unit>
+            <per-minute>106</per-minute>
+            </metronome>
+          </direction-type>
+        </direction>
       <note>
         <pitch>
           <step>B</step>

@@ -833,10 +833,11 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <tied type="start" />
           </notations>
         </note>
       </measure>
@@ -853,10 +854,12 @@
           <octave>4</octave>
           </pitch>
         <duration>24</duration>
+        <tie type="stop" />
+        <tie type="start" />
         <type>half</type>
         <notations>
-          <slur type="stop" number="1" />
-          <slur type="start" placement="below" number="1" />
+          <tied type="stop" />
+          <tied type="start" />
           </notations>
         </note>
       <note>
@@ -865,10 +868,11 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="stop" />
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="stop" number="1" />
+          <tied type="stop" />
           </notations>
         </note>
       <note>
@@ -1076,10 +1080,11 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <tied type="start" />
           </notations>
         </note>
       </measure>
@@ -1090,9 +1095,10 @@
           <octave>4</octave>
           </pitch>
         <duration>24</duration>
+        <tie type="stop" />
         <type>half</type>
         <notations>
-          <slur type="stop" number="1" />
+          <tied type="stop" />
           </notations>
         </note>
       <note>
@@ -1835,10 +1841,11 @@
           <octave>5</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <tied type="start" />
           </notations>
         </note>
       </measure>
@@ -1855,9 +1862,10 @@
           <octave>5</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="stop" />
         <type>eighth</type>
         <notations>
-          <slur type="stop" number="1" />
+          <tied type="stop" />
           </notations>
         </note>
       <note>
@@ -2746,10 +2754,11 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <tied type="start" />
           </notations>
         </note>
       </measure>
@@ -2766,10 +2775,11 @@
           <octave>4</octave>
           </pitch>
         <duration>36</duration>
+        <tie type="stop" />
         <type>half</type>
         <dot />
         <notations>
-          <slur type="stop" number="1" />
+          <tied type="stop" />
           </notations>
         </note>
       <note>
@@ -2968,10 +2978,11 @@
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
+        <tie type="start" />
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <tied type="start" />
           </notations>
         </note>
       </measure>
@@ -2982,9 +2993,10 @@
           <octave>4</octave>
           </pitch>
         <duration>24</duration>
+        <tie type="stop" />
         <type>half</type>
         <notations>
-          <slur type="stop" number="1" />
+          <tied type="stop" />
           </notations>
         </note>
       <note>
