@@ -5982,5 +5982,38 @@
     "name": "Хмільна",
     "artist": "Борис Сичевський",
     "language": "ukrainian"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "22016092",
+    "videoId": "qIJqMixH2LU",
+    "measureMap": {"3": 3, "88": 56},
+    "fileName": "Jadore_Hardcore",
+    "name": "J'adore Hardcore",
+    "artist": "Scooter",
+    "language": "english"
+  },
+  {
+    "keys": [4, -4],
+    "times": [[4, 4], [3, 4]],
+    "source": "22018702",
+    "videoId": "TVcWTLeGmMc",
+    "measureMap": {"6": 3, "66.75": 51, "81.94": 67, "87": 71},
+    "fileName": "Envoys_of_Peace",
+    "name": "Envoys of Peace",
+    "artist": "In Legend",
+    "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "22019086",
+    "videoId": "ZlHyK3AlNGU",
+    "measureMap": {"6": 3, "61": 41},
+    "fileName": "Same_Kind_of_People",
+    "name": "Same Kind of People",
+    "artist": "Bukahara",
+    "language": "english"
   }
 ]
