@@ -43,17 +43,20 @@ export const Favorites = () => {
   };
 
   useEffect(() => {
-    if (loginRequired.isLoggedIn) {
+    if (loginRequired.user) {
       loadFavs();
     }
-  }, [favorites.loadingStatus]);
+  }, [favorites.loadingStatus, loginRequired.user]);
 
-  if (!loginRequired.isLoggedIn) {
-    console.log("Loading favorites");
+  if (loginRequired.user === null) {
+    console.log("Not logged-in");
     return wrap(loginRequired.component);
   }
 
-  if (favorites.loadingStatus == "loading") {
+  if (
+    favorites.loadingStatus === "loading" ||
+    loginRequired.user === undefined
+  ) {
     return wrap("Loading");
   }
 

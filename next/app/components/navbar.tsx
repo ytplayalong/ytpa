@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { MdFavorite, MdLanguage, MdList, MdSettings } from "react-icons/md";
+import {
+  MdAccountCircle,
+  MdFavorite,
+  MdLanguage,
+  MdList,
+  MdLogin,
+  MdSettings,
+} from "react-icons/md";
 
 import { LANGUAGES } from "@/i18n";
 import { getFlag } from "@/i18n/flags";
@@ -11,6 +18,7 @@ import usePathTranslation from "@/i18n/hook";
 
 import { Constants } from "../constants";
 import { containerInner, flexCentered } from "../util/styles";
+import { getCurrUsername, useCurrentUser } from "../firebase";
 
 const home = { url: "/", name: "Home" };
 const buttSize = 26;
@@ -53,9 +61,28 @@ const navStyle = {
 export default function NavigationBar() {
   const currentPage = usePathname();
   const { t, getLink, currentLang } = usePathTranslation();
+  const user = useCurrentUser();
+
+  const [langDDShown, setLangDDShown] = useState(false);
+
   const currentActiveLink = navbarLinks.filter((el) => el.url === currentPage);
   const label =
     currentActiveLink.length > 0 ? currentActiveLink[0].key : defaultPageTitle;
+
+  const getLinks = () => {
+    const login = {
+      url: "/login",
+      key: "login",
+      icon: <MdLogin {...iconProps} />,
+    };
+    const userName = getCurrUsername(user);
+    if (userName != null) {
+      login.icon = <MdAccountCircle {...iconProps} />;
+      login.key = userName;
+      return [login, ...navbarLinks];
+    }
+    return [login, ...navbarLinks];
+  };
 
   const navLogo = (
     <Link
@@ -71,8 +98,6 @@ export default function NavigationBar() {
       <img src="/YTPALogo.svg" height={imgH} alt="Youtube Play Along logo" />
     </Link>
   );
-
-  const [langDDShown, setDDShown] = useState(false);
 
   const ddLinkStyle: any = {
     color: "black",
@@ -98,7 +123,7 @@ export default function NavigationBar() {
     display: langDDShown ? "block" : "none",
     position: "absolute",
   };
-  const ddClicked = () => setDDShown(!langDDShown);
+  const ddClicked = () => setLangDDShown(!langDDShown);
 
   const ddStyle: any = {
     float: "right",
@@ -130,7 +155,7 @@ export default function NavigationBar() {
             <div style={contentStyle}>{ddElements}</div>
           </div>
         </div>
-        {navbarLinks.map((el) => {
+        {getLinks().map((el) => {
           const backgroundColor =
             el.url === currentPage
               ? Constants.navActiveBGCol
