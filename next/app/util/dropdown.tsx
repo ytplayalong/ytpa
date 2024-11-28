@@ -91,7 +91,7 @@ export const useMultiDropDown = (
 ) => {
   const [isShown, setIsShown] = useState<string | null>(null);
 
-  return (key: string) => {
+  const compCreator = (key: string) => {
     const toggleDd = () => setIsShown(isShown == key ? null : key);
     const contStyle = {
       ...ddContentStyle,
@@ -126,6 +126,7 @@ export const useMultiDropDown = (
       </div>
     );
   };
+  return compCreator;
 };
 
 export const DropdownComp = (props: React.PropsWithChildren<DdProps>) => {

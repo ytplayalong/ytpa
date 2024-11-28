@@ -1,10 +1,10 @@
+import Link from "next/link";
 import { MdMoreVert } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
 import { useMultiDropDown } from "../util/dropdown";
 import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
-import Link from "next/link";
 
 const tableRowHeight = "80px";
 const tableRowMargin = "6px";

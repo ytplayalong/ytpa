@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
-import { MdCopyright } from "react-icons/md";
 import Link from "next/link";
+import { MdCopyright } from "react-icons/md";
 
 import CookieConsentBanner from "@/app/components/cookie";
 import NavigationBar from "@/app/components/navbar";

@@ -17,8 +17,8 @@ import { getFlag } from "@/i18n/flags";
 import usePathTranslation from "@/i18n/hook";
 
 import { Constants } from "../constants";
-import { containerInnerLeftRight, flexCentered } from "../util/styles";
 import { getCurrUsername, useCurrentUser } from "../firebase";
+import { containerInnerLeftRight, flexCentered } from "../util/styles";
 
 const home = { url: "/", name: "Home" };
 const buttSize = 26;
