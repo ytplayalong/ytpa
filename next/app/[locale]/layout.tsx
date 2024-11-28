@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { MdCopyright } from "react-icons/md";
+import Link from "next/link";
 
 import CookieConsentBanner from "@/app/components/cookie";
 import NavigationBar from "@/app/components/navbar";
@@ -48,7 +49,7 @@ export default function RootLayout({
               paddingBottom: "2em",
             }}
           >
-            <MdCopyright /> <a href="https://ytpa.ch">YTPA.ch</a> {currentYear}
+            <MdCopyright /> <Link href="/">YTPA.ch</Link> {currentYear}
           </div>
         </div>
       </body>

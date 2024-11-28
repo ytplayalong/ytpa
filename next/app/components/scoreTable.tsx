@@ -4,6 +4,7 @@ import usePathTranslation from "@/i18n/hook";
 
 import { useMultiDropDown } from "../util/dropdown";
 import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
+import Link from "next/link";
 
 const tableRowHeight = "80px";
 const tableRowMargin = "6px";
@@ -34,7 +35,7 @@ const tdStyle = {
 /** Wrap table cell such that it links to the provided link. */
 const wrapLinkedCell = (inner: any, link: string) => {
   return (
-    <a href={link} style={tableLinkStyle}>
+    <Link style={tableLinkStyle} href={link}>
       <div
         style={{
           height: tableRowHeight,
@@ -43,7 +44,7 @@ const wrapLinkedCell = (inner: any, link: string) => {
       >
         {inner}
       </div>
-    </a>
+    </Link>
   );
 };
 
