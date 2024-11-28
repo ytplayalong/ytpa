@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   sendEmailVerification,
   signInWithEmailAndPassword,
+  signOut,
   User,
 } from "firebase/auth";
 import {
@@ -48,6 +49,14 @@ class FirebaseManager {
 
   getAuth() {
     return this.firebaseAuth;
+  }
+
+  async signOut() {
+    try {
+      await signOut(this.firebaseAuth);
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
   }
 
   /** Sign-in a user by email and password. */
@@ -95,13 +104,14 @@ class FirebaseManager {
 
     if (!loadedDoc.exists()) {
       console.log("creating new");
-      const newData = { stringList: [scoreId] };
+      const newData: DbUserData = { allFavorites: [scoreId] };
       await setDoc(userDocRef, newData);
     } else {
-      const data = loadedDoc.data();
-      const currentList = data.stringList || [];
+      const data = loadedDoc.data() as DbUserData;
+      const currentList = data.allFavorites || [];
       const updatedList = Array.from(new Set([...currentList, scoreId])); // No duplicates
-      await updateDoc(userDocRef, { stringList: updatedList });
+      const updatedData: DbUserData = { allFavorites: updatedList };
+      await updateDoc(userDocRef, updatedData);
     }
   }
 
@@ -111,8 +121,8 @@ class FirebaseManager {
     if (!loadedDoc.exists()) {
       return [];
     }
-    const data = loadedDoc.data();
-    const currentList: string[] = data.stringList || [];
+    const data = loadedDoc.data() as DbUserData;
+    const currentList: string[] = data.allFavorites || [];
     return currentList;
   }
 
@@ -120,10 +130,11 @@ class FirebaseManager {
     const userDocRef = this.getUserDoc();
     const loadedDoc = await getDoc(userDocRef);
     if (loadedDoc.exists()) {
-      const data = loadedDoc.data();
-      const currentList: string[] = data.stringList || [];
+      const data = loadedDoc.data() as DbUserData;
+      const currentList: string[] = data.allFavorites || [];
       const updatedList = currentList.filter((el) => el != scoreId);
-      await updateDoc(userDocRef, { stringList: updatedList });
+      const updatedData: DbUserData = { allFavorites: updatedList };
+      await updateDoc(userDocRef, updatedData);
     }
   }
 
@@ -157,6 +168,11 @@ const getName = (user: User) => {
   return email.split("@")[0];
 };
 
+/** Hook for usage of user.
+ *
+ * If the user is null, it is not logged-in. If it is undefined,
+ * it is not yet determined if he is logged in.
+ */
 export const useCurrentUser = () => {
   const [currentUser, setCurrentUser] = useState<User | null | undefined>(
     undefined
