@@ -185,7 +185,8 @@ export const getCurrUsername = (user: User | null | undefined) => {
   let userName: string | null = null;
   if (user) {
     userName = getName(user);
-  } else if (user === undefined) {
+  } else if (user === undefined && typeof window !== "undefined") {
+    console.log("Grabbing username from localstorage");
     const storedUsername = localStorage.getItem("username");
     if (storedUsername !== null) {
       userName = storedUsername;
