@@ -7,6 +7,7 @@ import usePathTranslation from "@/i18n/hook";
 import firebaseManager from "../firebase";
 import { containerInner } from "../util/styles";
 import { fullScoreInfo } from "../util/util";
+import { Loading } from "./loading";
 import { useLoginRequired } from "./loginRequired";
 import { ScoreTable } from "./scoreTable";
 
@@ -31,6 +32,7 @@ export const Favorites = () => {
     setFavorites({ loadingStatus: "succeeded", favorites: loadedFavorites });
     console.log("Loaded favorites");
   };
+  const title = t("favorites");
   const wrap = (el: any) => {
     return (
       <div className="container">
@@ -57,7 +59,7 @@ export const Favorites = () => {
     favorites.loadingStatus === "loading" ||
     loginRequired.user === undefined
   ) {
-    return wrap("Loading");
+    return <Loading title={title} addComp={true} />;
   }
 
   if (favorites.favorites.length == 0) {

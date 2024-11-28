@@ -14,6 +14,7 @@ import {
   transpose,
   transposeKeys,
 } from "../util/util";
+import { Loading } from "./loading";
 import { MovingSheet } from "./movingSheet";
 import { settingsManager } from "./settings";
 
@@ -259,9 +260,5 @@ export const PartSelector = ({
       </>
     );
   }
-  return (
-    <div className="container">
-      <div style={containerInner}>Loading...</div>
-    </div>
-  );
+  return <Loading />;
 };
