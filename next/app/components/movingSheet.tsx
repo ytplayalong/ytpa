@@ -107,8 +107,8 @@ const getInterpolator = (
   const nEntries = numEntries.length;
   let [currSec, currMeasIdx] = numEntries[0];
 
-  const secs = [];
-  const xVals = [];
+  const secs: number[] = [];
+  const xVals: number[] = [];
   for (let k = 0; k < nEntries - 1; ++k) {
     let [nextSec, nextMeasIdx] = numEntries[k + 1];
     const nextX = measureXList[nextMeasIdx - 1];
@@ -147,8 +147,18 @@ const getInterpolator = (
   // Create a Spline object
   const spline = new MonotonicCubicSpline(secs, xVals);
   return (val: number, fac: number) => {
+    // Handle extrapolation
+    let ipVal;
+    if (val <= secs[0]) {
+      ipVal = xVals[0];
+    } else if (val >= secs[secs.length - 1]) {
+      ipVal = xVals[xVals.length - 1];
+    } else {
+      // Ok, within interpolation interval
+      ipVal = spline.interpolate(val);
+    }
     const offset = anchorFactor * window.innerWidth;
-    return Math.max(0, spline.interpolate(val) * fac - offset);
+    return Math.max(0, ipVal * fac - offset);
   };
 };
 
@@ -203,7 +213,9 @@ export const MovingSheet = (props: {
         const posObj = settingsManager.isHorizontalMode()
           ? { x: position, y: 0 }
           : { x: 0, y: position };
-        setCurrPos(posObj);
+        if (posObj.x !== currPos.x || posObj.y !== currPos.y) {
+          setCurrPos(posObj);
+        }
       }, 20); // ms refresh.
 
       return () => {

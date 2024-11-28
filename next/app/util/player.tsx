@@ -9,7 +9,7 @@ export const useYoutubePlayer = (videoId: string) => {
   const playerRef = useRef<any>();
 
   const getTime = useCallback(async () => {
-    return await playerRef.current.getInternalPlayer().getCurrentTime();
+    return await playerRef.current?.getInternalPlayer().getCurrentTime();
   }, [playerRef]);
 
   const comp = (
