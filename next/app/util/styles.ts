@@ -38,5 +38,10 @@ export const flexCentered: any = {
 };
 
 export const containerInner: any = {
-  padding: "6px",
+  padding: "8px",
+};
+
+export const containerInnerLeftRight: any = {
+  paddingLeft: "8px",
+  paddingRight: "8px",
 };

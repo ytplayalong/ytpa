@@ -17,7 +17,7 @@ import { getFlag } from "@/i18n/flags";
 import usePathTranslation from "@/i18n/hook";
 
 import { Constants } from "../constants";
-import { containerInner, flexCentered } from "../util/styles";
+import { containerInnerLeftRight, flexCentered } from "../util/styles";
 import { getCurrUsername, useCurrentUser } from "../firebase";
 
 const home = { url: "/", name: "Home" };
@@ -134,7 +134,7 @@ export default function NavigationBar() {
 
   const newNav = (
     <nav className="container" style={navStyle}>
-      <div style={containerInner}>
+      <div style={containerInnerLeftRight}>
         {navLogo}
         <div style={{ ...baseNavEl, float: "left" }}>{label}</div>
         <div className="hoverlink" style={ddStyle}>
