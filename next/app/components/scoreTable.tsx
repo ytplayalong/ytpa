@@ -5,6 +5,8 @@ import usePathTranslation from "@/i18n/hook";
 
 import { useMultiDropDown } from "../util/dropdown";
 import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
+import useOverlay from "../util/overlay";
+import firebaseManager from "../firebase";
 
 const tableRowHeight = "80px";
 const tableRowMargin = "6px";
@@ -51,6 +53,20 @@ const wrapLinkedCell = (inner: any, link: string) => {
 export type TableEntryOption = {
   name: string;
   onClick: (scoreId: string) => void;
+};
+
+export const useFavoriteOption = () => {
+  const { t } = usePathTranslation();
+  const overlay = useOverlay(t("notLoggedIn"));
+
+  const addToFavorites = (scoreId: string) => {
+    if (!firebaseManager.userLoggedIn()) {
+      overlay.open();
+    }
+    firebaseManager.addFavorite(scoreId);
+  };
+  const options = [{ name: t("addToFavorites"), onClick: addToFavorites }];
+  return { options, overlay: overlay.component };
 };
 
 export const ScoreTable = ({

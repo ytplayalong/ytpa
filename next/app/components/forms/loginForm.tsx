@@ -26,9 +26,11 @@ export default function LoginForm() {
     const onLogout = () => firebaseManager.signOut();
     return (
       <>
-        <h4>Logged-in as {getCurrUsername(user)}</h4>
+        <h4>
+          {t("loggedInAs")} {getCurrUsername(user)}
+        </h4>
         <button {...buttonAttrs} onClick={onLogout}>
-          Log Out
+          {t("logout")}
         </button>
       </>
     );
@@ -38,10 +40,10 @@ export default function LoginForm() {
       <>
         <UserDataForm title={titleStr} initState={{}} onSubmit={loginUser} />
         <p>
-          No account yet?{" "}
-          <Link href={getLink("/register")}>Register here.</Link>
+          {t("noAccount")}{" "}
+          <Link href={getLink("/register")}>{t("registerHere")}</Link>
         </p>
-        <p>Forgot your password? TODO</p>
+        <p>{t("forgotPassword")} TODO</p>
       </>
     );
   }

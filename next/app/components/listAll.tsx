@@ -4,13 +4,11 @@ import { Fragment, useState } from "react";
 
 import usePathTranslation from "@/i18n/hook";
 
-import firebaseManager from "../firebase";
 import TimeSignatures from "../timeSignatures.json";
-import useOverlay from "../util/overlay";
 import { strLatinise } from "../util/sorting";
 import { distributedStyle, inputStyle } from "../util/styles";
-import { getScoreInfo,ScoreInfo, SortBy } from "../util/util";
-import { ScoreTable } from "./scoreTable";
+import { getScoreInfo, ScoreInfo, SortBy } from "../util/util";
+import { ScoreTable, useFavoriteOption } from "./scoreTable";
 
 type SortSetting = { by: SortBy; ascending: boolean };
 type ScoreNameArtist = { name: string; artist: string };
@@ -225,17 +223,11 @@ const useProcessedScores = () => {
 
 /** Lists all available scores. */
 export const ListScores = () => {
-  const overlay = useOverlay("You are not logged in.");
   const { scores, comp, sortInfo } = useProcessedScores();
-  const addToFavorites = (scoreId: string) => {
-    if (!firebaseManager.userLoggedIn()) {
-      overlay.open();
-    }
-    firebaseManager.addFavorite(scoreId);
-  };
-  const options = [{ name: "add to favorites", onClick: addToFavorites }];
+
+  const favOpt = useFavoriteOption();
   const scoreTable = (
-    <ScoreTable scores={scores} sortInfo={sortInfo} options={options} />
+    <ScoreTable scores={scores} sortInfo={sortInfo} options={favOpt.options} />
   );
 
   const { t } = usePathTranslation();
@@ -245,7 +237,7 @@ export const ListScores = () => {
       {comp}
       <div style={{ paddingTop: "2em", paddingBottom: "1em" }}>{totScores}</div>
       {scoreTable}
-      {overlay.component}
+      {favOpt.overlay}
     </>
   );
 };

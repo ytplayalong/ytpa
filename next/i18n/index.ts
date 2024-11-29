@@ -3,11 +3,18 @@ export const RESSOURCES = {
     translation: {
       langName: "English",
       language: "Language",
+      loading: "Loading...",
       helpTitle: "Help",
       favorites: "Favorites",
       login: "Login",
+      loggedInAs: "Logged-in as",
+      notLoggedIn: "Not logged-in.",
+      logout: "Log out",
+      noAccount: "No account?",
       register: "Register",
+      registerHere: "Register here",
       password: "Password",
+      forgotPassword: "Forgot your password?",
       settingsTitle: "Settings",
       instrumentKey: "Instrument Tuning",
       instrumentKeyShort: "Tuning",
@@ -54,12 +61,19 @@ export const RESSOURCES = {
     translation: {
       langName: "Español",
       language: "Lenguaje",
+      loading: "Cargando...",
       helpTitle: "Ayuda",
       settingsTitle: "Ajustes",
       favorites: "Favoritos",
       login: "Iniciar",
+      loggedInAs: "Conectado como",
+      notLoggedIn: "No conectado.",
+      logout: "Cerrar sesión",
+      noAccount: "¿No cuenta de usuario?",
       register: "Registrar",
+      registerHere: "Registrar aqui",
       password: "Contraseña",
+      forgotPassword: "¿Olvidó su contraseña?",
       instrumentKey: "Afinación de instrumento",
       instrumentKeyShort: "Afinación",
       octave: "Octava",
@@ -104,11 +118,18 @@ export const RESSOURCES = {
     translation: {
       langName: "Deutsch",
       language: "Sprache",
+      loading: "Lädt...",
       helpTitle: "Hilfe",
       favorites: "Favoriten",
       login: "Anmelden",
+      loggedInAs: "Eingeloggt als",
+      notLoggedIn: "Nicht eingeloggt.",
+      logout: "Abmelden",
+      noAccount: "Kein Benutzerkonto?",
       register: "Registrieren",
+      registerHere: "Hier registrieren",
       password: "Passwort",
+      forgotPassword: "Passwort vergessen?",
       settingsTitle: "Einstellungen",
       instrumentKey: "Instrumentenstimmung",
       instrumentKeyShort: "Stimmung",
@@ -152,7 +173,7 @@ export const RESSOURCES = {
   },
 };
 
-export const LANGUAGES = Object.keys(RESSOURCES) as string[];
+export const LANGUAGES = Object.keys(RESSOURCES);
 export const defaultLocale = "en";
 
 export const getStaticLocaleParams = () => {

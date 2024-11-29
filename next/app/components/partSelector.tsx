@@ -6,7 +6,6 @@ import { DropdownComp } from "../util/dropdown";
 import { containerInner, distributedStyle, flexCentered } from "../util/styles";
 import {
   getSingleXml,
-  MeasureMap,
   parseXml,
   Player,
   playerSizePx,
@@ -79,10 +78,11 @@ export const getParts = (xml: Document) => {
   const scorePwXml = getSingleXml(xml, "score-partwise");
   const parts = [];
   const els = scorePwXml.getElementsByTagName("score-part");
-  for (let i = 0; i < els.length; ++i) {
+
+  for (const element of els) {
     parts.push({
-      id: els[i].id,
-      name: els[i].getElementsByTagName("part-name")[0].textContent!,
+      id: element.id,
+      name: element.getElementsByTagName("part-name")[0].textContent!,
     });
   }
   return parts;
