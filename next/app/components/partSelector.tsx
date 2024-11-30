@@ -3,7 +3,12 @@ import { useEffect, useState } from "react";
 import usePathTranslation from "@/i18n/hook";
 
 import { DropdownComp } from "../util/dropdown";
-import { containerInner, distributedStyle, flexCentered } from "../util/styles";
+import {
+  buttonAttrs,
+  containerInner,
+  distributedStyle,
+  flexCentered,
+} from "../util/styles";
 import {
   getSingleXml,
   parseXml,
@@ -16,6 +21,8 @@ import {
 import { Loading } from "./loading";
 import { MovingSheet } from "./movingSheet";
 import { settingsManager } from "./settings";
+import { useFavoriteOption } from "./scoreTable";
+import { MdMoreVert } from "react-icons/md";
 
 type PartSelectorState = {
   xml: Document;
@@ -104,6 +111,7 @@ export const PartSelector = ({
   const fileName = `/mxl/${scoreInfo.fileName}.musicxml`;
   const mscComUrl = `https://musescore.com/user/83726533/scores/${scoreInfo.source}`;
 
+  const fav = useFavoriteOption();
   const { t } = usePathTranslation();
   const [origXmlAndParts, setOrigXmlAndParts] =
     useState<null | PartSelectorState>(null);
@@ -194,9 +202,35 @@ export const PartSelector = ({
       >{`${keyTxt}: ${currPitch}`}</DropdownComp>
     );
 
+    // Add button that opens a dropdown with more options
+    // Especially adding the current piece to favorites.
+    const fo = fav.options[0];
+    const favOpt = {
+      ...fo,
+      onClick: () => fo.onClick(scoreInfo.videoId),
+      key: "addFav",
+    };
+    const butAtrs = {
+      ...buttonAttrs,
+      style: { ...buttonAttrs.style, minWidth: "30px" },
+    };
+    const faWrapper = (label: string, onClick: VoidFunction) => {
+      return (
+        <button onClick={onClick} {...butAtrs}>
+          <MdMoreVert />{" "}
+        </button>
+      );
+    };
+    const addToFavButt = (
+      <DropdownComp options={[favOpt]} wrapper={faWrapper}>
+        ...
+      </DropdownComp>
+    );
+
     // (Part and) pitch selector dropdowns
     const partSelectorDD = (
       <div style={flexCentered}>
+        {addToFavButt}
         {pitchSelector}
         {octaveChooser}
       </div>
@@ -257,8 +291,9 @@ export const PartSelector = ({
         {player.comp}
         {partInfo}
         {score}
+        {fav.overlay}
       </>
     );
   }
-  return <Loading />;
+  return <Loading addComp={true} />;
 };

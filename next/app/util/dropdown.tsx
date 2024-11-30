@@ -16,7 +16,7 @@ const elementStyle = buttonAttrsClass({
 });
 
 type DDItem = { name: any; key: string; url?: string; onClick?: VoidFunction };
-type DdProps = { options: DDItem[] };
+type DdProps = { options: DDItem[]; wrapper?: any };
 
 const defaultWrapper = (el: React.ReactElement, onClick: VoidFunction) => {
   return (
@@ -130,5 +130,5 @@ export const useMultiDropDown = (
 };
 
 export const DropdownComp = (props: React.PropsWithChildren<DdProps>) => {
-  return useDropDown(props.children, props.options);
+  return useDropDown(props.children, props.options, props.wrapper);
 };
