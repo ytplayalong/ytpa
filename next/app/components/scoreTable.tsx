@@ -3,10 +3,10 @@ import { MdMoreVert } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
-import { useMultiDropDown } from "../util/dropdown";
-import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
-import useOverlay from "../util/overlay";
 import firebaseManager from "../firebase";
+import { useMultiDropDown } from "../util/dropdown";
+import useOverlay from "../util/overlay";
+import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
 
 const tableRowHeight = "80px";
 const tableRowMargin = "6px";

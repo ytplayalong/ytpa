@@ -1,11 +1,9 @@
-import { TestComp } from "@/app/components/test";
 import { containerInner } from "@/app/util/styles";
 import { getStaticLocaleParams } from "@/i18n";
 
 export default function Spotify() {
   return (
     <div className="container">
-      <TestComp />
       <div style={containerInner}>
         <h2>Spotify test</h2>
         <iframe

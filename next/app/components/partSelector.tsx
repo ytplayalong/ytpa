@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { MdMoreVert } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
@@ -20,9 +21,8 @@ import {
 } from "../util/util";
 import { Loading } from "./loading";
 import { MovingSheet } from "./movingSheet";
-import { settingsManager } from "./settings";
 import { useFavoriteOption } from "./scoreTable";
-import { MdMoreVert } from "react-icons/md";
+import { settingsManager } from "./settings";
 
 type PartSelectorState = {
   xml: Document;

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-import { buttonAttrs } from "./styles";
 import usePathTranslation from "@/i18n/hook";
+
+import { buttonAttrs } from "./styles";
 
 /** Hook that provides an overlay.
  *
