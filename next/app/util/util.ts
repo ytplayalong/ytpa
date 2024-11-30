@@ -221,10 +221,10 @@ export const transpose = (
       const step = el.getElementsByTagName("step")[0];
       const oct = el.getElementsByTagName("octave")[0];
       const alter = el.getElementsByTagName("alter")[0];
-      const alterNum = alter ? Number.parseInt(alter.textContent) : 0;
-      const octNum = Number.parseInt(oct.textContent);
+      const alterNum = alter ? Number.parseInt(alter.textContent!) : 0;
+      const octNum = Number.parseInt(oct.textContent!);
       const [newPitch, newAlter, newOct] = increase(
-        step.textContent,
+        step.textContent!,
         octNum + octave,
         alterNum,
         chrom,
