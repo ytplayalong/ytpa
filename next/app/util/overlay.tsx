@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 
 import { buttonAttrs } from "./styles";
+import usePathTranslation from "@/i18n/hook";
 
 /** Hook that provides an overlay.
  *
- * It has a simple button the closes it.
+ * It has a simple button that closes it.
  *
  * Returns the component and a function that opens the overlay.
  */
 const useOverlay = (msg: string) => {
   const [isVisible, setIsVisible] = useState(false); // State to toggle overlay visibility
+
+  const { t } = usePathTranslation();
 
   const handleClose = () => {
     setIsVisible(false); // Hides the overlay
@@ -45,7 +48,7 @@ const useOverlay = (msg: string) => {
           >
             <p style={{ margin: "0 0 20px" }}>{msg}</p>
             <button onClick={handleClose} {...buttonAttrs}>
-              Close
+              {t("close")}
             </button>
           </div>
         </div>

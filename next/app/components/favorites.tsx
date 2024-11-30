@@ -76,7 +76,7 @@ export const Favorites = () => {
     setFavorites({ favorites: newFav, loadingStatus: "succeeded" });
   };
   const removeOptions = [
-    { name: "Remove from favorites", onClick: removeFromFavorites },
+    { name: t("favoritesRemove"), onClick: removeFromFavorites },
   ];
   const favoriteScores = <ScoreTable scores={scores} options={removeOptions} />;
 

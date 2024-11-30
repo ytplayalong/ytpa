@@ -14,7 +14,7 @@ export default function RegisterForm() {
     {
       type: "password",
       name: "repeat_password",
-      label: t("repeat_password"),
+      label: t("passwordConfirm"),
       value: "",
       onChange: (e: any) => {},
     },
@@ -39,8 +39,8 @@ export default function RegisterForm() {
         onSubmit={registerUser}
       />
       <p>
-        Alread have an account?{" "}
-        <Link href={getLink("/login")}>Log in here.</Link>
+        {t("alreadyHaveAccount")}{" "}
+        <Link href={getLink("/login")}>{t("loginHere")}</Link>
       </p>
     </>
   );

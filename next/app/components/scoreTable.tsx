@@ -65,7 +65,7 @@ export const useFavoriteOption = () => {
     }
     firebaseManager.addFavorite(scoreId);
   };
-  const options = [{ name: t("addToFavorites"), onClick: addToFavorites }];
+  const options = [{ name: t("favoritesAdd"), onClick: addToFavorites }];
   return { options, overlay: overlay.component };
 };
 

@@ -16,11 +16,12 @@ export const useLoginRequired = () => {
   const component = (
     <>
       <p>
-        You need to log in to access this page.{" "}
-        <Link href={getLink("/login")}>Log in here.</Link>
+        {t("loginRequiredForPageAccess")}{" "}
+        <Link href={getLink("/login")}>{t("loginHere")}</Link>
       </p>
       <p>
-        No account yet? <Link href={getLink("/register")}>Register here.</Link>
+        {t("alreadyHaveAccount")}{" "}
+        <Link href={getLink("/register")}>{t("registerHere")}</Link>
       </p>
     </>
   );
