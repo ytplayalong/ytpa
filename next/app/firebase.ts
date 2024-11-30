@@ -23,6 +23,10 @@ import { useEffect, useState } from "react";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {};
 
+type DbUserData = {
+  allFavorites: string[];
+};
+
 class FirebaseManager {
   private readonly firebaseAuth: Auth;
   private readonly firestoreDb: Firestore;
