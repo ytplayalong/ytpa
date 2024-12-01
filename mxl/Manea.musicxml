@@ -577,6 +577,13 @@
         </barline>
       </measure>
     <measure number="9">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <rest />
         <duration>2</duration>
@@ -885,6 +892,12 @@
         </note>
       </measure>
     <measure number="11">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <rest />
         <duration>2</duration>
@@ -1449,6 +1462,13 @@
         </note>
       </measure>
     <measure number="15">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <rest />
         <duration>2</duration>

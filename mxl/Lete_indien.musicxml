@@ -925,9 +925,6 @@
         <type>16th</type>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <notations>
-          <slur type="start" placement="below" number="1" />
-          </notations>
         </note>
       <note>
         <pitch>
@@ -938,9 +935,6 @@
         <type>16th</type>
         <beam number="1">continue</beam>
         <beam number="2">end</beam>
-        <notations>
-          <slur type="stop" number="1" />
-          </notations>
         </note>
       <note>
         <pitch>

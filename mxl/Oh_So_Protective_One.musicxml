@@ -2763,7 +2763,7 @@
         </harmony>
       <note>
         <pitch>
-          <step>A</step>
+          <step>F</step>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -2772,7 +2772,7 @@
         </note>
       <note>
         <pitch>
-          <step>A</step>
+          <step>F</step>
           <octave>4</octave>
           </pitch>
         <duration>2</duration>
@@ -2960,6 +2960,9 @@
           </pitch>
         <duration>2</duration>
         <type>eighth</type>
+        <notations>
+          <slur type="start" placement="below" number="1" />
+          </notations>
         </note>
       <note>
         <pitch>
@@ -2969,6 +2972,9 @@
         <duration>6</duration>
         <type>quarter</type>
         <dot />
+        <notations>
+          <slur type="stop" number="1" />
+          </notations>
         </note>
       <note>
         <rest />
