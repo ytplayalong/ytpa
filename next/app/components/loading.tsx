@@ -1,3 +1,4 @@
+"use client";
 import usePathTranslation from "@/i18n/hook";
 
 import { containerInner } from "../util/styles";
