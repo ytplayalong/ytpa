@@ -75,6 +75,7 @@ const getInterpolator = (
     let yValBetter: number[] = [];
     measureYList.forEach((el, ct) => {
       if (isNaN(el)) {
+        console.log("Found Nan :(");
         return; // Ignore
       }
       if (el != prevVal) {
@@ -213,9 +214,7 @@ export const MovingSheet = (props: {
         const posObj = settingsManager.isHorizontalMode()
           ? { x: position, y: 0 }
           : { x: 0, y: position };
-        if (posObj.x !== currPos.x || posObj.y !== currPos.y) {
-          setCurrPos(posObj);
-        }
+        setCurrPos(posObj);
       }, 20); // ms refresh.
 
       return () => {
