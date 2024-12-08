@@ -5823,7 +5823,7 @@
     "times": [[4, 4]],
     "source": "21395590",
     "videoId": "_a1umxX3nlI",
-    "measureMap": {"3": 3, "71": 52},
+    "measureMap": {"3": 3, "166": 120},
     "fileName": "Ringispil",
     "name": "Ringišpil",
     "artist": "Šuma Čovjek",
@@ -6037,5 +6037,38 @@
     "name": "Love Anthem",
     "artist": "Ibrahim Maalouf",
     "language": "instrumental"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "22257532",
+    "videoId": "4fgzu9Fo66Y",
+    "measureMap": {"4": 2, "88": 46},
+    "fileName": "Magnetised",
+    "name": "Magnetised",
+    "artist": "Tom Odell",
+    "language": "english"
+  },
+  {
+    "keys": [2],
+    "times": [[6, 8]],
+    "source": "22257496",
+    "videoId": "FGmwYH_AlRM",
+    "measureMap": {"1": 2, "124": 65},
+    "fileName": "Planxty_Irwin",
+    "name": "Planxty Irwin",
+    "artist": "The Dubliners",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-1],
+    "times": [[6, 8]],
+    "source": "22258270",
+    "videoId": "rBrd_3VMC3c",
+    "measureMap": {"2": 2, "111": 67, "120": 72},
+    "fileName": "What_A_Wonderful_World",
+    "name": "What A Wonderful World",
+    "artist": "Louis Armstrong",
+    "language": "english"
   }
 ]
