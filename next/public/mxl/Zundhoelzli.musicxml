@@ -2,7 +2,8 @@
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="3.1">
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">Mani Matter</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <supports element="accidental" type="yes" />
