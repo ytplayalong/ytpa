@@ -4,17 +4,22 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 import zipfile
 import os
+import argparse
 
 
 class MsczFileManager:
+    """Read, modify and write compressed musescore files."""
+
     _path: Path
     _packed_xml_name: str | None = None
     _parsed_xml: ET.Element | None = None
 
     def __init__(self, path: Path):
+        """Constructor."""
         self._path = path
 
     def read_mscz(self) -> ET.Element | None:
+        """Read a file."""
         xml_data: bytes | None = None
         with zipfile.ZipFile(self._path, "r") as archive:
             for file in archive.filelist:
@@ -29,6 +34,7 @@ class MsczFileManager:
         return self._parsed_xml
 
     def get_meta_tags(self):
+        """Read meta tags from XML."""
         if self._parsed_xml is None:
             return None
         meta_tags = self._parsed_xml.findall(".//metaTag")
@@ -40,6 +46,7 @@ class MsczFileManager:
         return tag_dict
 
     def get_text(self):
+        """Read text from boxes in XML."""
         vbox_texts = self._parsed_xml.findall(".//VBox/Text")
         out_dict: dict[str, str] = {}
         for tag in vbox_texts:
@@ -62,6 +69,11 @@ class MsczFileManager:
             print(f"Could not set {k} to {v}")
 
     def write(self, out_path: Path | None = None):
+        """Write to file.
+
+        Args:
+            out_path: File output path. If None, the read file will be replaced.
+        """
         save_path = self._path if out_path is None else out_path
 
         _header = b'<?xml version="1.0" encoding="UTF-8"?>'
@@ -88,11 +100,15 @@ class MsczFileManager:
         os.replace(temp_zip_path, save_path)
         return save_path
 
-    pass
 
-
-# Test
+# Update meta tags in all files in a directory
 if __name__ == "__main__":
+
+    # Create the parser
+    parser = argparse.ArgumentParser(description="Process a directory path.")
+    parser.add_argument("process_dir", type=str, help="Path to the directory")
+    args = parser.parse_args()
+    score_dir = Path(args.process_dir)
 
     for ct, score_file in enumerate(score_dir.iterdir()):
         print(f"Processing file {ct}")
