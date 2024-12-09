@@ -39,6 +39,15 @@ class MsczFileManager:
             tag_dict[name] = text
         return tag_dict
 
+    def get_text(self):
+        vbox_texts = self._parsed_xml.findall(".//VBox/Text")
+        out_dict: dict[str, str] = {}
+        for tag in vbox_texts:
+            style = tag.find("style").text
+            text = tag.find("text").text
+            out_dict[style] = text
+        return out_dict
+
     def set_meta_tags(self, set_tags: dict[str, str]):
         """Set meta tags."""
         copied_tags = {**set_tags}
@@ -52,7 +61,7 @@ class MsczFileManager:
         for k, v in copied_tags.items():
             print(f"Could not set {k} to {v}")
 
-    def write(self, out_path: Path | None):
+    def write(self, out_path: Path | None = None):
         save_path = self._path if out_path is None else out_path
 
         _header = b'<?xml version="1.0" encoding="UTF-8"?>'
@@ -80,3 +89,35 @@ class MsczFileManager:
         return save_path
 
     pass
+
+
+# Test
+if __name__ == "__main__":
+
+    for ct, score_file in enumerate(score_dir.iterdir()):
+        print(f"Processing file {ct}")
+        if score_file.suffix != ".mscz":
+            continue
+
+        file_manager = MsczFileManager(score_file)
+        file_manager.read_mscz()
+        meta_tags = file_manager.get_meta_tags()
+        set_tags = {"copyright": "Play-Along this score on YouTube on https://ytpa.ch"}
+
+        # Extract title and composer from text boxes
+        text_tags = file_manager.get_text()
+        if "Title" in text_tags:
+            set_tags["workTitle"] = text_tags["Title"]
+        if "Composer" in text_tags:
+            set_tags["composer"] = text_tags["Composer"]
+
+        # Remove all other meta tags, except source
+        for k, v in meta_tags.items():
+            if k == "source":
+                set_tags[k] = v
+            elif k not in set_tags:
+                set_tags[k] = None
+
+        # Save with modified meta tags
+        file_manager.set_meta_tags(set_tags)
+        file_manager.write()
