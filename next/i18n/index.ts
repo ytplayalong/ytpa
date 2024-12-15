@@ -42,6 +42,7 @@ export const RESSOURCES = {
       allScores: "All Pieces",
       allScoresTxt:
         "There is a total of <num /> pieces of music available for playing along including the corresponding sheet music. They all can be accessed under <all/>. Or just jump right in and choose a <random />",
+      findAllHereTxt: "More pieces can be found here: <all/>",
       randomScore: "Random Piece",
       recentScores: "Recently Added Pieces",
       recentTxt:
@@ -108,6 +109,7 @@ export const RESSOURCES = {
       allScores: "Toda la música",
       allScoresTxt:
         "En total hay <num /> piezas. Se puede acceder a ellas a través del siguiente enlace <all/>. O elige una pieza al azar: <random />",
+      findAllHereTxt: "Encontrará más piezas aquí: <all/>",
       randomScore: "Pieza al azar",
       recentScores: "Piezas recientes",
       recentTxt: "Las piezas más recientes se muestran a continuación.",
@@ -173,6 +175,7 @@ export const RESSOURCES = {
       allScores: "Alle Lieder",
       allScoresTxt:
         "Es stehen total <num /> Lieder zur Verfügung mit den dazugehörigen Noten. Alle können unter <all/> gefunden werden. Alternativ kann ein zufälliges gewählt werden unter folgendem Link: <random />",
+      findAllHereTxt: "Mehr Stücke gibt es hier: <all/>",
       randomScore: "Zufälliges Stück",
       recentScores: "Kürzlich hinzugefügte Lieder",
       recentTxt: "Die neusten verfügbaren Stücke sind unten aufgeführt.",

@@ -21,9 +21,10 @@ const Home = () => {
   const nScores = fullScoreInfo.length;
   const { t, getLink } = usePathTranslation();
   const randScore = getRandomScore();
+  const allLink = <Link href={getLink("/listall")}> {t("allScores")}</Link>;
   const parInfo = {
     num: <>{`${nScores}`}</>,
-    all: <Link href={getLink("/listall")}> {t("allScores")}</Link>,
+    all: allLink,
     random: (
       <Link href={getLink(`/piece?scoreId=${randScore.videoId}`)}>
         {t("randomScore")}
@@ -31,13 +32,14 @@ const Home = () => {
     ),
   };
   const secondPar = <Trans i18nKey={"allScoresTxt"} components={parInfo} />;
-
+  const morePieces = <Trans i18nKey={"findAllHereTxt"} components={parInfo} />;
   return (
     <>
       <p>{t("intro")}</p>
       <h4>{t("allScores")}</h4>
       <p>{secondPar}</p>
       <NewestScores nMostRecentSongs={20} />
+      <p>{morePieces}</p>
     </>
   );
 };
