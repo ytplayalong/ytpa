@@ -4813,5 +4813,21 @@
     "name": "Border",
     "artist": "Bukahara",
     "language": "english"
+  },
+  {
+    "videoId": "NLIRTyRvbKk",
+    "measureMap": { "18": 1, "82": 49 },
+    "fileName": "Cmerka",
+    "name": "Смерека",
+    "artist": "Mad Heads",
+    "language": "ukrainian"
+  },
+  {
+    "videoId": "5SNULE7ylDk",
+    "measureMap": { "8": 8, "80": 74 },
+    "fileName": "Alili",
+    "name": "Alili",
+    "artist": "Fanfare Ciocarlia",
+    "language": "azerbaijani"
   }
 ]
