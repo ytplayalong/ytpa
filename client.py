@@ -11,7 +11,7 @@ MUSESCORECOM_SCORES_URL = f"{MUSESCORECOM_API_ROOT_URL}/collection/scores"
 
 
 home = Path.home()
-access_file_path = home / (r"AppData\Local\MuseScore\MuseScore4\musescorecom_cred.dat")
+access_file_path = home / r"AppData\Local\MuseScore\MuseScore4\musescorecom_cred.dat"
 
 headers = {
     "Accept": "application/json",
@@ -40,9 +40,6 @@ def main():
     user_id = resp_val["id"]
     user_name = resp_val["name"]
     print(f"Loaded user info of '{user_name}' (id='{user_id}')")
-
-    scores_per_page = 100
-    page_id = 0
 
 
 if __name__ == "__main__":

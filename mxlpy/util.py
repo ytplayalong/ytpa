@@ -9,8 +9,10 @@ from typing import Any
 class Paths:
     """Static class holding some paths."""
 
-    MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 3/bin/MuseScore3.exe")
-    COMPOSITIONS_PATH = Path("C:/Users/Chrigi/Documents/GitHub/compositions")
+    _home = Path.home()
+
+    MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 4/bin/MuseScore4.exe")
+    COMPOSITIONS_PATH = _home / "Documents/GitHub/compositions"
     MSCZ_SCORE_PATH = COMPOSITIONS_PATH / "PlayAlong"
 
     MXLPY_PATH = Path(__file__).parent.resolve()
