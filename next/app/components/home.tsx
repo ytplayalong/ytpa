@@ -21,10 +21,9 @@ const Home = () => {
   const nScores = fullScoreInfo.length;
   const { t, getLink } = usePathTranslation();
   const randScore = getRandomScore();
-  const allLink = <Link href={getLink("/listall")}> {t("allScores")}</Link>;
   const parInfo = {
     num: <>{`${nScores}`}</>,
-    all: allLink,
+    all: <Link href={getLink("/listall")}> {t("allScores")}</Link>,
     random: (
       <Link href={getLink(`/piece?scoreId=${randScore.videoId}`)}>
         {t("randomScore")}

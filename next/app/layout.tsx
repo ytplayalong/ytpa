@@ -9,9 +9,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html>
-      <body>{children}</body>
-    </html>
-  );
+  // This is needed somehow. But do not place body / html tags here.
+  return children;
 }
