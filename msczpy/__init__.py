@@ -6,6 +6,8 @@ import zipfile
 import os
 import argparse
 
+TEST_SCORE_PATH = Path(__file__).parent / "test.mscz"
+
 
 class MsczFileManager:
     """Read, modify and write compressed musescore files."""
