@@ -8,7 +8,7 @@ from pathlib import Path
 from tqdm import tqdm
 
 from msczpy import TEST_SCORE_PATH, MsczFileManager
-from mxlpy.util import Paths
+from mxlpy.util import Paths, check_all_yt_sources
 
 MUSESCORECOM_API_ROOT_URL = "https://desktop.musescore.com/editor/v1"
 MUSESCORECOM_URL = "https://musescore.com"
@@ -115,18 +115,11 @@ class MuseScoreComApiClient:
         return resp_val
 
 
-def main():
-    alili_score_id = "22385650"
+def modify_and_update_online():
     client = MuseScoreComApiClient()
-    client.get_user_info()
-    client.get_score_info(alili_score_id)
-
-    test_score_id = "22250446"
-    resp_val = client.upload_score(TEST_SCORE_PATH, test_score_id, "test", public=False)
-    print(resp_val)
 
     score_infos = Paths.read_generated_score_info()
-    for score_info in tqdm(score_infos):
+    for score_info in tqdm(score_infos, "Re-uploading modified Mscz files"):
         mscz_path = Paths.get_mscz_path(score_info)
 
         if not mscz_path.exists():
@@ -144,5 +137,17 @@ def main():
         client.upload_score(mscz_path, source_id, title)
 
 
+def test():
+    alili_score_id = "22385650"
+    client = MuseScoreComApiClient()
+    client.get_user_info()
+    client.get_score_info(alili_score_id)
+
+    test_score_id = "22250446"
+    client.upload_score(TEST_SCORE_PATH, test_score_id, "test", public=False)
+
+
 if __name__ == "__main__":
-    main()
+    check_all_yt_sources()
+    test()
+    # modify_and_update_online()

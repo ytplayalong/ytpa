@@ -5,6 +5,9 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
+import requests
+from tqdm import tqdm
+
 
 class Paths:
     """Static class holding some paths."""
@@ -71,6 +74,36 @@ class Paths:
 XML_DEC = """<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 """
+
+
+def check_yt_available(video_id: str):
+    url = f"https://img.youtube.com/vi/{video_id}/default.jpg"
+    r = requests.get(url, stream=True)
+    if r.status_code == 200:
+        return True
+    elif r.status_code == 404:
+        return False
+    print(f"Unexpected status: {r.status_code}")
+    return False
+
+
+def check_all_yt_sources():
+    """Check if all referenced YouTube videos are still available."""
+
+    score_infos = Paths.read_generated_score_info()
+    unavailable = []
+    for score_info in tqdm(score_infos, desc="Checking YT sources"):
+        if not check_yt_available(score_info["videoId"]):
+            unavailable.append(score_info)
+
+    n_unavailable = len(unavailable)
+    if n_unavailable > 0:
+        print(f"Found {n_unavailable} YouTube videos that are not available.")
+        for score_info in unavailable:
+            name, artist = score_info["name"], score_info["artist"]
+            print(f" - {name} by {artist} (ID={score_info['videoId']})")
+        print()
+    return unavailable
 
 
 def write_xml(tree: ET, out_path: Path) -> None:

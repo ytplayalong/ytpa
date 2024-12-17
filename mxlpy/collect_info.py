@@ -8,7 +8,7 @@ from collections import OrderedDict
 
 from tqdm import tqdm
 
-from mxlpy.util import Paths, read_json, write_json
+from mxlpy.util import Paths, write_json
 
 
 def _make_unique(inp: list) -> list:
