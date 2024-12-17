@@ -13,7 +13,7 @@ class Paths:
 
     MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 4/bin/MuseScore4.exe")
     COMPOSITIONS_PATH = _home / "Documents/GitHub/compositions"
-    MSCZ_SCORE_PATH = COMPOSITIONS_PATH / "PlayAlong"
+    MSCZ_SCORE_PATH = COMPOSITIONS_PATH / "PlayAlong" / "Current"
 
     MXLPY_PATH = Path(__file__).parent.resolve()
     YTPA_BASE_PATH = MXLPY_PATH.parent
@@ -31,6 +31,16 @@ class Paths:
     assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
     assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
     assert XML_SCORES_PATH, f"XML output dir {XML_SCORES_PATH} does not exist!"
+
+    @staticmethod
+    def get_xml_path(score_info: dict):
+        file_name = score_info["fileName"]
+        return Paths.XML_SCORES_PATH / f"{file_name}.musicxml"
+
+    @staticmethod
+    def get_mscz_path(score_info: dict):
+        file_name = score_info["fileName"]
+        return Paths.MSCZ_SCORE_PATH / f"{file_name}.mscz"
 
     @staticmethod
     def find_all_scores(sort_by_modify_date: bool = False):

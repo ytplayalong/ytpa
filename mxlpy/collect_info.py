@@ -155,11 +155,9 @@ def extract_all_information():
     score_info = Paths.read_score_info(exclude_privates=True)
 
     generated_info: list[dict] = []
-    yt_xml_dir = Paths.XML_SCORES_PATH
     for score in tqdm(score_info):
-        file_name = score["fileName"]
+        file_path = Paths.get_xml_path(score)
 
-        file_path = yt_xml_dir / f"{file_name}.musicxml"
         auto_extracted = extract_auto_info(file_path)
         if auto_extracted:
             meas_to_time = auto_extracted.pop("meas_to_time")
@@ -168,6 +166,7 @@ def extract_all_information():
                 score["measureMap"] = _check_measure_map(meas_to_time, meas_map)
             generated_info.append({**auto_extracted, **score})
         else:
+            file_name = score["fileName"]
             print(f"Did not find file {file_name}")
 
     _write_generated(generated_info)
