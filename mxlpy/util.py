@@ -32,6 +32,27 @@ class Paths:
     assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
     assert XML_SCORES_PATH, f"XML output dir {XML_SCORES_PATH} does not exist!"
 
+    @staticmethod
+    def find_all_scores(sort_by_modify_date: bool = False):
+        all_paths = Paths.MSCZ_SCORE_PATH.rglob("*.mscz")
+        if sort_by_modify_date:
+            all_paths = reversed(sorted(all_paths, key=lambda p: p.lstat().st_mtime))
+        return all_paths
+
+    @staticmethod
+    def read_score_info(exclude_privates: bool = False) -> list:
+        all_scores = read_json(Paths.SCORE_INFO_FILE)
+        if exclude_privates:
+            excluded_ids = Paths.read_private_score_ids()
+            all_scores = [sc for sc in all_scores if sc["videoId"] not in excluded_ids]
+
+        return all_scores
+
+    @staticmethod
+    def read_private_score_ids():
+        score_ids: list[str] = read_json(Paths.PRIVATE_SCORES_FILE)
+        return set(score_ids)
+
 
 XML_DEC = """<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">

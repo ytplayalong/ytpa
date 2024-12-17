@@ -16,9 +16,8 @@ def export_yt(n_process: int | None):
     """Export scores corresponding to YouTube videos."""
 
     # Find all scores
-    all_paths = list(Paths.MSCZ_SCORE_PATH.rglob("*.mscz"))
+    all_paths = list(Paths.find_all_scores(sort_by_modify_date=True))
     tot = len(all_paths)
-    all_paths = reversed(sorted(all_paths, key=lambda p: p.lstat().st_mtime))
 
     for ct, mscz_path in enumerate(all_paths):
         if n_process is not None and ct == n_process:

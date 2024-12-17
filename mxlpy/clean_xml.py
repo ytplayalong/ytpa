@@ -5,6 +5,8 @@ from pathlib import Path
 
 from mxlpy.util import write_xml
 
+# "type" is needed for small notes
+# "beam" are used and not generated automatically
 REMOVE_ELEMENTS = [
     "defaults",
     "credit",
@@ -15,8 +17,6 @@ REMOVE_ELEMENTS = [
     "encoding-date",
     "sound",
     "voice",
-    # "type", # Needed for small notes
-    # "beam", # Beams are not added automatically
     "stem",
 ]
 REMOVE_ATRS = ["default-x", "default-y", "width", "relative-y"]

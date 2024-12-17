@@ -24,10 +24,10 @@ def extract_info(xml: Path):
     score_parts = root.findall(".//score-part")
     used_part_ids = []
     for part in score_parts:
-        id = part.attrib["id"]
+        part_id = part.attrib["id"]
         name = part.find("part-name").text
         if "drum" not in name.lower():
-            used_part_ids.append(id)
+            used_part_ids.append(part_id)
 
     # Find source
     sources = root.findall(".//identification/source")
@@ -38,7 +38,7 @@ def extract_info(xml: Path):
     all_keys = []
     for part_id in used_part_ids:
         part = root.find(f".//part[@id='{part_id}']")
-        fifths = part.findall(f".//fifths")
+        fifths = part.findall(".//fifths")
         all_keys += [int(fifth.text) for fifth in fifths]
     all_keys = _make_unique(all_keys)
 
@@ -152,17 +152,12 @@ def _check_measure_map(
 def extract_all_information():
     """Collect information from all scores in the given list."""
 
-    score_info = read_json(Paths.SCORE_INFO_FILE)
-    private_scores = set(read_json(Paths.PRIVATE_SCORES_FILE))
+    score_info = Paths.read_score_info(exclude_privates=True)
 
     generated_info: list[dict] = []
     yt_xml_dir = Paths.XML_SCORES_PATH
     for score in tqdm(score_info):
         file_name = score["fileName"]
-
-        if score["videoId"] in private_scores:
-            print(f"Private: {file_name}")
-            continue
 
         file_path = yt_xml_dir / f"{file_name}.musicxml"
         auto_extracted = extract_auto_info(file_path)
@@ -170,7 +165,6 @@ def extract_all_information():
             meas_to_time = auto_extracted.pop("meas_to_time")
             if len(meas_to_time) > 1:
                 meas_map = score["measureMap"]
-                name = score["name"]
                 score["measureMap"] = _check_measure_map(meas_to_time, meas_map)
             generated_info.append({**auto_extracted, **score})
         else:
@@ -225,10 +219,8 @@ def _write_score_file(info: list[dict]):
         all_item_string = ",\n".join(score_dict_list)
         json_string = f"{indent}{{\n{all_item_string}\n{indent}}}"
         json_dict_strings.append(json_string)
-        pass
 
     json_string = ",\n".join(json_dict_strings)
     json_list = f"[\n{json_string}\n]\n"
     with open(Paths.GENERATED_SCORE_INFO_FILE, "w", encoding="UTF-8") as f:
         f.write(json_list)
-    pass

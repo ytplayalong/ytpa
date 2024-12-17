@@ -111,7 +111,7 @@ class MuseScoreComApiClient:
 
 def main():
     test_score_id = "22250446"
-    alili_score_id = "22385650"
+    # alili_score_id = "22385650"
     used_score_id = test_score_id
 
     client = MuseScoreComApiClient()
