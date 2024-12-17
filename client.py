@@ -1,10 +1,14 @@
 """MuseScore.com API client."""
 
+import tempfile
 import requests
 import json
 from pathlib import Path
 
-from msczpy import TEST_SCORE_PATH
+from tqdm import tqdm
+
+from msczpy import TEST_SCORE_PATH, MsczFileManager
+from mxlpy.util import Paths
 
 MUSESCORECOM_API_ROOT_URL = "https://desktop.musescore.com/editor/v1"
 MUSESCORECOM_URL = "https://musescore.com"
@@ -73,7 +77,9 @@ class MuseScoreComApiClient:
         print(f"Loaded score info, title: '{title}', played: {playback_count} times")
         return resp_val
 
-    def upload_score(self, score_path: Path, score_id: str, title: str):
+    def upload_score(
+        self, score_path: Path, score_id: str, title: str, public: bool = True
+    ):
         """Upload score."""
 
         with open(score_path, "rb") as f:
@@ -84,10 +90,11 @@ class MuseScoreComApiClient:
             "score_data": (file_name, file_content, "application/octet-stream"),
         }
         # The 'data' dictionary for non-file fields
+        privacy_int = 0 if public else 2
         data = {
             "score_id": score_id,
             "title": title,
-            "privacy": str(0),  # Public
+            "privacy": str(privacy_int),
             "license": "cc-by-nc",  # Non-commercial
         }
 
@@ -104,22 +111,37 @@ class MuseScoreComApiClient:
             print(f"Upload failed with status code {response.status_code}")
             return
 
-        print("Successfully uploaded score!")
         resp_val = json.loads(response.text)
         return resp_val
 
 
 def main():
-    test_score_id = "22250446"
-    # alili_score_id = "22385650"
-    used_score_id = test_score_id
-
+    alili_score_id = "22385650"
     client = MuseScoreComApiClient()
     client.get_user_info()
-    score_info = client.get_score_info(used_score_id)
-    title = score_info["metadata"]["title"]
-    resp_val = client.upload_score(TEST_SCORE_PATH, used_score_id, title)
+    client.get_score_info(alili_score_id)
+
+    test_score_id = "22250446"
+    resp_val = client.upload_score(TEST_SCORE_PATH, test_score_id, "test", public=False)
     print(resp_val)
+
+    score_infos = Paths.read_generated_score_info()
+    for score_info in tqdm(score_infos):
+        mscz_path = Paths.get_mscz_path(score_info)
+
+        if not mscz_path.exists():
+            print(f"File {mscz_path} not found!")
+            continue
+
+        source_id = score_info["source"]
+        title = f"{score_info['name']} - {score_info['artist']}"
+
+        file_manager = MsczFileManager(mscz_path)
+        file_manager.read_mscz()
+        file_manager.set_copyright()
+        file_manager.write()
+
+        client.upload_score(mscz_path, source_id, title)
 
 
 if __name__ == "__main__":

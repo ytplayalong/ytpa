@@ -50,7 +50,11 @@ class Paths:
         return all_paths
 
     @staticmethod
-    def read_score_info(exclude_privates: bool = False) -> list:
+    def read_generated_score_info() -> list[dict]:
+        return read_json(Paths.GENERATED_SCORE_INFO_FILE)
+
+    @staticmethod
+    def read_score_info(exclude_privates: bool = False) -> list[dict]:
         all_scores = read_json(Paths.SCORE_INFO_FILE)
         if exclude_privates:
             excluded_ids = Paths.read_private_score_ids()
