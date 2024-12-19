@@ -31,8 +31,12 @@ def extract_info(xml: Path):
 
     # Find source
     sources = root.findall(".//identification/source")
-    assert len(sources) > 0, f"No source specified in {xml.name}"
-    msc_score_id = sources[0].text.split("/")[-1]
+    has_source = len(sources) > 0
+    if not has_source:
+        warnings.warn(f"No source specified in {xml.name}")
+        msc_score_id = "dummy"
+    else:
+        msc_score_id = sources[0].text.split("/")[-1]
 
     # Find keys, exclude drum parts
     all_keys = []

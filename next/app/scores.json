@@ -6114,5 +6114,16 @@
     "name": "Umtahemd",
     "artist": "Fäaschtbänkler",
     "language": "german"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "HCjNJDNzw8Y",
+    "measureMap": {"3": 2, "83": 37},
+    "fileName": "Havana",
+    "name": "Havana",
+    "artist": "Camila Cabello",
+    "language": "english"
   }
 ]
