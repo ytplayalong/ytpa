@@ -4845,5 +4845,21 @@
     "name": "Havana",
     "artist": "Camila Cabello",
     "language": "english"
+  },
+  {
+    "videoId": "9QRqaMzN9xA",
+    "measureMap": { "2": 2, "101": 56 },
+    "fileName": "Opa_Cupa",
+    "name": "Opa Cupa",
+    "artist": "Slavic Soul Party!",
+    "language": "romanian"
+  },
+  {
+    "videoId": "IYxj9w_LE1M",
+    "measureMap": { "9": 5, "129": 60 },
+    "fileName": "Kurultaj_dal",
+    "name": "Kurultaj dal",
+    "artist": "Arslanbek Sultanbekov / Fehér József",
+    "language": "hungarian"
   }
 ]
