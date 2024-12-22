@@ -1537,17 +1537,8 @@
           <step>E</step>
           <octave>5</octave>
           </pitch>
-        <duration>6</duration>
-        <type>quarter</type>
-        <dot />
-        </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <octave>5</octave>
-          </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>8</duration>
+        <type>half</type>
         </note>
       </measure>
     <measure number="17">

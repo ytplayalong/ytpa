@@ -6118,7 +6118,7 @@
   {
     "keys": [-2],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "22510231",
     "videoId": "HCjNJDNzw8Y",
     "measureMap": {"3": 2, "83": 37},
     "fileName": "Havana",
@@ -6129,7 +6129,7 @@
   {
     "keys": [-2],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "22510240",
     "videoId": "9QRqaMzN9xA",
     "measureMap": {"2": 2, "101": 56},
     "fileName": "Opa_Cupa",
@@ -6140,12 +6140,34 @@
   {
     "keys": [-2],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "22510255",
     "videoId": "IYxj9w_LE1M",
     "measureMap": {"9": 5, "129": 60},
     "fileName": "Kurultaj_dal",
     "name": "Kurultaj dal",
     "artist": "Arslanbek Sultanbekov / Fehér József",
     "language": "hungarian"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "22510258",
+    "videoId": "eu_ZSECMbgg",
+    "measureMap": {"2": 2, "80": 47},
+    "fileName": "Taka_sobie",
+    "name": "Taka sobie",
+    "artist": "Guzowianki",
+    "language": "polish"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "22510405",
+    "videoId": "p8AgGTtXmac",
+    "measureMap": {"3": 3, "112": 71},
+    "fileName": "A_la_folie",
+    "name": "À la folie",
+    "artist": "Adèle Castillon",
+    "language": "french"
   }
 ]

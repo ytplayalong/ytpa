@@ -4861,5 +4861,21 @@
     "name": "Kurultaj dal",
     "artist": "Arslanbek Sultanbekov / Fehér József",
     "language": "hungarian"
+  },
+  {
+    "videoId": "eu_ZSECMbgg",
+    "measureMap": { "2": 2, "80": 47 },
+    "fileName": "Taka_sobie",
+    "name": "Taka sobie",
+    "artist": "Guzowianki",
+    "language": "polish"
+  },
+  {
+    "videoId": "p8AgGTtXmac",
+    "measureMap": { "3": 3, "112": 71 },
+    "fileName": "A_la_folie",
+    "name": "À la folie",
+    "artist": "Adèle Castillon",
+    "language": "french"
   }
 ]

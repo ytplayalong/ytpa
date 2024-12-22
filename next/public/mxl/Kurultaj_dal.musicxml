@@ -12,6 +12,7 @@
       <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
+    <source>https://musescore.com/user/83726533/scores/22510255</source>
     </identification>
   <part-list>
     <score-part id="P1">
