@@ -29,6 +29,8 @@ class MuseScoreComApiClient:
         "User-Agent": "MS_EDITOR/4.5.0. (winnt 10.0.19045 windows 10 x86_64)",
     }
 
+    _user_id: str | None = None
+
     def __init__(self):
         """Constructor."""
 
@@ -55,9 +57,9 @@ class MuseScoreComApiClient:
             return
 
         resp_val: dict = json.loads(resp.text)
-        user_id = resp_val["id"]
+        self._user_id = resp_val["id"]
         user_name = resp_val["name"]
-        print(f"Loaded user info of '{user_name}' (id='{user_id}')")
+        print(f"Loaded user info of '{user_name}' (id='{self._user_id}')")
         return resp_val
 
     def get_score_info(self, score_id: str):
@@ -78,7 +80,11 @@ class MuseScoreComApiClient:
         return resp_val
 
     def upload_score(
-        self, score_path: Path, score_id: str, title: str, public: bool = True
+        self,
+        score_path: Path,
+        title: str,
+        score_id: str | None = None,
+        public: bool = True,
     ):
         """Upload score."""
 
@@ -91,28 +97,62 @@ class MuseScoreComApiClient:
         }
         # The 'data' dictionary for non-file fields
         privacy_int = 0 if public else 2
+        params = {self._access_token_key: self.token}
         data = {
-            "score_id": score_id,
             "title": title,
             "privacy": str(privacy_int),
             "license": "cc-by-nc",  # Non-commercial
         }
+        if score_id is not None:
+            data["score_id"] = score_id
 
-        # Make the HTTP request
-        params = {self._access_token_key: self.token}
-        response = requests.put(
-            MUSESCORECOM_SCORE_UPLOAD_URL,
-            params=params,
-            files=files,
-            data=data,
-            headers=self._headers,
-        )
+            # Make the HTTP request
+            response = requests.put(
+                MUSESCORECOM_SCORE_UPLOAD_URL,
+                params=params,
+                files=files,
+                data=data,
+                headers=self._headers,
+            )
+        else:
+            response = requests.post(
+                MUSESCORECOM_SCORE_UPLOAD_URL,
+                params=params,
+                files=files,
+                data=data,
+                headers=self._headers,
+            )
+
         if response.status_code != 200:
             print(f"Upload failed with status code {response.status_code}")
             return
 
         resp_val = json.loads(response.text)
+        if score_id is None:
+            if self._user_id is None:
+                self.get_user_info()
+
+            # Add source ID to file
+            score_id = resp_val["id"]
+            source_url = f"https://musescore.com/user/{self._user_id}/scores/{score_id}"
+            file_manager = MsczFileManager(score_path)
+            file_manager.read_mscz()
+            file_manager.set_copyright(source=source_url)
+            file_manager.write()
+
         return resp_val
+
+    def upload(self, score_info: dict, public: bool = True):
+
+        mscz_path = Paths.get_mscz_path(score_info)
+        if not mscz_path.exists():
+            print(f"File {mscz_path} not found!")
+            return
+
+        source_id = score_info["source"]
+        title = f"{score_info['name']} - {score_info['artist']}"
+        source_id = None if source_id == "dummy" else source_id
+        self.upload_score(mscz_path, title, source_id, public)
 
 
 def modify_and_update_online():
@@ -126,15 +166,23 @@ def modify_and_update_online():
             print(f"File {mscz_path} not found!")
             continue
 
-        source_id = score_info["source"]
-        title = f"{score_info['name']} - {score_info['artist']}"
-
         file_manager = MsczFileManager(mscz_path)
         file_manager.read_mscz()
         file_manager.set_copyright()
         file_manager.write()
 
-        client.upload_score(mscz_path, source_id, title)
+        client.upload(score_info)
+
+
+def upload_not_yet_uploaded():
+    client = MuseScoreComApiClient()
+    client.get_user_info()  # To set user ID correctly
+
+    score_infos = Paths.read_generated_score_info()
+    for score_info in tqdm(score_infos, "Uploading Mscz files"):
+        if score_info["source"] == "dummy":
+            client.upload(score_info, True)
+            print(f"Uploaded {score_info['name']}")
 
 
 def test():
@@ -144,10 +192,11 @@ def test():
     client.get_score_info(alili_score_id)
 
     test_score_id = "22250446"
-    client.upload_score(TEST_SCORE_PATH, test_score_id, "test", public=False)
+    client.upload_score(TEST_SCORE_PATH, "test", test_score_id, public=False)
 
 
 if __name__ == "__main__":
-    check_all_yt_sources()
     test()
+    upload_not_yet_uploaded()
+    # check_all_yt_sources()
     # modify_and_update_online()

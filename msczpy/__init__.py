@@ -102,7 +102,7 @@ class MsczFileManager:
         os.replace(temp_zip_path, save_path)
         return save_path
 
-    def set_copyright(self):
+    def set_copyright(self, source: str | None = None):
         meta_tags = self.get_meta_tags()
         set_tags = {"copyright": "Play-Along this score on YouTube on https://ytpa.ch"}
 
@@ -116,7 +116,7 @@ class MsczFileManager:
         # Remove all other meta tags, except source
         for k, v in meta_tags.items():
             if k == "source":
-                set_tags[k] = v
+                set_tags[k] = v if source is None else source
             elif k not in set_tags:
                 set_tags[k] = None
 
