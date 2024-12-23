@@ -4877,5 +4877,21 @@
     "name": "À la folie",
     "artist": "Adèle Castillon",
     "language": "french"
+  },
+  {
+    "videoId": "qJ5-FoiBuVc",
+    "measureMap": { "4": 3, "138": 76 },
+    "fileName": "Yellow_River",
+    "name": "Yellow River",
+    "artist": "Christie",
+    "language": "english"
+  },
+  {
+    "videoId": "XG_RTRgEweA",
+    "measureMap": { "6": 3, "147": 117 },
+    "fileName": "Fiore_Sulle_Dolomiti",
+    "name": "C'è un fiore sulle Dolomiti",
+    "artist": "Goran Bregović",
+    "language": "italian"
   }
 ]
