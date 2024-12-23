@@ -5885,11 +5885,11 @@
     "language": "english"
   },
   {
-    "keys": [-3],
+    "keys": [-3, -1],
     "times": [[4, 4]],
     "source": "21623128",
     "videoId": "YEKYG-zvQvA",
-    "measureMap": {"3": 2, "95": 71},
+    "measureMap": {"3": 2, "142": 106, "148": 108},
     "fileName": "Bubamara",
     "name": "Bubamara",
     "artist": "Tzupati Orchestra",
@@ -6197,7 +6197,7 @@
     "times": [[4, 4]],
     "source": "22524583",
     "videoId": "tZ0vD0enD5g",
-    "measureMap": {"5": 4, "174": 105},
+    "measureMap": {"5": 4, "174": 106},
     "fileName": "Od_Srca",
     "name": "Od Srca",
     "artist": "Boban Markovic Orkestar",
