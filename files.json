@@ -4901,5 +4901,29 @@
     "name": "Od Srca",
     "artist": "Boban Markovic Orkestar",
     "language": "croatian"
+  },
+  {
+    "videoId": "y8trd3gjJt0",
+    "measureMap": { "8": 2, "15": 6, "100": 52 },
+    "fileName": "Pepas",
+    "name": "Pepas",
+    "artist": "Farruko",
+    "language": "spanish"
+  },
+  {
+    "videoId": "82sfvXuF5w0",
+    "measureMap": { "2": 2, "126": 67 },
+    "fileName": "Hurricane",
+    "name": "Hurricane",
+    "artist": "Ofenbach & Ella Henderson",
+    "language": "english"
+  },
+  {
+    "videoId": "0fFdt_YYf2E",
+    "measureMap": { "9": 10, "50": 48 },
+    "fileName": "Maroni",
+    "name": "Marini Maruni Maroni",
+    "artist": "Andrew Bond",
+    "language": "german"
   }
 ]

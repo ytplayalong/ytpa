@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">Paté de Fuá</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
+      <software>MuseScore 4.4.4</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18677851</source>
@@ -19,6 +20,7 @@
       <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -38,7 +40,7 @@
           <line>2</line>
           </clef>
         </attributes>
-      <direction>
+      <direction placement="above" system="only-top">
         <direction-type>
           <words font-weight="bold" font-size="12">Swing</words>
           </direction-type>
@@ -176,10 +178,14 @@
     <measure number="3">
       <harmony print-frame="no">
         <root>
-          <root-step>D</root-step>
+          <root-step>B</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind>major</kind>
+        <kind text="m">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -220,7 +226,7 @@
         <root>
           <root-step>C</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -365,6 +371,9 @@
           <root-step>C</root-step>
           </root>
         <kind text="7">dominant</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -538,7 +547,7 @@
         <root>
           <root-step>C</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -777,10 +786,12 @@
     <measure number="12">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>C</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -830,7 +841,11 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -861,7 +876,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="6">major-sixth</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -909,10 +924,13 @@
     <measure number="14">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="7">dominant</kind>
+        <bass>
+          <bass-step>C</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -1006,18 +1024,21 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>F</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         <bass>
           <bass-step>A</bass-step>
           </bass>
         </harmony>
       <note>
-        <rest />
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+          </pitch>
         <duration>12</duration>
         <type>quarter</type>
+        <accidental>natural</accidental>
         </note>
       <note>
         <rest />
@@ -1050,10 +1071,10 @@
     <measure number="16">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1100,10 +1121,10 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>A</root-step>
+          <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1134,7 +1155,7 @@
           <root-step>G</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="maj7">major-seventh</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1147,9 +1168,13 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+          </bass>
         </harmony>
       <note>
         <rest />
@@ -1209,6 +1234,15 @@
           <tied type="stop" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="7">dominant</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
+        </harmony>
       <note>
         <rest />
         <duration>6</duration>
@@ -1295,10 +1329,12 @@
     <measure number="20">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>C</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -1348,7 +1384,11 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -1379,7 +1419,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="6">major-sixth</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1508,10 +1548,10 @@
     <measure number="23">
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>B</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="maj7">major-seventh</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -1524,9 +1564,13 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+          </bass>
         </harmony>
       <note>
         <rest />
@@ -1741,7 +1785,7 @@
         <root>
           <root-step>F</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -1924,7 +1968,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -1968,6 +2012,16 @@
           <tied type="start" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          </bass>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2004,7 +2058,7 @@
           <root-step>G</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -2085,7 +2139,7 @@
         <root>
           <root-step>E</root-step>
           </root>
-        <kind text="maj7">major-seventh</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -2188,31 +2242,43 @@
           </root>
         <kind text="6">major-sixth</kind>
         </harmony>
-      <harmony print-frame="no">
-        <root>
-          <root-step>D</root-step>
-          </root>
-        <kind text="dim7">diminished-seventh</kind>
-        <offset>24</offset>
-        </harmony>
       <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
           </pitch>
-        <duration>48</duration>
-        <type>whole</type>
+        <duration>24</duration>
+        <type>half</type>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="7">dominant</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>24</duration>
+        <type>half</type>
+        <accidental>natural</accidental>
         </note>
       </measure>
     <measure number="34">
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>C</root-step>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind>major</kind>
         </harmony>
       <note>
-        <rest />
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
         <duration>24</duration>
         <type>half</type>
         </note>
@@ -2220,7 +2286,10 @@
         <root>
           <root-step>C</root-step>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <rest />
@@ -2311,10 +2380,12 @@
     <measure number="36">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>C</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2364,7 +2435,11 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2395,7 +2470,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="6">major-sixth</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -2406,6 +2481,16 @@
         <duration>24</duration>
         <type>half</type>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          </bass>
+        </harmony>
       <note>
         <rest />
         <duration>6</duration>
@@ -2443,10 +2528,14 @@
     <measure number="38">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>G</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2497,6 +2586,9 @@
           <root-step>F</root-step>
           </root>
         <kind text="7">dominant</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2524,14 +2616,18 @@
     <measure number="39">
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
+          <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
-          <step>D</step>
+          <step>A</step>
           <alter>-1</alter>
           <octave>4</octave>
           </pitch>
@@ -2540,12 +2636,11 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>C</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         <bass>
-          <bass-step>A</bass-step>
+          <bass-step>G</bass-step>
           </bass>
         </harmony>
       <note>
@@ -2584,10 +2679,14 @@
     <measure number="40">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2775,10 +2874,12 @@
     <measure number="44">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>C</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2828,7 +2929,11 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2874,7 +2979,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="6">major-sixth</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -2896,7 +3001,8 @@
         </note>
       <note>
         <pitch>
-          <step>F</step>
+          <step>D</step>
+          <alter>-1</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -2926,10 +3032,13 @@
     <measure number="46">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="7">dominant</kind>
+        <bass>
+          <bass-step>C</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -3041,10 +3150,9 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>F</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         <bass>
           <bass-step>A</bass-step>
           </bass>
@@ -3072,10 +3180,10 @@
     <measure number="48">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3122,10 +3230,10 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>A</root-step>
+          <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3170,7 +3278,7 @@
           <root-step>G</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="maj7">major-seventh</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3187,9 +3295,13 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+          </bass>
         </harmony>
       <note>
         <rest />
@@ -3249,6 +3361,15 @@
           <tied type="stop" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="7">dominant</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
+        </harmony>
       <note>
         <rest />
         <duration>6</duration>
@@ -3335,10 +3456,12 @@
     <measure number="52">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>C</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -3388,7 +3511,11 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -3434,7 +3561,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="6">major-sixth</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3582,10 +3709,10 @@
     <measure number="55">
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>B</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="maj7">major-seventh</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -3602,9 +3729,13 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+          </bass>
         </harmony>
       <note>
         <rest />
@@ -3780,7 +3911,7 @@
         <root>
           <root-step>F</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -3950,7 +4081,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3994,6 +4125,16 @@
           <tied type="start" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          </bass>
+        </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -4026,7 +4167,7 @@
           <root-step>G</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -4119,7 +4260,7 @@
         <root>
           <root-step>E</root-step>
           </root>
-        <kind text="maj7">major-seventh</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -4256,9 +4397,9 @@
         </harmony>
       <harmony print-frame="no">
         <root>
-          <root-step>D</root-step>
+          <root-step>G</root-step>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind text="7">dominant</kind>
         <offset>24</offset>
         </harmony>
       <note>
@@ -4277,9 +4418,9 @@
     <measure number="66">
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>C</root-step>
           </root>
-        <kind text="dim7">diminished-seventh</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <rest />
@@ -4290,7 +4431,10 @@
         <root>
           <root-step>C</root-step>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <rest />
@@ -4381,10 +4525,12 @@
     <measure number="68">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>C</root-step>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -4417,7 +4563,11 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="7">dominant</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -4459,7 +4609,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="6">major-sixth</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -4474,6 +4624,16 @@
           <tied type="stop" />
           </notations>
         </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          </bass>
+        </harmony>
       <note>
         <rest />
         <duration>6</duration>
@@ -4511,10 +4671,14 @@
     <measure number="70">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>G</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -4565,6 +4729,9 @@
           <root-step>F</root-step>
           </root>
         <kind text="7">dominant</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -4606,10 +4773,14 @@
     <measure number="71">
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
+          <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -4626,12 +4797,11 @@
         </note>
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>C</root-step>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         <bass>
-          <bass-step>A</bass-step>
+          <bass-step>G</bass-step>
           </bass>
         </harmony>
       <note>
@@ -4657,10 +4827,14 @@
     <measure number="72">
       <harmony print-frame="no">
         <root>
-          <root-step>E</root-step>
+          <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="m7">minor-seventh</kind>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         </harmony>
       <note>
         <pitch>
@@ -4765,10 +4939,1079 @@
           </pitch>
         <duration>48</duration>
         <tie type="stop" />
+        <tie type="start" />
         <type>whole</type>
         <notations>
           <tied type="stop" />
+          <tied type="start" />
           </notations>
+        </note>
+      </measure>
+    <measure number="74">
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>24</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <rest />
+        <duration>6</duration>
+        <type>eighth</type>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
+      </measure>
+    <measure number="75">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
+        </harmony>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>18</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        </note>
+      </measure>
+    <measure number="76">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+          </bass>
+        </harmony>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>24</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      </measure>
+    <measure number="77">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>18</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        </note>
+      </measure>
+    <measure number="78">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
+        </harmony>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>24</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      </measure>
+    <measure number="79">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          </bass>
+        </harmony>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>18</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <dot />
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        </note>
+      </measure>
+    <measure number="80">
+      <harmony print-frame="no">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+          </bass>
+        </harmony>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>24</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      </measure>
+    <measure number="81">
+      <harmony print-frame="no">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <accidental>natural</accidental>
+        <beam number="1">end</beam>
+        <notations>
+          <tied type="start" />
+          </notations>
+        </note>
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop" />
+        <type>eighth</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>18</duration>
+        <type>quarter</type>
+        <dot />
+        </note>
+      </measure>
+    <measure number="82">
+      <harmony print-frame="no">
+        <root>
+          <root-step>F</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>48</duration>
+        <type>whole</type>
+        </note>
+      </measure>
+    <measure number="83">
+      <note>
+        <rest measure="yes" />
+        <duration>48</duration>
+        </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
+      </measure>
+    <measure number="84">
+      <note>
+        <rest />
+        <duration>12</duration>
+        <type>quarter</type>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          </time-modification>
+        <beam number="1">begin</beam>
+        <notations>
+          <tuplet type="start" bracket="no" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          </time-modification>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          </time-modification>
+        <beam number="1">end</beam>
+        <notations>
+          <tuplet type="stop" />
+          </notations>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>natural</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>flat</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        </note>
+      </measure>
+    <measure number="85">
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>18</duration>
+        <type>quarter</type>
+        <dot />
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>3</duration>
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>3</duration>
+        <type>16th</type>
+        <accidental>natural</accidental>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>flat</accidental>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>sharp</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>natural</accidental>
+        <beam number="1">end</beam>
+        </note>
+      </measure>
+    <measure number="86">
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <type>quarter</type>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>natural</accidental>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>flat</accidental>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        </note>
+      </measure>
+    <measure number="87">
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <type>quarter</type>
+        </note>
+      <note>
+        <rest />
+        <duration>12</duration>
+        <type>quarter</type>
+        </note>
+      <note>
+        <rest />
+        <duration>6</duration>
+        <type>eighth</type>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>3</duration>
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>3</duration>
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>natural</accidental>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        </note>
+      </measure>
+    <measure number="88">
+      <note>
+        <pitch>
+          <step>D</step>
+          <alter>-1</alter>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>natural</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>natural</accidental>
+        <beam number="1">end</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>flat</accidental>
+        <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>flat</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <beam number="1">end</beam>
+        </note>
+      </measure>
+    <measure number="89">
+      <note>
+        <pitch>
+          <step>G</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <type>eighth</type>
+        <accidental>flat</accidental>
+        </note>
+      <note>
+        <rest />
+        <duration>6</duration>
+        <type>eighth</type>
+        </note>
+      <note>
+        <rest />
+        <duration>12</duration>
+        <type>quarter</type>
+        </note>
+      <note>
+        <rest />
+        <duration>24</duration>
+        <type>half</type>
+        </note>
+      </measure>
+    <measure number="90">
+      <note>
+        <rest measure="yes" />
+        <duration>48</duration>
+        </note>
+      </measure>
+    <measure number="91">
+      <note>
+        <rest measure="yes" />
+        <duration>48</duration>
+        </note>
+      </measure>
+    <measure number="92">
+      <note>
+        <rest measure="yes" />
+        <duration>48</duration>
+        </note>
+      </measure>
+    <measure number="93">
+      <note>
+        <rest measure="yes" />
+        <duration>48</duration>
+        </note>
+      </measure>
+    <measure number="94">
+      <note>
+        <rest measure="yes" />
+        <duration>48</duration>
+        </note>
+      </measure>
+    <measure number="95">
+      <note>
+        <rest measure="yes" />
+        <duration>48</duration>
+        </note>
+      </measure>
+    <measure number="96">
+      <note>
+        <rest measure="yes" />
+        <duration>48</duration>
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>

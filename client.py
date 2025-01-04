@@ -132,6 +132,8 @@ class MuseScoreComApiClient:
             if self._user_id is None:
                 self.get_user_info()
 
+            assert self._user_id is not None
+
             # Add source ID to file
             score_id = resp_val["id"]
             source_url = f"https://musescore.com/user/{self._user_id}/scores/{score_id}"
