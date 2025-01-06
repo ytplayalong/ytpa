@@ -6290,5 +6290,16 @@
     "name": "The Pink Panther Theme",
     "artist": "Henry Mancini",
     "language": "instrumental"
+  },
+  {
+    "keys": [4],
+    "times": [[4, 4]],
+    "source": "22739470",
+    "videoId": "9uYF95jR_ME",
+    "measureMap": {"3": 2, "96.5": 52},
+    "fileName": "Moonlight_Shadow_Original",
+    "name": "Moonlight Shadow",
+    "artist": "Mike Oldfield",
+    "language": "english"
   }
 ]
