@@ -8,6 +8,8 @@ from pathlib import Path
 from tqdm import tqdm
 
 from msczpy import TEST_SCORE_PATH, MsczFileManager
+from mxlpy import export_mscz
+from mxlpy.clean_xml import reduce_file
 from mxlpy.util import Paths, check_all_yt_sources
 
 MUSESCORECOM_API_ROOT_URL = "https://desktop.musescore.com/editor/v1"
@@ -184,6 +186,15 @@ def upload_not_yet_uploaded():
     for score_info in tqdm(score_infos, "Uploading Mscz files"):
         if score_info["source"] == "dummy":
             client.upload(score_info, True)
+
+            # Export to musicxml
+            mscz_path = Paths.get_mscz_path(score_info)
+            xml_path = Paths.get_xml_path(score_info)
+            export_mscz(mscz_path, xml_path)
+
+            # Reduce XML file
+            reduce_file(xml_path)
+
             print(f"Uploaded {score_info['name']}")
 
 
@@ -198,7 +209,7 @@ def test():
 
 
 if __name__ == "__main__":
-    test()
+    # test()
     upload_not_yet_uploaded()
     # check_all_yt_sources()
     # modify_and_update_online()

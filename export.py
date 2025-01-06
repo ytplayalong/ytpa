@@ -38,13 +38,15 @@ def export_yt(n_process: int | None):
 
 def check_positive(value):
     ivalue = int(value)
-    if ivalue <= 0:
+    if ivalue < 0:
         raise argparse.ArgumentTypeError("%s is an invalid positive int value" % value)
     return ivalue
 
 
 parser = argparse.ArgumentParser("Export script")
-parser.add_argument("n", type=check_positive)
+parser.add_argument(
+    "-n", "--n-export", type=check_positive, default="0", required=False
+)
 parser.add_argument(
     "-m", "--no-mp3", action="store_true", default=False, required=False
 )
@@ -52,7 +54,8 @@ parser.add_argument(
 if __name__ == "__main__":
     args = parser.parse_args()
 
-    export_yt(args.n)
+    if args.n_export > 0:
+        export_yt(args.n_export)
 
     # Extract info from musicXML directly
     extract_all_information()
