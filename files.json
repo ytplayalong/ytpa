@@ -4957,5 +4957,13 @@
     "name": "Siebe chugelrundi Säu",
     "artist": "ChinderMusigWält",
     "language": "german"
+  },
+  {
+    "videoId": "VyZiIuMufTA",
+    "measureMap": { "12.5": 7, "68.5": 35 },
+    "fileName": "Pink_Panther",
+    "name": "The Pink Panther Theme",
+    "artist": "Henry Mancini",
+    "language": "instrumental"
   }
 ]
