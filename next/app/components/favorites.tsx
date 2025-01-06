@@ -9,8 +9,8 @@ import { containerInner } from "../util/styles";
 import { fullScoreInfo } from "../util/util";
 import { Loading } from "./loading";
 import { useLoginRequired } from "./loginRequired";
-import { ScoreTable } from "./scoreTable";
 import { useProcessedScores } from "./listAll";
+import { ScoreTable } from "./scoreTable";
 
 type FavoritesState = {
   loadingStatus: "loading" | "succeeded" | "failed";
