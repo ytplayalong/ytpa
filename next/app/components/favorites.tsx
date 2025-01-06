@@ -10,6 +10,7 @@ import { fullScoreInfo } from "../util/util";
 import { Loading } from "./loading";
 import { useLoginRequired } from "./loginRequired";
 import { ScoreTable } from "./scoreTable";
+import { useProcessedScores } from "./listAll";
 
 type FavoritesState = {
   loadingStatus: "loading" | "succeeded" | "failed";
@@ -19,6 +20,17 @@ type FavoritesState = {
 const initStatus: FavoritesState = {
   loadingStatus: "loading",
   favorites: [],
+};
+
+const wrap = (el: any, t: any) => {
+  return (
+    <div className="container">
+      <div style={containerInner}>
+        <h4>{t("favorites")}</h4>
+        {el}
+      </div>
+    </div>
+  );
 };
 
 export const Favorites = () => {
@@ -33,16 +45,6 @@ export const Favorites = () => {
     console.log("Loaded favorites");
   };
   const title = t("favorites");
-  const wrap = (el: any) => {
-    return (
-      <div className="container">
-        <div style={containerInner}>
-          <h4>{t("favorites")}</h4>
-          {el}
-        </div>
-      </div>
-    );
-  };
 
   useEffect(() => {
     if (loginRequired.user) {
@@ -52,7 +54,7 @@ export const Favorites = () => {
 
   if (loginRequired.user === null) {
     console.log("Not logged-in");
-    return wrap(loginRequired.component);
+    return wrap(loginRequired.component, t);
   }
 
   if (
@@ -63,22 +65,43 @@ export const Favorites = () => {
   }
 
   if (favorites.favorites.length == 0) {
-    return wrap("No favorites added yet");
+    return wrap("No favorites added yet", t);
   }
-
-  const favSets = new Set<string>(favorites.favorites);
-  let scores = fullScoreInfo.filter((el) => favSets.has(el.videoId));
-  scores = scores.reverse(); // Most recently added scores on top
 
   const removeFromFavorites = async (scoreId: string) => {
     await firebaseManager.removeFromFavorites(scoreId);
     const newFav = favorites.favorites.filter((el) => el != scoreId);
     setFavorites({ favorites: newFav, loadingStatus: "succeeded" });
   };
+  return (
+    <FavoritesNotNull
+      favorites={favorites}
+      removeFromFavorites={removeFromFavorites}
+    />
+  );
+};
+
+const FavoritesNotNull = ({
+  favorites,
+  removeFromFavorites,
+}: {
+  favorites: FavoritesState;
+  removeFromFavorites: (scoreId: string) => Promise<void>;
+}) => {
+  const { t } = usePathTranslation();
+
+  const favSets = new Set<string>(favorites.favorites);
+  let allScores = fullScoreInfo.filter((el) => favSets.has(el.videoId));
+  allScores = allScores.reverse(); // Most recently added scores on top per default
+  const { scores, sortInfo } = useProcessedScores(allScores);
+
   const removeOptions = [
     { name: t("favoritesRemove"), onClick: removeFromFavorites },
   ];
-  const favoriteScores = <ScoreTable scores={scores} options={removeOptions} />;
 
-  return wrap(favoriteScores);
+  const favoriteScores = (
+    <ScoreTable scores={scores} sortInfo={sortInfo} options={removeOptions} />
+  );
+
+  return wrap(favoriteScores, t);
 };

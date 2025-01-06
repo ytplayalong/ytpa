@@ -118,7 +118,7 @@ export const ScoreTable = ({
   const keyColWidth = "10%";
   const optionColWidth = "4%";
 
-  const th = sortBy.map((el) => {
+  const tableHeaderSortable = sortBy.map((el) => {
     let ex = "";
     if (sortInfo !== undefined) {
       if (sortInfo.by === el) {
@@ -144,7 +144,7 @@ export const ScoreTable = ({
     <thead style={{ width: "100%" }}>
       <tr style={{ width: "100%" }}>
         <th style={{ width: imgColWidth, ...thStyle }}></th>
-        {th}
+        {tableHeaderSortable}
         <th style={{ width: keyColWidth, ...thStyle }}>{t("songKey")}</th>
         {optionsHeader}
       </tr>

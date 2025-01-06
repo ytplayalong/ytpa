@@ -162,7 +162,7 @@ const useKeyFilter = () => {
 };
 
 /** Hook for filtering and sorting scores. */
-const useProcessedScores = () => {
+export const useProcessedScores = (scoreInfos: ScoreInfo[]) => {
   const { t } = usePathTranslation();
   const [filterS, filterForm] = useScoreFilter(t("txtFilterDefault"));
   const sortInfo = useSortedScores();
@@ -217,13 +217,13 @@ const useProcessedScores = () => {
     return scores;
   };
 
-  const scores = filterAndSort(getScoreInfo()).filter(filterKeys);
+  const scores = filterAndSort(scoreInfos).filter(filterKeys);
   return { scores, comp, sortInfo };
 };
 
 /** Lists all available scores. */
 export const ListScores = () => {
-  const { scores, comp, sortInfo } = useProcessedScores();
+  const { scores, comp, sortInfo } = useProcessedScores(getScoreInfo());
 
   const favOpt = useFavoriteOption();
   const scoreTable = (
