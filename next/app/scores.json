@@ -6334,5 +6334,16 @@
     "name": "Movidito Movidito",
     "artist": "Sebastián",
     "language": "spanish"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "22926724",
+    "videoId": "oWwiMu2iLzM",
+    "measureMap": {"8": 3, "160": 67},
+    "fileName": "Lucky_Day",
+    "name": "Lucky Day",
+    "artist": "Sasha",
+    "language": "english"
   }
 ]

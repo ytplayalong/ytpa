@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
+    <creator type="composer">Kaoma</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
+      <software>MuseScore 4.4.4</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18850159</source>
@@ -18,6 +20,7 @@
       <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -1169,8 +1172,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1180,9 +1184,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1355,8 +1361,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1366,9 +1373,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1538,7 +1547,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1629,8 +1638,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1640,9 +1650,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1913,9 +1925,11 @@
         <duration>3</duration>
         <tie type="stop" />
         <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
         <notations>
           <tied type="stop" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1925,11 +1939,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
-        <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="1">continue</beam>
+        <beam number="2">end</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2112,8 +2126,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2123,9 +2138,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2298,8 +2315,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2309,9 +2327,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2354,7 +2374,7 @@
           </pitch>
         <duration>6</duration>
         <type>eighth</type>
-        <beam number="1">end</beam>
+        <beam number="1">continue</beam>
         </note>
       <note>
         <pitch>
@@ -2363,7 +2383,7 @@
           </pitch>
         <duration>6</duration>
         <type>eighth</type>
-        <beam number="1">begin</beam>
+        <beam number="1">continue</beam>
         </note>
       <note>
         <pitch>
@@ -2572,8 +2592,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2583,9 +2604,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2856,9 +2879,11 @@
         <duration>3</duration>
         <tie type="stop" />
         <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
         <notations>
           <tied type="stop" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2868,11 +2893,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
-        <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="1">continue</beam>
+        <beam number="2">end</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3176,6 +3201,9 @@
         <duration>12</duration>
         <type>quarter</type>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="49">
       <harmony print-frame="no">
@@ -3839,8 +3867,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3850,9 +3879,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4025,8 +4056,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4036,9 +4068,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4208,7 +4242,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4299,8 +4333,9 @@
         <duration>9</duration>
         <type>eighth</type>
         <dot />
+        <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4310,9 +4345,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">backward hook</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4583,9 +4620,11 @@
         <duration>3</duration>
         <tie type="stop" />
         <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
         <notations>
           <tied type="stop" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4595,11 +4634,11 @@
           </pitch>
         <duration>3</duration>
         <type>16th</type>
-        <beam number="1">begin</beam>
-        <beam number="2">forward hook</beam>
+        <beam number="1">continue</beam>
+        <beam number="2">end</beam>
         <notations>
           <slur type="stop" number="1" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4900,9 +4939,12 @@
         <duration>12</duration>
         <type>quarter</type>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="75">
-      <direction>
+      <direction placement="above" system="only-top">
         <direction-type>
           <words>Accordion Solo</words>
           </direction-type>
@@ -4953,6 +4995,9 @@
         <rest measure="yes" />
         <duration>48</duration>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="83">
       <harmony print-frame="no">
@@ -5941,9 +5986,12 @@
         <duration>12</duration>
         <type>quarter</type>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="99">
-      <direction>
+      <direction placement="above" system="only-top">
         <direction-type>
           <words>Sax. Solo</words>
           </direction-type>
@@ -6076,6 +6124,9 @@
         <duration>12</duration>
         <type>quarter</type>
         </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+        </barline>
       </measure>
     <measure number="119">
       <harmony print-frame="no">
@@ -6772,7 +6823,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
