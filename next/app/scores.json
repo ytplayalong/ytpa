@@ -6345,5 +6345,27 @@
     "name": "Lucky Day",
     "artist": "Sasha",
     "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "22972369",
+    "videoId": "sVCi8t-E_R8",
+    "measureMap": {"3": 2, "134": 63},
+    "fileName": "Mamy_Blue",
+    "name": "Mamy Blue",
+    "artist": "Nicolette",
+    "language": "french"
+  },
+  {
+    "keys": [0, -3],
+    "times": [[4, 4]],
+    "source": "22972717",
+    "videoId": "J-r7KdnqvdM",
+    "measureMap": {"16": 9, "95": 50},
+    "fileName": "A_far_lamore",
+    "name": "A far l'amore comincia tu",
+    "artist": "Raffaella Carrà",
+    "language": "italian"
   }
 ]
