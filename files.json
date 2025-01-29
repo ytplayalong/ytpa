@@ -5037,5 +5037,21 @@
     "name": "Persepolis",
     "artist": "Edgar Viens",
     "language": "iranian"
+  },
+  {
+    "videoId": "pSw8an1u3rc",
+    "measureMap": { "8": 6, "85.5": 45 },
+    "fileName": "Happy_Together",
+    "name": "Happy Together",
+    "artist": "The Turtles",
+    "language": "english"
+  },
+  {
+    "videoId": "LHaupL3rf-c",
+    "measureMap": { "5": 2, "110": 52 },
+    "fileName": "No_se_por_que",
+    "name": "No sé por qué",
+    "artist": "Paté de Fuá",
+    "language": "spanish"
   }
 ]
