@@ -196,6 +196,8 @@ def upload_not_yet_uploaded():
             reduce_file(xml_path)
 
             print(f"Uploaded {score_info['name']}")
+            print("Make sure to close it if open in MuseScore.")
+            print("Otherwise, you risk overwriting the source!")
 
 
 def test():
