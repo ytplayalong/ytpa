@@ -5061,5 +5061,21 @@
     "name": "Siyahamba",
     "artist": "Heralders Children's Choir",
     "language": "zulu"
+  },
+  {
+    "videoId": "qWJU_eANW4M",
+    "measureMap": { "5": 4, "71": 49 },
+    "fileName": "Runaway_OneRep",
+    "name": "Runaway",
+    "artist": "OneRepublic",
+    "language": "english"
+  },
+  {
+    "videoId": "0vxx04quIzs",
+    "measureMap": { "2": 2, "106": 60 },
+    "fileName": "A_Demons_Fate",
+    "name": "A Demon's Fate",
+    "artist": "Within Temptation",
+    "language": "english"
   }
 ]
