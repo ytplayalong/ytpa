@@ -6466,5 +6466,27 @@
     "name": "Olam Chesed Yibaneh",
     "artist": "Melita and Isaac",
     "language": ["english", "hebrew"]
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "23459089",
+    "videoId": "CjWTuznCWh0",
+    "measureMap": {"3": 3, "82": 36},
+    "fileName": "Bashana_Habaah",
+    "name": "Bashana Haba'ah",
+    "artist": "Melita and Isaac",
+    "language": ["english", "hebrew"]
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "23459092",
+    "videoId": "cV6XpNZzkmg",
+    "measureMap": {"7": 4, "65": 56},
+    "fileName": "One_Fine_Day",
+    "name": "One Fine Day",
+    "artist": "Fiddler's Green",
+    "language": "english"
   }
 ]
