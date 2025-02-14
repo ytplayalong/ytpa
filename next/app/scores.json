@@ -6488,5 +6488,16 @@
     "name": "One Fine Day",
     "artist": "Fiddler's Green",
     "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "23500555",
+    "videoId": "gH476CxJxfg",
+    "measureMap": {"8": 3, "87": 26},
+    "fileName": "Bad_Day",
+    "name": "Bad Day",
+    "artist": "Daniel Powter",
+    "language": "english"
   }
 ]
