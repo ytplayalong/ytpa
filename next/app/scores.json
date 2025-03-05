@@ -6499,5 +6499,16 @@
     "name": "Bad Day",
     "artist": "Daniel Powter",
     "language": "english"
+  },
+  {
+    "keys": [3],
+    "times": [[4, 4]],
+    "source": "23869801",
+    "videoId": "2CkTJIfr7IA",
+    "measureMap": {"77": 3, "153": 49},
+    "fileName": "Zebrastreifenpferd",
+    "name": "Zebrastreifenpferd",
+    "artist": "Oimara",
+    "language": "german"
   }
 ]
