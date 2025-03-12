@@ -6510,5 +6510,27 @@
     "name": "Zebrastreifenpferd",
     "artist": "Oimara",
     "language": "german"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "24015730",
+    "videoId": "CE70PHlgrlo",
+    "measureMap": {"9": 2, "120": 63},
+    "fileName": "Johnny_Daepp",
+    "name": "Johnny Däpp",
+    "artist": "Lorenz Büffel",
+    "language": "german"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "XPXiHGq2Ods",
+    "measureMap": {"47": 4, "167": 73},
+    "fileName": "Sennesinger",
+    "name": "Sennesinger",
+    "artist": "Trauffer ft. Jodlerquartett Männertreu",
+    "language": "german"
   }
 ]
