@@ -651,7 +651,7 @@
     "language": "english"
   },
   {
-    "videoId": "1LEfacrCU9M",
+    "videoId": "VLQddUfyMOk",
     "measureMap": {
       "9": 6,
       "58": 25,
@@ -5165,5 +5165,13 @@
     "name": "The Logical Song",
     "artist": "Scooter",
     "language": "english"
+  },
+  {
+    "videoId": "5Q40D1Wg06E",
+    "measureMap": { "18": 2, "158": 141 },
+    "fileName": "Hijo_de_la_Luna",
+    "name": "Hijo de la Luna",
+    "artist": "Gerónimo Rauch ft. Carlos Rivera",
+    "language": "spanish"
   }
 ]

@@ -608,7 +608,7 @@
     "keys": [-3],
     "times": [[4, 4]],
     "source": "18898489",
-    "videoId": "1LEfacrCU9M",
+    "videoId": "VLQddUfyMOk",
     "measureMap": {"9": 6, "58": 25, "105": 61, "115": 69, "131": 75, "136": 77, "173": 105, "180": 108},
     "fileName": "Soul_Split",
     "name": "Soul Split",
@@ -6565,5 +6565,16 @@
     "name": "The Logical Song",
     "artist": "Scooter",
     "language": "english"
+  },
+  {
+    "keys": [0, 1, -4, -2],
+    "times": [[3, 4]],
+    "source": "dummy",
+    "videoId": "5Q40D1Wg06E",
+    "measureMap": {"18": 2, "158": 141},
+    "fileName": "Hijo_de_la_Luna",
+    "name": "Hijo de la Luna",
+    "artist": "Gerónimo Rauch ft. Carlos Rivera",
+    "language": "spanish"
   }
 ]
