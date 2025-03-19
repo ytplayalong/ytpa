@@ -5149,5 +5149,21 @@
     "name": "Lady In Black",
     "artist": "Fiddler's Green",
     "language": "english"
+  },
+  {
+    "videoId": "sK8eQWgGkKk",
+    "measureMap": { "10": 4, "65": 36 },
+    "fileName": "Bora_Bora_Bora",
+    "name": "Bora! Bora! Bora!",
+    "artist": "Scooter",
+    "language": "english"
+  },
+  {
+    "videoId": "dDa4JhXocGs",
+    "measureMap": { "2": 2, "32": 20 },
+    "fileName": "The_Logical_Song",
+    "name": "The Logical Song",
+    "artist": "Scooter",
+    "language": "english"
   }
 ]
