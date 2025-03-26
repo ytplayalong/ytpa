@@ -10,7 +10,7 @@ from tqdm import tqdm
 from msczpy import TEST_SCORE_PATH, MsczFileManager
 from mxlpy import export_mscz
 from mxlpy.clean_xml import reduce_file
-from mxlpy.util import Paths, check_all_yt_sources
+from mxlpy.util import Paths, check_all_yt_sources, write_json
 
 MUSESCORECOM_API_ROOT_URL = "https://desktop.musescore.com/editor/v1"
 MUSESCORECOM_URL = "https://musescore.com"
@@ -64,7 +64,7 @@ class MuseScoreComApiClient:
         print(f"Loaded user info of '{user_name}' (id='{self._user_id}')")
         return resp_val
 
-    def get_score_info(self, score_id: str):
+    def get_score_info(self, score_id: str, verbose: bool = False):
         """Load score info of a specific score."""
 
         get_score_params = {self._access_token_key: self.token, "score_id": score_id}
@@ -76,9 +76,12 @@ class MuseScoreComApiClient:
             return None
 
         resp_val: dict = json.loads(resp.text)
-        playback_count = resp_val["playback_count"]
-        title = resp_val["metadata"]["title"]
-        print(f"Loaded score info, title: '{title}', played: {playback_count} times")
+        if verbose:
+            playback_count = resp_val["playback_count"]
+            title = resp_val["metadata"]["title"]
+            print(
+                f"Loaded score info, title: '{title}', played: {playback_count} times"
+            )
         return resp_val
 
     def upload_score(
@@ -156,7 +159,25 @@ class MuseScoreComApiClient:
         source_id = score_info["source"]
         title = f"{score_info['name']} - {score_info['artist']}"
         source_id = None if source_id == "dummy" else source_id
-        self.upload_score(mscz_path, title, source_id, public)
+
+        # Prevent upload if it is markerd as dummy in the export JSON
+        # but still has a source specified in the MSCZ file...
+        file_manager = MsczFileManager(mscz_path)
+        file_manager.read_mscz()
+        meta_tags = file_manager.get_meta_tags()
+        meta_source = meta_tags.get("source")
+        if source_id == None:
+            if meta_source is not None:
+                print("Already uploaded, run export again!")
+                return
+        elif meta_source is None:
+            print("Source only in JSON available...")
+            return
+        elif source_id not in meta_source:
+            print("Inconsistent source!")
+            return
+
+        return self.upload_score(mscz_path, title, source_id, public)
 
 
 def modify_and_update_online():
@@ -180,12 +201,17 @@ def modify_and_update_online():
 
 def upload_not_yet_uploaded():
     client = MuseScoreComApiClient()
-    client.get_user_info()  # To set user ID correctly
+    info = client.get_user_info()  # To set user ID correctly
+    if info is None:
+        print("Getting info failed")
+        return
 
     score_infos = Paths.read_generated_score_info()
     for score_info in tqdm(score_infos, "Uploading Mscz files"):
         if score_info["source"] == "dummy":
-            client.upload(score_info, True)
+            resp = client.upload(score_info, True)
+            if resp is None:
+                continue
 
             # Export to musicxml
             mscz_path = Paths.get_mscz_path(score_info)
@@ -200,6 +226,26 @@ def upload_not_yet_uploaded():
             print("Otherwise, you risk overwriting the source!")
 
 
+def get_all_score_info():
+    """Loads the score info for all scores via API.
+
+    Note:
+        It does not contain info whether the score was set to
+        private.
+    """
+    client = MuseScoreComApiClient()
+    score_infos = Paths.read_generated_score_info()
+
+    api_score_info = []
+    for score_info in tqdm(score_infos, "Checking online file status"):
+        score_id = score_info["source"]
+        if score_id != "dummy":
+            score_api_info = client.get_score_info(score_id)
+            api_score_info.append(score_api_info)
+
+    write_json("api_score_info.json", api_score_info)
+
+
 def test():
     alili_score_id = "22385650"
     client = MuseScoreComApiClient()
@@ -212,6 +258,7 @@ def test():
 
 if __name__ == "__main__":
     # test()
+    # get_all_score_info()
     upload_not_yet_uploaded()
     # check_all_yt_sources()
     # modify_and_update_online()
