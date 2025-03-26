@@ -6620,5 +6620,16 @@
     "name": "Cupid's Girl",
     "artist": "Marina",
     "language": "english"
+  },
+  {
+    "keys": [0, 3],
+    "times": [[4, 4]],
+    "source": "24304507",
+    "videoId": "iMZOrEbS7cU",
+    "measureMap": {"2": 2, "84": 49},
+    "fileName": "Pedro",
+    "name": "Pedro",
+    "artist": "Raffaella Carrà",
+    "language": "italian"
   }
 ]
