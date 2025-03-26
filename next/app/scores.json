@@ -6609,5 +6609,16 @@
     "name": "Depends On You",
     "artist": "Gabry Ponte",
     "language": "english"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "24303874",
+    "videoId": "xZHTxr24sBY",
+    "measureMap": {"11": 8, "79": 52},
+    "fileName": "Cupids_Girl",
+    "name": "Cupid's Girl",
+    "artist": "Marina",
+    "language": "english"
   }
 ]
