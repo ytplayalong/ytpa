@@ -6646,12 +6646,34 @@
   {
     "keys": [0],
     "times": [[7, 8]],
-    "source": "dummy",
+    "source": "24450886",
     "videoId": "nCSRtraiU1M",
     "measureMap": {"5": 4, "68": 42},
     "fileName": "Jovano",
     "name": "Jovano, Jovanke",
     "artist": "Grupa MAESTRO",
     "language": "romanian"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "24516943",
+    "videoId": "UZ2BdHTqKXg",
+    "measureMap": {"2": 2, "63": 99},
+    "fileName": "Tenia_Razon",
+    "name": "Tenía Razón",
+    "artist": "Paté de Fuá",
+    "language": "spanish"
+  },
+  {
+    "keys": [-1, 6],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "A_8g3df4zcI",
+    "measureMap": {"8": 4, "96": 43},
+    "fileName": "Pain_Au_Chocolat",
+    "name": "Le petit pain au chocolat",
+    "artist": "Joe Dassin",
+    "language": "french"
   }
 ]

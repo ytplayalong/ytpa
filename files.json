@@ -5229,5 +5229,29 @@
     "name": "Jovano, Jovanke",
     "artist": "Grupa MAESTRO",
     "language": "romanian"
+  },
+  {
+    "videoId": "UZ2BdHTqKXg",
+    "measureMap": { "2": 2, "63": 99 },
+    "fileName": "Tenia_Razon",
+    "name": "Tenía Razón",
+    "artist": "Paté de Fuá",
+    "language": "spanish"
+  },
+  {
+    "videoId": "A_8g3df4zcI",
+    "measureMap": { "8": 4, "96": 43 },
+    "fileName": "Pain_Au_Chocolat",
+    "name": "Le petit pain au chocolat",
+    "artist": "Joe Dassin",
+    "language": "french"
+  },
+  {
+    "videoId": "dwH7RPaNEUw",
+    "measureMap": { "8": 4, "96": 43 },
+    "fileName": "_____",
+    "name": "Hallo kleine Maus",
+    "artist": "Sašo Avsenik und seine Oberkrainer",
+    "language": "german"
   }
 ]
