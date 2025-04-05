@@ -6659,7 +6659,7 @@
     "times": [[4, 4]],
     "source": "24516943",
     "videoId": "UZ2BdHTqKXg",
-    "measureMap": {"2": 2, "63": 99},
+    "measureMap": {"2": 2, "119": 63},
     "fileName": "Tenia_Razon",
     "name": "Tenía Razón",
     "artist": "Paté de Fuá",
@@ -6668,12 +6668,23 @@
   {
     "keys": [-1, 6],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "24517588",
     "videoId": "A_8g3df4zcI",
     "measureMap": {"8": 4, "96": 43},
     "fileName": "Pain_Au_Chocolat",
     "name": "Le petit pain au chocolat",
     "artist": "Joe Dassin",
     "language": "french"
+  },
+  {
+    "keys": [0, -1, -2],
+    "times": [[4, 4]],
+    "source": "24517600",
+    "videoId": "dwH7RPaNEUw",
+    "measureMap": {"8": 5, "108": 62},
+    "fileName": "Hallo_kleine_Maus",
+    "name": "Hallo kleine Maus",
+    "artist": "Sašo Avsenik und seine Oberkrainer",
+    "language": "german"
   }
 ]
