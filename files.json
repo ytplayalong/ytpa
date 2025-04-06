@@ -5253,5 +5253,13 @@
     "name": "Hallo kleine Maus",
     "artist": "Sašo Avsenik und seine Oberkrainer",
     "language": "german"
+  },
+  {
+    "videoId": "O_2nrZDSMF8",
+    "measureMap": { "5": 5, "39": 33 },
+    "fileName": "La_Carovana",
+    "name": "La Carovana",
+    "artist": "Talco",
+    "language": "italian"
   }
 ]

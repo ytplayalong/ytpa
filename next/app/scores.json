@@ -6652,7 +6652,7 @@
     "fileName": "Jovano",
     "name": "Jovano, Jovanke",
     "artist": "Grupa MAESTRO",
-    "language": "romanian"
+    "language": "macedonian"
   },
   {
     "keys": [-2],
@@ -6686,5 +6686,16 @@
     "name": "Hallo kleine Maus",
     "artist": "Sašo Avsenik und seine Oberkrainer",
     "language": "german"
+  },
+  {
+    "keys": [3],
+    "times": [[4, 4]],
+    "source": "24536497",
+    "videoId": "O_2nrZDSMF8",
+    "measureMap": {"5": 5, "39": 33},
+    "fileName": "La_Carovana",
+    "name": "La Carovana",
+    "artist": "Talco",
+    "language": "italian"
   }
 ]
