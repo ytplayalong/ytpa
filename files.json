@@ -5269,5 +5269,13 @@
     "name": "Testamento Di Un Buffone",
     "artist": "Talco",
     "language": "italian"
+  },
+  {
+    "videoId": "gEonN84mTws",
+    "measureMap": { "2": 1, "77": 75 },
+    "fileName": "Tadschik",
+    "name": "Tadschik",
+    "artist": "Otrava",
+    "language": "instrumental"
   }
 ]
