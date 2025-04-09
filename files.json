@@ -5277,5 +5277,13 @@
     "name": "Tadschik",
     "artist": "Otrava",
     "language": "instrumental"
+  },
+  {
+    "videoId": "ly5wxmaRQ8U",
+    "measureMap": { "4": 4, "80": 50 },
+    "fileName": "Pogumno_Na_Ples",
+    "name": "Pogumno Na Ples",
+    "artist": "Šmarnogorski kvintet",
+    "language": "slovenian"
   }
 ]
