@@ -5301,5 +5301,21 @@
     "name": "Für alt und Jung",
     "artist": "Schönleiten Musi",
     "language": "instrumental"
+  },
+  {
+    "videoId": "lN53pemd8W0",
+    "measureMap": { "2": 2, "114": 58 },
+    "fileName": "Il_tempo_se_ne_va",
+    "name": "Il tempo se ne va",
+    "artist": "Adriano Celentano",
+    "language": "italian"
+  },
+  {
+    "videoId": "FggnWTfxIVA",
+    "measureMap": { "1": 2, "84": 96 },
+    "fileName": "Schone_guete_Morge",
+    "name": "Schöne guete Morge",
+    "artist": "Trio Örgeliwirbel",
+    "language": "german"
   }
 ]
