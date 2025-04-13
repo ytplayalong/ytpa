@@ -6774,5 +6774,16 @@
     "name": "Schöne guete Morge",
     "artist": "Trio Örgeliwirbel",
     "language": "german"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "24677272",
+    "videoId": "G3k2MOJOkKg",
+    "measureMap": {"6": 3, "32": 21, "75": 52},
+    "fileName": "Alcohol_Is_Free",
+    "name": "Alcohol Is Free",
+    "artist": "Koza Mostra & Agathon Iakovidis",
+    "language": "greek"
   }
 ]
