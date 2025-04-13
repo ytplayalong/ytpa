@@ -5325,5 +5325,21 @@
     "name": "Alcohol Is Free",
     "artist": "Koza Mostra & Agathon Iakovidis",
     "language": "greek"
+  },
+  {
+    "videoId": "RFjU_LVpZCg",
+    "measureMap": { "5": 5, "113": 95 },
+    "fileName": "Libre",
+    "name": "Libre",
+    "artist": "Délinquante",
+    "language": "french"
+  },
+  {
+    "videoId": "NIBp35NjBa4",
+    "measureMap": { "4": 6, "113": 134 },
+    "fileName": "Ljubezen_ni_le_beseda",
+    "name": "Ljubezen ni le beseda",
+    "artist": "Ansambel Jureta Zajca",
+    "language": "slovenian"
   }
 ]
