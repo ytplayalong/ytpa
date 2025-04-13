@@ -188,7 +188,7 @@ export const transpose = (
   const fingerOctave = octaveChange ? parseInt(octaveChange) : 0;
 
   // Change to bass clef if selected in settings
-  if (clef === "Bass") {
+  if (clef === "bassClef") {
     octave = octave - 1; // Set score one octave lower for bass clef
     for (const element of clefEl.children) {
       const childEl = element;
