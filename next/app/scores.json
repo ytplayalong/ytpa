@@ -6807,5 +6807,16 @@
     "name": "Ljubezen ni le beseda",
     "artist": "Ansambel Jureta Zajca",
     "language": "slovenian"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "24738262",
+    "videoId": "T6i58D2gN8Y",
+    "measureMap": {"5": 4, "72": 43},
+    "fileName": "Wehrt_Euch",
+    "name": "Wehrt Euch!",
+    "artist": "The Busters feat. Katharina Wackernagel",
+    "language": "german"
   }
 ]
