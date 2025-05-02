@@ -1079,8 +1079,8 @@
         </note>
       <note>
         <rest />
-        <duration>4</duration>
-        <type>quarter</type>
+        <duration>2</duration>
+        <type>eighth</type>
         </note>
       <note>
         <pitch>
@@ -1100,6 +1100,15 @@
         <duration>2</duration>
         <type>eighth</type>
         <accidental>sharp</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
         </note>
       </measure>
@@ -1348,8 +1357,8 @@
         </note>
       <note>
         <rest />
-        <duration>4</duration>
-        <type>quarter</type>
+        <duration>2</duration>
+        <type>eighth</type>
         </note>
       <note>
         <pitch>
@@ -1369,6 +1378,15 @@
         <duration>2</duration>
         <type>eighth</type>
         <accidental>sharp</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
         </note>
       </measure>
@@ -4104,8 +4122,8 @@
         </note>
       <note>
         <rest />
-        <duration>4</duration>
-        <type>quarter</type>
+        <duration>2</duration>
+        <type>eighth</type>
         </note>
       <note>
         <pitch>
@@ -4125,6 +4143,15 @@
         <duration>2</duration>
         <type>eighth</type>
         <accidental>sharp</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
         </note>
       </measure>
@@ -4373,8 +4400,8 @@
         </note>
       <note>
         <rest />
-        <duration>4</duration>
-        <type>quarter</type>
+        <duration>2</duration>
+        <type>eighth</type>
         </note>
       <note>
         <pitch>
@@ -4394,6 +4421,15 @@
         <duration>2</duration>
         <type>eighth</type>
         <accidental>sharp</accidental>
+        <beam number="1">continue</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+          </pitch>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
         </note>
       </measure>
