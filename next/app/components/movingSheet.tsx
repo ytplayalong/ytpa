@@ -99,6 +99,9 @@ const getInterpolator = (
       );
       yValBetter = yValBetter.concat(newRange);
       yValBetter.push(prevVal);
+    } else {
+      // Last line only contains one bar
+      yValBetter.push(lastAnchor[1]);
     }
 
     // Todo: Interpolate lines linearly regardless of bars.
