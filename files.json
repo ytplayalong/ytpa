@@ -5365,5 +5365,13 @@
     "name": "Luigi",
     "artist": "Roy de Roy",
     "language": "slovenian"
+  },
+  {
+    "videoId": "sh1u8j4NGic",
+    "measureMap": { "24": 3, "107": 69 },
+    "fileName": "La_Tempesta",
+    "name": "La Tempesta",
+    "artist": "Luca Bassanese & la P.O.P.",
+    "language": "italian"
   }
 ]
