@@ -6824,7 +6824,7 @@
     "times": [[4, 4]],
     "source": "24945010",
     "videoId": "wLVZkUCcanM",
-    "measureMap": {"6": 6, "61": 45},
+    "measureMap": {"6": 6, "106": 77},
     "fileName": "Naie_Chuppe",
     "name": "Naie Chuppe",
     "artist": "Otrava",
@@ -6879,10 +6879,21 @@
     "times": [[2, 4]],
     "source": "25077274",
     "videoId": "0HKF6gTuyWY",
-    "measureMap": {"3": 5, "54": 82},
+    "measureMap": {"3": 5, "69": 104},
     "fileName": "Polka_Triciclo",
     "name": "Polka",
     "artist": "Triciclo Circus Band",
     "language": "instrumental"
+  },
+  {
+    "keys": [-3],
+    "times": [[4, 4]],
+    "source": "25139716",
+    "videoId": "8jUpwM30N-Q",
+    "measureMap": {"14": 3, "113": 65},
+    "fileName": "Dio_Lires",
+    "name": "Dio Lires",
+    "artist": "Voukolic Disorder",
+    "language": "greek"
   }
 ]
