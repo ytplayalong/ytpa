@@ -6895,5 +6895,16 @@
     "name": "Dio Lires",
     "artist": "Voukolic Disorder",
     "language": "greek"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "25166059",
+    "videoId": "gxZkrbKPVJw",
+    "measureMap": {"4": 2, "94": 64},
+    "fileName": "Cest_la_vie",
+    "name": "C'est la vie",
+    "artist": "dArtagnan",
+    "language": "german"
   }
 ]
