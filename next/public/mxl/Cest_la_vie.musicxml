@@ -828,12 +828,22 @@
         </note>
       <note>
         <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>2</duration>
+        <type>quarter</type>
+        </note>
+      <note>
+        <pitch>
           <step>G</step>
           <octave>4</octave>
           </pitch>
         <duration>2</duration>
         <type>quarter</type>
         </note>
+      </measure>
+    <measure number="14">
       <note>
         <pitch>
           <step>A</step>
@@ -841,35 +851,26 @@
           </pitch>
         <duration>1</duration>
         <type>eighth</type>
-        <beam number="1">begin</beam>
         </note>
       <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>2</duration>
+        <type>quarter</type>
+        </note>
+      <note>
+        <pitch>
+          <step>A</step>
           <octave>4</octave>
           </pitch>
         <duration>1</duration>
         <tie type="start" />
         <type>eighth</type>
-        <beam number="1">end</beam>
         <notations>
           <tied type="start" />
-          </notations>
-        </note>
-      </measure>
-    <measure number="14">
-      <note>
-        <pitch>
-          <step>B</step>
-          <alter>-1</alter>
-          <octave>4</octave>
-          </pitch>
-        <duration>1</duration>
-        <tie type="stop" />
-        <type>eighth</type>
-        <notations>
-          <tied type="stop" />
           </notations>
         </note>
       <note>
@@ -877,14 +878,12 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
-        <type>quarter</type>
-        <dot />
-        </note>
-      <note>
-        <rest />
         <duration>2</duration>
+        <tie type="stop" />
         <type>quarter</type>
+        <notations>
+          <tied type="stop" />
+          </notations>
         </note>
       <note>
         <pitch>
