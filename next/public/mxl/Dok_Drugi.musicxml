@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
+    <creator type="composer">Šuma Čovjek</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
+      <software>MuseScore 4.5.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18848959</source>
     </identification>
   <part-list>
-    <part-group type="start" number="1">
-      <group-symbol>brace</group-symbol>
-      </part-group>
     <score-part id="P1">
       <part-name>Voice</part-name>
       <part-abbreviation>Vc.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -46,7 +46,7 @@
           </root>
         <kind text="m">minor</kind>
         </harmony>
-      <direction placement="above">
+      <direction placement="above" system="only-top">
         <direction-type>
           <metronome parentheses="no">
             <beat-unit>quarter</beat-unit>
@@ -2897,6 +2897,12 @@
         </note>
       </measure>
     <measure number="91">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2923,7 +2929,7 @@
         <duration>6</duration>
         <type>quarter</type>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2999,10 +3005,9 @@
     <measure number="97">
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>G</root-step>
           </root>
-        <kind>major</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -3038,6 +3043,13 @@
         </note>
       </measure>
     <measure number="99">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3070,7 +3082,7 @@
         <duration>6</duration>
         <type>quarter</type>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3195,6 +3207,12 @@
         </note>
       </measure>
     <measure number="107">
+      <harmony print-frame="no">
+        <root>
+          <root-step>G</root-step>
+          </root>
+        <kind text="m">minor</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3221,7 +3239,7 @@
         <duration>6</duration>
         <type>quarter</type>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3297,10 +3315,9 @@
     <measure number="113">
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>G</root-step>
           </root>
-        <kind>major</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -3336,6 +3353,13 @@
         </note>
       </measure>
     <measure number="115">
+      <harmony print-frame="no">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3368,7 +3392,7 @@
         <duration>6</duration>
         <type>quarter</type>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3598,10 +3622,9 @@
     <measure number="131">
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>G</root-step>
           </root>
-        <kind>major</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -3642,9 +3665,10 @@
     <measure number="133">
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3657,6 +3681,12 @@
         </note>
       </measure>
     <measure number="134">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3708,9 +3738,9 @@
     <measure number="137">
       <harmony print-frame="no">
         <root>
-          <root-step>F</root-step>
+          <root-step>A</root-step>
           </root>
-        <kind>major</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <rest measure="yes" />
@@ -3888,10 +3918,9 @@
     <measure number="147">
       <harmony print-frame="no">
         <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
+          <root-step>G</root-step>
           </root>
-        <kind>major</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <pitch>
@@ -3932,9 +3961,10 @@
     <measure number="149">
       <harmony print-frame="no">
         <root>
-          <root-step>G</root-step>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
           </root>
-        <kind text="m">minor</kind>
+        <kind>major</kind>
         </harmony>
       <note>
         <pitch>
@@ -3947,6 +3977,12 @@
         </note>
       </measure>
     <measure number="150">
+      <harmony print-frame="no">
+        <root>
+          <root-step>C</root-step>
+          </root>
+        <kind>major</kind>
+        </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3998,9 +4034,9 @@
     <measure number="153">
       <harmony print-frame="no">
         <root>
-          <root-step>F</root-step>
+          <root-step>A</root-step>
           </root>
-        <kind>major</kind>
+        <kind text="m">minor</kind>
         </harmony>
       <note>
         <rest measure="yes" />
