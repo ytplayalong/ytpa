@@ -5424,7 +5424,7 @@
   },
   {
     "videoId": "NFSyl3pwa-A",
-    "measureMap": { "8": 3, "98": 64 },
+    "measureMap": { "8": 3, "98": 63 },
     "fileName": "Mari_Carmen",
     "name": "Mari Carmen",
     "artist": "La Pegatina",
@@ -5453,5 +5453,13 @@
     "name": "Mamko nedávej mě",
     "artist": "Čechomor",
     "language": "czech"
+  },
+  {
+    "videoId": "-yJZuG_mBhI",
+    "measureMap": { "9": 3, "147": 144 },
+    "fileName": "Gojzar_tanc",
+    "name": "Gojzar tanc",
+    "artist": "Fehtarji",
+    "language": "slovenian"
   }
 ]
