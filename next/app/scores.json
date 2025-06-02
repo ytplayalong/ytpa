@@ -6965,12 +6965,34 @@
   {
     "keys": [-4, -3, -2],
     "times": [[2, 4]],
-    "source": "dummy",
+    "source": "25547734",
     "videoId": "-yJZuG_mBhI",
     "measureMap": {"9": 3, "147": 144},
     "fileName": "Gojzar_tanc",
     "name": "Gojzar tanc",
     "artist": "Fehtarji",
     "language": "slovenian"
+  },
+  {
+    "keys": [-6, -5],
+    "times": [[2, 4]],
+    "source": "25572697",
+    "videoId": "POg0Jl18spc",
+    "measureMap": {"7": 3, "78": 93},
+    "fileName": "Edelweiss",
+    "name": "Edelweiss",
+    "artist": "Fäaschtbänkler",
+    "language": "german"
+  },
+  {
+    "keys": [5, -2],
+    "times": [[2, 4]],
+    "source": "25606645",
+    "videoId": "azjVawnaMag",
+    "measureMap": {"4": 4, "153": 125},
+    "fileName": "Herzschlag",
+    "name": "Herzschlag für Herzschlag",
+    "artist": "Kastelruther Spatzen",
+    "language": "german"
   }
 ]

@@ -5461,5 +5461,21 @@
     "name": "Gojzar tanc",
     "artist": "Fehtarji",
     "language": "slovenian"
+  },
+  {
+    "videoId": "POg0Jl18spc",
+    "measureMap": { "7": 3, "78": 93 },
+    "fileName": "Edelweiss",
+    "name": "Edelweiss",
+    "artist": "Fäaschtbänkler",
+    "language": "german"
+  },
+  {
+    "videoId": "azjVawnaMag",
+    "measureMap": { "4": 4, "153": 125 },
+    "fileName": "Herzschlag",
+    "name": "Herzschlag für Herzschlag",
+    "artist": "Kastelruther Spatzen",
+    "language": "german"
   }
 ]
