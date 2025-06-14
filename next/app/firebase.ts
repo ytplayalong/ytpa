@@ -21,7 +21,15 @@ import { useEffect, useState } from "react";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {};
+const firebaseConfig = {
+  apiKey: "AIzaSyCVJ76vO0YNHlGwCtvkKfDe5rWLxFiIzgA",
+  authDomain: "ytpa-f7aca.firebaseapp.com",
+  projectId: "ytpa-f7aca",
+  storageBucket: "ytpa-f7aca.firebasestorage.app",
+  messagingSenderId: "374268704603",
+  appId: "1:374268704603:web:646ec6a00d2b5d45968c7e",
+  measurementId: "G-860EZ6JGNF",
+};
 
 type DbUserData = {
   allFavorites: string[];
