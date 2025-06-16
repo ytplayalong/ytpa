@@ -5493,5 +5493,21 @@
     "name": "Czas na umieranie",
     "artist": "Wojtek Szumański",
     "language": "polish"
+  },
+  {
+    "videoId": "0RWDb9EawGE",
+    "measureMap": { "20": 20, "71": 68 },
+    "fileName": "O_Susanna",
+    "name": "O Susanna",
+    "artist": "Heather Walton",
+    "language": "instrumental"
+  },
+  {
+    "videoId": "0AfE3NCNZCc",
+    "measureMap": { "19": 2, "108": 112 },
+    "fileName": "Ozenil_bom_Slovenko",
+    "name": "Oženil bom Slovenko",
+    "artist": "Gadi",
+    "language": "slovenian"
   }
 ]
