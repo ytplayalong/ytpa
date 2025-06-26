@@ -5517,5 +5517,21 @@
     "name": "Wiegala",
     "artist": "Oktopus ft. Janna Kate",
     "language": "german"
+  },
+  {
+    "videoId": "MAvVIUGSx6s",
+    "measureMap": { "6": 2, "173": 96 },
+    "fileName": "Bella_Napoli",
+    "name": "Bella Napoli",
+    "artist": "Roy Bianco & Die Abbrunzati Boys",
+    "language": "german"
+  },
+  {
+    "videoId": "XWxRAMHmXBU",
+    "measureMap": { "4": 4, "74": 60 },
+    "fileName": "Guten_Morgen_Sonnenschein",
+    "name": "Guten Morgen Sonnenschein",
+    "artist": "Nana Mouskouri",
+    "language": "german"
   }
 ]
