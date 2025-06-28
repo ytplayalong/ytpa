@@ -7071,5 +7071,16 @@
     "name": "Guten Morgen Sonnenschein",
     "artist": "Nana Mouskouri",
     "language": "german"
+  },
+  {
+    "keys": [2],
+    "times": [[2, 4]],
+    "source": "26022481",
+    "videoId": "J261FJLjgj8",
+    "measureMap": {"8": 7, "34": 38},
+    "fileName": "Pique_la_Baleine",
+    "name": "Pique la Baleine",
+    "artist": "Hélianthème",
+    "language": "french"
   }
 ]
