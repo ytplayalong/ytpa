@@ -524,9 +524,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -534,10 +533,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="6">
@@ -565,10 +563,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -578,7 +585,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="7">
@@ -689,9 +696,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -699,10 +705,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="10">
@@ -730,10 +735,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -743,7 +757,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="11">
@@ -860,9 +874,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -870,10 +883,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="14">
@@ -901,10 +913,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -914,7 +935,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="15">
@@ -1025,9 +1046,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -1035,10 +1055,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="18">
@@ -1066,10 +1085,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -1079,7 +1107,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="19">
@@ -1140,17 +1168,8 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>6</duration>
-        <type>quarter</type>
-        <dot />
-        </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>8</duration>
+        <type>half</type>
         </note>
       <barline location="right">
         <bar-style>light-light</bar-style>
@@ -1319,9 +1338,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -1329,10 +1347,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="26">
@@ -1360,10 +1377,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -1373,7 +1399,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="27">
@@ -1434,17 +1460,8 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>6</duration>
-        <type>quarter</type>
-        <dot />
-        </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>8</duration>
+        <type>half</type>
         </note>
       </measure>
     <measure number="29">
@@ -1610,9 +1627,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -1620,10 +1636,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="34">
@@ -1651,10 +1666,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -1664,7 +1688,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="35">
@@ -1784,9 +1808,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -1794,10 +1817,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="38">
@@ -1825,10 +1847,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -1838,7 +1869,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="39">
@@ -1949,9 +1980,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -1959,10 +1989,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="42">
@@ -1990,10 +2019,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2003,7 +2041,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="43">
@@ -2120,9 +2158,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -2130,10 +2167,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="46">
@@ -2161,10 +2197,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2174,7 +2219,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="47">
@@ -2285,9 +2330,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -2295,10 +2339,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="50">
@@ -2326,10 +2369,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2339,7 +2391,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="51">
@@ -2409,8 +2461,20 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">end</beam>
+        <beam number="2">end</beam>
         </note>
       <barline location="right">
         <bar-style>light-light</bar-style>
@@ -2579,9 +2643,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -2589,10 +2652,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="58">
@@ -2620,10 +2682,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2633,7 +2704,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="59">
@@ -2694,17 +2765,8 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>6</duration>
-        <type>quarter</type>
-        <dot />
-        </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>2</duration>
-        <type>eighth</type>
+        <duration>8</duration>
+        <type>half</type>
         </note>
       </measure>
     <measure number="61">
@@ -2870,9 +2932,8 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
         </note>
       <note>
@@ -2880,10 +2941,9 @@
           <step>B</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>16th</type>
+        <duration>2</duration>
+        <type>eighth</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
         </note>
       </measure>
     <measure number="66">
@@ -2911,10 +2971,19 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>2</duration>
         <type>eighth</type>
-        <dot />
         <beam number="1">begin</beam>
+        </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>1</duration>
+        <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2924,7 +2993,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="67">
@@ -2985,29 +3054,8 @@
           <step>D</step>
           <octave>4</octave>
           </pitch>
-        <duration>6</duration>
-        <type>quarter</type>
-        <dot />
-        </note>
-      <note>
-        <pitch>
-          <step>D</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>1</duration>
-        <type>16th</type>
-        <beam number="1">begin</beam>
-        <beam number="2">begin</beam>
-        </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>1</duration>
-        <type>16th</type>
-        <beam number="1">end</beam>
-        <beam number="2">end</beam>
+        <duration>8</duration>
+        <type>half</type>
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
