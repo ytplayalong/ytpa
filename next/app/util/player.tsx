@@ -6,7 +6,7 @@ import { Player, playerSizePx } from "./util";
 
 /** YouTube player hook. */
 export const useYoutubePlayer = (videoId: string) => {
-  const playerRef = useRef<any>();
+  const playerRef = useRef<any>(null);
 
   const getTime = useCallback(async () => {
     return await playerRef.current?.getInternalPlayer().getCurrentTime();
