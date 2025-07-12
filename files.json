@@ -5495,11 +5495,11 @@
     "language": "polish"
   },
   {
-    "videoId": "0RWDb9EawGE",
-    "measureMap": { "20": 20, "71": 68 },
+    "videoId": "CkZmMNSMWXQ",
+    "measureMap": { "5": 5, "72": 68 },
     "fileName": "O_Susanna",
     "name": "O Susanna",
-    "artist": "Heather Walton",
+    "artist": "Craig Duncan",
     "language": "instrumental"
   },
   {
@@ -5557,5 +5557,13 @@
     "name": "Happy Days Are Here Again",
     "artist": "Jack Hylton",
     "language": "english"
+  },
+  {
+    "videoId": "DEX0EEGMXdk",
+    "measureMap": { "9": 2, "162.5": 77 },
+    "fileName": "Tomos_Polka",
+    "name": "Tomos Polka",
+    "artist": "Šargo Banda",
+    "language": "slovenian"
   }
 ]
