@@ -1,6 +1,5 @@
 """MuseScore.com API client."""
 
-import tempfile
 import requests
 import json
 from pathlib import Path

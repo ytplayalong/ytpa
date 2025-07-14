@@ -86,8 +86,8 @@ def _check_measure_map(
     """
     curr_meas_to_sec_idx = 0
 
-    sorted_meas_to_sec = list(sorted(meas_map.items(), key=lambda el: (el[1], el[0])))
-    sorted_meas_to_time = list(sorted(meas_to_time.items()))
+    sorted_meas_to_sec = sorted(meas_map.items(), key=lambda el: (el[1], el[0]))
+    sorted_meas_to_time = sorted(meas_to_time.items())
 
     meas_to_sec_size = len(sorted_meas_to_sec)
 
@@ -141,7 +141,7 @@ def _check_measure_map(
         curr_meas_to_sec_idx += 1
 
     # Order dict to get consistent JSON
-    entries = list(sorted(meas_map.items(), key=lambda el: el[1]))
+    entries = sorted(meas_map.items(), key=lambda el: el[1])
     new_meas_map = OrderedDict(entries)
 
     all_sorted = all(
@@ -202,7 +202,7 @@ def _write_generated(info: list[dict]) -> None:
     for score_info in info:
         for ts in score_info["times"]:
             all_time_signatures.add(tuple(ts))
-    sorted_times = list(sorted(all_time_signatures))
+    sorted_times = sorted(all_time_signatures)
     write_json(Paths.TIME_SIGNATURES_FILE, sorted_times)
 
 

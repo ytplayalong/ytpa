@@ -49,7 +49,7 @@ class Paths:
     def find_all_scores(sort_by_modify_date: bool = False):
         all_paths = Paths.MSCZ_SCORE_PATH.rglob("*.mscz")
         if sort_by_modify_date:
-            all_paths = reversed(sorted(all_paths, key=lambda p: p.lstat().st_mtime))
+            all_paths = sorted(all_paths, key=lambda p: p.lstat().st_mtime, reverse=True)
         return all_paths
 
     @staticmethod
