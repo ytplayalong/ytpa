@@ -1,5 +1,7 @@
 """Python package for reading and modifying MuseScore .mscz files."""
 
+import copy
+import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 import zipfile
@@ -7,6 +9,11 @@ import os
 import argparse
 
 TEST_SCORE_PATH = Path(__file__).parent / "test.mscz"
+
+
+def safe_filename(name: str):
+    """Replace any characters that are not safe for filenames."""
+    return re.sub(r"[^\w.\- ]", "_", name.strip())
 
 
 class MsczFileManager:
@@ -34,6 +41,35 @@ class MsczFileManager:
 
         self._parsed_xml = ET.fromstring(xml_data.decode())
         return self._parsed_xml
+
+    def extract_parts(self, out_dir: Path):
+        """Create individual mscx files, one for each part."""
+
+        assert self._parsed_xml is not None, "File not read yet!"
+
+        # Navigate to the outer <Score> element
+        outer_score = self._parsed_xml.find("Score")
+
+        # Iterate over all nested <Score> elements
+        inner_scores = [child for child in outer_score if child.tag == "Score"]
+        for i, inner_score in enumerate(inner_scores, 1):
+
+            new_root = copy.deepcopy(self._parsed_xml)
+
+            # Replace <Score> element with inner one
+            old_score = new_root.find("Score")
+            new_root.remove(old_score)
+            new_root.append(inner_score)
+
+            # Use the part name to define the filename
+            name_elem = inner_score.find("name")
+            score_name = name_elem.text if name_elem is not None else f"part_{i}"
+            filename = safe_filename(score_name)
+            out_path = out_dir / f"{filename}.mscx"
+
+            # Write to file
+            with open(out_path, "wb") as f:
+                f.write(self.get_write_xml(new_root))
 
     def get_meta_tags(self):
         """Read meta tags from XML."""
@@ -70,6 +106,13 @@ class MsczFileManager:
         for k, v in copied_tags.items():
             print(f"Could not set {k} to {v}")
 
+    @staticmethod
+    def get_write_xml(xml: ET.Element):
+        _header = b'<?xml version="1.0" encoding="UTF-8"?>'
+        modified_xml = ET.tostring(xml, encoding="utf-8")
+        modified_xml = _header + b"\n" + modified_xml
+        return modified_xml
+
     def write(self, out_path: Path | None = None):
         """Write to file.
 
@@ -77,8 +120,6 @@ class MsczFileManager:
             out_path: File output path. If None, the read file will be replaced.
         """
         save_path = self._path if out_path is None else out_path
-
-        _header = b'<?xml version="1.0" encoding="UTF-8"?>'
 
         # Create a new zip file
         temp_zip_path = save_path.parent / f"{save_path.stem}.temp"
@@ -90,8 +131,7 @@ class MsczFileManager:
             for item in zip_in.infolist():
                 if item.filename == self._packed_xml_name:
                     # Replace the specified file
-                    modified_xml = ET.tostring(self._parsed_xml, encoding="utf-8")
-                    modified_xml = _header + b"\n" + modified_xml
+                    modified_xml = self.get_write_xml(self._parsed_xml)
                     with zip_in.open(item.filename) as source_file:
                         zip_out.writestr(item, modified_xml)
                 else:
