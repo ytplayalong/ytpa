@@ -61,7 +61,7 @@ class MsczFileManager:
             name_elem = inner_score.find("name")
             score_name = name_elem.text if name_elem is not None else f"part_{i}"
             filename = safe_filename(score_name)
-            out_path = out_dir / f"{filename}.mscx"
+            out_path = out_dir / f"{safe_filename(self._path.stem)}_{filename}.mscx"
 
             # Write to file
             with open(out_path, "wb") as f:
@@ -158,7 +158,6 @@ class MsczFileManager:
 
         # Save with modified meta tags
         self.set_meta_tags(set_tags)
-
 
 
 # Update meta tags in all files in a directory

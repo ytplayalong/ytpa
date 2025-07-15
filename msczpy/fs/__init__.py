@@ -4,9 +4,12 @@ import re
 from tempfile import TemporaryDirectory
 
 
-def safe_filename(name: str):
+def safe_filename(name: str, replace_spaces: bool = True):
     """Replace any characters that are not safe for filenames."""
-    return re.sub(r"[^\w.\- ]", "_", name.strip())
+    res = re.sub(r"[^\w.\- ]", "_", name.strip())
+    if replace_spaces:
+        res = res.replace(" ", "_")
+    return res
 
 
 def get_input_list(in_path: Path, suffix: str):

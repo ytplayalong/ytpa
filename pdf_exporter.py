@@ -1,6 +1,9 @@
+"""Script for batch-exporting individual parts of a MuseScore file."""
+
 import argparse
 from pathlib import Path
 
+from pypdf import PdfWriter
 from tqdm import tqdm
 
 from msczpy import MsczFileManager
@@ -9,28 +12,21 @@ from mxlpy import export_mscz_to_pdf
 
 
 def get_parser():
-    parser = argparse.ArgumentParser(description="Process a directory path.")
+    # Re-use module docstring as description:
+    parser = argparse.ArgumentParser(description=__doc__)
+
     parser.add_argument("input_path", type=str, help="Input file or directory.")
     parser.add_argument("-o", "--output_dir", type=str, help="Output directory")
     parser.add_argument(
         "-m3", "--musescore_v3", action="store_true", help="Use MuseScore version 3"
     )
+    parser.add_argument(
+        "-l2", "--second_level", action="store_true", help="Export folder structure"
+    )
     return parser
 
 
-def run_pdf_export():
-
-    # Create the parser
-    args = get_parser().parse_args()
-
-    input_path = Path(args.input_path)
-    process_list = get_input_list(input_path, ".mscz")
-
-    if args.output_dir is None:
-        out_dir = Path(__file__).parent / "out"
-    else:
-        out_dir = Path(args.output_dir)
-    out_dir.mkdir(exist_ok=True)
+def export_to_pdf(out_dir: Path, process_list: list[Path], use_m3: bool = True):
 
     with temporary_pathdir() as temp_dir:
 
@@ -44,8 +40,51 @@ def run_pdf_export():
         mscx_files = [
             file_p for file_p in temp_dir.iterdir() if file_p.suffix == ".mscx"
         ]
+        out_pdf_files = []
         for mscx_file in tqdm(mscx_files, desc="Exporting PDF"):
-            export_mscz_to_pdf(mscx_file, out_dir, args.musescore_v3)
+            out_pdf = export_mscz_to_pdf(mscx_file, out_dir, use_m3)
+            out_pdf_files.append(out_pdf)
+
+        # Merge all PDFs
+        merged_file_path = out_dir / "All_Parts_Merged.pdf"
+        with PdfWriter() as pdf_writer:
+            for pdf_file in out_pdf_files:
+                pdf_writer.append(pdf_file)
+
+            pdf_writer.write(merged_file_path)
+
+
+def run_pdf_export():
+
+    # Create the parser
+    args = get_parser().parse_args()
+
+    input_path = Path(args.input_path)
+
+    if args.output_dir is None:
+        out_dir = Path(__file__).parent / "out"
+    else:
+        out_dir = Path(args.output_dir)
+    out_dir.mkdir(exist_ok=True)
+
+    if args.second_level:
+        for sub_dir in input_path.iterdir():
+            if not sub_dir.is_dir():
+                continue
+
+            process_list = get_input_list(sub_dir, ".mscz")
+            if len(process_list) == 0:
+                continue
+
+            print(f"Processing {input_path.name}/{sub_dir.name}")
+
+            sub_out_dir = out_dir / sub_dir.name
+            sub_out_dir.mkdir(exist_ok=True)
+            export_to_pdf(sub_out_dir, process_list, args.musescore_v3)
+
+    else:
+        process_list = get_input_list(input_path, ".mscz")
+        export_to_pdf(out_dir, process_list, args.musescore_v3)
 
 
 if __name__ == "__main__":
