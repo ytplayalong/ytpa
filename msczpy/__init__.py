@@ -1,19 +1,15 @@
 """Python package for reading and modifying MuseScore .mscz files."""
 
 import copy
-import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 import zipfile
 import os
 import argparse
 
+from msczpy.fs import get_input_list, safe_filename
+
 TEST_SCORE_PATH = Path(__file__).parent / "test.mscz"
-
-
-def safe_filename(name: str):
-    """Replace any characters that are not safe for filenames."""
-    return re.sub(r"[^\w.\- ]", "_", name.strip())
 
 
 class MsczFileManager:
@@ -164,19 +160,20 @@ class MsczFileManager:
         self.set_meta_tags(set_tags)
 
 
+
 # Update meta tags in all files in a directory
 if __name__ == "__main__":
-
     # Create the parser
     parser = argparse.ArgumentParser(description="Process a directory path.")
-    parser.add_argument("process_dir", type=str, help="Path to the directory")
+    parser.add_argument("input_path", type=str, help="Input file or directory.")
+    parser.add_argument("--output_dir", type=str, help="Output directory")
     args = parser.parse_args()
-    score_dir = Path(args.process_dir)
 
-    for ct, score_file in enumerate(score_dir.iterdir()):
+    input_path = Path(args.input_path)
+    process_list = get_input_list(input_path, ".mscz")
+
+    for ct, score_file in enumerate(process_list):
         print(f"Processing file {ct}")
-        if score_file.suffix != ".mscz":
-            continue
 
         file_manager = MsczFileManager(score_file)
         file_manager.read_mscz()

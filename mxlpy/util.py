@@ -15,6 +15,7 @@ class Paths:
     _home = Path.home()
 
     MUSESCORE_EXE_PATH = Path("C:/Program Files/MuseScore 4/bin/MuseScore4.exe")
+    MUSESCORE3_EXE_PATH = Path("C:/Program Files/MuseScore 3/bin/MuseScore3.exe")
     COMPOSITIONS_PATH = _home / "Documents/GitHub/compositions"
     MSCZ_SCORE_PATH = COMPOSITIONS_PATH / "PlayAlong" / "Current"
 
@@ -49,7 +50,9 @@ class Paths:
     def find_all_scores(sort_by_modify_date: bool = False):
         all_paths = Paths.MSCZ_SCORE_PATH.rglob("*.mscz")
         if sort_by_modify_date:
-            all_paths = sorted(all_paths, key=lambda p: p.lstat().st_mtime, reverse=True)
+            all_paths = sorted(
+                all_paths, key=lambda p: p.lstat().st_mtime, reverse=True
+            )
         return all_paths
 
     @staticmethod
