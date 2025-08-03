@@ -5571,7 +5571,15 @@
     "measureMap": { "8": 3, "46": 26 },
     "fileName": "Hej_dziny",
     "name": "Hej dziny",
-    "artist": "Štefan Repka &amp; Gorals",
+    "artist": "Štefan Repka & Gorals",
     "language": "slovenian"
+  },
+  {
+    "videoId": "lWpwePxyo9g",
+    "measureMap": { "1": 2, "66": 27 },
+    "fileName": "Bajuschki_Baju",
+    "name": "Bajuschki, Baju",
+    "artist": "Kalle Klang",
+    "language": "german"
   }
 ]
