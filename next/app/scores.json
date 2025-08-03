@@ -7124,7 +7124,7 @@
     "measureMap": {"8": 3, "46": 26},
     "fileName": "Hej_dziny",
     "name": "Hej dziny",
-    "artist": "Štefan Repka &amp; Gorals",
+    "artist": "Štefan Repka & Gorals",
     "language": "slovenian"
   },
   {
@@ -7137,5 +7137,16 @@
     "name": "Bajuschki, Baju",
     "artist": "Kalle Klang",
     "language": "german"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "26659000",
+    "videoId": "BOuyzwxDXWA",
+    "measureMap": {"2": 2, "92": 49},
+    "fileName": "Old_Maui",
+    "name": "Old Maui",
+    "artist": "The Longest Johns",
+    "language": "english"
   }
 ]
