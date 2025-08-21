@@ -7181,5 +7181,27 @@
     "name": "Marina",
     "artist": "Rocco Granata",
     "language": "italian"
+  },
+  {
+    "keys": [4],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "9NK3f9-Y8m4",
+    "measureMap": {"5": 3, "129": 71},
+    "fileName": "Gloria",
+    "name": "Gloria",
+    "artist": "Umberto Tozzi",
+    "language": "italian"
+  },
+  {
+    "keys": [-2],
+    "times": [[2, 4]],
+    "source": "dummy",
+    "videoId": "4RI8cB1v7GY",
+    "measureMap": {"4": 3, "85": 57},
+    "fileName": "Unza_Unza_Time",
+    "name": "Unza Unza Time",
+    "artist": "Balkan Paradise Orchestra",
+    "language": "instrumental"
   }
 ]
