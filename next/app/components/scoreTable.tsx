@@ -151,52 +151,65 @@ export const ScoreTable = ({
     </thead>
   );
 
+  // Put in a div that makes only the table
+  // horizontally scrollable.
   return (
-    <table
+    <div
       style={{
+        display: "flex",
         width: "100%",
-        borderCollapse: "separate",
-        borderSpacing: `0 ${tableRowMargin}`,
+        overflowX: "auto",
       }}
     >
-      {tableHeader}
-      <tbody>
-        {scores.map((el) => {
-          const optionComp = hasOptions ? (
-            <td style={tdStyle}>{sheetDD(el.videoId)}</td>
-          ) : undefined;
+      <table
+        style={{
+          width: "100%",
+          borderCollapse: "separate",
+          overflowX: "auto",
+          borderSpacing: `0 ${tableRowMargin}`,
+        }}
+      >
+        {tableHeader}
+        <tbody>
+          {scores.map((el) => {
+            const optionComp = hasOptions ? (
+              <td style={tdStyle}>{sheetDD(el.videoId)}</td>
+            ) : undefined;
 
-          const link = getLink(`/piece?scoreId=${el.videoId}`);
-          return (
-            <tr
-              key={el.videoId}
-              style={{ cursor: "pointer", height: tableRowHeight }}
-              className="hoverlink"
-            >
-              <td style={leftTdStyle}>
-                {wrapLinkedCell(
-                  <img
-                    height={tableRowHeight}
-                    src={`https://img.youtube.com/vi/${el.videoId}/default.jpg`}
-                    alt={`YouTube thumbnail of ${el.name} by ${el.artist}`}
-                  ></img>,
-                  link
-                )}
-              </td>
-              {sortBy.map((field) => {
-                return (
-                  <td key={`td-${field}`} style={tdStyle}>
-                    {wrapLinkedCell(el[field]?.trim(), link)}
-                  </td>
-                );
-              })}
-              <td style={tdStyle}>{wrapLinkedCell(getKeys(el.keys), link)}</td>
-              {optionComp}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+            const link = getLink(`/piece?scoreId=${el.videoId}`);
+            return (
+              <tr
+                key={el.videoId}
+                style={{ cursor: "pointer", height: tableRowHeight }}
+                className="hoverlink"
+              >
+                <td style={leftTdStyle}>
+                  {wrapLinkedCell(
+                    <img
+                      height={tableRowHeight}
+                      src={`https://img.youtube.com/vi/${el.videoId}/default.jpg`}
+                      alt={`YouTube thumbnail of ${el.name} by ${el.artist}`}
+                    ></img>,
+                    link
+                  )}
+                </td>
+                {sortBy.map((field) => {
+                  return (
+                    <td key={`td-${field}`} style={tdStyle}>
+                      {wrapLinkedCell(el[field]?.trim(), link)}
+                    </td>
+                  );
+                })}
+                <td style={tdStyle}>
+                  {wrapLinkedCell(getKeys(el.keys), link)}
+                </td>
+                {optionComp}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
