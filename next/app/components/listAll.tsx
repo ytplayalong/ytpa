@@ -75,7 +75,7 @@ const useTimeSignatureFilter = () => {
   const initTimes = TimeSignatures.map(() => true);
   const [chosenTimes, setChosenTimes] = useState<boolean[]>(initTimes);
   const comp = (
-    <div style={distributedStyle}>
+    <div style={{ ...distributedStyle, overflowX: "auto" }}>
       {TimeSignatures.map((el, idx) => (
         <Fragment key={`time-${el}`}>
           <label htmlFor={`time-${el}`}>{`${el[0]}/${el[1]}`}</label>
