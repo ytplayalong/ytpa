@@ -1,10 +1,13 @@
 import RegisterForm from "@/app/components/forms/registerForm";
+import { containerInner } from "@/app/util/styles";
 import { getStaticLocaleParams } from "@/i18n";
 
 export default function Register() {
   return (
     <div className="container">
-      <RegisterForm />
+      <div style={containerInner}>
+        <RegisterForm />
+      </div>
     </div>
   );
 }
