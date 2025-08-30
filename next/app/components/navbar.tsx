@@ -136,7 +136,9 @@ export default function NavigationBar() {
     <nav className="container" style={navStyle}>
       <div style={containerInnerLeftRight}>
         {navLogo}
-        <div style={{ ...baseNavEl, float: "left" }}>{label}</div>
+        <div className="hide-on-mobile" style={{ ...baseNavEl, float: "left" }}>
+          {label}
+        </div>
         <div className="hoverlink" style={ddStyle}>
           <div
             onClick={ddClicked}
