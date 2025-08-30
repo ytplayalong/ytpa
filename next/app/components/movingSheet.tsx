@@ -22,21 +22,16 @@ class MyOSMD extends OpenSheetMusicDisplay {
 
 /** Load the score from the xml. */
 const loadOsmd = async (
-  xml: Document,
+  osmd: MyOSMD,
   width: number,
   height: number,
   zoomFac: number
 ) => {
-  const osmd = new MyOSMD(osmdId, {
-    drawCredits: false,
-    drawPartNames: false,
-    measureNumberInterval: 4,
-  });
-  osmd.setup();
-
-  await osmd.load(xml);
   osmd.setCustomPageFormat(width, height);
   osmd.Zoom = zoomFac;
+  if (!osmd.IsReadyToRender()) {
+    console.warn("Should not render");
+  }
   osmd.render();
   return osmd;
 };
@@ -104,7 +99,7 @@ const getInterpolator = (
       yValBetter.push(lastAnchor[1]);
     }
 
-    // Todo: Interpolate lines linearly regardless of bars.
+    // TODO: Interpolate lines linearly regardless of bars.
     measureXList = yValBetter;
   }
 
@@ -172,6 +167,7 @@ export const MovingSheet = (props: {
   measureMap: MeasureMap;
   getTime: () => Promise<number>;
 }) => {
+  const [osmd, setOsmd] = useState<MyOSMD | null>(null);
   const [currPos, setCurrPos] = useState({ x: 0, y: 0 });
   const [ipOrNull, setIpOrNull] = useState<{
     ip: (n: number, fac: number) => number;
@@ -192,20 +188,37 @@ export const MovingSheet = (props: {
   const { getTime, measureMap, xml } = props;
 
   useEffect(() => {
-    // Load the sheet music display and create interpolator.
-    const loadLocal = async () => {
-      const osmdPageHeight = settingsManager.isHorizontalMode()
-        ? sheetHeigthPx * userZoom
-        : 100000;
-      const osmd = await loadOsmd(xml, sheetWidth, osmdPageHeight, zoomFac);
-      const ipObj = getInterpolator(osmd, measureMap);
-      setIpOrNull({ ip: ipObj });
+    const loadOsmd = async () => {
+      const osmd = new MyOSMD(osmdId, {
+        drawCredits: false,
+        drawPartNames: false,
+        measureNumberInterval: 4,
+      });
+      osmd.setup();
+      await osmd.load(xml);
+      setOsmd(osmd);
     };
-    loadLocal();
+
+    loadOsmd();
+  }, [xml]);
+
+  useEffect(() => {
+    // Load the sheet music display and create interpolator.
+    if (osmd != null) {
+      const loadLocal = async () => {
+        const osmdPageHeight = settingsManager.isHorizontalMode()
+          ? sheetHeigthPx * userZoom
+          : 100000;
+        await loadOsmd(osmd, sheetWidth, osmdPageHeight, zoomFac);
+        const ipObj = getInterpolator(osmd, measureMap);
+        setIpOrNull({ ip: ipObj });
+      };
+      loadLocal();
+    }
     return () => {
       setIpOrNull(null);
     };
-  }, [xml, measureMap, sheetHeigthPx, userZoom, zoomFac, sheetWidth]);
+  }, [osmd, measureMap, sheetHeigthPx, userZoom, zoomFac, sheetWidth]);
 
   useEffect(() => {
     // Register callback that adjusts the sheet according to the video

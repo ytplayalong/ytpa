@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -8,18 +8,33 @@ function getWindowDimensions() {
   };
 }
 
-export default function useWindowDimensions() {
+export default function useWindowDimensions(delay = 200) {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );
 
   useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
+    // Using debouncing with timeout
+    // to only have one event at the end of a resize.
+    let timeoutId: NodeJS.Timeout | undefined = undefined;
+
+    const handleResize = () => {
+      if (timeoutId !== undefined) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        setWindowDimensions(getWindowDimensions());
+      }, delay);
+    };
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    return () => {
+      if (timeoutId !== undefined) {
+        clearTimeout(timeoutId);
+      }
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return windowDimensions;
