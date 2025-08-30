@@ -32,7 +32,7 @@ const navbarLinks = [
     icon: <MdSettings {...iconProps} />,
   },
 ].reverse();
-const defaultPageTitle = "YouTube Play-Along";
+export const defaultPageTitle = "YouTube Play-Along";
 
 const imgH = "45px";
 const padLeftRight = "14px";

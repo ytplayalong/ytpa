@@ -24,7 +24,7 @@ export const NewestScores = ({
   return (
     <div>
       <h4>{t("recentScores")}</h4>
-      <p>{t("recentTxt")}</p>
+      <p style={{ marginBottom: "1.5rem" }}>{t("recentTxt")}</p>
       {newestScores}
       {favOpt.overlay}
     </div>

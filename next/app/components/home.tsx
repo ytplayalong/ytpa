@@ -9,8 +9,17 @@ import usePathTranslation from "@/i18n/hook";
 
 import { fullScoreInfo, getRandomScore } from "../util/util";
 import { NewestScores } from "./recentScores";
+import { defaultPageTitle } from "./navbar";
 
 const TRACKING_ID = "G-42SMWF6LRM";
+const titleStyle: React.CSSProperties = {
+  textAlign: "center",
+  display: "inline-block",
+  padding: "0.5rem 1rem",
+  borderRadius: "8px",
+  fontWeight: "bold",
+  margin: "1rem", // optional spacing
+};
 
 const Home = () => {
   ReactGA.initialize(TRACKING_ID);
@@ -34,8 +43,13 @@ const Home = () => {
   const morePieces = <Trans i18nKey={"findAllHereTxt"} components={parInfo} />;
   return (
     <>
-      <p>{t("intro")}</p>
-      <h4>{t("allScores")}</h4>
+      <div style={{ textAlign: "center", margin: "1rem" }}>
+        <div style={titleStyle}>
+          <h1 style={{ margin: 0, fontSize: "3rem" }}>{defaultPageTitle}</h1>
+        </div>
+        <h4 style={{ fontSize: "1.5rem" }}>{t("intro")}</h4>
+      </div>
+      <h4 style={{ marginTop: "3rem" }}>{t("allScores")}</h4>
       <p>{secondPar}</p>
       <NewestScores nMostRecentSongs={20} />
       <p>{morePieces}</p>

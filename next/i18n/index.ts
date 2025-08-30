@@ -41,10 +41,10 @@ export const RESSOURCES = {
       txtFilterDefault: "Enter keyword(s)",
       allScores: "All Pieces",
       allScoresTxt:
-        "There is a total of <num /> pieces of music available for playing along including the corresponding sheet music. They all can be accessed under <all/>. Or just jump right in and choose a <random />",
+        "There is a total of <num /> pieces of music available here: <all/>. Or choose a <random />",
       findAllHereTxt: "More pieces can be found here: <all/>",
       randomScore: "Random Piece",
-      recentScores: "Recently Added Pieces",
+      recentScores: "Most Recently Added",
       recentTxt:
         "The most recently added scores are listed below. Choose one by clicking on it and start playing right away.",
       name: "Name",
@@ -57,8 +57,7 @@ export const RESSOURCES = {
       contact: "Contact",
       contactTxt:
         "If you have any questions, need assistance, or want to provide us with helpful feedback, please don't hesitate to use the following contact form.",
-      intro:
-        "Welcome! We are pleased to offer a wide variety of sheet music for a variety of musical styles and instruments. Our website features interactive sheet music that is synced with corresponding music videos, allowing you to play along with the video as you practice.",
+      intro: "Interactive sheet music synced with YouTube videos",
       viewSheetsOn: "View sheet music on",
       sheetMoveMode: "Synchronization mode",
       horizontalMode: "Horizontal",
@@ -108,7 +107,7 @@ export const RESSOURCES = {
       txtFilterDefault: "Insertar palabras clave",
       allScores: "Toda la música",
       allScoresTxt:
-        "En total hay <num /> piezas. Se puede acceder a ellas a través del siguiente enlace <all/>. O elige una pieza al azar: <random />",
+        "Hay un total de <num /> piezas musicales disponibles aquí: <all/>. O elige una <random />",
       findAllHereTxt: "Encontrará más piezas aquí: <all/>",
       randomScore: "Pieza al azar",
       recentScores: "Piezas recientes",
@@ -123,8 +122,7 @@ export const RESSOURCES = {
       contact: "Contacto",
       contactTxt:
         "Si tiene alguna pregunta, necesita ayuda o desea brindarnos comentarios útiles, no dude en utilizar el siguiente formulario de contacto.",
-      intro:
-        "¡Bienvenido! Nos complace ofrecer una amplia variedad de partituras para una variedad de estilos e instrumentos musicales. Nuestro sitio web presenta partituras interactivas que se sincronizan con los videos musicales correspondientes, lo que le permite reproducir el video mientras practica.",
+      intro: "Partituras interactivas sincronizadas con videos de YouTube",
       viewSheetsOn: "Ver partitura en",
       sheetMoveMode: "Modo de sincronización",
       horizontalMode: "Horizontal",
@@ -174,7 +172,7 @@ export const RESSOURCES = {
       txtFilterDefault: "Liedname oder Künstler",
       allScores: "Alle Lieder",
       allScoresTxt:
-        "Es stehen total <num /> Lieder zur Verfügung mit den dazugehörigen Noten. Alle können unter <all/> gefunden werden. Alternativ kann ein zufälliges gewählt werden unter folgendem Link: <random />",
+        "Es stehen total <num /> Lieder zur Verfügung hier: <all/>. Oder wähle ein <random />",
       findAllHereTxt: "Mehr Stücke gibt es hier: <all/>",
       randomScore: "Zufälliges Stück",
       recentScores: "Kürzlich hinzugefügte Lieder",
@@ -188,9 +186,8 @@ export const RESSOURCES = {
       message: "Nachricht",
       contact: "Kontakt",
       contactTxt:
-        "Wenn Sie Fragen haben, Hilfe benötigen oder uns hilfreiches Feedback geben möchten, nutzen Sie bitte das folgende Kontaktformular.",
-      intro:
-        "Willkommen! Wir freuen uns, eine große Auswahl an Noten für verschiedene Musikstile und Instrumente anbieten zu können. Auf unserer Website finden Sie interaktive Noten, die mit entsprechenden Musikvideos synchronisiert sind, so dass Sie beim Üben zum Video mitspielen können.",
+        "Wenn Sie Fragen haben, Hilfe benötigen oder hilfreiches Feedback geben möchten, nutzen Sie bitte folgendes Kontaktformular.",
+      intro: "Interaktive Musiknoten, synchronisiert mit YouTube-Videos",
       viewSheetsOn: "Schauen Sie sich die Noten an auf",
       sheetMoveMode: "Synchronisierungsmodus",
       horizontalMode: "Horizontal",
