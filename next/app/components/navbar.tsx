@@ -24,12 +24,23 @@ const home = { url: "/", name: "Home" };
 const buttSize = 26;
 const iconProps = { size: buttSize, style: { marginRight: "0.5em" } };
 const navbarLinks = [
-  { url: "/favorites", key: "favorites", icon: <MdFavorite {...iconProps} /> },
-  { url: "/listall", key: "allScores", icon: <MdList {...iconProps} /> },
+  {
+    url: "/favorites",
+    key: "favorites",
+    icon: <MdFavorite {...iconProps} />,
+    mobileShown: true,
+  },
+  {
+    url: "/listall",
+    key: "allScores",
+    icon: <MdList {...iconProps} />,
+    mobileShown: true,
+  },
   {
     url: "/settings",
     key: "settingsTitle",
     icon: <MdSettings {...iconProps} />,
+    mobileShown: true,
   },
 ].reverse();
 export const defaultPageTitle = "YouTube Play-Along";
@@ -74,6 +85,7 @@ export default function NavigationBar() {
       url: "/login",
       key: "login",
       icon: <MdLogin {...iconProps} />,
+      mobileShown: false,
     };
     const userName = getCurrUsername(user);
     if (userName != null) {
@@ -162,11 +174,15 @@ export default function NavigationBar() {
             el.url === currentPage
               ? Constants.navActiveBGCol
               : navStyle.backgroundColor;
+          let cName = "hoverlink";
+          if (!el.mobileShown) {
+            cName = `hide-on-mobile ${cName}`;
+          }
           return (
             <Link
               href={getLink(el.url)}
               key={el.url}
-              className="hoverlink"
+              className={cName}
               style={{ ...linkStyle, backgroundColor }}
             >
               {el.icon}

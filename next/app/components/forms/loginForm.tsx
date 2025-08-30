@@ -29,6 +29,10 @@ export default function LoginForm() {
         <h4>
           {t("loggedInAs")} {getCurrUsername(user)}
         </h4>
+        <div className="row" style={{ marginBottom: "0.5em" }}>
+          <div className="twocols">{t("email")}</div>
+          <div className="twocols rightcol">{user.email}</div>
+        </div>
         <button {...buttonAttrs} onClick={onLogout}>
           {t("logout")}
         </button>
@@ -39,11 +43,17 @@ export default function LoginForm() {
     return (
       <>
         <UserDataForm title={titleStr} initState={{}} onSubmit={loginUser} />
-        <p>
-          {t("noAccount")}{" "}
-          <Link href={getLink("/register")}>{t("registerHere")}</Link>
-        </p>
-        <p>{t("forgotPassword")} TODO</p>
+        <div className="row" style={{ marginTop: "0.5em" }}>
+          <div className="twocols">
+            <p>
+              {t("noAccount")}{" "}
+              <Link href={getLink("/register")}>{t("registerHere")}</Link>
+            </p>
+          </div>
+          <div className="twocols rightcol">
+            <p>{t("forgotPassword")} TODO</p>
+          </div>
+        </div>
       </>
     );
   }

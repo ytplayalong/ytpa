@@ -68,6 +68,6 @@
 /* For stuff that is not shown on mobile */
 @media (max-width: 768px) {
   .hide-on-mobile {
-    display: none; /* hide on mobile */
+    display: none !important; /* hide on mobile */
   }
 }
