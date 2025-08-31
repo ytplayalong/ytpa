@@ -5,15 +5,19 @@ import {
   getAuth,
   onAuthStateChanged,
   sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
   User,
 } from "firebase/auth";
 import {
+  addDoc,
+  collection,
   doc,
   Firestore,
   getDoc,
   getFirestore,
+  serverTimestamp,
   setDoc,
   updateDoc,
 } from "firebase/firestore";
@@ -54,13 +58,27 @@ class FirebaseManager {
     return this.firebaseAuth.currentUser;
   }
 
+  getUserEmail() {
+    return firebaseManager.currentUser()?.email;
+  }
+
   getUserName() {
-    const email = firebaseManager.currentUser()?.email ?? "@";
+    const email = this.getUserEmail() ?? "@";
     return email.split("@")[0];
   }
 
   getAuth() {
     return this.firebaseAuth;
+  }
+
+  async resetPassword(email: string) {
+    try {
+      await sendPasswordResetEmail(this.firebaseAuth, email);
+      return true;
+    } catch (err: any) {
+      console.error(err);
+      return false;
+    }
   }
 
   async signOut() {
@@ -107,6 +125,27 @@ class FirebaseManager {
       return { info: "Created user account, verify your email and log in." };
     } catch (error) {
       return { error: `Sign-up failed, error: ${error}` };
+    }
+  }
+
+  async addSongSuggestion(
+    name: string,
+    artist: string,
+    videoUrl: string,
+    email: string
+  ) {
+    try {
+      await addDoc(collection(this.firestoreDb, "suggestions"), {
+        name,
+        artist,
+        videoUrl,
+        email,
+        createdAt: serverTimestamp(),
+      });
+      return true;
+    } catch (err) {
+      console.log(err);
+      return false;
     }
   }
 

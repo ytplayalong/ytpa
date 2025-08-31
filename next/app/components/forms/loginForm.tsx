@@ -21,6 +21,10 @@ export default function LoginForm() {
     return await firebaseManager.signIn(data.email, data.password);
   };
 
+  const onPasswordReset = async () => {
+    return await firebaseManager.resetPassword("");
+  };
+
   const titleStr = t("login");
   if (user) {
     const onLogout = () => firebaseManager.signOut();
@@ -51,7 +55,9 @@ export default function LoginForm() {
             </p>
           </div>
           <div className="twocols rightcol">
-            <p>{t("forgotPassword")} TODO</p>
+            <p>
+              <Link href={getLink("/pwreset")}>{t("forgotPassword")}</Link>
+            </p>
           </div>
         </div>
       </>

@@ -62,6 +62,19 @@ export const RESSOURCES = {
       sheetMoveMode: "Synchronization mode",
       horizontalMode: "Horizontal",
       verticalMode: "Vertical",
+
+      songSuggestion: "Song Request",
+      suggestASong: "Suggest a song for YTPA.",
+      songName: "Song name",
+      ytUrl: "YouTube URL",
+      songSubmissionFail: "Submission failed :(",
+      songSubmissionSuccessful: "Song request succesfully submitted :)",
+
+      sendPwResetEmail: "Send an email with link to reset your passwork.",
+      send: "Send",
+      pwReset: "Reset Password",
+      sentPwResetEmail: "Email sent, check your inbox",
+      sendPwResetEmailFailed: "Sending reset email failed.",
     },
   },
   es: {
@@ -127,6 +140,20 @@ export const RESSOURCES = {
       sheetMoveMode: "Modo de sincronización",
       horizontalMode: "Horizontal",
       verticalMode: "Vertical",
+
+      songSuggestion: "Solicitud de canción",
+      suggestASong: "Sugiere una canción para YTPA.",
+      songName: "Nombre de la canción",
+      ytUrl: "URL de YouTube",
+      songSubmissionFail: "Error al enviar :(",
+      songSubmissionSuccessful: "Solicitud de canción enviada :)",
+
+      sendPwResetEmail:
+        "Enviar un correo con un enlace para restablecer tu contraseña.",
+      send: "Enviar",
+      pwReset: "Restablecer Contraseña",
+      sentPwResetEmail: "Correo enviado, revisa tu bandeja de entrada",
+      sendPwResetEmailFailed: "Error al enviar el correo.",
     },
   },
   de: {
@@ -192,6 +219,20 @@ export const RESSOURCES = {
       sheetMoveMode: "Synchronisierungsmodus",
       horizontalMode: "Horizontal",
       verticalMode: "Vertikal",
+
+      songSuggestion: "Liedervorschlag",
+      suggestASong: "Schlage ein Lied vor für YTPA.",
+      songName: "Songtitel",
+      ytUrl: "YouTube URL",
+      songSubmissionFail: "Übermittlung fehlgeschlagen :(",
+      songSubmissionSuccessful: "Liedervorschlag erfolgreich eingereicht :)",
+
+      sendPwResetEmail:
+        "Sende eine E-Mail mit einem Link zum Zurücksetzen deines Passworts.",
+      send: "Senden",
+      pwReset: "Passwort Zurücksetzen",
+      sentPwResetEmail: "E-Mail gesendet, bitte Posteingang prüfen",
+      sendPwResetEmailFailed: "Senden fehlgeschlagen.",
     },
   },
 };
