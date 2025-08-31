@@ -1,11 +1,13 @@
 import { buttonColor } from "./colors";
 
 export const borderRadius = "6px";
-const buttonStyle: any = {
+const buttonStyle: React.CSSProperties = {
   border: "none",
   cursor: "pointer",
   padding: "0.5em",
-  minWidth: "100px",
+  minWidth: "120px",
+  fontSize: "inherit",
+  fontFamily: "inherit",
   borderRadius,
   backgroundColor: buttonColor,
 };
@@ -19,29 +21,29 @@ export const buttonAttrsClass = (style: object, className: string = "") => {
   };
 };
 
-export const inputStyle: any = {
+export const inputStyle: React.CSSProperties = {
   boxSizing: "border-box",
   width: "100%",
   minHeight: "40px",
   borderRadius,
 };
 
-export const distributedStyle = {
+export const distributedStyle: React.CSSProperties = {
   justifyContent: "space-between",
   display: "flex",
 };
-export const flexCentered: any = {
+export const flexCentered: React.CSSProperties = {
   display: "flex",
   justifyContent: "center",
   textAlign: "center",
   alignItems: "center",
 };
 
-export const containerInner: any = {
+export const containerInner: React.CSSProperties = {
   padding: "8px",
 };
 
-export const containerInnerLeftRight: any = {
+export const containerInnerLeftRight: React.CSSProperties = {
   paddingLeft: "8px",
   paddingRight: "8px",
 };

@@ -5,9 +5,12 @@ import usePathTranslation from "@/i18n/hook";
 
 import { borderRadius, buttonAttrs, buttonAttrsClass } from "./styles";
 
-const ddStyle: any = { position: "relative", display: "inline-block" };
+const ddStyle: React.CSSProperties = {
+  position: "relative",
+  display: "inline-block",
+};
 
-const ddContentStyle: any = { position: "absolute", zIndex: 1 };
+const ddContentStyle: React.CSSProperties = { position: "absolute", zIndex: 1 };
 const elementStyle = buttonAttrsClass({
   textDecoration: "none",
   display: "block",
@@ -87,7 +90,7 @@ export const useMultiDropDown = (
   label: any,
   options: MultiDDItem[],
   wrapper = defaultWrapper,
-  baseElementStyle: any = {}
+  baseElementStyle: React.CSSProperties = {}
 ) => {
   const [isShown, setIsShown] = useState<string | null>(null);
 

@@ -48,7 +48,7 @@ export const defaultPageTitle = "YouTube Play-Along";
 const imgH = "45px";
 const padLeftRight = "14px";
 const padTopBot = "16px";
-const baseNavEl = {
+const baseNavEl: React.CSSProperties = {
   color: Constants.navTextCol,
   padding: `${padLeftRight} ${padTopBot}`,
   textDecoration: "none",
@@ -56,14 +56,14 @@ const baseNavEl = {
   lineHeight: imgH,
   height: imgH,
 };
-const linkStyle: any = {
+const linkStyle: React.CSSProperties = {
   ...baseNavEl,
   float: "right",
   pointer: "cursor",
   ...flexCentered,
 };
 
-const navStyle = {
+const navStyle: React.CSSProperties = {
   backgroundColor: Constants.navBGCol,
   overflow: "hidden",
   padding: 0,

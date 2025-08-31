@@ -12,7 +12,7 @@ export const Loading = ({
 }) => {
   const { t } = usePathTranslation();
 
-  const titleComp = title ?? <h4>{title}</h4>;
+  const titleComp = title != undefined ? <h4>{title}</h4> : null;
   const content = (
     <>
       {titleComp}

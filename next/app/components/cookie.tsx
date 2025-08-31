@@ -24,7 +24,7 @@ const CookieConsentBanner = () => {
     return null;
   }
 
-  const bannerStyle: any = {
+  const bannerStyle: React.CSSProperties = {
     width: "100%",
     height: "100%",
     position: "absolute",

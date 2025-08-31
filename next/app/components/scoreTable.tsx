@@ -110,7 +110,7 @@ export const ScoreTable = ({
     baseElementStyle
   );
 
-  const thStyle: any = { textAlign: "left", ...tdStyle };
+  const thStyle: React.CSSProperties = { textAlign: "left", ...tdStyle };
 
   const hasOptions = definedOptions.length > 0;
   const imgColWidth = "10%";
