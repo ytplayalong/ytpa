@@ -5653,5 +5653,21 @@
     "name": "Daj że mi Hanyczko",
     "artist": "Nadija",
     "language": "polish"
+  },
+  {
+    "videoId": "BRdopPUzDR8",
+    "measureMap": { "6": 2, "195": 128 },
+    "fileName": "Hava_Nagila_Gabber",
+    "name": "Hava Nagila",
+    "artist": "Strongi",
+    "language": "hebrew"
+  },
+  {
+    "videoId": "pR26nzO4DNA",
+    "measureMap": { "1": 2, "116": 78 },
+    "fileName": "Club_Bizarre",
+    "name": "Club Bizarre",
+    "artist": "U 96",
+    "language": "english"
   }
 ]
