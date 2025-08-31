@@ -222,14 +222,14 @@ export const PartSelector = ({
       );
     };
     const addToFavButt = (
-      <DropdownComp options={[favOpt]} wrapper={faWrapper}>
+      <DropdownComp options={[favOpt]} wrapper={faWrapper} alignRight={true}>
         ...
       </DropdownComp>
     );
 
     // (Part and) pitch selector dropdowns
     const partSelectorDD = (
-      <div style={flexCentered}>
+      <div style={{ ...flexCentered, flexWrap: "wrap" }}>
         {addToFavButt}
         {pitchSelector}
         {octaveChooser}

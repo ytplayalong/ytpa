@@ -107,7 +107,8 @@ export const ScoreTable = ({
     <MdMoreVert />,
     optionDdItems,
     ddWrapper,
-    baseElementStyle
+    baseElementStyle,
+    true
   );
 
   const thStyle: React.CSSProperties = { textAlign: "left", ...tdStyle };

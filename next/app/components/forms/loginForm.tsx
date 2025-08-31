@@ -21,10 +21,6 @@ export default function LoginForm() {
     return await firebaseManager.signIn(data.email, data.password);
   };
 
-  const onPasswordReset = async () => {
-    return await firebaseManager.resetPassword("");
-  };
-
   const titleStr = t("login");
   if (user) {
     const onLogout = () => firebaseManager.signOut();

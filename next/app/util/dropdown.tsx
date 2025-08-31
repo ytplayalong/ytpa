@@ -10,7 +10,10 @@ const ddStyle: React.CSSProperties = {
   display: "inline-block",
 };
 
-const ddContentStyle: React.CSSProperties = { position: "absolute", zIndex: 1 };
+const ddContentStyle: React.CSSProperties = {
+  position: "absolute",
+  zIndex: 1,
+};
 const elementStyle = buttonAttrsClass({
   textDecoration: "none",
   display: "block",
@@ -19,7 +22,7 @@ const elementStyle = buttonAttrsClass({
 });
 
 type DDItem = { name: any; key: string; url?: string; onClick?: VoidFunction };
-type DdProps = { options: DDItem[]; wrapper?: any };
+type DdProps = { options: DDItem[]; wrapper?: any; alignRight?: boolean };
 
 const defaultWrapper = (el: React.ReactNode, onClick: VoidFunction) => {
   return (
@@ -32,12 +35,16 @@ const defaultWrapper = (el: React.ReactNode, onClick: VoidFunction) => {
 export const useDropDown = (
   label: React.ReactNode,
   options: DDItem[],
+  alignRight = false,
   wrapper = defaultWrapper
 ) => {
   const [isShown, setIsShown] = useState(false);
   const { getLink } = usePathTranslation();
 
   const contStyle = { ...ddContentStyle, display: isShown ? "block" : "none" };
+  if (alignRight) {
+    contStyle.right = 0;
+  }
   const onClick = () => setIsShown(!isShown);
 
   return (
@@ -90,7 +97,8 @@ export const useMultiDropDown = (
   label: React.ReactNode,
   options: MultiDDItem[],
   wrapper = defaultWrapper,
-  baseElementStyle: React.CSSProperties = {}
+  baseElementStyle: React.CSSProperties = {},
+  alignRight = false
 ) => {
   const [isShown, setIsShown] = useState<string | null>(null);
 
@@ -99,6 +107,7 @@ export const useMultiDropDown = (
     const contStyle = {
       ...ddContentStyle,
       display: isShown == key ? "block" : "none",
+      right: alignRight ? 0 : undefined,
     };
     return (
       <div style={{ ...ddStyle, ...baseElementStyle }}>
@@ -133,5 +142,10 @@ export const useMultiDropDown = (
 };
 
 export const DropdownComp = (props: React.PropsWithChildren<DdProps>) => {
-  return useDropDown(props.children, props.options, props.wrapper);
+  return useDropDown(
+    props.children,
+    props.options,
+    props.alignRight ?? false,
+    props.wrapper
+  );
 };
