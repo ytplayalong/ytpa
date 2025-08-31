@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002F[locale]","\u002F[locale]\u002F404","\u002F[locale]\u002Ffavorites","\u002F[locale]\u002Flistall","\u002F[locale]\u002Flogin","\u002F[locale]\u002Fpiece","\u002F[locale]\u002Fregister","\u002F[locale]\u002Fsettings","\u002F[locale]\u002Fspotify"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
