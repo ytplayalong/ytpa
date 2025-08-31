@@ -22,7 +22,7 @@ const initStatus: FavoritesState = {
   favorites: [],
 };
 
-const wrap = (el: any, t: any) => {
+const wrap = (el: React.ReactNode, t: any) => {
   return (
     <div className="container">
       <div style={containerInner}>

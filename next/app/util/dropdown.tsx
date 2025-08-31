@@ -21,7 +21,7 @@ const elementStyle = buttonAttrsClass({
 type DDItem = { name: any; key: string; url?: string; onClick?: VoidFunction };
 type DdProps = { options: DDItem[]; wrapper?: any };
 
-const defaultWrapper = (el: React.ReactElement, onClick: VoidFunction) => {
+const defaultWrapper = (el: React.ReactNode, onClick: VoidFunction) => {
   return (
     <button {...buttonAttrs} onClick={onClick}>
       {el} ▾
@@ -30,7 +30,7 @@ const defaultWrapper = (el: React.ReactElement, onClick: VoidFunction) => {
 };
 
 export const useDropDown = (
-  label: any,
+  label: React.ReactNode,
   options: DDItem[],
   wrapper = defaultWrapper
 ) => {
@@ -75,7 +75,7 @@ export const useDropDown = (
 };
 
 type MultiDDItem = {
-  name: any;
+  name: React.ReactNode;
   key: string;
   onClick: (key: string) => void;
 };
@@ -87,7 +87,7 @@ type MultiDDItem = {
  * Using this function, many dropdowns can be created and used in the same component.
  */
 export const useMultiDropDown = (
-  label: any,
+  label: React.ReactNode,
   options: MultiDDItem[],
   wrapper = defaultWrapper,
   baseElementStyle: React.CSSProperties = {}

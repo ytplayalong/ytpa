@@ -36,7 +36,7 @@ const YoutubePlayer = ({
   };
 
   // This is a hack for shutting up typescript compiler!
-  const yt: any = React.createElement(YouTube as any, {
+  const yt: React.ReactNode = React.createElement(YouTube as any, {
     videoId,
     opts,
     ref: playerRef,

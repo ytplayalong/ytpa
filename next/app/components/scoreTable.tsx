@@ -35,7 +35,7 @@ const tdStyle = {
 };
 
 /** Wrap table cell such that it links to the provided link. */
-const wrapLinkedCell = (inner: any, link: string) => {
+const wrapLinkedCell = (inner: React.ReactNode, link: string) => {
   return (
     <Link style={tableLinkStyle} href={link}>
       <div
@@ -88,7 +88,7 @@ export const ScoreTable = ({
   const optionDdItems = definedOptions.map((el) => {
     return { key: el.name, ...el };
   });
-  const ddWrapper = (el: any, onClick: any) => (
+  const ddWrapper = (el: React.ReactNode, onClick: any) => (
     <div
       onClick={onClick}
       style={{

@@ -111,7 +111,7 @@ export default function NavigationBar() {
     </Link>
   );
 
-  const ddLinkStyle: any = {
+  const ddLinkStyle: React.CSSProperties = {
     color: "black",
     backgroundColor: "white",
     padding: "10px",
@@ -131,17 +131,17 @@ export default function NavigationBar() {
       );
     }
   );
-  const contentStyle: any = {
+  const contentStyle: React.CSSProperties = {
     display: langDDShown ? "block" : "none",
     position: "absolute",
   };
   const ddClicked = () => setLangDDShown(!langDDShown);
 
-  const ddStyle: any = {
+  const ddStyle: React.CSSProperties = {
     float: "right",
     ...baseNavEl,
     overflow: "hidden",
-    pointer: "cursor",
+    cursor: "pointer",
   };
 
   const newNav = (

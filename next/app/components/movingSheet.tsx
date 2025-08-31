@@ -66,7 +66,7 @@ const getInterpolator = (
 
     // Choose anchors, first bars of the lines
     let prevVal = 0;
-    let lineAnchors: any = [[0, 0]];
+    let lineAnchors: [number, number][] = [[0, 0]];
     let yValBetter: number[] = [];
     measureYList.forEach((el, ct) => {
       if (isNaN(el)) {

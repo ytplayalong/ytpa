@@ -61,7 +61,9 @@ const pitchMap: { [key: string]: number } = {
   A: 9,
   B: 11,
 };
-const sharpScale = [
+
+type ScaleType = [string, number][];
+const sharpScale: ScaleType = [
   ["C", 0],
   ["C", 1],
   ["D", 0],
@@ -75,7 +77,7 @@ const sharpScale = [
   ["A", 1],
   ["B", 0],
 ];
-const flatScale = [
+const flatScale: ScaleType = [
   ["C", 0],
   ["D", -1],
   ["D", 0],
@@ -102,7 +104,7 @@ const increase = (
   oct: number,
   alterNum: number,
   n: number,
-  scale: any
+  scale: ScaleType
 ) => {
   const idx = pitchMap[val];
   const newIdxTot = idx + n + alterNum;
@@ -113,7 +115,7 @@ const increase = (
 };
 
 /** Find the scale of the given measure if present. */
-const getScaleUpdate = (measure: any, fifths: number) => {
+const getScaleUpdate = (measure: Element, fifths: number) => {
   const attrs = measure.getElementsByTagName("attributes")[0];
   if (!attrs) {
     return null;
@@ -202,7 +204,7 @@ export const transpose = (
   }
   // TODO: Also change to treble if the current clef is a bass clef.
 
-  let usedScale = null;
+  let usedScale = sharpScale;
   for (const element of measures) {
     const currMeas = element;
     const newScaleOrNull = getScaleUpdate(currMeas, fifths);
@@ -256,7 +258,7 @@ export const transpose = (
         }
       }
 
-      // Remove any accidentals, they are handled by the "alter" element.
+      // Remove accidentals, they are handled by the "alter" element.
       const acc = noteEl.getElementsByTagName("accidental")[0];
       if (acc) {
         noteEl.removeChild(acc);
