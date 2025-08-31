@@ -59,7 +59,7 @@ const baseNavEl: React.CSSProperties = {
 const linkStyle: React.CSSProperties = {
   ...baseNavEl,
   float: "right",
-  pointer: "cursor",
+  cursor: "pointer",
   ...flexCentered,
 };
 
