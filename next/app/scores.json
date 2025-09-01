@@ -7258,5 +7258,16 @@
     "name": "Club Bizarre",
     "artist": "U 96",
     "language": "english"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "vuBrfeIbhHQ",
+    "measureMap": {"2": 2, "78": 47},
+    "fileName": "Frag_de_Heinz",
+    "name": "Frag de Heinz",
+    "artist": "Stubete Gäng",
+    "language": "german"
   }
 ]
