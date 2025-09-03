@@ -5701,5 +5701,13 @@
     "name": "Danza del Osos",
     "artist": "Danzante Banda Celta",
     "language": "instrumental"
+  },
+  {
+    "videoId": "FIpRBD9OxVI",
+    "measureMap": { "10": 3, "86": 33 },
+    "fileName": "Hirsute",
+    "name": "Hirsute",
+    "artist": "Mamoutte",
+    "language": "instrumental"
   }
 ]
