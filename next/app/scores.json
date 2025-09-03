@@ -7280,5 +7280,27 @@
     "name": "Uns Geht's Gut",
     "artist": "Kellerkommando",
     "language": "german"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "1uLj6098TvM",
+    "measureMap": {"3": 3, "64": 41},
+    "fileName": "Szerb_mulatos",
+    "name": "Szerb mulatós",
+    "artist": "Dánielfy",
+    "language": "hungarian"
+  },
+  {
+    "keys": [1],
+    "times": [[6, 8]],
+    "source": "dummy",
+    "videoId": "GYqKG4qT2pM",
+    "measureMap": {"9": 10, "73": 84},
+    "fileName": "Danza_del_Osos",
+    "name": "Danza del Osos",
+    "artist": "Danzante Banda Celta",
+    "language": "instrumental"
   }
 ]
