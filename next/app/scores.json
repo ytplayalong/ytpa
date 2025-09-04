@@ -7335,5 +7335,16 @@
     "name": "An den Ufern des Mexico River",
     "artist": "Wally Schneider",
     "language": "german"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "hRZcBLLhvLs",
+    "measureMap": {"3": 3, "40": 32},
+    "fileName": "Ohni_Znacht_is_Bett",
+    "name": "Ohni Znacht is Bett",
+    "artist": "Schtärneföifi",
+    "language": "german"
   }
 ]
