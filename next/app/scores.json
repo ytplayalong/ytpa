@@ -7313,5 +7313,27 @@
     "name": "Hirsute",
     "artist": "Mamoutte",
     "language": "instrumental"
+  },
+  {
+    "keys": [-4],
+    "times": [[7, 8]],
+    "source": "dummy",
+    "videoId": "V5wLdEyu2PA",
+    "measureMap": {"15": 3, "88": 58},
+    "fileName": "Haidouks_Makam",
+    "name": "Haidouks Makam",
+    "artist": "PAK! Orkestar",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-5],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "80drs3q-yU0",
+    "measureMap": {"3": 2, "112": 52},
+    "fileName": "Mexico_River",
+    "name": "An den Ufern des Mexico River",
+    "artist": "Wally Schneider",
+    "language": "german"
   }
 ]
