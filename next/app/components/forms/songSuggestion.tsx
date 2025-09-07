@@ -21,7 +21,11 @@ export default function SongSuggestion() {
     setArtist(v.snippet.channelTitle);
     setName(v.snippet.title);
   };
-  const { ytSearchComp, videoInfo, resetVideo } = useYtVideoSelector(onVideo);
+
+  const { ytSearchComp, videoInfo, resetVideo } = useYtVideoSelector(
+    onVideo,
+    setStatus
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,7 +122,6 @@ export default function SongSuggestion() {
           <button type="submit" {...buttonAttrs}>
             {t("submit")}
           </button>
-          {status && <p>{status}</p>}
         </div>
       </form>
     );
@@ -128,6 +131,7 @@ export default function SongSuggestion() {
       <h4>{t("songSuggestion")}</h4>
       {ytSearchComp}
       {form}
+      {status && <p>{status}</p>}
     </>
   );
 }

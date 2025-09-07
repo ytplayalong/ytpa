@@ -32,9 +32,11 @@ export interface YtSearchResult {
 
 const API_KEY = "AIzaSyDg5-5jYRHEkl63llX8WBIGWYjiKISpPKs";
 
-export function useYtVideoSelector(onVideoSet: (v: YtSearchResult) => void) {
+export function useYtVideoSelector(
+  onVideoSet: (v: YtSearchResult) => void,
+  setError: (s: string) => void
+) {
   const [query, setQuery] = useState("");
-  const [error, setError] = useState("");
   const [results, setResults] = useState<YtSearchResult[]>([]);
   const [selectedVideo, setSelectedVideo] = useState<YtSearchResult | null>(
     null
@@ -43,6 +45,7 @@ export function useYtVideoSelector(onVideoSet: (v: YtSearchResult) => void) {
   const { t } = usePathTranslation();
 
   const searchVideos = async () => {
+    setError(""); // Clear error
     if (!query) return;
     setLoading(true);
     try {
