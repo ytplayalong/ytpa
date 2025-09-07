@@ -8,6 +8,9 @@ const buttonStyle: React.CSSProperties = {
   minWidth: "120px",
   fontSize: "inherit",
   fontFamily: "inherit",
+  display: "flex",
+  justifyContent: "center", // horizontal alignment
+  alignItems: "center",
   borderRadius,
   backgroundColor: buttonColor,
 };

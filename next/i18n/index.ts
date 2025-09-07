@@ -16,6 +16,7 @@ export const RESSOURCES = {
       notLoggedIn: "Not logged-in.",
       logout: "Log out",
       noAccount: "No account?",
+      manageAccount: "Manage Account",
       alreadyHaveAccount: "Already have an account?",
       register: "Register",
       registerHere: "Register here",
@@ -64,7 +65,7 @@ export const RESSOURCES = {
       verticalMode: "Vertical",
 
       songSuggestion: "Song Request",
-      suggestASong: "Suggest a song for YTPA.",
+      suggestASong: "Suggest a song for YTPA",
       songName: "Song name",
       ytUrl: "YouTube URL",
       songSubmissionFail: "Submission failed :(",
@@ -75,6 +76,12 @@ export const RESSOURCES = {
       pwReset: "Reset Password",
       sentPwResetEmail: "Email sent, check your inbox",
       sendPwResetEmailFailed: "Sending reset email failed.",
+
+      title: "Title",
+      channel: "Channel",
+      searchYouTube: "Search YouTube...",
+      runSearch: "Search",
+      backToSearch: "Back to search",
     },
   },
   es: {
@@ -96,6 +103,7 @@ export const RESSOURCES = {
       notLoggedIn: "No conectado.",
       logout: "Cerrar sesión",
       noAccount: "¿No tiene cuenta?",
+      manageAccount: "Administrar cuenta",
       alreadyHaveAccount: "¿Ya tiene una cuenta?",
       register: "Registrar",
       registerHere: "Registrar aqui",
@@ -142,7 +150,7 @@ export const RESSOURCES = {
       verticalMode: "Vertical",
 
       songSuggestion: "Solicitud de canción",
-      suggestASong: "Sugiere una canción para YTPA.",
+      suggestASong: "Sugiere una canción para YTPA",
       songName: "Nombre de la canción",
       ytUrl: "URL de YouTube",
       songSubmissionFail: "Error al enviar :(",
@@ -154,6 +162,12 @@ export const RESSOURCES = {
       pwReset: "Restablecer Contraseña",
       sentPwResetEmail: "Correo enviado, revisa tu bandeja de entrada",
       sendPwResetEmailFailed: "Error al enviar el correo.",
+
+      title: "Título",
+      channel: "Canal",
+      searchYouTube: "Buscar en YouTube...",
+      runSearch: "Buscar",
+      backToSearch: "Volver a la búsqueda",
     },
   },
   de: {
@@ -174,6 +188,7 @@ export const RESSOURCES = {
       notLoggedIn: "Nicht eingeloggt.",
       logout: "Abmelden",
       noAccount: "Kein Benutzerkonto?",
+      manageAccount: "Benutzerkonto verwalten",
       alreadyHaveAccount: "Haben Sie bereits ein Konto?",
       register: "Registrieren",
       registerHere: "Hier registrieren",
@@ -221,7 +236,7 @@ export const RESSOURCES = {
       verticalMode: "Vertikal",
 
       songSuggestion: "Liedervorschlag",
-      suggestASong: "Schlage ein Lied vor für YTPA.",
+      suggestASong: "Schlage ein Lied vor für YTPA",
       songName: "Songtitel",
       ytUrl: "YouTube URL",
       songSubmissionFail: "Übermittlung fehlgeschlagen :(",
@@ -233,6 +248,12 @@ export const RESSOURCES = {
       pwReset: "Passwort Zurücksetzen",
       sentPwResetEmail: "E-Mail gesendet, bitte Posteingang prüfen",
       sendPwResetEmailFailed: "Senden fehlgeschlagen.",
+
+      title: "Titel",
+      channel: "Kanal",
+      searchYouTube: "YouTube durchsuchen...",
+      runSearch: "Suchen",
+      backToSearch: "Zurück zur Suche",
     },
   },
 };

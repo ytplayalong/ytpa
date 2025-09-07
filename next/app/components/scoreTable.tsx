@@ -7,9 +7,13 @@ import firebaseManager from "../firebase";
 import { useMultiDropDown } from "../util/dropdown";
 import useOverlay from "../util/overlay";
 import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
-
-const tableRowHeight = "80px";
-const tableRowMargin = "6px";
+import {
+  BasicTable,
+  leftTdStyle,
+  tableRowHeight,
+  tdStyle,
+  thStyle,
+} from "../util/tables";
 
 const noSpace = {
   padding: 0,
@@ -22,16 +26,6 @@ const tableLinkStyle = {
   height: tableRowHeight,
   display: "block",
   ...noSpace,
-};
-
-const leftTdStyle = {
-  paddingTop: 0,
-  paddingBottom: 0,
-  paddingRight: 0,
-};
-const tdStyle = {
-  ...leftTdStyle,
-  paddingLeft: ".4em",
 };
 
 /** Wrap table cell such that it links to the provided link. */
@@ -111,8 +105,6 @@ export const ScoreTable = ({
     true
   );
 
-  const thStyle: React.CSSProperties = { textAlign: "left", ...tdStyle };
-
   const hasOptions = definedOptions.length > 0;
   const imgColWidth = "10%";
   const nameArtistColWidth = hasOptions ? "38%" : "40%";
@@ -141,77 +133,56 @@ export const ScoreTable = ({
   const optionsHeader = hasOptions ? (
     <th style={{ width: optionColWidth, ...thStyle }}></th>
   ) : undefined;
-  const tableHeader = (
-    <thead style={{ width: "100%" }}>
-      <tr style={{ width: "100%" }}>
-        <th style={{ width: imgColWidth, ...thStyle }}></th>
-        {tableHeaderSortable}
-        <th style={{ width: keyColWidth, ...thStyle }}>{t("songKey")}</th>
-        {optionsHeader}
-      </tr>
-    </thead>
+
+  const header = (
+    <>
+      <th style={{ width: imgColWidth, ...thStyle }}></th>
+      {tableHeaderSortable}
+      <th style={{ width: keyColWidth, ...thStyle }}>{t("songKey")}</th>
+      {optionsHeader}
+    </>
   );
 
-  // Put in a div that makes only the table
-  // horizontally scrollable.
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        overflowX: "auto",
-      }}
-    >
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "separate",
-          overflowX: "auto",
-          borderSpacing: `0 ${tableRowMargin}`,
-        }}
-      >
-        {tableHeader}
-        <tbody>
-          {scores.map((el) => {
-            const optionComp = hasOptions ? (
-              <td style={tdStyle}>{sheetDD(el.videoId)}</td>
-            ) : undefined;
+  const body = (
+    <>
+      {scores.map((el) => {
+        const optionComp = hasOptions ? (
+          <td style={tdStyle}>{sheetDD(el.videoId)}</td>
+        ) : undefined;
 
-            const link = getLink(`/piece?scoreId=${el.videoId}`);
-            return (
-              <tr
-                key={el.videoId}
-                style={{ cursor: "pointer", height: tableRowHeight }}
-                className="hoverlink"
-              >
-                <td style={leftTdStyle}>
-                  {wrapLinkedCell(
-                    <img
-                      height={tableRowHeight}
-                      src={`https://img.youtube.com/vi/${el.videoId}/default.jpg`}
-                      alt={`YouTube thumbnail of ${el.name} by ${el.artist}`}
-                    ></img>,
-                    link
-                  )}
+        const link = getLink(`/piece?scoreId=${el.videoId}`);
+        return (
+          <tr
+            key={el.videoId}
+            style={{ cursor: "pointer", height: tableRowHeight }}
+            className="hoverlink"
+          >
+            <td style={leftTdStyle}>
+              {wrapLinkedCell(
+                <img
+                  height={tableRowHeight}
+                  src={`https://img.youtube.com/vi/${el.videoId}/default.jpg`}
+                  alt={`YouTube thumbnail of ${el.name} by ${el.artist}`}
+                ></img>,
+                link
+              )}
+            </td>
+            {sortBy.map((field) => {
+              return (
+                <td key={`td-${field}`} style={tdStyle}>
+                  {wrapLinkedCell(el[field]?.trim(), link)}
                 </td>
-                {sortBy.map((field) => {
-                  return (
-                    <td key={`td-${field}`} style={tdStyle}>
-                      {wrapLinkedCell(el[field]?.trim(), link)}
-                    </td>
-                  );
-                })}
-                <td style={tdStyle}>
-                  {wrapLinkedCell(getKeys(el.keys), link)}
-                </td>
-                {optionComp}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+              );
+            })}
+            <td style={tdStyle}>{wrapLinkedCell(getKeys(el.keys), link)}</td>
+            {optionComp}
+          </tr>
+        );
+      })}
+    </>
   );
+
+  return <BasicTable header={header} body={body} />;
 };
 
 const getKeys = (keyInts: number[]) => {
