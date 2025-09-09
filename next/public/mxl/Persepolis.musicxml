@@ -5,7 +5,7 @@
     <creator type="composer">Edgar Viens</creator>
     <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 4.4.4</software>
+      <software>MuseScore 4.5.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
       <supports element="print" attribute="new-page" type="yes" value="yes" />
@@ -40,7 +40,7 @@
           <line>2</line>
           </clef>
         </attributes>
-      <direction placement="above">
+      <direction placement="above" system="only-top">
         <direction-type>
           <metronome parentheses="no">
             <beat-unit>quarter</beat-unit>
@@ -73,6 +73,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -84,7 +85,7 @@
       <note>
         <pitch>
           <step>D</step>
-          <alter>-0.5</alter>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>12</duration>
@@ -119,6 +120,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>12</duration>
@@ -139,6 +141,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>12</duration>
@@ -194,7 +197,7 @@
       <note>
         <pitch>
           <step>D</step>
-          <alter>-0.5</alter>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>24</duration>
@@ -253,6 +256,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -264,7 +268,7 @@
       <note>
         <pitch>
           <step>D</step>
-          <alter>-0.5</alter>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>12</duration>
@@ -299,6 +303,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>12</duration>
@@ -319,6 +324,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>12</duration>
@@ -374,6 +380,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>24</duration>
@@ -452,6 +459,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>3</duration>
@@ -550,6 +558,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -571,6 +580,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -581,6 +591,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -595,6 +606,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>3</duration>
@@ -619,7 +631,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <alter>-1</alter>
+          <alter>-1.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -655,6 +667,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>2</duration>
@@ -687,6 +700,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -701,6 +715,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>12</duration>
@@ -744,6 +759,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>3</duration>
@@ -766,6 +782,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -780,6 +797,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -844,6 +862,7 @@
       <note>
         <pitch>
           <step>D</step>
+          <alter>-0.4</alter>
           <octave>4</octave>
           </pitch>
         <duration>6</duration>
@@ -891,7 +910,7 @@
       <note>
         <pitch>
           <step>A</step>
-          <alter>-0.5</alter>
+          <alter>-0.4</alter>
           <octave>3</octave>
           </pitch>
         <duration>3</duration>
@@ -909,6 +928,7 @@
       <note>
         <pitch>
           <step>A</step>
+          <alter>-0.4</alter>
           <octave>3</octave>
           </pitch>
         <duration>12</duration>
