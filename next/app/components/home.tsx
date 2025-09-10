@@ -10,6 +10,7 @@ import usePathTranslation from "@/i18n/hook";
 import { fullScoreInfo, getRandomScore } from "../util/util";
 import { NewestScores } from "./recentScores";
 import { defaultPageTitle } from "./navbar";
+import useMounted from "../hooks/mounted";
 
 const TRACKING_ID = "G-42SMWF6LRM";
 const titleStyle: React.CSSProperties = {
@@ -29,7 +30,8 @@ const Home = () => {
 
   const nScores = fullScoreInfo.length;
   const { t, getLink } = usePathTranslation();
-  const randScore = getRandomScore();
+  const mounted = useMounted();
+  const randScore = mounted ? getRandomScore() : fullScoreInfo[0];
   const parInfo = {
     num: <>{`${nScores}`}</>,
     all: <Link href={getLink("/listall")}> {t("allScores")}</Link>,

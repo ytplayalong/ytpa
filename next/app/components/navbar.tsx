@@ -19,6 +19,7 @@ import usePathTranslation from "@/i18n/hook";
 import { Constants } from "../constants";
 import { getCurrUsername, useCurrentUser } from "../firebase";
 import { containerInnerLeftRight, flexCentered } from "../util/styles";
+import useMounted from "../hooks/mounted";
 
 const home = { url: "/", name: "Home" };
 const buttSize = 26;
@@ -72,7 +73,8 @@ const navStyle: React.CSSProperties = {
 export default function NavigationBar() {
   const currentPage = usePathname();
   const { t, getLink, currentLang } = usePathTranslation();
-  const user = useCurrentUser();
+  const currentUser = useCurrentUser();
+  const mounted = useMounted();
 
   const [langDDShown, setLangDDShown] = useState(false);
 
@@ -87,8 +89,8 @@ export default function NavigationBar() {
       icon: <MdLogin {...iconProps} />,
       mobileShown: false,
     };
-    const userName = getCurrUsername(user);
-    if (userName != null) {
+    const userName = getCurrUsername(currentUser);
+    if (userName != null && mounted) {
       login.icon = <MdAccountCircle {...iconProps} />;
       login.key = userName;
       return [login, ...navbarLinks];

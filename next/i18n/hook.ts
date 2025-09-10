@@ -2,6 +2,7 @@ import { LANGUAGES, RESSOURCES, defaultLocale } from ".";
 
 import i18n from "i18next";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { initReactI18next, useTranslation } from "react-i18next";
 
 i18n.use(initReactI18next).init({
@@ -17,9 +18,11 @@ const usePathTranslation = () => {
   const locale = pathname.split("/")[1];
 
   const usedLocale = LANGUAGES.includes(locale) ? locale : defaultLocale;
-  if (i18n.language !== usedLocale) {
-    i18n.changeLanguage(usedLocale);
-  }
+  useEffect(() => {
+    if (i18n.language !== usedLocale) {
+      i18n.changeLanguage(usedLocale);
+    }
+  });
 
   const getLink = (url: string) => "/" + locale + url;
   return { t, i18n, getLink, currentLang: usedLocale };

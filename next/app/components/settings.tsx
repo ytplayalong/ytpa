@@ -4,6 +4,7 @@ import usePathTranslation from "@/i18n/hook";
 
 import { useDropDown } from "../util/dropdown";
 import { FingerType, transposeKeys } from "../util/util";
+import useMounted from "../hooks/mounted";
 
 class SettingsManager {
   clefOptions = ["trebleClef", "bassClef"];
@@ -113,23 +114,26 @@ export const settingsManager = new SettingsManager();
 const SettingsComp = () => {
   const { t } = usePathTranslation();
 
+  const mounted = useMounted();
+
   const keyOptions = settingsManager.getInstrumentKeyOptions();
-  const keyDD = useDropDown(settingsManager.getInstrumentKey(), keyOptions);
+  const currKey = mounted ? settingsManager.getInstrumentKey() : null;
+  const keyDD = useDropDown(currKey, keyOptions);
 
   const options = settingsManager.getClefOptions(t);
-  const currClefName = t(settingsManager.getClef());
+  const currClefName = mounted ? t(settingsManager.getClef()) : null;
   const clefDD = useDropDown(currClefName, options);
 
   const fingerOptions = settingsManager.getFingeringOptions(t);
-  const currFingerName = t(settingsManager.getFingering());
+  const currFingerName = mounted ? t(settingsManager.getFingering()) : null;
   const fingerDD = useDropDown(currFingerName, fingerOptions);
 
   const zoomOptions = settingsManager.getZoomOptions(t);
-  const currZoom = settingsManager.getZoom();
+  const currZoom = mounted ? settingsManager.getZoom() : null;
   const zoomDD = useDropDown(currZoom, zoomOptions);
 
   const sheetOptions = settingsManager.getSheetOptions(t);
-  const currSheetMode = t(settingsManager.getSheetMode());
+  const currSheetMode = mounted ? t(settingsManager.getSheetMode()) : null;
   const sheetDD = useDropDown(currSheetMode, sheetOptions);
 
   return (
@@ -158,4 +162,5 @@ const SettingsComp = () => {
     </>
   );
 };
+
 export default SettingsComp;
