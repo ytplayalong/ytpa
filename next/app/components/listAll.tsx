@@ -15,7 +15,7 @@ type ScoreNameArtist = { name: string; artist: string };
 
 /** Hook providing form to enter text for filtering scores. */
 const useScoreFilter = (placeholder: string) => {
-  const [filterS, setFilterS] = useState<string | undefined>(undefined);
+  const [filterS, setFilterS] = useState("");
   const filterForm = (
     <input
       placeholder={placeholder}
