@@ -1,6 +1,7 @@
 """MusicXML utility module."""
 
 import json
+import unicodedata
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
@@ -118,7 +119,11 @@ def write_xml(tree: ET, out_path: Path) -> None:
 def read_json(p: Path):
     """Read data from JSON."""
     with open(p, "r", encoding="UTF-8") as f:
-        return json.load(f)
+        raw = f.read()
+
+        # This fixes strange umlauts:
+        normalized_raw = unicodedata.normalize("NFC", raw)
+        return json.loads(normalized_raw)
 
 
 def write_json(p: Path, data: Any, **kwargs) -> None:
