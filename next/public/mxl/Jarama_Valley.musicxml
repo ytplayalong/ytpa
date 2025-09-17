@@ -2,7 +2,7 @@
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="4.0">
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">Trastienda RC</creator>
     <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
       <software>MuseScore 4.5.2</software>
@@ -12,6 +12,7 @@
       <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
+    <source>https://musescore.com/user/83726533/scores/27721921</source>
     </identification>
   <part-list>
     <score-part id="P1">
