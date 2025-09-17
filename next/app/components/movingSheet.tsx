@@ -21,14 +21,8 @@ class MyOSMD extends OpenSheetMusicDisplay {
 }
 
 /** Load the score from the xml. */
-const loadOsmd = async (
-  osmd: MyOSMD,
-  width: number,
-  height: number,
-  zoomFac: number
-) => {
+const loadOsmd = async (osmd: MyOSMD, width: number, height: number) => {
   osmd.setCustomPageFormat(width, height);
-  osmd.Zoom = zoomFac;
   if (!osmd.IsReadyToRender()) {
     console.warn("Should not render");
   }
@@ -196,11 +190,19 @@ export const MovingSheet = (props: {
       });
       osmd.setup();
       await osmd.load(xml);
+      osmd.Zoom = zoomFac; // Needs to be done after load()
+
+      // Doing it here at least once, but it is done later as well, so
+      // we don't care about dependencies
+      const osmdPageHeight = settingsManager.isHorizontalMode()
+        ? sheetHeigthPx * userZoom
+        : 100000;
+      osmd.setCustomPageFormat(sheetWidth, osmdPageHeight);
       setOsmd(osmd);
     };
 
     loadOsmd();
-  }, [xml]);
+  }, [xml, zoomFac, userZoom]);
 
   useEffect(() => {
     // Load the sheet music display and create interpolator.
@@ -209,7 +211,7 @@ export const MovingSheet = (props: {
         const osmdPageHeight = settingsManager.isHorizontalMode()
           ? sheetHeigthPx * userZoom
           : 100000;
-        await loadOsmd(osmd, sheetWidth, osmdPageHeight, zoomFac);
+        await loadOsmd(osmd, sheetWidth, osmdPageHeight);
         const ipObj = getInterpolator(osmd, measureMap);
         setIpOrNull({ ip: ipObj });
       };
