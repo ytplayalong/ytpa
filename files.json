@@ -5741,5 +5741,21 @@
     "name": "Покохала упиря",
     "artist": "Folkulaka",
     "language": "ukrainian"
+  },
+  {
+    "videoId": "nKMndstwASU",
+    "measureMap": { "17": 2, "82": 32 },
+    "fileName": "Jarama_Valley",
+    "name": "Jarama Valley",
+    "artist": "Trastienda RC",
+    "language": "spanish"
+  },
+  {
+    "videoId": "FOt3oQ_k008",
+    "measureMap": { "12": 7, "132": 40 },
+    "fileName": "Sailing",
+    "name": "Sailing",
+    "artist": "Rod Stewart",
+    "language": "english"
   }
 ]
