@@ -7379,5 +7379,16 @@
     "name": "Sailing",
     "artist": "Rod Stewart",
     "language": "english"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "LkTXcwc3zvk",
+    "measureMap": {"2": 2, "70": 39},
+    "fileName": "Where_Have_All_The_Flowers_Gone",
+    "name": "Where Have All The Flowers Gone",
+    "artist": "The Kingston Trio",
+    "language": "english"
   }
 ]
