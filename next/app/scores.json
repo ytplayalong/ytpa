@@ -7390,5 +7390,27 @@
     "name": "Where Have All The Flowers Gone",
     "artist": "The Kingston Trio",
     "language": "english"
+  },
+  {
+    "keys": [4],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "aJ9usrpAPao",
+    "measureMap": {"10": 6, "114": 63},
+    "fileName": "Im_Gonna_Be",
+    "name": "I'm Gonna Be (500 Miles)",
+    "artist": "The Proclaimers",
+    "language": "english"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "s5jd3wjBJfQ",
+    "measureMap": {"10": 6, "49": 40},
+    "fileName": "Auld_Lang_Syne_Fiddlers",
+    "name": "Auld Lang Syne",
+    "artist": "Fiddler's Green",
+    "language": "english"
   }
 ]
