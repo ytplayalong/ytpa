@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const tableRowMargin = "6px";
 
 export const tableRowHeight = "80px";
@@ -12,7 +14,42 @@ export const tdStyle = {
   paddingLeft: ".4em",
 };
 
+const noSpace = {
+  padding: 0,
+  margin: 0,
+};
+export const tableLinkStyle = {
+  font: "inherit",
+  color: "inherit",
+  textDecoration: "none",
+  height: tableRowHeight,
+  display: "block",
+  ...noSpace,
+};
 export const thStyle: React.CSSProperties = { textAlign: "left", ...tdStyle };
+
+/** Wrap table cell such that it links to the provided link. */
+export const wrapLinkedCell = (
+  inner: React.ReactNode,
+  link: string,
+  openNewTab: boolean = false
+) => {
+  const linkArgs = openNewTab
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
+  return (
+    <Link style={tableLinkStyle} href={link} {...linkArgs}>
+      <div
+        style={{
+          height: tableRowHeight,
+          alignContent: "center",
+        }}
+      >
+        {inner}
+      </div>
+    </Link>
+  );
+};
 
 export const BasicTable = (props: {
   header: React.ReactNode;

@@ -1,12 +1,12 @@
-import { Favorites } from "@/app/components/favorites";
+import SuggestionList from "@/app/components/suggestionList";
 import { containerInner } from "@/app/util/styles";
 import { getStaticLocaleParams } from "@/i18n";
 
-export default function FavoritesPage() {
+export default function SongSuggestionPage() {
   return (
     <div className="container">
       <div style={containerInner}>
-        <Favorites />
+        <SuggestionList />
       </div>
     </div>
   );

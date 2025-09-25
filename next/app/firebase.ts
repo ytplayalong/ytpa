@@ -16,6 +16,7 @@ import {
   doc,
   Firestore,
   getDoc,
+  getDocs,
   getFirestore,
   serverTimestamp,
   setDoc,
@@ -125,6 +126,20 @@ class FirebaseManager {
       return { info: "Created user account, verify your email and log in." };
     } catch (error) {
       return { error: `Sign-up failed, error: ${error}` };
+    }
+  }
+
+  /** Returns all suggested songs in a list. */
+  async getSongSuggestions() {
+    try {
+      const querySnapshot = await getDocs(
+        collection(this.firestoreDb, "suggestions")
+      );
+      const all = querySnapshot.docs.map((el) => ({ id: el.id, ...el.data() }));
+      return all;
+    } catch (err) {
+      console.log(err);
+      return [];
     }
   }
 

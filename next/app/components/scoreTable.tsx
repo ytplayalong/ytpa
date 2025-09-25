@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MdMoreVert } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
@@ -13,36 +12,8 @@ import {
   tableRowHeight,
   tdStyle,
   thStyle,
+  wrapLinkedCell,
 } from "../util/tables";
-
-const noSpace = {
-  padding: 0,
-  margin: 0,
-};
-const tableLinkStyle = {
-  font: "inherit",
-  color: "inherit",
-  textDecoration: "none",
-  height: tableRowHeight,
-  display: "block",
-  ...noSpace,
-};
-
-/** Wrap table cell such that it links to the provided link. */
-const wrapLinkedCell = (inner: React.ReactNode, link: string) => {
-  return (
-    <Link style={tableLinkStyle} href={link}>
-      <div
-        style={{
-          height: tableRowHeight,
-          alignContent: "center",
-        }}
-      >
-        {inner}
-      </div>
-    </Link>
-  );
-};
 
 export type TableEntryOption = {
   name: string;

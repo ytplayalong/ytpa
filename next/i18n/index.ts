@@ -66,6 +66,7 @@ export const RESSOURCES = {
       verticalMode: "Vertical",
 
       songSuggestion: "Song Request",
+      suggestions: "Requested Songs",
       suggestASong: "Suggest a song for YTPA",
       songName: "Song name",
       ytUrl: "YouTube URL",
@@ -152,6 +153,7 @@ export const RESSOURCES = {
       verticalMode: "Vertical",
 
       songSuggestion: "Solicitud de canción",
+      suggestions: "Canciones Solicitadas",
       suggestASong: "Sugiere una canción para YTPA",
       songName: "Nombre de la canción",
       ytUrl: "URL de YouTube",
@@ -239,6 +241,7 @@ export const RESSOURCES = {
       verticalMode: "Vertikal",
 
       songSuggestion: "Liedervorschlag",
+      suggestions: "Vorgeschlagene Lieder",
       suggestASong: "Schlage ein Lied vor für YTPA",
       songName: "Songtitel",
       ytUrl: "YouTube URL",
