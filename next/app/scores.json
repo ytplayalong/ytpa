@@ -7394,7 +7394,7 @@
   {
     "keys": [4],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "28018612",
     "videoId": "aJ9usrpAPao",
     "measureMap": {"10": 6, "114": 63},
     "fileName": "Im_Gonna_Be",
@@ -7405,12 +7405,34 @@
   {
     "keys": [1],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "28018615",
     "videoId": "s5jd3wjBJfQ",
-    "measureMap": {"10": 6, "49": 40},
+    "measureMap": {"4": 4, "49": 40},
     "fileName": "Auld_Lang_Syne_Fiddlers",
     "name": "Auld Lang Syne",
     "artist": "Fiddler's Green",
+    "language": "english"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "31C1Des-XuY",
+    "measureMap": {"5": 4, "177": 104},
+    "fileName": "Libertango",
+    "name": "Libertango",
+    "artist": "Yo-Yo Ma",
+    "language": "instrumental"
+  },
+  {
+    "keys": [-4, 6],
+    "times": [[3, 4]],
+    "source": "dummy",
+    "videoId": "bACiODIbf84",
+    "measureMap": {"7": 8, "71": 84, "215": 140},
+    "fileName": "My_Favorite_Things",
+    "name": "My Favorite Things",
+    "artist": "Julie Andrews",
     "language": "english"
   }
 ]

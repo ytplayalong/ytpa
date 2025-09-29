@@ -5776,7 +5776,7 @@
   },
   {
     "videoId": "s5jd3wjBJfQ",
-    "measureMap": { "10": 6, "49": 40 },
+    "measureMap": { "4": 4, "49": 40 },
     "fileName": "Auld_Lang_Syne_Fiddlers",
     "name": "Auld Lang Syne",
     "artist": "Fiddler's Green",
@@ -5789,5 +5789,13 @@
     "name": "Libertango",
     "artist": "Yo-Yo Ma",
     "language": "instrumental"
+  },
+  {
+    "videoId": "bACiODIbf84",
+    "measureMap": { "7": 8, "71": 84, "215": 140 },
+    "fileName": "My_Favorite_Things",
+    "name": "My Favorite Things",
+    "artist": "Julie Andrews",
+    "language": "english"
   }
 ]
