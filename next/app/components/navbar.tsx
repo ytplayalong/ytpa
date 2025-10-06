@@ -196,9 +196,5 @@ export default function NavigationBar() {
     </nav>
   );
 
-  return (
-    <header className="topnav" style={navStyle}>
-      {newNav}
-    </header>
-  );
+  return <header style={navStyle}>{newNav}</header>;
 }

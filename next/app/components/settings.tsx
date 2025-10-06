@@ -107,6 +107,7 @@ class SettingsManager {
     return this.getSheetMode() === "horizontalMode";
   }
 }
+export const twoColumns: React.CSSProperties = { float: "left", width: "50%" };
 
 // Setting manager singleton instance.
 export const settingsManager = new SettingsManager();
@@ -140,24 +141,24 @@ const SettingsComp = () => {
     <>
       <h4>{t("settingsTitle")}</h4>
       <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="twocols">{t("instrumentKey")}</div>
-        <div className="twocols rightcol">{keyDD}</div>
+        <div className="button-label">{t("instrumentKey")}</div>
+        <div className="button-button">{keyDD}</div>
       </div>
       <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="twocols">{t("clef")}</div>
-        <div className="twocols rightcol">{clefDD}</div>
+        <div className="button-label">{t("clef")}</div>
+        <div className="button-button">{clefDD}</div>
       </div>
       <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="twocols">{t("fingering")}</div>
-        <div className="twocols rightcol">{fingerDD}</div>
+        <div className="button-label">{t("fingering")}</div>
+        <div className="button-button">{fingerDD}</div>
       </div>
       <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="twocols">{t(settingsManager.scaleKey)}</div>
-        <div className="twocols rightcol">{zoomDD}</div>
+        <div className="button-label">{t(settingsManager.scaleKey)}</div>
+        <div className="button-button">{zoomDD}</div>
       </div>
       <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="twocols">{t(settingsManager.sheetModeKey)}</div>
-        <div className="twocols rightcol">{sheetDD}</div>
+        <div className="button-label">{t(settingsManager.sheetModeKey)}</div>
+        <div className="button-button">{sheetDD}</div>
       </div>
     </>
   );

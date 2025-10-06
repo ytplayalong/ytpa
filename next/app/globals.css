@@ -58,6 +58,25 @@
   }  
 }
 
+/** ------------------- Responsive labelled button layout ------------------- **/
+.button-label {
+  float: left;
+}
+.button-button {
+  float: right;
+  width: auto;
+}
+@media (min-width: 768px) {
+  .button-label {
+    float: left;
+    width: 50%;
+  }
+  .button-button {
+    float: left;
+    width: 50%;
+  }
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
