@@ -7434,5 +7434,16 @@
     "name": "My Favorite Things",
     "artist": "Julie Andrews",
     "language": "english"
+  },
+  {
+    "keys": [-1],
+    "times": [[2, 4]],
+    "source": "dummy",
+    "videoId": "7CZNptHOXDY",
+    "measureMap": {"3": 5, "62": 84},
+    "fileName": "Fischia_il_vento",
+    "name": "Fischia il vento",
+    "artist": "Skassapunka",
+    "language": "italian"
   }
 ]
