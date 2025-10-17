@@ -5813,5 +5813,21 @@
     "name": "Jesenje Lišće",
     "artist": "Blanka Došen",
     "language": "serbian"
+  },
+  {
+    "videoId": "pxSOZ_5-Bkw",
+    "measureMap": { "18": 9, "104": 49 },
+    "fileName": "Lu_rusciu_te_lu_mare",
+    "name": "Lu rusciu te lu mare",
+    "artist": "I Scianari",
+    "language": "italian"
+  },
+  {
+    "videoId": "P0lb4zgFySI",
+    "measureMap": { "9": 5, "149": 73 },
+    "fileName": "Arbeiter_von_Wien",
+    "name": "Arbeiter von Wien",
+    "artist": "Erich-Weinert-Ensemble",
+    "language": "german"
   }
 ]
