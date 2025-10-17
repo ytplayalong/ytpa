@@ -5,7 +5,6 @@
     <creator type="composer">Danzante Banda Celta</creator>
     <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 4.5.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
       <supports element="print" attribute="new-page" type="yes" value="yes" />

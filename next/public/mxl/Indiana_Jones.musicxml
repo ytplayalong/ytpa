@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
+    <creator type="composer">John Williams</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18740017</source>
     </identification>
   <part-list>
-    <part-group type="start" number="1">
-      <group-symbol>brace</group-symbol>
-      </part-group>
     <score-part id="P1">
       <part-name>Piano</part-name>
       <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -394,7 +393,7 @@
         <root>
           <root-step>C</root-step>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>
@@ -633,7 +632,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>
@@ -827,7 +826,7 @@
         <root>
           <root-step>C</root-step>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>
@@ -1066,7 +1065,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>
@@ -2717,7 +2716,7 @@
         <root>
           <root-step>C</root-step>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>
@@ -2956,7 +2955,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>
@@ -3272,7 +3271,7 @@
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>
@@ -3530,7 +3529,7 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>

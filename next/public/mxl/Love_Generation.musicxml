@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">Bob Sinclar</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18725479</source>
@@ -19,6 +19,7 @@
       <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -331,15 +332,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -727,15 +728,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -977,15 +978,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -1180,15 +1181,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -1430,15 +1431,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -1717,15 +1718,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <rest />
@@ -1972,15 +1973,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2257,15 +2258,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -2349,15 +2350,17 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>4</duration>
         <type>quarter</type>
-        <accidental>flat-up</accidental>
+        <accidental cautionary="yes" parentheses="no">flat-up</accidental>
         </note>
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>2</duration>
@@ -2367,6 +2370,7 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>2</duration>
@@ -2380,6 +2384,7 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>4</duration>
@@ -2402,6 +2407,7 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>2</duration>
@@ -2461,15 +2467,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <rest />
@@ -2557,15 +2563,17 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>4</duration>
         <type>quarter</type>
-        <accidental>flat-up</accidental>
+        <accidental cautionary="yes" parentheses="no">flat-up</accidental>
         </note>
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>2</duration>
@@ -2575,6 +2583,7 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>2</duration>
@@ -2588,6 +2597,7 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>4</duration>
@@ -2610,6 +2620,7 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>-0.5</alter>
           <octave>5</octave>
           </pitch>
         <duration>2</duration>
@@ -2669,15 +2680,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -3003,15 +3014,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -3286,15 +3297,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <pitch>
@@ -3397,15 +3408,15 @@
           <root-alter>-1</root-alter>
           </root>
         <kind>major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+          </bass>
         <degree>
           <degree-value>2</degree-value>
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
           </degree>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-          </bass>
         </harmony>
       <note>
         <rest measure="yes" />

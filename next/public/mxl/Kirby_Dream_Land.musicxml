@@ -4,7 +4,6 @@
   <identification>
     <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 4.5.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
       <supports element="print" attribute="new-page" type="yes" value="yes" />
@@ -2839,7 +2838,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind text="sus4">suspended-fourth</kind>
+        <kind text="4">suspended-fourth</kind>
         </harmony>
       <note>
         <pitch>

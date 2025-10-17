@@ -19,6 +19,7 @@ REMOVE_ELEMENTS = [
     "voice",
     "stem",
     "miscellaneous",
+    "software",
 ]
 REMOVE_ATRS = [
     "arrangement",

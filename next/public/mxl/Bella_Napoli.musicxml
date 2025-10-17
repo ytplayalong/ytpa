@@ -5,7 +5,6 @@
     <creator type="composer">Roy Bianco &amp; Die Abbrunzati Boys</creator>
     <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 4.5.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
       <supports element="print" attribute="new-page" type="yes" value="yes" />
@@ -243,7 +242,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -459,7 +458,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -941,7 +940,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -1230,7 +1229,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -1439,7 +1438,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -1625,7 +1624,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -1959,7 +1958,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -2170,7 +2169,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -2311,7 +2310,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -2522,7 +2521,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -2804,7 +2803,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -3007,7 +3006,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -3296,7 +3295,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -3499,7 +3498,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -3686,7 +3685,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -4020,7 +4019,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -4231,7 +4230,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -4369,7 +4368,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -4580,7 +4579,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -4809,7 +4808,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
@@ -5033,7 +5032,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind text="7sus4">suspended-fourth</kind>
+        <kind text="74">suspended-fourth</kind>
         <degree>
           <degree-value>7</degree-value>
           <degree-alter>0</degree-alter>
