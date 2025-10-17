@@ -1,5 +1,6 @@
 """MuseScore.com API client."""
 
+import argparse
 import requests
 import json
 from pathlib import Path
@@ -198,7 +199,7 @@ def modify_and_update_online():
         client.upload(score_info)
 
 
-def upload_not_yet_uploaded():
+def upload_not_yet_uploaded(max_uploaded: int | None = None):
     client = MuseScoreComApiClient()
     info = client.get_user_info()  # To set user ID correctly
     if info is None:
@@ -206,6 +207,7 @@ def upload_not_yet_uploaded():
         return
 
     score_infos = Paths.read_generated_score_info()
+    upload_ct = 0
     for score_info in tqdm(score_infos, "Uploading Mscz files"):
         if score_info["source"] == "dummy":
             resp = client.upload(score_info, True)
@@ -223,6 +225,11 @@ def upload_not_yet_uploaded():
             print(f"Uploaded {score_info['name']}")
             print("Make sure to close it if open in MuseScore.")
             print("Otherwise, you risk overwriting the source!")
+            upload_ct += 1
+
+            if max_uploaded is not None and upload_ct >= max_uploaded:
+                print(f"Aborting uplaod, already uploaded {max_uploaded}")
+                break
 
 
 def get_all_score_info():
@@ -256,8 +263,20 @@ def test():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Example: optional integer argument")
+
+    # Define an optional integer argument, e.g. --num 5
+    parser.add_argument(
+        "-n",
+        "--num",
+        type=int,
+        help="Max. number of scores to upload",
+        default=None,  # Optional: defaults to None if not provided
+    )
+    args = parser.parse_args()
+
     # test()
     # get_all_score_info()
-    upload_not_yet_uploaded()
+    upload_not_yet_uploaded(args.num)
     # check_all_yt_sources()
     # modify_and_update_online()

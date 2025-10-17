@@ -18,8 +18,17 @@ REMOVE_ELEMENTS = [
     "sound",
     "voice",
     "stem",
+    "miscellaneous",
 ]
-REMOVE_ATRS = ["default-x", "default-y", "width", "relative-y"]
+REMOVE_ATRS = [
+    "arrangement",
+    "default-x",
+    "default-y",
+    "width",
+    "relative-y",
+    "bezier-x",
+    "bezier-y",
+]
 
 
 def reduce_file(path: Path) -> None:
