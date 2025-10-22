@@ -1,5 +1,4 @@
 import { containerInner } from "@/app/util/styles";
-import { getStaticLocaleParams } from "@/i18n";
 
 export default function Spotify() {
   return (
@@ -18,4 +17,4 @@ export default function Spotify() {
   );
 }
 
-export const generateStaticParams = getStaticLocaleParams;
+export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

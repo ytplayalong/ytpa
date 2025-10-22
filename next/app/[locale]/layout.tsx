@@ -5,11 +5,9 @@ import { MdCopyright } from "react-icons/md";
 import CookieConsentBanner from "@/app/components/cookie";
 import NavigationBar from "@/app/components/navbar";
 
-import { baseMetadata } from "../util/meta";
-
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = baseMetadata;
+export { baseMetadata as metadata } from "../util/meta";
 
 export default function RootLayout({
   children,

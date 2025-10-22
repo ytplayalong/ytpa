@@ -1,5 +1,3 @@
-import { getStaticLocaleParams } from "@/i18n";
-
 import Home from "../components/home";
 import { containerInner } from "../util/styles";
 
@@ -13,4 +11,4 @@ export default function HomeComp() {
   );
 }
 
-export const generateStaticParams = getStaticLocaleParams;
+export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

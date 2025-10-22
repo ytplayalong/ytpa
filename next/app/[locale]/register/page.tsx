@@ -1,6 +1,5 @@
 import RegisterForm from "@/app/components/forms/registerForm";
 import { containerInner } from "@/app/util/styles";
-import { getStaticLocaleParams } from "@/i18n";
 
 export default function Register() {
   return (
@@ -11,4 +10,5 @@ export default function Register() {
     </div>
   );
 }
-export const generateStaticParams = getStaticLocaleParams;
+
+export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

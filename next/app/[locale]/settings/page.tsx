@@ -1,6 +1,5 @@
 import SettingPage from "@/app/components/settingPage";
 import { containerInner } from "@/app/util/styles";
-import { getStaticLocaleParams } from "@/i18n";
 
 export default function Settings() {
   return (
@@ -11,4 +10,5 @@ export default function Settings() {
     </div>
   );
 }
-export const generateStaticParams = getStaticLocaleParams;
+
+export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

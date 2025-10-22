@@ -1,6 +1,5 @@
 import { Favorites } from "@/app/components/favorites";
 import { containerInner } from "@/app/util/styles";
-import { getStaticLocaleParams } from "@/i18n";
 
 export default function FavoritesPage() {
   return (
@@ -11,4 +10,5 @@ export default function FavoritesPage() {
     </div>
   );
 }
-export const generateStaticParams = getStaticLocaleParams;
+
+export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

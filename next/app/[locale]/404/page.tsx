@@ -1,5 +1,4 @@
 import { containerInner } from "@/app/util/styles";
-import { getStaticLocaleParams } from "@/i18n";
 
 export default function NotFound() {
   return (
@@ -11,4 +10,4 @@ export default function NotFound() {
   );
 }
 
-export const generateStaticParams = getStaticLocaleParams;
+export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

@@ -1,6 +1,5 @@
 import SuggestionList from "@/app/components/suggestionList";
 import { containerInner } from "@/app/util/styles";
-import { getStaticLocaleParams } from "@/i18n";
 
 export default function SongSuggestionPage() {
   return (
@@ -11,4 +10,5 @@ export default function SongSuggestionPage() {
     </div>
   );
 }
-export const generateStaticParams = getStaticLocaleParams;
+
+export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

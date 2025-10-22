@@ -1,6 +1,5 @@
 import PwResetForm from "@/app/components/forms/pwResetForm";
 import { containerInner } from "@/app/util/styles";
-import { getStaticLocaleParams } from "@/i18n";
 
 export default function PwReset() {
   return (
@@ -11,4 +10,5 @@ export default function PwReset() {
     </div>
   );
 }
-export const generateStaticParams = getStaticLocaleParams;
+
+export { getStaticLocaleParams as generateStaticParams } from "@/i18n";
