@@ -5,7 +5,6 @@
     <creator type="composer">Daniel Powter</creator>
     <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 4.5.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
       <supports element="print" attribute="new-page" type="yes" value="yes" />
@@ -135,7 +134,7 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="sus2">suspended-second</kind>
+        <kind text="2">suspended-second</kind>
         </harmony>
       <note>
         <pitch>
@@ -469,7 +468,7 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="sus2">suspended-second</kind>
+        <kind text="2">suspended-second</kind>
         </harmony>
       <note>
         <pitch>
@@ -694,7 +693,7 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="sus2">suspended-second</kind>
+        <kind text="2">suspended-second</kind>
         </harmony>
       <note>
         <pitch>
@@ -1417,7 +1416,7 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="sus2">suspended-second</kind>
+        <kind text="2">suspended-second</kind>
         </harmony>
       <note>
         <pitch>
@@ -1623,7 +1622,7 @@
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
           </root>
-        <kind text="sus2">suspended-second</kind>
+        <kind text="2">suspended-second</kind>
         </harmony>
       <note>
         <pitch>

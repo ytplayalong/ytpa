@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">HBz</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18740125</source>
@@ -19,6 +19,7 @@
       <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -45,7 +46,7 @@
           </root>
         <kind>major</kind>
         </harmony>
-      <direction placement="above">
+      <direction placement="above" system="only-top">
         <direction-type>
           <metronome parentheses="no">
             <beat-unit>half</beat-unit>
@@ -1232,7 +1233,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1305,7 +1306,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1495,7 +1496,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1564,7 +1565,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1759,7 +1760,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1832,7 +1833,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1887,7 +1888,7 @@
         <accidental>flat</accidental>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1979,7 +1980,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2005,7 +2006,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2058,7 +2059,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2085,7 +2086,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2222,6 +2223,8 @@
         <rest />
         <duration>1</duration>
         <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -2232,7 +2235,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="64">
@@ -2283,7 +2286,7 @@
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2392,7 +2395,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2418,7 +2421,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2544,7 +2547,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2612,7 +2615,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2638,7 +2641,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2761,7 +2764,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2823,7 +2826,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2868,7 +2871,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2894,7 +2897,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3092,6 +3095,8 @@
         <rest />
         <duration>1</duration>
         <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -3102,7 +3107,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="91">
@@ -3145,7 +3150,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3219,7 +3224,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3725,7 +3730,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3770,7 +3775,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3796,7 +3801,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4026,7 +4031,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4100,7 +4105,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4171,7 +4176,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4591,7 +4596,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -4882,6 +4887,8 @@
         <rest />
         <duration>1</duration>
         <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -4892,7 +4899,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="157">
@@ -5152,7 +5159,7 @@
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5264,7 +5271,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5290,7 +5297,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5416,7 +5423,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5484,7 +5491,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5510,7 +5517,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5633,7 +5640,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5695,7 +5702,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5740,7 +5747,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5766,7 +5773,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -5964,6 +5971,8 @@
         <rest />
         <duration>1</duration>
         <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -5974,7 +5983,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="191">
@@ -6017,7 +6026,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -6091,7 +6100,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -6569,7 +6578,7 @@
         <type>quarter</type>
         <dot />
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -6860,6 +6869,8 @@
         <rest />
         <duration>1</duration>
         <type>16th</type>
+        <beam number="1">continue</beam>
+        <beam number="2">begin</beam>
         </note>
       <note>
         <pitch>
@@ -6870,7 +6881,7 @@
         <duration>1</duration>
         <type>16th</type>
         <beam number="1">end</beam>
-        <beam number="2">backward hook</beam>
+        <beam number="2">end</beam>
         </note>
       </measure>
     <measure number="223">

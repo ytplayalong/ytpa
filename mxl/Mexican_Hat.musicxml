@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
+    <creator type="composer">The Mariachis (Jarabe Tapatio)</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18849328</source>
     </identification>
   <part-list>
-    <part-group type="start" number="1">
-      <group-symbol>brace</group-symbol>
-      </part-group>
     <score-part id="P1">
       <part-name>Trumpet</part-name>
       <part-abbreviation>Tp.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -46,7 +45,7 @@
           </root>
         <kind>major</kind>
         </harmony>
-      <direction placement="above">
+      <direction placement="above" system="only-top">
         <direction-type>
           <metronome parentheses="no">
             <beat-unit>quarter</beat-unit>
@@ -2211,7 +2210,7 @@
         <type>quarter</type>
         <dot />
         </note>
-      <direction>
+      <direction placement="above" system="only-top">
         <direction-type>
           <words font-weight="bold" font-size="12">Swing</words>
           </direction-type>
@@ -3689,7 +3688,7 @@
           </time-modification>
         <beam number="1">begin</beam>
         <notations>
-          <tuplet type="start" bracket="no" />
+          <tuplet type="start" bracket="yes" />
           </notations>
         </note>
       <note>
@@ -3813,7 +3812,7 @@
           </time-modification>
         <beam number="1">begin</beam>
         <notations>
-          <tuplet type="start" bracket="no" />
+          <tuplet type="start" bracket="yes" />
           </notations>
         </note>
       <note>
@@ -3946,7 +3945,7 @@
           </time-modification>
         <beam number="1">begin</beam>
         <notations>
-          <tuplet type="start" bracket="no" />
+          <tuplet type="start" bracket="yes" />
           </notations>
         </note>
       <note>
@@ -4167,7 +4166,7 @@
           </root>
         <kind>major</kind>
         </harmony>
-      <direction>
+      <direction placement="above" system="only-top">
         <direction-type>
           <words font-weight="bold" font-size="12">Straight</words>
           </direction-type>
@@ -4421,7 +4420,7 @@
         </note>
       </measure>
     <measure number="90">
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4430,7 +4429,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4439,7 +4438,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4448,7 +4447,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -4458,7 +4457,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4467,7 +4466,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -4763,7 +4762,7 @@
         </note>
       </measure>
     <measure number="98">
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4772,7 +4771,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4781,7 +4780,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4790,7 +4789,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -4800,7 +4799,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4809,7 +4808,7 @@
         <type>eighth</type>
         <beam number="1">continue</beam>
         </note>
-      <note dynamics="106.67">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>

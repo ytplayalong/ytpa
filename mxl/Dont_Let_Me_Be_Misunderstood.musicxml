@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
+    <creator type="composer">The Animals</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18739897</source>
@@ -18,6 +19,7 @@
       <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -401,7 +403,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -449,7 +451,7 @@
         <beam number="2">begin</beam>
         <notations>
           <tied type="stop" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -480,7 +482,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -557,7 +559,7 @@
           <root-step>F</root-step>
           <root-alter>1</root-alter>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -692,7 +694,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -731,7 +733,7 @@
         <beam number="1">continue</beam>
         <beam number="2">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -761,7 +763,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -855,7 +857,7 @@
           <root-step>F</root-step>
           <root-alter>1</root-alter>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -881,7 +883,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -1021,7 +1023,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -1487,7 +1489,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -1535,7 +1537,7 @@
         <beam number="2">begin</beam>
         <notations>
           <tied type="stop" />
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1566,7 +1568,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -1649,7 +1651,7 @@
           <root-step>F</root-step>
           <root-alter>1</root-alter>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -1767,7 +1769,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -1834,7 +1836,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1863,7 +1865,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -1906,7 +1908,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1958,7 +1960,7 @@
           <root-step>F</root-step>
           <root-alter>1</root-alter>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -1980,7 +1982,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -2120,7 +2122,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -2896,7 +2898,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -2956,7 +2958,7 @@
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2987,7 +2989,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -3062,7 +3064,7 @@
           <root-step>F</root-step>
           <root-alter>1</root-alter>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -3151,7 +3153,7 @@
         <root>
           <root-step>A</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -3197,7 +3199,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -3226,7 +3228,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -3315,7 +3317,7 @@
           <root-step>F</root-step>
           <root-alter>1</root-alter>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -3337,7 +3339,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -3477,7 +3479,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -3743,7 +3745,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -3883,7 +3885,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />
@@ -4149,7 +4151,7 @@
         <root>
           <root-step>D</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <pitch>
@@ -4289,7 +4291,7 @@
         <root>
           <root-step>G</root-step>
           </root>
-        <kind />
+        <kind>none</kind>
         </harmony>
       <note>
         <rest />

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">Céline Dion</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18916795</source>
@@ -19,6 +19,7 @@
       <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -57,7 +58,7 @@
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -92,7 +93,7 @@
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -134,7 +135,7 @@
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -283,7 +284,7 @@
           </pitch>
         <duration>12</duration>
         <type size="cue">half</type>
-        <dot />
+        <dot placement="below" />
         </note>
       <note>
         <pitch>
@@ -360,7 +361,7 @@
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -520,7 +521,7 @@
           </pitch>
         <duration>6</duration>
         <type>quarter</type>
-        <dot />
+        <dot placement="above" />
         </note>
       <note>
         <pitch>
@@ -660,7 +661,7 @@
           </pitch>
         <duration>6</duration>
         <type>quarter</type>
-        <dot />
+        <dot placement="above" />
         </note>
       <note>
         <pitch>
@@ -720,7 +721,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -789,7 +790,7 @@
           </pitch>
         <duration>6</duration>
         <type>quarter</type>
-        <dot />
+        <dot placement="above" />
         </note>
       <note>
         <pitch>
@@ -929,7 +930,7 @@
           </pitch>
         <duration>6</duration>
         <type>quarter</type>
-        <dot />
+        <dot placement="above" />
         </note>
       <note>
         <pitch>
@@ -1072,7 +1073,7 @@
           </pitch>
         <duration>12</duration>
         <type>half</type>
-        <dot />
+        <dot placement="below" />
         </note>
       <note>
         <pitch>
@@ -1255,7 +1256,7 @@
         <duration>16</duration>
         <type>whole</type>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       </measure>
@@ -1310,7 +1311,7 @@
           </pitch>
         <duration>12</duration>
         <type>half</type>
-        <dot />
+        <dot placement="below" />
         </note>
       <note>
         <pitch>
@@ -1541,7 +1542,7 @@
         <duration>4</duration>
         <type>quarter</type>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -1589,7 +1590,7 @@
           </pitch>
         <duration>6</duration>
         <type>quarter</type>
-        <dot />
+        <dot placement="above" />
         </note>
       <note>
         <pitch>
@@ -1729,7 +1730,7 @@
           </pitch>
         <duration>6</duration>
         <type>quarter</type>
-        <dot />
+        <dot placement="above" />
         </note>
       <note>
         <pitch>
@@ -1851,7 +1852,7 @@
           </pitch>
         <duration>6</duration>
         <type>quarter</type>
-        <dot />
+        <dot placement="above" />
         </note>
       <note>
         <pitch>
@@ -1991,7 +1992,7 @@
           </pitch>
         <duration>6</duration>
         <type>quarter</type>
-        <dot />
+        <dot placement="above" />
         </note>
       <note>
         <pitch>
@@ -2051,7 +2052,7 @@
         <type>eighth</type>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -2142,7 +2143,7 @@
           </pitch>
         <duration>12</duration>
         <type>half</type>
-        <dot />
+        <dot placement="below" />
         </note>
       <note>
         <pitch>
@@ -2343,7 +2344,7 @@
         <duration>16</duration>
         <type>whole</type>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       </measure>
@@ -2398,7 +2399,7 @@
           </pitch>
         <duration>12</duration>
         <type>half</type>
-        <dot />
+        <dot placement="below" />
         </note>
       <note>
         <pitch>
@@ -2629,7 +2630,7 @@
         <duration>4</duration>
         <type>quarter</type>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>

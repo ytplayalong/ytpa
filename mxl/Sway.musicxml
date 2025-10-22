@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
+<score-partwise version="4.0">
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">Dean Martin</creator>
+    <rights>Play-Along this score on YouTube on https://ytpa.ch</rights>
     <encoding>
-      <software>MuseScore 3.6.2</software>
       <supports element="accidental" type="yes" />
       <supports element="beam" type="yes" />
-      <supports element="print" attribute="new-page" type="no" />
-      <supports element="print" attribute="new-system" type="no" />
+      <supports element="print" attribute="new-page" type="yes" value="yes" />
+      <supports element="print" attribute="new-system" type="yes" value="yes" />
       <supports element="stem" type="yes" />
       </encoding>
     <source>https://musescore.com/user/83726533/scores/18845392</source>
@@ -19,6 +19,7 @@
       <part-abbreviation>Pno.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
+        <instrument-sound>keyboard.piano</instrument-sound>
         </score-instrument>
       </score-part>
     </part-list>
@@ -268,7 +269,7 @@
           </root>
         <kind text="m7(b5)" parentheses-degrees="yes">half-diminished</kind>
         </harmony>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -277,7 +278,7 @@
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
         </note>
-      <note dynamics="88.89">
+      <note>
         <chord />
         <pitch>
           <step>G</step>
@@ -286,7 +287,7 @@
         <duration>2</duration>
         <type size="cue">eighth</type>
         </note>
-      <note dynamics="88.89">
+      <note>
         <chord />
         <pitch>
           <step>G</step>
@@ -398,7 +399,7 @@
         <duration>2</duration>
         <type size="cue">eighth</type>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>F</step>
           <octave>5</octave>
@@ -407,7 +408,7 @@
         <type size="cue">eighth</type>
         <beam number="1">continue</beam>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>C</step>
           <alter>1</alter>
@@ -418,7 +419,7 @@
         <accidental>sharp</accidental>
         <beam number="1">continue</beam>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -427,7 +428,7 @@
         <type size="cue">eighth</type>
         <beam number="1">end</beam>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -437,7 +438,7 @@
         <dot />
         <beam number="1">begin</beam>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -447,7 +448,7 @@
         <dot />
         <beam number="1">continue</beam>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>C</step>
           <alter>1</alter>
@@ -466,7 +467,7 @@
           </root>
         <kind text="m">minor</kind>
         </harmony>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -528,7 +529,7 @@
         </note>
       </measure>
     <measure number="6">
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -820,7 +821,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -880,7 +881,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
@@ -933,7 +934,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <harmony print-frame="no">
@@ -2045,7 +2046,7 @@
         <duration>16</duration>
         <type>whole</type>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       </measure>
@@ -2595,7 +2596,7 @@
           </root>
         <kind text="m7(b5)" parentheses-degrees="yes">half-diminished</kind>
         </harmony>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2604,7 +2605,7 @@
         <duration>4</duration>
         <type size="cue">quarter</type>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2619,7 +2620,7 @@
           </root>
         <kind text="7">dominant</kind>
         </harmony>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2652,7 +2653,7 @@
           </root>
         <kind text="m7(b5)" parentheses-degrees="yes">half-diminished</kind>
         </harmony>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2661,7 +2662,7 @@
         <duration>4</duration>
         <type size="cue">quarter</type>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2676,7 +2677,7 @@
           </root>
         <kind text="7">dominant</kind>
         </harmony>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2709,7 +2710,7 @@
           </root>
         <kind text="m">minor</kind>
         </harmony>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2717,7 +2718,7 @@
         <duration>4</duration>
         <type size="cue">quarter</type>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2726,7 +2727,7 @@
         <type size="cue">eighth</type>
         <beam number="1">begin</beam>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2739,7 +2740,7 @@
           <tied type="start" />
           </notations>
         </note>
-      <note dynamics="88.89">
+      <note>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3839,7 +3840,7 @@
         <duration>16</duration>
         <type>whole</type>
         <notations>
-          <slur type="start" placement="above" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       </measure>
@@ -4038,7 +4039,7 @@
         <type>eighth</type>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" placement="below" number="1" />
+          <slur type="start" number="1" />
           </notations>
         </note>
       <note>
