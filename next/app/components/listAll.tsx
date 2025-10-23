@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useState } from "react";
+import { useSearchParams, usePathname } from "next/navigation";
 
 import usePathTranslation from "@/i18n/hook";
 
@@ -13,13 +14,47 @@ import { ScoreTable, useFavoriteOption } from "./scoreTable";
 type SortSetting = { by: SortBy; ascending: boolean };
 type ScoreNameArtist = { name: string; artist: string };
 
+const urlSep = "_";
+const checkBoxStyle: React.CSSProperties = {
+  minWidth: "18px",
+  minHeight: "18px",
+};
+const divStyle: React.CSSProperties = { flex: "0.4" };
+const equiSpacedBoxes: React.CSSProperties = {
+  ...checkBoxStyle,
+  textAlign: "left",
+  marginLeft: 0,
+};
+const labelStyle = { flex: "1" };
+
 /** Hook providing form to enter text for filtering scores. */
 const useScoreFilter = (placeholder: string) => {
-  const [filterS, setFilterS] = useState("");
+  const filterKey = "search";
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const init = searchParams.get(filterKey) ?? "";
+  const [filterS, setFilterS] = useState(init);
+
+  const setFilterWrapped = (val: string) => {
+    // Update URL such that search filter is represented
+    const params = new URLSearchParams(searchParams);
+    if (val === "") {
+      params.delete(filterKey);
+    } else {
+      params.set(filterKey, val);
+    }
+    const newUrl = `${pathname}?${params.toString()}`;
+    if (globalThis.history !== undefined) {
+      globalThis.history.replaceState(null, "", newUrl);
+    }
+
+    setFilterS(val);
+  };
+
   const filterForm = (
     <input
       placeholder={placeholder}
-      onChange={(ev: { target: any }) => setFilterS(ev.target.value)}
+      onChange={(ev: { target: any }) => setFilterWrapped(ev.target.value)}
       value={filterS}
       style={inputStyle}
     ></input>
@@ -66,30 +101,51 @@ const useSortedScores = () => {
   return { sortFun, sortClick, ...sortSetting };
 };
 
-const checkBoxStyle = {
-  minWidth: "18px",
-  minHeight: "18px",
-};
-
 const useTimeSignatureFilter = () => {
+  const timeSigKey = "ts";
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+
   const initTimes = TimeSignatures.map(() => true);
-  const [chosenTimes, setChosenTimes] = useState<boolean[]>(initTimes);
+  const param = searchParams.get(timeSigKey);
+  const initialValues = param
+    ? param.split(urlSep).map((v) => v === "1")
+    : initTimes;
+
+  const [chosenTimes, setChosenTimes] = useState<boolean[]>(initialValues);
+  const setTimesWrapped = (values: boolean[]) => {
+    const params = new URLSearchParams(searchParams);
+    const serialized = values.map((b) => (b ? "1" : "0")).join(urlSep);
+    params.set(timeSigKey, serialized);
+
+    if (globalThis.history !== undefined) {
+      const newUrl = `${pathname}?${params.toString()}`;
+      globalThis.history.replaceState(null, "", newUrl);
+    }
+    setChosenTimes(values);
+  };
+
   const comp = (
     <div style={{ ...distributedStyle, overflowX: "auto" }}>
       {TimeSignatures.map((el, idx) => (
         <Fragment key={`time-${el}`}>
-          <label htmlFor={`time-${el}`}>{`${el[0]}/${el[1]}`}</label>
-          <input
-            type="checkbox"
-            name={`time-${el}`}
-            checked={chosenTimes[idx]}
-            onChange={() => {
-              const newTimes = [...chosenTimes];
-              newTimes[idx] = !newTimes[idx];
-              setChosenTimes(newTimes);
-            }}
-            style={checkBoxStyle}
-          />
+          <div style={divStyle}>
+            <input
+              type="checkbox"
+              name={`time-${el}`}
+              checked={chosenTimes[idx]}
+              onChange={() => {
+                const newTimes = [...chosenTimes];
+                newTimes[idx] = !newTimes[idx];
+                setTimesWrapped(newTimes);
+              }}
+              style={equiSpacedBoxes}
+            />
+          </div>
+          <label
+            style={labelStyle}
+            htmlFor={`time-${el}`}
+          >{`${el[0]}/${el[1]}`}</label>
         </Fragment>
       ))}
     </div>
@@ -104,55 +160,80 @@ const useTimeSignatureFilter = () => {
 
 /** Hook for filtering based on key signature. */
 const useKeyFilter = () => {
+  const keyKey = "sharps";
   const flats = [1, 2, 3, 4, 5, 6];
   const sharps = [1, 2, 3, 4, 5];
   const negFlats = flats.map((el) => -el);
+
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const param = searchParams.get(keyKey);
   const initValue = [0, ...sharps, ...negFlats];
-  const [chosenKeys, setChosenKeys] = useState<number[]>(initValue);
+  const initialFromURL = param ? param.split(urlSep).map(Number) : initValue;
+
+  const [chosenKeys, setChosenKeys] = useState<number[]>(initialFromURL);
 
   const sharpIsSet = (sharpIdx: number) => chosenKeys.includes(sharpIdx);
   const setSharp = (sharpIdx: number) => {
     const idx = chosenKeys.indexOf(sharpIdx);
+    let keys: number[];
     if (idx === -1) {
-      setChosenKeys([sharpIdx, ...chosenKeys]);
+      keys = [sharpIdx, ...chosenKeys];
     } else {
-      setChosenKeys(chosenKeys.filter((el) => el !== sharpIdx));
+      keys = chosenKeys.filter((el) => el !== sharpIdx);
+    }
+    keys = initValue.filter((el) => keys.includes(el));
+    setChosenKeys(keys);
+
+    // Update URL such that key filter is represented
+    const params = new URLSearchParams(searchParams);
+    params.set(keyKey, keys.join(urlSep));
+    const newUrl = `${pathname}?${params.toString()}`;
+    if (globalThis.history !== undefined) {
+      globalThis.history.replaceState(null, "", newUrl);
     }
   };
+
   const comp = (
-    <div>
+    <div style={{ overflowX: "auto" }}>
       <div style={distributedStyle}>
-        <label htmlFor="none">{`0 #`}</label>
-        <input
-          type="checkbox"
-          name="none"
-          id={`none`}
-          checked={sharpIsSet(0)}
-          onChange={() => setSharp(0)}
-          style={checkBoxStyle}
-        />
+        <div style={divStyle}>
+          <input
+            type="checkbox"
+            name="none"
+            id={`none`}
+            checked={sharpIsSet(0)}
+            onChange={() => setSharp(0)}
+            style={equiSpacedBoxes}
+          />
+        </div>
+        <label htmlFor="none" style={labelStyle}>{`0#`}</label>
         {sharps.map((el) => (
           <Fragment key={`sharp-${el}`}>
-            <label htmlFor={`sharp-${el}`}>{`${el} #`}</label>
-            <input
-              type="checkbox"
-              checked={sharpIsSet(el)}
-              onChange={() => setSharp(el)}
-              style={checkBoxStyle}
-            />
+            <div style={divStyle}>
+              <input
+                type="checkbox"
+                checked={sharpIsSet(el)}
+                onChange={() => setSharp(el)}
+                style={equiSpacedBoxes}
+              />
+            </div>
+            <label htmlFor={`sharp-${el}`} style={labelStyle}>{`${el}#`}</label>
           </Fragment>
         ))}
       </div>
       <div style={distributedStyle}>
         {flats.map((el) => (
           <Fragment key={`flat-${el}`}>
-            <label htmlFor={`flat-${el}`}>{`${el} ♭`}</label>
-            <input
-              type="checkbox"
-              checked={sharpIsSet(-el)}
-              onChange={() => setSharp(-el)}
-              style={checkBoxStyle}
-            />
+            <div style={divStyle}>
+              <input
+                type="checkbox"
+                checked={sharpIsSet(-el)}
+                onChange={() => setSharp(-el)}
+                style={equiSpacedBoxes}
+              />
+            </div>
+            <label htmlFor={`flat-${el}`} style={labelStyle}>{`${el}♭`}</label>
           </Fragment>
         ))}
       </div>
