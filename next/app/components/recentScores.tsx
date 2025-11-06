@@ -4,25 +4,19 @@ import usePathTranslation from "@/i18n/hook";
 
 import { fullScoreInfo } from "../util/util";
 import { ScoreTable, useFavoriteOption } from "./scoreTable";
-import { useState } from "react";
-import { buttonAttrs } from "../util/styles";
 
-export const NewestScores = ({
-  nMostRecentSongs,
-}: {
-  nMostRecentSongs: number;
-}) => {
+export const NewestScores = () => {
   const { t } = usePathTranslation();
 
   const favOpt = useFavoriteOption();
-  const [nShown, setNShown] = useState(nMostRecentSongs);
 
   // Select only most recent scores
-  let scores = fullScoreInfo.filter(
-    (_el, idx) => idx > fullScoreInfo.length - nShown - 1
+  const scoresByRecency = [...fullScoreInfo].reverse();
+
+  // TODO(CB): Make sortable, but keep initial sorting
+  const newestScores = (
+    <ScoreTable scores={scoresByRecency} options={favOpt.options} />
   );
-  scores = scores.reverse();
-  const newestScores = <ScoreTable scores={scores} options={favOpt.options} />;
 
   return (
     <div>
@@ -30,9 +24,6 @@ export const NewestScores = ({
       <p style={{ marginBottom: "1.5rem" }}>{t("recentTxt")}</p>
       {newestScores}
       {favOpt.overlay}
-      <button onClick={() => setNShown(nShown + 5)} {...buttonAttrs}>
-        {t("more")}
-      </button>
     </div>
   );
 };

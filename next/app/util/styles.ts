@@ -6,6 +6,7 @@ const buttonStyle: React.CSSProperties = {
   cursor: "pointer",
   padding: "0.5em",
   minWidth: "120px",
+  height: "2.5em",
   fontSize: "inherit",
   fontFamily: "inherit",
   display: "flex",
@@ -22,6 +23,10 @@ export const buttonAttrsClass = (style: object, className: string = "") => {
     style: { ...buttonStyle, ...style },
     className: `hoverlink ${className}`,
   };
+};
+
+export const getButtonAttrs = (width: string) => {
+  return { ...buttonAttrs, style: { ...buttonStyle, minWidth: width } };
 };
 
 export const inputStyle: React.CSSProperties = {

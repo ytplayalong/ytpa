@@ -14,6 +14,7 @@ import {
   thStyle,
   wrapLinkedCell,
 } from "../util/tables";
+import { usePaginatedList } from "../hooks/pagination";
 
 export type TableEntryOption = {
   name: string;
@@ -48,6 +49,13 @@ export const ScoreTable = ({
   options?: TableEntryOption[];
 }) => {
   const { t, getLink } = usePathTranslation();
+
+  // TODO: Make this a setting
+  const scoresPerPage = 20;
+  const { currentChunk, navComponent, setPage } = usePaginatedList(
+    scores,
+    scoresPerPage
+  );
 
   const definedOptions = options || [];
   const optionDdItems = definedOptions.map((el) => {
@@ -89,10 +97,16 @@ export const ScoreTable = ({
         ex = sortInfo.ascending ? "▴" : "▾";
       }
     }
+    const sortClicked = () => {
+      if (sortInfo) {
+        sortInfo.sortClick(el);
+        setPage(1); // Reset page index if sorted differently
+      }
+    };
     return (
       <th
         key={el}
-        onClick={() => sortInfo?.sortClick(el)}
+        onClick={sortClicked}
         style={{ cursor: "pointer", width: nameArtistColWidth, ...thStyle }}
       >
         {t(el)}
@@ -116,7 +130,7 @@ export const ScoreTable = ({
 
   const body = (
     <>
-      {scores.map((el) => {
+      {currentChunk.map((el) => {
         const optionComp = hasOptions ? (
           <td style={tdStyle}>{sheetDD(el.videoId)}</td>
         ) : undefined;
@@ -153,7 +167,13 @@ export const ScoreTable = ({
     </>
   );
 
-  return <BasicTable header={header} body={body} />;
+  return (
+    <>
+      {navComponent}
+      <BasicTable header={header} body={body} />
+      {navComponent}
+    </>
+  );
 };
 
 const getKeys = (keyInts: number[]) => {

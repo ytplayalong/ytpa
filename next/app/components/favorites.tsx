@@ -87,17 +87,17 @@ const FavoritesNotNull = ({
   const { t } = usePathTranslation();
 
   const favSets = new Set<string>(favorites.favorites);
-  let allScores = fullScoreInfo.filter((el) => favSets.has(el.videoId));
-  allScores = allScores.reverse(); // Most recently added scores on top per default
-  const { scores, sortInfo } = useProcessedScores(allScores);
+  let favoriteScores = fullScoreInfo.filter((el) => favSets.has(el.videoId));
+  favoriteScores = favoriteScores.reverse(); // Most recently added scores on top per default
+  const { scores, sortInfo } = useProcessedScores(favoriteScores);
 
   const removeOptions = [
     { name: t("favoritesRemove"), onClick: removeFromFavorites },
   ];
 
-  const favoriteScores = (
+  const favoriteScoreComp = (
     <ScoreTable scores={scores} sortInfo={sortInfo} options={removeOptions} />
   );
 
-  return favoriteScores;
+  return favoriteScoreComp;
 };

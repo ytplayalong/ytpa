@@ -5,10 +5,10 @@ import usePathTranslation from "@/i18n/hook";
 
 import { DropdownComp } from "../util/dropdown";
 import {
-  buttonAttrs,
   containerInner,
   distributedStyle,
   flexCentered,
+  getButtonAttrs,
 } from "../util/styles";
 import {
   getSingleXml,
@@ -48,11 +48,11 @@ const removeUnused = (
   partId: string
 ) => {
   const parEl = getSingleXml(baseEl, parName);
-  parEl.childNodes.forEach((el) => {
+  for (const el of parEl.childNodes) {
     if (el.nodeName === childName && (el as any).id !== partId) {
-      parEl.removeChild(el);
+      el.remove();
     }
-  });
+  }
 };
 
 /** Copy XML object. */
@@ -89,7 +89,7 @@ export const getParts = (xml: Document) => {
   for (const element of els) {
     parts.push({
       id: element.id,
-      name: element.getElementsByTagName("part-name")[0].textContent!,
+      name: element.getElementsByTagName("part-name")[0].textContent,
     });
   }
   return parts;
@@ -210,14 +210,11 @@ export const PartSelector = ({
       onClick: () => fo.onClick(scoreInfo.videoId),
       key: "addFav",
     };
-    const butAtrs = {
-      ...buttonAttrs,
-      style: { ...buttonAttrs.style, minWidth: "30px" },
-    };
+    const butAtrs = getButtonAttrs("30px");
     const faWrapper = (label: string, onClick: VoidFunction) => {
       return (
         <button onClick={onClick} {...butAtrs}>
-          <MdMoreVert />{" "}
+          <MdMoreVert />
         </button>
       );
     };
