@@ -53,7 +53,7 @@ const Home = () => {
       </div>
       <h4 style={{ marginTop: "3rem" }}>{t("allScores")}</h4>
       <p>{secondPar}</p>
-      <NewestScores nMostRecentSongs={20} />
+      <NewestScores />
       <p>{morePieces}</p>
     </>
   );
