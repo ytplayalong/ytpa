@@ -5853,5 +5853,21 @@
     "name": "POLKA",
     "artist": "Susi Evans & Szilvia Csaranko",
     "language": "instrumental"
+  },
+  {
+    "videoId": "CA6B4MZmYms",
+    "measureMap": { "3": 3, "104": 73 },
+    "fileName": "Je_Voulais",
+    "name": "Je Voulais",
+    "artist": "Ladaniva",
+    "language": "french"
+  },
+  {
+    "videoId": "YmSUajmPPPQ",
+    "measureMap": { "3": 4, "141": 151 },
+    "fileName": "Cyrus",
+    "name": "Cyrus, The Scholar (学者サイラスのテーマ)",
+    "artist": "Yasunori Nishiki",
+    "language": "instrumental"
   }
 ]
