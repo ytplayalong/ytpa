@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import ReactGA from "react-ga4";
 import { Trans } from "react-i18next";
 
@@ -25,7 +25,7 @@ const titleStyle: React.CSSProperties = {
 const Home = () => {
   ReactGA.initialize(TRACKING_ID);
   useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+    ReactGA.send({ hitType: "pageview", page: globalThis.location.pathname });
   }, []);
 
   const nScores = fullScoreInfo.length;
@@ -53,7 +53,9 @@ const Home = () => {
       </div>
       <h4 style={{ marginTop: "3rem" }}>{t("allScores")}</h4>
       <p>{secondPar}</p>
-      <NewestScores />
+      <Suspense fallback={<div>Loading scores...</div>}>
+        <NewestScores />
+      </Suspense>
       <p>{morePieces}</p>
     </>
   );
