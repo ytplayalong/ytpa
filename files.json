@@ -5869,5 +5869,21 @@
     "name": "Cyrus, The Scholar (学者サイラスのテーマ)",
     "artist": "Yasunori Nishiki",
     "language": "instrumental"
+  },
+  {
+    "videoId": "xibUqxLdKZc",
+    "measureMap": { "2": 3, "177": 127 },
+    "fileName": "Ill_be_Okay",
+    "name": "I'll be Okay",
+    "artist": "Neptunica",
+    "language": "english"
+  },
+  {
+    "videoId": "iPxqgP9hWzo",
+    "measureMap": { "14": 15, "33": 31, "48": 45, "67": 64 },
+    "fileName": "Al_di_la_del_Vetro",
+    "name": "Al di là del Vetro",
+    "artist": "Ludovico Einaudi",
+    "language": "instrumental"
   }
 ]
