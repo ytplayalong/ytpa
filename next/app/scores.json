@@ -7577,5 +7577,27 @@
     "name": "Glücklich",
     "artist": "Niki Reiser",
     "language": "instrumental"
+  },
+  {
+    "keys": [5],
+    "times": [[3, 4]],
+    "source": "dummy",
+    "videoId": "f9IajuQrMxA",
+    "measureMap": {"21": 17, "57.5": 53},
+    "fileName": "Jane_Maryam",
+    "name": "Jane Maryam",
+    "artist": "Sara Naeini & Reza Rohani",
+    "language": "persian"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "hJinEdQp8bI",
+    "measureMap": {"21": 11, "79": 39},
+    "fileName": "Plagwitz",
+    "name": "Plagwitz",
+    "artist": "Stiehler",
+    "language": "instrumental"
   }
 ]
