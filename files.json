@@ -3384,7 +3384,7 @@
   },
   {
     "videoId": "tbDYwEUCb7Q",
-    "measureMap": { "1": 2, "156": 73 },
+    "measureMap": { "1": 2, "156": 73, "263": 122 },
     "fileName": "A_Donde_Vas",
     "name": "¿A Dónde Vas?",
     "artist": "Paté de Fuá",
@@ -5941,5 +5941,21 @@
     "name": "Nomade",
     "artist": "Michèle Bernard",
     "language": "french"
+  },
+  {
+    "videoId": "6ajhW7XmXHk",
+    "measureMap": { "4": 4, "142": 96 },
+    "fileName": "Wei_du_bist",
+    "name": "Weil du bist wie du bist",
+    "artist": "Fäaschtbänkler",
+    "language": "german"
+  },
+  {
+    "videoId": "sryuEsgVIPA",
+    "measureMap": { "3": 3, "88": 65 },
+    "fileName": "Go_Mauve",
+    "name": "Go Mauve",
+    "artist": "The Free Radicals",
+    "language": "instrumental"
   }
 ]

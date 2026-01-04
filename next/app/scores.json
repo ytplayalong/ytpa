@@ -4129,7 +4129,7 @@
     "times": [[4, 4]],
     "source": "18677851",
     "videoId": "tbDYwEUCb7Q",
-    "measureMap": {"1": 2, "156": 73},
+    "measureMap": {"1": 2, "156": 73, "263": 122},
     "fileName": "A_Donde_Vas",
     "name": "¿A Dónde Vas?",
     "artist": "Paté de Fuá",
@@ -7614,7 +7614,7 @@
   {
     "keys": [4],
     "times": [[3, 4]],
-    "source": "dummy",
+    "source": "30334265",
     "videoId": "FVbDZaUuNvQ",
     "measureMap": {"2": 3, "129": 151},
     "fileName": "Mother_Earth",
@@ -7625,12 +7625,34 @@
   {
     "keys": [-4],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "30334271",
     "videoId": "3XasXbudVQ8",
     "measureMap": {"22": 2, "209": 93},
     "fileName": "Nomade",
     "name": "Nomade",
     "artist": "Michèle Bernard",
     "language": "french"
+  },
+  {
+    "keys": [-5],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "6ajhW7XmXHk",
+    "measureMap": {"4": 4, "142": 96},
+    "fileName": "Wei_du_bist",
+    "name": "Weil du bist wie du bist",
+    "artist": "Fäaschtbänkler",
+    "language": "german"
+  },
+  {
+    "keys": [2],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "sryuEsgVIPA",
+    "measureMap": {"3": 3, "88": 65},
+    "fileName": "Go_Mauve",
+    "name": "Go Mauve",
+    "artist": "The Free Radicals",
+    "language": "instrumental"
   }
 ]
