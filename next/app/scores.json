@@ -781,6 +781,17 @@
     "language": "french"
   },
   {
+    "keys": [-4],
+    "times": [[4, 4], [12, 8]],
+    "source": "18892573",
+    "videoId": "kijpcUv-b8M",
+    "measureMap": {"7": 2, "18": 6, "26": 8, "33": 10, "56": 17, "95": 29, "129": 39},
+    "fileName": "Somebody_To_Love",
+    "name": "Somebody To Love",
+    "artist": "Queen",
+    "language": "english"
+  },
+  {
     "keys": [1],
     "times": [[4, 4]],
     "source": "18892564",
@@ -2814,6 +2825,17 @@
     "name": "Just Over In The Gloryland",
     "artist": "Craig Duncan",
     "language": "instrumental"
+  },
+  {
+    "keys": [-1],
+    "times": [[4, 4]],
+    "source": "18729895",
+    "videoId": "azdwsXLmrHE",
+    "measureMap": {"24": 1, "62": 19, "319": 139},
+    "fileName": "Radio_Gaga",
+    "name": "Radio Ga Ga",
+    "artist": "Queen",
+    "language": "english"
   },
   {
     "keys": [0],
@@ -7636,7 +7658,7 @@
   {
     "keys": [-5],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "30626159",
     "videoId": "6ajhW7XmXHk",
     "measureMap": {"4": 4, "142": 96},
     "fileName": "Wei_du_bist",
@@ -7647,7 +7669,7 @@
   {
     "keys": [2],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "30626162",
     "videoId": "sryuEsgVIPA",
     "measureMap": {"3": 3, "88": 65},
     "fileName": "Go_Mauve",
