@@ -7676,5 +7676,38 @@
     "name": "Go Mauve",
     "artist": "The Free Radicals",
     "language": "instrumental"
+  },
+  {
+    "keys": [5, -2],
+    "times": [[4, 4]],
+    "source": "31826072",
+    "videoId": "6LlXRtfzf-A",
+    "measureMap": {"48": 2, "224": 110},
+    "fileName": "Karnevalsmaus",
+    "name": "Karnevalsmaus",
+    "artist": "Druckluft",
+    "language": "german"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "31826078",
+    "videoId": "q2QWm_I_S9g",
+    "measureMap": {"2": 2, "59": 36},
+    "fileName": "Jarba_mare_jarba",
+    "name": "Járbă, máré járbă",
+    "artist": "Baba Yaga",
+    "language": "romanian"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4], [6, 4]],
+    "source": "31826081",
+    "videoId": "_lJv09v7kpI",
+    "measureMap": {"3": 3, "37.14": 22, "39.84": 23, "90.15": 51, "92.84": 52, "118": 66},
+    "fileName": "Gute_Laune",
+    "name": "Gute Laune",
+    "artist": "GroßstadtEngel",
+    "language": "german"
   }
 ]
