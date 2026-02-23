@@ -1,5 +1,6 @@
 """MusicXML utility module."""
 
+import os
 import json
 import unicodedata
 import xml.etree.ElementTree as ET
@@ -38,6 +39,13 @@ class Paths:
 
     @staticmethod
     def find_musescore_binary(version: int = 4):
+        pth = os.environ.get("MS_EXPORT_PATH")
+        if pth is not None:
+            ms_pth = Path(pth).expanduser()
+            if ms_pth.exists():
+                print(f"Using ms from {ms_pth}")
+                return ms_pth
+
         win_path_s = f"C:/Program Files/MuseScore {version}/bin/MuseScore{version}.exe"
         win_path = Path(win_path_s)
         if win_path.exists():
