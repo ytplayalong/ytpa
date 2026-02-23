@@ -17,15 +17,18 @@ def get_parser():
 
     parser.add_argument("input_path", type=str, help="Input file or directory.")
     parser.add_argument("-o", "--output_dir", type=str, help="Output directory")
+    parser.add_argument("-w", "--working_dir", type=str, help="Working directory")
     parser.add_argument(
         "-l2", "--second_level", action="store_true", help="Export folder structure"
     )
     return parser
 
 
-def export_to_pdf(out_dir: Path, process_list: list[Path]):
+def export_to_pdf(out_dir: Path, process_list: list[Path], intermediate_dir: Path | None = None):
 
     with temporary_pathdir() as temp_dir:
+        if intermediate_dir is not None:
+            temp_dir = intermediate_dir
 
         # For all files extract all parts into individual mscx files
         for mscz_file_path in tqdm(process_list, desc="Exporting individual parts."):
@@ -64,6 +67,11 @@ def run_pdf_export():
         out_dir = Path(args.output_dir)
     out_dir.mkdir(exist_ok=True)
 
+    work_dir = None
+    if args.working_dir is not None:
+        work_dir = Path(args.working_dir)
+        work_dir.mkdir(exist_ok=True)
+
     if args.second_level:
         for sub_dir in input_path.iterdir():
             if not sub_dir.is_dir():
@@ -77,11 +85,11 @@ def run_pdf_export():
 
             sub_out_dir = out_dir / sub_dir.name
             sub_out_dir.mkdir(exist_ok=True)
-            export_to_pdf(sub_out_dir, process_list)
+            export_to_pdf(sub_out_dir, process_list, work_dir)
 
     else:
         process_list = get_input_list(input_path, ".mscz")
-        export_to_pdf(out_dir, process_list)
+        export_to_pdf(out_dir, process_list, work_dir)
 
 
 if __name__ == "__main__":
