@@ -16,7 +16,7 @@ def export_mscz(mscz_src: Path, out_path: Path):
         stdout=subprocess.DEVNULL)
     
     ct = 0
-    while not out_path.exists() and ct < 20:
+    while not out_path.exists() and ct < 200:
         time.sleep(0.1)
         ct += 1
     assert out_path.exists(), f"Export failed {mscz_src}"
