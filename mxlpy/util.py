@@ -41,7 +41,7 @@ class Paths:
     def find_musescore_binary(version: int = 4):
         pth = os.environ.get("MS_EXPORT_PATH")
         if pth is not None:
-            ms_pth = Path(pth).expanduser()
+            ms_pth = Path(pth).expanduser().resolve()
             if ms_pth.exists():
                 print(f"Using ms from {ms_pth}")
                 return ms_pth
