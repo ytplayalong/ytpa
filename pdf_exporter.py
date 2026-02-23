@@ -18,15 +18,12 @@ def get_parser():
     parser.add_argument("input_path", type=str, help="Input file or directory.")
     parser.add_argument("-o", "--output_dir", type=str, help="Output directory")
     parser.add_argument(
-        "-m3", "--musescore_v3", action="store_true", help="Use MuseScore version 3"
-    )
-    parser.add_argument(
         "-l2", "--second_level", action="store_true", help="Export folder structure"
     )
     return parser
 
 
-def export_to_pdf(out_dir: Path, process_list: list[Path], use_m3: bool = True):
+def export_to_pdf(out_dir: Path, process_list: list[Path]):
 
     with temporary_pathdir() as temp_dir:
 
@@ -42,7 +39,7 @@ def export_to_pdf(out_dir: Path, process_list: list[Path], use_m3: bool = True):
         ]
         out_pdf_files = []
         for mscx_file in tqdm(mscx_files, desc="Exporting PDF"):
-            out_pdf = export_mscz_to_pdf(mscx_file, out_dir, use_m3)
+            out_pdf = export_mscz_to_pdf(mscx_file, out_dir)
             out_pdf_files.append(out_pdf)
 
         # Merge all PDFs
@@ -80,11 +77,11 @@ def run_pdf_export():
 
             sub_out_dir = out_dir / sub_dir.name
             sub_out_dir.mkdir(exist_ok=True)
-            export_to_pdf(sub_out_dir, process_list, args.musescore_v3)
+            export_to_pdf(sub_out_dir, process_list)
 
     else:
         process_list = get_input_list(input_path, ".mscz")
-        export_to_pdf(out_dir, process_list, args.musescore_v3)
+        export_to_pdf(out_dir, process_list)
 
 
 if __name__ == "__main__":

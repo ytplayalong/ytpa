@@ -34,8 +34,20 @@ class Paths:
     PRIVATE_SCORES_FILE = YTPA_BASE_PATH / "private.json"
 
     assert MSCZ_SCORE_PATH.exists, f"Score directory {MSCZ_SCORE_PATH} not found!"
-    assert MUSESCORE_EXE_PATH.exists(), f"Musescore not found at {MUSESCORE_EXE_PATH}!"
     assert XML_SCORES_PATH, f"XML output dir {XML_SCORES_PATH} does not exist!"
+
+    @staticmethod
+    def find_musescore_binary(version: int = 4):
+        win_path_s = f"C:/Program Files/MuseScore {version}/bin/MuseScore{version}.exe"
+        win_path = Path(win_path_s)
+        if win_path.exists():
+            return win_path
+        
+        snap_paht = Path("/snap/bin/musescore")
+        if snap_paht.exists():
+            return snap_paht
+        
+        raise FileNotFoundError("Did not find musescore executable.")
 
     @staticmethod
     def get_xml_path(score_info: dict):
