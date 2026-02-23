@@ -8,10 +8,13 @@ from mxlpy.clean_xml import reduce_file
 from mxlpy.util import Paths
 
 
-def export_mscz(mscz_src: Path, out_path: Path):
+def export_mscz(mscz_src: Path, out_path: Path, headless: bool = False):
     """Export MuseScore file."""
     ms_exe = Paths.find_musescore_binary()
-    subprocess.run([str(ms_exe), "-o", str(out_path), str(mscz_src)],
+    args = [str(ms_exe), "-o", str(out_path), str(mscz_src)]
+    if headless:
+        args = ["xvfb-run", *args]
+    subprocess.run(args,
         stderr=subprocess.DEVNULL,
         stdout=subprocess.DEVNULL)
     
@@ -23,13 +26,13 @@ def export_mscz(mscz_src: Path, out_path: Path):
     return out_path
 
 
-def export_mscz_to_pdf(mscz_src: Path, out_path: Path):
+def export_mscz_to_pdf(mscz_src: Path, out_path: Path, headless: bool = False):
     """Export mscz file as PDF."""
     if out_path.is_dir():
         assert out_path.exists()
         out_path = out_path / f"{mscz_src.stem}.pdf"
 
-    return export_mscz(mscz_src, out_path)
+    return export_mscz(mscz_src, out_path, headless)
 
 
 __all__ = ["Paths", "export_mscz", "reduce_file"]

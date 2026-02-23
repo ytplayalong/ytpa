@@ -21,10 +21,14 @@ def get_parser():
     parser.add_argument(
         "-l2", "--second_level", action="store_true", help="Export folder structure"
     )
+    parser.add_argument(
+        "-hd", "--headless", action="store_true", help="Run in headless env."
+    )
     return parser
 
 
-def export_to_pdf(out_dir: Path, process_list: list[Path], intermediate_dir: Path | None = None):
+def export_to_pdf(out_dir: Path, process_list: list[Path], 
+                  intermediate_dir: Path | None = None, headless: bool = False):
 
     with temporary_pathdir() as temp_dir:
         if intermediate_dir is not None:
@@ -42,7 +46,7 @@ def export_to_pdf(out_dir: Path, process_list: list[Path], intermediate_dir: Pat
         ]
         out_pdf_files = []
         for mscx_file in tqdm(mscx_files, desc="Exporting PDF"):
-            out_pdf = export_mscz_to_pdf(mscx_file, out_dir)
+            out_pdf = export_mscz_to_pdf(mscx_file, out_dir, headless)
             out_pdf_files.append(out_pdf)
 
         # Merge all PDFs
@@ -72,6 +76,8 @@ def run_pdf_export():
         work_dir = Path(args.working_dir)
         work_dir.mkdir(exist_ok=True)
 
+    headless = True if args.headless else False
+
     if args.second_level:
         for sub_dir in input_path.iterdir():
             if not sub_dir.is_dir():
@@ -85,11 +91,11 @@ def run_pdf_export():
 
             sub_out_dir = out_dir / sub_dir.name
             sub_out_dir.mkdir(exist_ok=True)
-            export_to_pdf(sub_out_dir, process_list, work_dir)
+            export_to_pdf(sub_out_dir, process_list, work_dir, headless)
 
     else:
         process_list = get_input_list(input_path, ".mscz")
-        export_to_pdf(out_dir, process_list, work_dir)
+        export_to_pdf(out_dir, process_list, work_dir, headless)
 
 
 if __name__ == "__main__":
