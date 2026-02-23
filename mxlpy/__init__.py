@@ -2,6 +2,7 @@
 
 import subprocess
 from pathlib import Path
+import time
 
 from mxlpy.clean_xml import reduce_file
 from mxlpy.util import Paths
@@ -13,6 +14,11 @@ def export_mscz(mscz_src: Path, out_path: Path):
     subprocess.run([str(ms_exe), "-o", str(out_path), str(mscz_src)],
         stderr=subprocess.DEVNULL,
         stdout=subprocess.DEVNULL)
+    
+    ct = 0
+    while not out_path.exists() and ct < 20:
+        time.sleep(0.1)
+        ct += 1
     assert out_path.exists(), f"Export failed {mscz_src}"
     return out_path
 
