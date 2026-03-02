@@ -14,6 +14,7 @@ def export_mscz(mscz_src: Path, out_path: Path, headless: bool = False):
     args = [str(ms_exe), "-o", str(out_path), str(mscz_src)]
     if headless:
         args = ["xvfb-run", "-a", *args]
+        
     subprocess.run(args,
         stderr=subprocess.DEVNULL,
         stdout=subprocess.DEVNULL)

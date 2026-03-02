@@ -43,7 +43,6 @@ class Paths:
         if pth is not None:
             ms_pth = Path(pth).expanduser().resolve()
             if ms_pth.exists():
-                print(f"Using ms from {ms_pth}")
                 return ms_pth
 
         win_path_s = f"C:/Program Files/MuseScore {version}/bin/MuseScore{version}.exe"
