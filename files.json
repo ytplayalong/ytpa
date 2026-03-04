@@ -5981,5 +5981,13 @@
     "name": "Gute Laune",
     "artist": "GroßstadtEngel",
     "language": "german"
+  },
+  {
+    "videoId": "x58xLKBARWE",
+    "measureMap": { "1": 2, "73": 38 },
+    "fileName": "Manhattan",
+    "name": "Manhattan",
+    "artist": "Bligg",
+    "language": "german"
   }
 ]
