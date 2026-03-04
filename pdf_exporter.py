@@ -69,12 +69,12 @@ def run_pdf_export():
         out_dir = Path(__file__).parent / "out"
     else:
         out_dir = Path(args.output_dir)
-    out_dir.mkdir(exist_ok=True)
+    out_dir.mkdir(exist_ok=True, parents=True)
 
     work_dir = None
     if args.working_dir is not None:
         work_dir = Path(args.working_dir)
-        work_dir.mkdir(exist_ok=True)
+        work_dir.mkdir(exist_ok=True, parents=True)
 
     headless = True if args.headless else False
 
