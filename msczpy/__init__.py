@@ -35,7 +35,8 @@ class MsczFileManager:
                     # Include style file
                     if curr_fname.endswith(".mscx") or curr_fname.endswith(".mss"):
                         f_name = curr_fname.split("/")[-1]
-                        self._parts[f_name] = archive.read(item)
+                        full_name = f"{self._path.stem}_{f_name}"
+                        self._parts[full_name] = archive.read(item)
 
             for file in archive.filelist:
                 if file.filename.endswith(".mscx"):
