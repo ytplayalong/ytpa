@@ -1,7 +1,7 @@
 """This python script generates the XML files.
 
 It uses the MuseScore executable to export .mscz files to .musicxml
-and then reduces the exported XML files by removing certain tags 
+and then reduces the exported XML files by removing certain tags
 and attributes from the XML document.
 """
 

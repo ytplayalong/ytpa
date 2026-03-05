@@ -18,6 +18,7 @@ class MsczFileManager:
     _path: Path
     _packed_xml_name: str | None = None
     _parsed_xml: ET.Element | None = None
+    _parts: dict = {}
 
     def __init__(self, path: Path):
         """Constructor."""
@@ -27,6 +28,15 @@ class MsczFileManager:
         """Read a file."""
         xml_data: bytes | None = None
         with zipfile.ZipFile(self._path, "r") as archive:
+            all_files = archive.infolist()
+            for item in all_files:
+                curr_fname = item.filename
+                if curr_fname.startswith("Excerpts/"):
+                    # Include style file
+                    if curr_fname.endswith(".mscx") or curr_fname.endswith(".mss"):
+                        f_name = curr_fname.split("/")[-1]
+                        self._parts[f_name] = archive.read(item)
+
             for file in archive.filelist:
                 if file.filename.endswith(".mscx"):
                     self._packed_xml_name = file.filename
@@ -40,6 +50,16 @@ class MsczFileManager:
 
     def extract_parts(self, out_dir: Path):
         """Create individual mscx files, one for each part."""
+
+        # New style format
+        if self._parts:
+            for name, read in self._parts.items():
+
+                # Write to file
+                out_path = out_dir / name
+                with open(out_path, "wb") as f:
+                    f.write(read)
+            return
 
         assert self._parsed_xml is not None, "File not read yet!"
 

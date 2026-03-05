@@ -27,8 +27,12 @@ def get_parser():
     return parser
 
 
-def export_to_pdf(out_dir: Path, process_list: list[Path], 
-                  intermediate_dir: Path | None = None, headless: bool = False):
+def export_to_pdf(
+    out_dir: Path,
+    process_list: list[Path],
+    intermediate_dir: Path | None = None,
+    headless: bool = False,
+):
 
     with temporary_pathdir() as temp_dir:
         if intermediate_dir is not None:
@@ -46,7 +50,11 @@ def export_to_pdf(out_dir: Path, process_list: list[Path],
         ]
         out_pdf_files = []
         for mscx_file in tqdm(mscx_files, desc="Exporting PDF"):
-            out_pdf = export_mscz_to_pdf(mscx_file, out_dir, headless)
+            style_file = None
+            style_file_path = Path(str(mscx_file).replace(".mscx", ".mss"))
+            if style_file_path.exists():
+                style_file = style_file_path
+            out_pdf = export_mscz_to_pdf(mscx_file, out_dir, headless, style_file)
             out_pdf_files.append(out_pdf)
 
         # Merge all PDFs
