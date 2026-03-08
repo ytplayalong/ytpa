@@ -7720,5 +7720,27 @@
     "name": "Manhattan",
     "artist": "Bligg",
     "language": "german"
+  },
+  {
+    "keys": [1, -2],
+    "times": [[4, 4], [12, 8]],
+    "source": "dummy",
+    "videoId": "DD9oG1kIC2I",
+    "measureMap": {"2": 2, "29": 19, "32.43": 21, "35": 22, "145.5": 81, "156": 84, "186": 100},
+    "fileName": "Viva_Colonia",
+    "name": "Viva Colonia",
+    "artist": "Höhner",
+    "language": "german"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "ldgwAAwj9zs",
+    "measureMap": {"2": 2, "200": 124},
+    "fileName": "Back_in_my_Life",
+    "name": "Back in my Life",
+    "artist": "Alice Deejay",
+    "language": "english"
   }
 ]
