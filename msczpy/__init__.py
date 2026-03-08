@@ -55,11 +55,17 @@ class MsczFileManager:
         # New style format
         if self._parts:
             for name, read in self._parts.items():
+                discard = False
+                if name.endswith(".mscx"):
+                    root = ET.fromstring(read.decode())
+                    open_text = root.findtext(".//Score/open")
+                    discard = open_text is None
 
-                # Write to file
-                out_path = out_dir / name
-                with open(out_path, "wb") as f:
-                    f.write(read)
+                if not discard:
+                    # Write to file
+                    out_path = out_dir / name
+                    with open(out_path, "wb") as f:
+                        f.write(read)
             return
 
         assert self._parsed_xml is not None, "File not read yet!"

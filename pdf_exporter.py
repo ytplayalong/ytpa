@@ -2,6 +2,7 @@
 
 import argparse
 from pathlib import Path
+import shutil
 
 from pypdf import PdfWriter
 from tqdm import tqdm
@@ -24,6 +25,9 @@ def get_parser():
     parser.add_argument(
         "-hd", "--headless", action="store_true", help="Run in headless env."
     )
+    parser.add_argument(
+        "-c", "--clean", action="store_true", help="Clean existing files."
+    )
     return parser
 
 
@@ -32,11 +36,18 @@ def export_to_pdf(
     process_list: list[Path],
     intermediate_dir: Path | None = None,
     headless: bool = False,
+    clean: bool = False
 ):
+    if clean:
+        shutil.rmtree(out_dir)
+        out_dir.mkdir(parents=True)
 
     with temporary_pathdir() as temp_dir:
         if intermediate_dir is not None:
             temp_dir = intermediate_dir
+            if clean:
+                shutil.rmtree(temp_dir)
+                temp_dir.mkdir(parents=True)
 
         # For all files extract all parts into individual mscx files
         for mscz_file_path in tqdm(process_list, desc="Exporting individual parts."):
@@ -60,7 +71,7 @@ def export_to_pdf(
         # Merge all PDFs
         merged_file_path = out_dir / "All_Parts_Merged.pdf"
         with PdfWriter() as pdf_writer:
-            for pdf_file in out_pdf_files:
+            for pdf_file in sorted(out_pdf_files, key=lambda el: el.stem):
                 pdf_writer.append(pdf_file)
 
             pdf_writer.write(merged_file_path)
@@ -85,6 +96,7 @@ def run_pdf_export():
         work_dir.mkdir(exist_ok=True, parents=True)
 
     headless = True if args.headless else False
+    clean = True if args.clean else False
 
     if args.second_level:
         for sub_dir in input_path.iterdir():
@@ -99,11 +111,11 @@ def run_pdf_export():
 
             sub_out_dir = out_dir / sub_dir.name
             sub_out_dir.mkdir(exist_ok=True)
-            export_to_pdf(sub_out_dir, process_list, work_dir, headless)
+            export_to_pdf(sub_out_dir, process_list, work_dir, headless, clean)
 
     else:
         process_list = get_input_list(input_path, ".mscz")
-        export_to_pdf(out_dir, process_list, work_dir, headless)
+        export_to_pdf(out_dir, process_list, work_dir, headless, clean)
 
 
 if __name__ == "__main__":
