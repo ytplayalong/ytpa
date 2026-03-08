@@ -49,11 +49,11 @@ class Paths:
         win_path = Path(win_path_s)
         if win_path.exists():
             return win_path
-        
+
         snap_paht = Path("/snap/bin/musescore")
         if snap_paht.exists():
             return snap_paht
-        
+
         raise FileNotFoundError("Did not find musescore executable.")
 
     @staticmethod
