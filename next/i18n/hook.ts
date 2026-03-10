@@ -22,7 +22,7 @@ const usePathTranslation = () => {
     if (i18n.language !== usedLocale) {
       i18n.changeLanguage(usedLocale);
     }
-  });
+  }, [i18n, usedLocale]);
 
   const getLink = (url: string) => "/" + locale + url;
   return { t, i18n, getLink, currentLang: usedLocale };

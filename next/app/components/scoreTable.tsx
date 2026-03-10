@@ -54,7 +54,7 @@ export const ScoreTable = ({
   const scoresPerPage = 20;
   const { currentChunk, navComponent, setPage } = usePaginatedList(
     scores,
-    scoresPerPage
+    scoresPerPage,
   );
 
   const definedOptions = options || [];
@@ -81,7 +81,7 @@ export const ScoreTable = ({
     optionDdItems,
     ddWrapper,
     baseElementStyle,
-    true
+    true,
   );
 
   const hasOptions = definedOptions.length > 0;
@@ -149,7 +149,7 @@ export const ScoreTable = ({
                   src={`https://img.youtube.com/vi/${el.videoId}/default.jpg`}
                   alt={`YouTube thumbnail of ${el.name} by ${el.artist}`}
                 ></img>,
-                link
+                link,
               )}
             </td>
             {sortBy.map((field) => {

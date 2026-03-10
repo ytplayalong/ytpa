@@ -96,7 +96,7 @@ class FirebaseManager {
       const userCredential = await signInWithEmailAndPassword(
         this.firebaseAuth,
         email,
-        password
+        password,
       );
 
       // Check that email is verified
@@ -116,7 +116,7 @@ class FirebaseManager {
       const userCredential = await createUserWithEmailAndPassword(
         this.firebaseAuth,
         email,
-        password
+        password,
       );
 
       // Send verification email
@@ -133,7 +133,7 @@ class FirebaseManager {
   async getSongSuggestions() {
     try {
       const querySnapshot = await getDocs(
-        collection(this.firestoreDb, "suggestions")
+        collection(this.firestoreDb, "suggestions"),
       );
       const all = querySnapshot.docs.map((el) => ({ id: el.id, ...el.data() }));
       return all;
@@ -147,7 +147,7 @@ class FirebaseManager {
     name: string,
     artist: string,
     videoUrl: string,
-    email: string
+    email: string,
   ) {
     try {
       await addDoc(collection(this.firestoreDb, "suggestions"), {
@@ -168,16 +168,16 @@ class FirebaseManager {
     const userDocRef = this.getUserDoc();
     const loadedDoc = await getDoc(userDocRef);
 
-    if (!loadedDoc.exists()) {
-      console.log("creating new");
-      const newData: DbUserData = { allFavorites: [scoreId] };
-      await setDoc(userDocRef, newData);
-    } else {
+    if (loadedDoc.exists()) {
       const data = loadedDoc.data() as DbUserData;
       const currentList = data.allFavorites || [];
       const updatedList = Array.from(new Set([...currentList, scoreId])); // No duplicates
       const updatedData: DbUserData = { allFavorites: updatedList };
       await updateDoc(userDocRef, updatedData);
+    } else {
+      console.log("creating new");
+      const newData: DbUserData = { allFavorites: [scoreId] };
+      await setDoc(userDocRef, newData);
     }
   }
 
@@ -241,7 +241,7 @@ const getName = (user: User) => {
  */
 export const useCurrentUser = () => {
   const [currentUser, setCurrentUser] = useState<User | null | undefined>(
-    undefined
+    undefined,
   );
 
   useEffect(() => {
@@ -267,7 +267,7 @@ export const getCurrUsername = (user: User | null | undefined) => {
   let userName: string | null = null;
   if (user) {
     userName = getName(user);
-  } else if (user === undefined && typeof window !== "undefined") {
+  } else if (user === undefined && globalThis.window !== undefined) {
     console.log("Grabbing username from localstorage");
     const storedUsername = localStorage.getItem("username");
     if (storedUsername !== null) {
