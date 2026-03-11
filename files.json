@@ -6012,5 +6012,21 @@
     "name": "Back in my Life",
     "artist": "Alice Deejay",
     "language": "english"
+  },
+  {
+    "videoId": "ZTBwO7qrpsM",
+    "measureMap": { "3": 2, "138": 64 },
+    "fileName": "Fischerin_vom_Bodensee",
+    "name": "Die Fischerin vom Bodensee",
+    "artist": "Die Wildecker Herzbuben",
+    "language": "german"
+  },
+  {
+    "videoId": "XkMTw1D4iaU",
+    "measureMap": { "3": 2, "21": 11, "104": 56 },
+    "fileName": "13_jours",
+    "name": "13 jours en France",
+    "artist": "Francis Lai",
+    "language": "instrumental"
   }
 ]
