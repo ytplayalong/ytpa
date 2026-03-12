@@ -5989,5 +5989,44 @@
     "name": "Manhattan",
     "artist": "Bligg",
     "language": "german"
+  },
+  {
+    "videoId": "DD9oG1kIC2I",
+    "measureMap": {
+      "2": 2,
+      "29": 19,
+      "35": 22,
+      "145.5": 81,
+      "156": 84,
+      "186": 100
+    },
+    "fileName": "Viva_Colonia",
+    "name": "Viva Colonia",
+    "artist": "Höhner",
+    "language": "german"
+  },
+  {
+    "videoId": "ldgwAAwj9zs",
+    "measureMap": { "2": 2, "200": 116 },
+    "fileName": "Back_in_my_Life",
+    "name": "Back in my Life",
+    "artist": "Alice Deejay",
+    "language": "english"
+  },
+  {
+    "videoId": "ZTBwO7qrpsM",
+    "measureMap": { "3": 2, "138": 64 },
+    "fileName": "Fischerin_vom_Bodensee",
+    "name": "Die Fischerin vom Bodensee",
+    "artist": "Die Wildecker Herzbuben",
+    "language": "german"
+  },
+  {
+    "videoId": "XkMTw1D4iaU",
+    "measureMap": { "3": 2, "21": 11, "104": 56 },
+    "fileName": "13_jours",
+    "name": "13 jours en France",
+    "artist": "Francis Lai",
+    "language": "instrumental"
   }
 ]

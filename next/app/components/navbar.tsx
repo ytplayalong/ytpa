@@ -89,11 +89,13 @@ export default function NavigationBar() {
       icon: <MdLogin {...iconProps} />,
       mobileShown: false,
     };
-    const userName = getCurrUsername(currentUser);
-    if (userName != null && mounted) {
-      login.icon = <MdAccountCircle {...iconProps} />;
-      login.key = userName;
-      return [login, ...navbarLinks];
+    if (mounted) {
+      const userName = getCurrUsername(currentUser);
+      if (userName != null) {
+        login.icon = <MdAccountCircle {...iconProps} />;
+        login.key = userName;
+        return [login, ...navbarLinks];
+      }
     }
     return [login, ...navbarLinks];
   };
@@ -131,7 +133,7 @@ export default function NavigationBar() {
           {getFlag(loc)}
         </Link>
       );
-    }
+    },
   );
   const contentStyle: React.CSSProperties = {
     display: langDDShown ? "block" : "none",

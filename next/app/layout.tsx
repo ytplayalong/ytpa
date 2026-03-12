@@ -1,9 +1,5 @@
 import "./globals.css";
 
-import { baseMetadata } from "./util/meta";
-
-export const metadata = baseMetadata;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -12,3 +8,5 @@ export default function RootLayout({
   // This is needed somehow. But do not place body / html tags here.
   return children;
 }
+
+export { baseMetadata as metadata } from "./util/meta";

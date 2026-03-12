@@ -28,7 +28,7 @@ export const paginationKey = "page";
  */
 export function usePaginatedList<T>(
   items: T[],
-  chunkSize: number
+  chunkSize: number,
 ): UsePaginatedListResult<T> {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -53,8 +53,13 @@ export function usePaginatedList<T>(
       params.delete(paginationKey);
     }
 
-    if (globalThis.history !== undefined) {
-      const newUrl = `${pathname}?${params.toString()}`;
+    const stringParams = params.toString();
+    const newUrl =
+      stringParams === "" ? pathname : `${pathname}?${params.toString()}`;
+    if (
+      globalThis.history !== undefined &&
+      newUrl !== globalThis.location.pathname + globalThis.location.search
+    ) {
       globalThis.history.replaceState(null, "", newUrl);
     }
   }, [page, pathname, searchParams]);
