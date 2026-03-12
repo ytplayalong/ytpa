@@ -19,44 +19,52 @@ class MsczFileManager:
     _packed_xml_name: str | None = None
     _parsed_xml: ET.Element | None = None
     _parts: dict = {}
+    xml_data: bytes | None = None
+    style_data: bytes | None = None
 
     def __init__(self, path: Path):
         """Constructor."""
         self._path = path
+        self._parts = {}
 
     def read_mscz(self) -> ET.Element | None:
         """Read a file."""
-        xml_data: bytes | None = None
+
         with zipfile.ZipFile(self._path, "r") as archive:
             all_files = archive.infolist()
             for item in all_files:
                 curr_fname = item.filename
                 if curr_fname.startswith("Excerpts/"):
+                    # Parts
                     # Include style file
                     if curr_fname.endswith(".mscx") or curr_fname.endswith(".mss"):
                         f_name = curr_fname.split("/")[-1]
                         full_name = f"{self._path.stem}_{f_name}"
                         self._parts[full_name] = archive.read(item)
+                else:  
+                    # Main file
+                    if curr_fname.endswith(".mscx"):
+                        self._packed_xml_name = curr_fname
+                        self.xml_data = archive.read(item)
+                    elif curr_fname.endswith(".mss"):
+                        self.style_data = archive.read(item)
 
-            for file in archive.filelist:
-                if file.filename.endswith(".mscx"):
-                    self._packed_xml_name = file.filename
-                    xml_data = archive.read(file)
-                    break
-        if xml_data is None:
+        if self.xml_data is None:
             return None
 
-        self._parsed_xml = ET.fromstring(xml_data.decode())
+        self._parsed_xml = ET.fromstring(self.xml_data.decode())
         return self._parsed_xml
 
     def extract_parts(self, out_dir: Path):
         """Create individual mscx files, one for each part."""
 
         # New style format
+        parts_written = False
         if self._parts:
             for name, read in self._parts.items():
                 discard = False
-                if name.endswith(".mscx"):
+                is_mscx = name.endswith(".mscx")
+                if is_mscx:
                     root = ET.fromstring(read.decode())
                     open_text = root.findtext(".//Score/open")
                     discard = open_text is None
@@ -64,17 +72,36 @@ class MsczFileManager:
                 if not discard:
                     # Write to file
                     out_path = out_dir / name
+                    parts_written = parts_written or is_mscx
                     with open(out_path, "wb") as f:
                         f.write(read)
-            return
+
+            if parts_written:
+                return
 
         assert self._parsed_xml is not None, "File not read yet!"
 
         # Navigate to the outer <Score> element
         outer_score = self._parsed_xml.find("Score")
 
-        # Iterate over all nested <Score> elements
         inner_scores = [child for child in outer_score if child.tag == "Score"]
+        
+        # Only one part, export whole as PDF
+        if len(inner_scores) == 0:
+            if self.xml_data is not None:
+                out_path = out_dir / self._packed_xml_name
+
+                if self.style_data is not None:
+                    style_name = Path(str(out_path).replace(".mscx", ".mss"))
+                    with open(style_name, "wb") as f:
+                        f.write(self.style_data)
+                        
+                with open(out_path, "wb") as f:
+                    f.write(self.xml_data)
+            return
+
+        # Legacy version for MS3
+        # Iterate over all nested <Score> elements
         for i, inner_score in enumerate(inner_scores, 1):
 
             new_root = copy.deepcopy(self._parsed_xml)

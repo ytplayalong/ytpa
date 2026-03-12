@@ -15,7 +15,7 @@ def safe_filename(name: str, replace_spaces: bool = True):
 def get_input_list(in_path: Path, suffix: str):
     """Checks path for file(s) of specific type.
 
-    If path is a directory, it is searched for such files.
+    If path is a directory, it is searched for such files recursively.
     If path is a file, it is returned in a list if the extension is correct.
 
     Returns:
@@ -28,9 +28,8 @@ def get_input_list(in_path: Path, suffix: str):
         else:
             print(f"Invalid file {in_path}")
     elif in_path.is_dir():
-        for score_file in in_path.iterdir():
-            if score_file.suffix == suffix:
-                process_list.append(score_file)
+        for score_file in in_path.rglob(f"*{suffix}"):
+            process_list.append(score_file)
         if len(process_list) == 0:
             print(f"No MuseScore files found in {in_path}")
     else:
