@@ -7775,5 +7775,27 @@
     "name": "Bonnie & Clyde",
     "artist": "Die Toten Hosen",
     "language": "german"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "M1Tca7BtH5I",
+    "measureMap": {"7": 5, "186": 107},
+    "fileName": "Carillon",
+    "name": "Carillon",
+    "artist": "Magic Box",
+    "language": "english"
+  },
+  {
+    "keys": [1, -1],
+    "times": [[3, 4]],
+    "source": "dummy",
+    "videoId": "-UGElKSyg6Q",
+    "measureMap": {"7": 5, "154": 133},
+    "fileName": "Mazurka_di_Periferia",
+    "name": "La Mazurka di Periferia",
+    "artist": "Raoul Casadei",
+    "language": "italian"
   }
 ]
