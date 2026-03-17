@@ -7819,5 +7819,27 @@
     "name": "Celtic Crest",
     "artist": "Christoph Walter",
     "language": "instrumental"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "NgSp9g676zs",
+    "measureMap": {"19": 7, "26": 10, "106": 56},
+    "fileName": "Adagio_Techno",
+    "name": "Adagio (DJ Guarja Remix)",
+    "artist": "Albinoni",
+    "language": "instrumental"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "Yeegb5_c_ys",
+    "measureMap": {"1": 2, "133": 69},
+    "fileName": "Haende_zum_Himmel",
+    "name": "Die Hände zum Himmel",
+    "artist": "Die Kolibris",
+    "language": "german"
   }
 ]
