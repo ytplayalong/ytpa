@@ -602,8 +602,8 @@
           <step>G</step>
           <octave>4</octave>
           </pitch>
-        <duration>1</duration>
-        <type>eighth</type>
+        <duration>2</duration>
+        <type>quarter</type>
         </note>
       <note>
         <pitch>
@@ -611,24 +611,8 @@
           <octave>4</octave>
           </pitch>
         <duration>1</duration>
-        <tie type="start" />
-        <type>eighth</type>
-        <notations>
-          <tied type="start" />
-          </notations>
-        </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>1</duration>
-        <tie type="stop" />
         <type>eighth</type>
         <beam number="1">begin</beam>
-        <notations>
-          <tied type="stop" />
-          </notations>
         </note>
       <note>
         <pitch>
