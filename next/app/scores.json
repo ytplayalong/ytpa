@@ -7845,12 +7845,23 @@
   {
     "keys": [-4],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "32700284",
     "videoId": "ql54MZUbheM",
     "measureMap": {"8": 6, "88": 56},
     "fileName": "Hey_Sokoly",
     "name": "Гей, соколи (Hey, Sokoly)",
     "artist": "Володимир Вермінський",
     "language": "ukrainian"
+  },
+  {
+    "keys": [0, -5],
+    "times": [[4, 4]],
+    "source": "32700290",
+    "videoId": "Q42kP9fjXVQ",
+    "measureMap": {"7": 2, "189": 119},
+    "fileName": "Vogulisi",
+    "name": "Vogulisi",
+    "artist": "Matty Valentino",
+    "language": "german"
   }
 ]
