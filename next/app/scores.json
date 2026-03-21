@@ -7863,5 +7863,16 @@
     "name": "Vogulisi",
     "artist": "Matty Valentino",
     "language": "german"
+  },
+  {
+    "keys": [1],
+    "times": [[3, 4]],
+    "source": "dummy",
+    "videoId": "XvjYPc9_-m0",
+    "measureMap": {"2.5": 3, "66": 66},
+    "fileName": "Minnesotavalsen",
+    "name": "Minnesotavalsen",
+    "artist": "Jon Fraukstad",
+    "language": "instrumental"
   }
 ]
