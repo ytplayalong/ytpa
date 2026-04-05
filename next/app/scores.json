@@ -7874,5 +7874,38 @@
     "name": "Minnesotavalsen",
     "artist": "Jon Fraukstad",
     "language": "instrumental"
+  },
+  {
+    "keys": [0],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "6dYWe1c3OyU",
+    "measureMap": {"7": 2, "23.5": 10, "98": 46},
+    "fileName": "I_Will_Survive",
+    "name": "I Will Survive",
+    "artist": "Gloria Gaynor",
+    "language": "english"
+  },
+  {
+    "keys": [5, -2],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "ULHb0QuDnJ8",
+    "measureMap": {"7": 6, "47": 36},
+    "fileName": "Hawaii_Five_O",
+    "name": "Hawaii Five-O",
+    "artist": "Mort Stevens",
+    "language": "instrumental"
+  },
+  {
+    "keys": [5],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "rfSYhomJJdg",
+    "measureMap": {"8": 8, "73": 58},
+    "fileName": "Eg_er_liten",
+    "name": "Eg er liten",
+    "artist": "Gangar",
+    "language": "norwegian"
   }
 ]
