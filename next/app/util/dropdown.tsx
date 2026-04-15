@@ -13,6 +13,10 @@ const ddStyle: React.CSSProperties = {
 const ddContentStyle: React.CSSProperties = {
   position: "absolute",
   zIndex: 1,
+  border: "1px solid #ccc",
+  borderRadius,
+  boxShadow: "0 2px 6px rgba(0,0,0,0.12)",
+  overflow: "hidden",
 };
 const elementStyle = buttonAttrsClass({
   textDecoration: "none",

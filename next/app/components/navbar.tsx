@@ -68,6 +68,7 @@ const navStyle: React.CSSProperties = {
   backgroundColor: Constants.navBGCol,
   overflow: "hidden",
   padding: 0,
+  borderBottom: "1px solid #d8d8d8",
 };
 
 export default function NavigationBar() {

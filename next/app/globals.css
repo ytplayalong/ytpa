@@ -1,8 +1,18 @@
 
 /** ------------------- Navigation Bar ------------------- **/
+.hoverlink {
+  transition: background-color 0.15s, color 0.15s;
+}
 .hoverlink:hover {
   background-color: #ddd !important;
   color: black !important;
+}
+
+/** ------------------- Focus styles ------------------- **/
+:focus-visible {
+  outline: 2px solid #666;
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
 /** ------------------- Bootstrap-like container ------------------- **/
@@ -41,8 +51,12 @@
 }
 
 /** ------------------- Responsive two column layout ------------------- **/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 .twocols {
-  float: left;
   width: 100%;
 }
 .rightcol {
@@ -50,12 +64,11 @@
 }
 @media (min-width: 992px) {
   .twocols {
-    float: left;
     width: 50%;
   }
   .rightcol {
     padding-top: 0;
-  }  
+  }
 }
 
 /** ------------------- Responsive labelled button layout ------------------- **/
@@ -75,13 +88,6 @@
     float: left;
     width: 50%;
   }
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 /* For stuff that is not shown on mobile */
