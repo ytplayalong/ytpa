@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   MdAccountCircle,
   MdFavorite,
@@ -18,7 +18,8 @@ import usePathTranslation from "@/i18n/hook";
 
 import { Constants } from "../constants";
 import { getCurrUsername, useCurrentUser } from "../firebase";
-import { containerInnerLeftRight, flexCentered } from "../util/styles";
+import { buttonAttrsClass, containerInnerLeftRight, flexCentered } from "../util/styles";
+import { ddContentStyle } from "../util/dropdown";
 import useMounted from "../hooks/mounted";
 
 const home = { url: "/", name: "Home" };
@@ -66,9 +67,14 @@ const linkStyle: React.CSSProperties = {
 
 const navStyle: React.CSSProperties = {
   backgroundColor: Constants.navBGCol,
-  overflow: "hidden",
   padding: 0,
   borderBottom: "1px solid #d8d8d8",
+};
+
+const headerStyle: React.CSSProperties = {
+  ...navStyle,
+  position: "relative",
+  zIndex: 100,
 };
 
 export default function NavigationBar() {
@@ -78,6 +84,18 @@ export default function NavigationBar() {
   const mounted = useMounted();
 
   const [langDDShown, setLangDDShown] = useState(false);
+  const langDDRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!langDDShown) return;
+    const handler = (e: MouseEvent) => {
+      if (langDDRef.current && !langDDRef.current.contains(e.target as Node)) {
+        setLangDDShown(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [langDDShown]);
 
   const currentActiveLink = navbarLinks.filter((el) => el.url === currentPage);
   const label =
@@ -116,47 +134,50 @@ export default function NavigationBar() {
     </Link>
   );
 
-  const ddLinkStyle: React.CSSProperties = {
-    color: "black",
-    backgroundColor: "white",
-    padding: "10px",
+  const ddItemAttrs = buttonAttrsClass({
     textDecoration: "none",
-    minWidth: "50px",
-    ...flexCentered,
-  };
+    borderRadius: 0,
+    backgroundColor: "#eee",
+  });
 
   const ddElements = LANGUAGES.filter((loc) => currentLang !== loc).map(
-    (loc) => {
+    (loc, idx, arr) => {
       const link = "/" + loc + currentPage.slice(3);
+      const borderBottom = idx < arr.length - 1 ? "3px solid #ccc" : undefined;
       return (
-        <Link className="hoverlink" href={link} style={ddLinkStyle} key={loc}>
-          <div style={{ marginRight: "1em" }}>{loc.toUpperCase()}</div>{" "}
+        <Link
+          {...ddItemAttrs}
+          style={{ ...ddItemAttrs.style, borderBottom }}
+          href={link}
+          key={loc}
+        >
+          <div style={{ marginRight: "0.5em" }}>{loc.toUpperCase()}</div>
           {getFlag(loc)}
         </Link>
       );
     },
   );
   const contentStyle: React.CSSProperties = {
+    ...ddContentStyle,
     display: langDDShown ? "block" : "none",
-    position: "absolute",
   };
   const ddClicked = () => setLangDDShown(!langDDShown);
 
   const ddStyle: React.CSSProperties = {
     float: "right",
     ...baseNavEl,
-    overflow: "hidden",
+    position: "relative",
     cursor: "pointer",
   };
 
   const newNav = (
     <nav className="container" style={navStyle}>
-      <div style={containerInnerLeftRight}>
+      <div style={containerInnerLeftRight} className="clearfix">
         {navLogo}
         <div className="hide-on-mobile" style={{ ...baseNavEl, float: "left" }}>
           {label}
         </div>
-        <div className="hoverlink" style={ddStyle}>
+        <div className="hoverlink" style={ddStyle} ref={langDDRef}>
           <div
             onClick={ddClicked}
             style={{ ...flexCentered, cursor: "pointer" }}
@@ -166,7 +187,6 @@ export default function NavigationBar() {
           <div
             className="dropdown"
             style={{
-              position: "relative",
               paddingTop: padLeftRight,
               marginLeft: `-${padTopBot}`,
             }}
@@ -199,5 +219,5 @@ export default function NavigationBar() {
     </nav>
   );
 
-  return <header style={navStyle}>{newNav}</header>;
+  return <header style={headerStyle}>{newNav}</header>;
 }

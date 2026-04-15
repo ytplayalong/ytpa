@@ -90,6 +90,13 @@
   }
 }
 
+/* Clear floats without clipping overflow */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* For stuff that is not shown on mobile */
 @media (max-width: 768px) {
   .hide-on-mobile {

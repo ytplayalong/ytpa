@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import usePathTranslation from "@/i18n/hook";
 
@@ -10,7 +10,7 @@ const ddStyle: React.CSSProperties = {
   display: "inline-block",
 };
 
-const ddContentStyle: React.CSSProperties = {
+export const ddContentStyle: React.CSSProperties = {
   position: "absolute",
   zIndex: 1,
   border: "1px solid #ccc",
@@ -43,7 +43,19 @@ export const useDropDown = (
   wrapper = defaultWrapper
 ) => {
   const [isShown, setIsShown] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   const { getLink } = usePathTranslation();
+
+  useEffect(() => {
+    if (!isShown) return;
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setIsShown(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [isShown]);
 
   const contStyle = { ...ddContentStyle, display: isShown ? "block" : "none" };
   if (alignRight) {
@@ -52,7 +64,7 @@ export const useDropDown = (
   const onClick = () => setIsShown(!isShown);
 
   return (
-    <div style={ddStyle}>
+    <div style={ddStyle} ref={ref}>
       {wrapper(label, onClick)}
       <div style={contStyle}>
         {options.map((el, idx) => {
@@ -105,6 +117,19 @@ export const useMultiDropDown = (
   alignRight = false
 ) => {
   const [isShown, setIsShown] = useState<string | null>(null);
+  const refsMap = useRef<Map<string, HTMLDivElement>>(new Map());
+
+  useEffect(() => {
+    if (!isShown) return;
+    const handler = (e: MouseEvent) => {
+      const el = refsMap.current.get(isShown);
+      if (el && !el.contains(e.target as Node)) {
+        setIsShown(null);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [isShown]);
 
   const compCreator = (key: string) => {
     const toggleDd = () => setIsShown(isShown == key ? null : key);
@@ -114,7 +139,13 @@ export const useMultiDropDown = (
       right: alignRight ? 0 : undefined,
     };
     return (
-      <div style={{ ...ddStyle, ...baseElementStyle }}>
+      <div
+        style={{ ...ddStyle, ...baseElementStyle }}
+        ref={(el) => {
+          if (el) refsMap.current.set(key, el);
+          else refsMap.current.delete(key);
+        }}
+      >
         {wrapper(label, toggleDd)}
         <div style={contStyle}>
           {options.map((el, idx) => {
