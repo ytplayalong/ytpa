@@ -17,11 +17,11 @@ const buttonStyle: React.CSSProperties = {
 };
 // The button's hover color is defined in the CSS file
 
-export const buttonAttrs = { style: buttonStyle, className: "hoverlink" };
+export const buttonAttrs = { style: buttonStyle, className: "hoverlink btn" };
 export const buttonAttrsClass = (style: object, className: string = "") => {
   return {
     style: { ...buttonStyle, ...style },
-    className: `hoverlink ${className}`,
+    className: `hoverlink btn ${className}`,
   };
 };
 
