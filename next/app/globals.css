@@ -52,11 +52,8 @@
 
 /** ------------------- Responsive two column layout ------------------- **/
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
 .twocols {
+  float: left;
   width: 100%;
 }
 .rightcol {
@@ -64,12 +61,14 @@
 }
 @media (min-width: 992px) {
   .twocols {
+    float: left;
     width: 50%;
   }
   .rightcol {
     padding-top: 0;
-  }
+  }  
 }
+
 
 /** ------------------- Responsive labelled button layout ------------------- **/
 .button-label {
@@ -90,8 +89,15 @@
   }
 }
 
-/* Clear floats without clipping overflow */
-.clearfix::after {
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Clear floats after the columns */
+.clearfix:after {
   content: "";
   display: table;
   clear: both;

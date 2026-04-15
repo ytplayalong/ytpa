@@ -18,7 +18,11 @@ import usePathTranslation from "@/i18n/hook";
 
 import { Constants } from "../constants";
 import { getCurrUsername, useCurrentUser } from "../firebase";
-import { buttonAttrsClass, containerInnerLeftRight, flexCentered } from "../util/styles";
+import {
+  buttonAttrsClass,
+  containerInnerLeftRight,
+  flexCentered,
+} from "../util/styles";
 import { ddContentStyle } from "../util/dropdown";
 import useMounted from "../hooks/mounted";
 
@@ -73,7 +77,6 @@ const navStyle: React.CSSProperties = {
 
 const headerStyle: React.CSSProperties = {
   ...navStyle,
-  position: "relative",
   zIndex: 100,
 };
 
@@ -166,7 +169,6 @@ export default function NavigationBar() {
   const ddStyle: React.CSSProperties = {
     float: "right",
     ...baseNavEl,
-    position: "relative",
     cursor: "pointer",
   };
 
