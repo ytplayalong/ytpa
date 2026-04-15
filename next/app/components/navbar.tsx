@@ -154,8 +154,10 @@ export default function NavigationBar() {
           href={link}
           key={loc}
         >
-          <div style={{ marginRight: "0.5em" }}>{loc.toUpperCase()}</div>
-          {getFlag(loc)}
+          <>
+            <div style={{ marginRight: "0.5em" }}>{loc.toUpperCase()}</div>
+            {getFlag(loc)}
+          </>
         </Link>
       );
     },

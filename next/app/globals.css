@@ -51,7 +51,6 @@
 }
 
 /** ------------------- Responsive two column layout ------------------- **/
-.row {
 .twocols {
   float: left;
   width: 100%;
