@@ -165,7 +165,7 @@ export default function NavigationBar() {
           <div
             className="dropdown"
             style={{
-              display: "relative",
+              position: "relative",
               paddingTop: padLeftRight,
               marginLeft: `-${padTopBot}`,
             }}
