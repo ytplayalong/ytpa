@@ -30,6 +30,7 @@ type DdProps = {
   options: DDItem[];
   wrapper?: any;
   alignRight?: boolean;
+};
 
 const defaultWrapper = (el: React.ReactNode, onClick: VoidFunction) => {
   return (
