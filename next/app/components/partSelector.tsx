@@ -5,6 +5,7 @@ import usePathTranslation from "@/i18n/hook";
 
 import { DropdownComp } from "../util/dropdown";
 import {
+  buttonAttrs,
   containerInner,
   distributedStyle,
   flexCentered,
@@ -45,7 +46,7 @@ const removeUnused = (
   baseEl: Document,
   parName: string,
   childName: string,
-  partId: string
+  partId: string,
 ) => {
   const parEl = getSingleXml(baseEl, parName);
   for (const el of parEl.childNodes) {
@@ -147,7 +148,7 @@ export const PartSelector = ({
     const setPart = (
       newPartIdx: number,
       newPitch: string,
-      newOctave: number
+      newOctave: number,
     ) => {
       if (
         newPartIdx === currPartIdx &&

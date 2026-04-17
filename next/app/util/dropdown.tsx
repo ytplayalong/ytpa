@@ -26,7 +26,10 @@ const elementStyle = buttonAttrsClass({
 });
 
 type DDItem = { name: any; key: string; url?: string; onClick?: VoidFunction };
-type DdProps = { options: DDItem[]; wrapper?: any; alignRight?: boolean };
+type DdProps = {
+  options: DDItem[];
+  wrapper?: any;
+  alignRight?: boolean;
 
 const defaultWrapper = (el: React.ReactNode, onClick: VoidFunction) => {
   return (
@@ -40,7 +43,7 @@ export const useDropDown = (
   label: React.ReactNode,
   options: DDItem[],
   alignRight = false,
-  wrapper = defaultWrapper
+  wrapper = defaultWrapper,
 ) => {
   const [isShown, setIsShown] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -57,11 +60,15 @@ export const useDropDown = (
     return () => document.removeEventListener("mousedown", handler);
   }, [isShown]);
 
-  const contStyle = { ...ddContentStyle, display: isShown ? "block" : "none" };
+  const contStyle = {
+    ...ddContentStyle,
+    display: isShown ? "block" : "none",
+  };
   if (alignRight) {
     contStyle.right = 0;
   }
   const onClick = () => setIsShown(!isShown);
+  elementStyle.style.minWidth = 150;
 
   return (
     <div style={ddStyle} ref={ref}>
@@ -114,7 +121,7 @@ export const useMultiDropDown = (
   options: MultiDDItem[],
   wrapper = defaultWrapper,
   baseElementStyle: React.CSSProperties = {},
-  alignRight = false
+  alignRight = false,
 ) => {
   const [isShown, setIsShown] = useState<string | null>(null);
   const refsMap = useRef<Map<string, HTMLDivElement>>(new Map());
@@ -181,6 +188,6 @@ export const DropdownComp = (props: React.PropsWithChildren<DdProps>) => {
     props.children,
     props.options,
     props.alignRight ?? false,
-    props.wrapper
+    props.wrapper,
   );
 };
