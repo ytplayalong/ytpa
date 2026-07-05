@@ -7918,5 +7918,16 @@
     "name": "Elle (valse à 5 temps)",
     "artist": "Rémi Geffroy",
     "language": "instrumental"
+  },
+  {
+    "keys": [-2],
+    "times": [[4, 4]],
+    "source": "32532251",
+    "videoId": "zSVRtM1x9wQ",
+    "measureMap": {"8": 3, "81": 24},
+    "fileName": "Down_By_The_River",
+    "name": "Down By The River",
+    "artist": "Baldur's Gate 3",
+    "language": "english"
   }
 ]
