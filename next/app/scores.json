@@ -7924,10 +7924,21 @@
     "times": [[4, 4]],
     "source": "32532251",
     "videoId": "zSVRtM1x9wQ",
-    "measureMap": {"8": 3, "81": 24},
+    "measureMap": {"8": 3, "115.5": 34},
     "fileName": "Down_By_The_River",
     "name": "Down By The River",
     "artist": "Baldur's Gate 3",
     "language": "english"
+  },
+  {
+    "keys": [0],
+    "times": [[3, 4]],
+    "source": "32532251",
+    "videoId": "J-fFsUFAnUc",
+    "measureMap": {"4": 5, "81": 89},
+    "fileName": "Lesteca",
+    "name": "L'estaca",
+    "artist": "Lluís Llach",
+    "language": "catalan"
   }
 ]
