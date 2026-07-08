@@ -15,8 +15,8 @@
     </identification>
   <part-list>
     <score-part id="P1">
-      <part-name>Trumpet</part-name>
-      <part-abbreviation>Tp.</part-abbreviation>
+      <part-name print-object="no">Trumpet</part-name>
+      <part-abbreviation print-object="no">Tp.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
         <instrument-sound>keyboard.piano</instrument-sound>

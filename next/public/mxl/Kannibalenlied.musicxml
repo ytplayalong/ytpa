@@ -15,8 +15,8 @@
     </identification>
   <part-list>
     <score-part id="P1">
-      <part-name>Lyrics</part-name>
-      <part-abbreviation>Lyr.</part-abbreviation>
+      <part-name print-object="no">Lyrics</part-name>
+      <part-abbreviation print-object="no">Lyr.</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
         <instrument-sound>keyboard.piano</instrument-sound>
