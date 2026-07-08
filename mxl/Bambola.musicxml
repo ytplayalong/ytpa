@@ -15,8 +15,8 @@
     </identification>
   <part-list>
     <score-part id="P1">
-      <part-name>Voice in C</part-name>
-      <part-abbreviation>Vc. C</part-abbreviation>
+      <part-name print-object="no">Voice in C</part-name>
+      <part-abbreviation print-object="no">Vc. C</part-abbreviation>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
         <instrument-sound>keyboard.piano</instrument-sound>
