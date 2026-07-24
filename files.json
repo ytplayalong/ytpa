@@ -6180,5 +6180,21 @@
     "name": "Im Oergelihuus",
     "artist": "Diä urchigä Glarner",
     "language": "instrumental"
+  },
+  {
+    "videoId": "2Y5feeccczg",
+    "measureMap": { "2": 2, "42": 27 },
+    "fileName": "Pasona_Kolo",
+    "name": "Pašona Kolo",
+    "artist": "Traditional",
+    "language": "instrumental"
+  },
+  {
+    "videoId": "sXdUMoEHxKs",
+    "measureMap": { "3": 5, "59": 84 },
+    "fileName": "Schluempfe",
+    "name": "Das Lied der Schlümpfe",
+    "artist": "Vader Abraham",
+    "language": "german"
   }
 ]
