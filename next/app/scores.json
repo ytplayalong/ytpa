@@ -7977,7 +7977,7 @@
   {
     "keys": [0],
     "times": [[4, 4]],
-    "source": "dummy",
+    "source": "36171986",
     "videoId": "2Y5feeccczg",
     "measureMap": {"2": 2, "42": 27},
     "fileName": "Pasona_Kolo",
@@ -7988,12 +7988,23 @@
   {
     "keys": [3],
     "times": [[2, 4]],
-    "source": "dummy",
+    "source": "36171989",
     "videoId": "sXdUMoEHxKs",
     "measureMap": {"3": 5, "59": 84},
     "fileName": "Schluempfe",
     "name": "Das Lied der Schlümpfe",
     "artist": "Vader Abraham",
+    "language": "german"
+  },
+  {
+    "keys": [1],
+    "times": [[4, 4]],
+    "source": "36171995",
+    "videoId": "-MJGQe_7DAA",
+    "measureMap": {"10.5": 4, "193": 92},
+    "fileName": "Lotosblume",
+    "name": "Lotosblume",
+    "artist": "Die Flippers",
     "language": "german"
   }
 ]
