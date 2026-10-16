@@ -8006,5 +8006,16 @@
     "name": "Lotosblume",
     "artist": "Die Flippers",
     "language": "german"
+  },
+  {
+    "keys": [3],
+    "times": [[4, 4]],
+    "source": "dummy",
+    "videoId": "k6bHErrAel4",
+    "measureMap": {"3": 1, "75": 44},
+    "fileName": "Schatzi",
+    "name": "Schatzi schenk mir ein Foto",
+    "artist": "Mickie Krause",
+    "language": "german"
   }
 ]
