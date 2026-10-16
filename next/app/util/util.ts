@@ -62,35 +62,7 @@ const pitchMap: { [key: string]: number } = {
   B: 11,
 };
 
-type ScaleType = [string, number][];
-const sharpScale: ScaleType = [
-  ["C", 0],
-  ["C", 1],
-  ["D", 0],
-  ["D", 1],
-  ["E", 0],
-  ["F", 0],
-  ["F", 1],
-  ["G", 0],
-  ["G", 1],
-  ["A", 0],
-  ["A", 1],
-  ["B", 0],
-];
-const flatScale: ScaleType = [
-  ["C", 0],
-  ["D", -1],
-  ["D", 0],
-  ["E", -1],
-  ["E", 0],
-  ["F", 0],
-  ["G", -1],
-  ["G", 0],
-  ["A", -1],
-  ["A", 0],
-  ["B", -1],
-  ["B", 0],
-];
+/** Transposition options: [semitones up, key signature shift in fifths]. */
 const transposeOptions: { [key: string]: [number, number] } = {
   C: [0, 0],
   "B♭": [2, 2],
@@ -98,23 +70,31 @@ const transposeOptions: { [key: string]: [number, number] } = {
   "E♭": [9, 3],
 };
 export const transposeKeys = Object.keys(transposeOptions);
-const sLen = flatScale.length;
+const stepNames = ["C", "D", "E", "F", "G", "A", "B"];
+
+/** Transposes a note keeping its spelling consistent with the interval.
+ *
+ * The diatonic shift is derived from the key signature shift (a fifth is
+ * four steps), so enharmonics are preserved (E# -> F# stays E# -> F#, double
+ * sharps / flats are kept where the key requires them).
+ */
 const increase = (
   val: string,
   oct: number,
   alterNum: number,
-  n: number,
-  scale: ScaleType
+  semitones: number,
+  fifthsShift: number
 ) => {
-  const idx = pitchMap[val];
-  const newIdxTot = idx + n + alterNum;
-  const newIdx = newIdxTot % sLen;
-  const newOct = newIdxTot >= sLen ? oct + 1 : oct;
-  const [newPitch, newAlter] = scale[newIdx];
+  const diatonic = (((fifthsShift * 4) % 7) + 7) % 7;
+  const totalSteps = oct * 7 + stepNames.indexOf(val) + diatonic;
+  const newOct = Math.floor(totalSteps / 7);
+  const newPitch = stepNames[totalSteps - newOct * 7];
+  const target = oct * 12 + pitchMap[val] + alterNum + semitones;
+  const newAlter = target - (newOct * 12 + pitchMap[newPitch]);
   return [newPitch, newAlter, newOct] as const;
 };
 
-/** Find the scale of the given measure if present. */
+/** Update the key signature of the measure, returns the applied shift in fifths. */
 const getScaleUpdate = (measure: Element, fifths: number) => {
   const attrs = measure.getElementsByTagName("attributes")[0];
   if (!attrs) {
@@ -128,15 +108,14 @@ const getScaleUpdate = (measure: Element, fifths: number) => {
   const fifthsNum = parseInt(fifthsEl.textContent);
   let newFifths = fifthsNum + fifths;
 
-  // Use scale with least sharps / flats
+  // Use key with the fewest sharps / flats
   if (newFifths > 6) {
     newFifths -= 12;
   } else if (newFifths < -6) {
     newFifths += 12;
   }
   fifthsEl.textContent = `${newFifths}`;
-  const usedScale = newFifths >= 0 ? sharpScale : flatScale;
-  return usedScale;
+  return newFifths - fifthsNum;
 };
 
 export type FingerType = "fingerNone" | "fingerThreeValves" | "fingerTrombone";
@@ -204,14 +183,13 @@ export const transpose = (
   }
   // TODO: Also change to treble if the current clef is a bass clef.
 
-  let usedScale = sharpScale;
+  let usedShift = fifths;
   for (const element of measures) {
     const currMeas = element;
     const newScaleOrNull = getScaleUpdate(currMeas, fifths);
     if (newScaleOrNull !== null) {
-      usedScale = newScaleOrNull;
+      usedShift = newScaleOrNull;
     }
-    console.assert(usedScale !== null, "Invalid scale!");
 
     const elements = currMeas.getElementsByTagName("note");
     for (const element of elements) {
@@ -230,7 +208,7 @@ export const transpose = (
         octNum + octave,
         alterNum,
         chrom,
-        usedScale
+        usedShift
       );
       step.textContent = newPitch;
       oct.textContent = newOct.toString();
@@ -246,7 +224,7 @@ export const transpose = (
         el.appendChild(newEl);
       }
       if (fingering !== null) {
-        const idx = pitchMap[newPitch] + newAlter;
+        const idx = (((pitchMap[newPitch] + newAlter) % 12) + 12) % 12;
         const oct = clef === "bass" ? newOct + 1 : newOct;
         const valOct = valveFingering[oct - fingerOctave];
         let val = valOct !== undefined ? valOct[idx] : undefined;
