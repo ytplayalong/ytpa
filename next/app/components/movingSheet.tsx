@@ -182,7 +182,15 @@ export const MovingSheet = (props: {
   const { getTime, measureMap, xml } = props;
 
   useEffect(() => {
+    let cancelled = false;
     const loadOsmd = async () => {
+      // Drop the previous rendering (e.g. before transposing) and stop
+      // following it, otherwise old and new scores get mixed.
+      setIpOrNull(null);
+      const container = document.getElementById(osmdId);
+      if (container) {
+        container.innerHTML = "";
+      }
       const osmd = new MyOSMD(osmdId, {
         drawCredits: false,
         drawPartNames: false,
@@ -190,6 +198,9 @@ export const MovingSheet = (props: {
       });
       osmd.setup();
       await osmd.load(xml);
+      if (cancelled) {
+        return; // A newer load superseded this one
+      }
       osmd.Zoom = zoomFac; // Needs to be done after load()
 
       // Doing it here at least once, but it is done later as well, so
@@ -202,22 +213,30 @@ export const MovingSheet = (props: {
     };
 
     loadOsmd();
+    return () => {
+      cancelled = true;
+    };
   }, [xml, zoomFac, userZoom]);
 
   useEffect(() => {
     // Load the sheet music display and create interpolator.
+    let cancelled = false;
     if (osmd != null) {
       const loadLocal = async () => {
         const osmdPageHeight = settingsManager.isHorizontalMode()
           ? sheetHeigthPx * userZoom
           : 100000;
         await loadOsmd(osmd, sheetWidth, osmdPageHeight);
+        if (cancelled) {
+          return;
+        }
         const ipObj = getInterpolator(osmd, measureMap);
         setIpOrNull({ ip: ipObj });
       };
       loadLocal();
     }
     return () => {
+      cancelled = true;
       setIpOrNull(null);
     };
   }, [osmd, measureMap, sheetHeigthPx, userZoom, zoomFac, sheetWidth]);
