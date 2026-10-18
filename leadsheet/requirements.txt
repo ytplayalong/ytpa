@@ -1,0 +1,8 @@
+numpy
+scipy
+librosa
+soundfile
+torch
+torchaudio
+demucs
+torchcrepe
