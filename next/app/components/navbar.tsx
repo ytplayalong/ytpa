@@ -106,7 +106,7 @@ export default function NavigationBar() {
 
   const getLinks = () => {
     const login = {
-      url: "/login",
+      url: "/account",
       key: "login",
       icon: <MdLogin {...iconProps} />,
       mobileShown: false,

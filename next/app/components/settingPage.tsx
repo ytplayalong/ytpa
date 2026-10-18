@@ -20,7 +20,7 @@ const SettingPage = () => {
         <Link href={getLink(`/suggest`)}>{t("suggestASong")}</Link>
       </p>
       <p>
-        <Link href={getLink(`/login`)}>{t("manageAccount")}</Link>
+        <Link href={getLink(`/account`)}>{t("manageAccount")}</Link>
       </p>
       <SettingsComp />
       <ContactForm />

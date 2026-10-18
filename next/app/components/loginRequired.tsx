@@ -17,7 +17,7 @@ export const useLoginRequired = () => {
     <>
       <p>
         {t("loginRequiredForPageAccess")}{" "}
-        <Link href={getLink("/login")}>{t("loginHere")}</Link>
+        <Link href={getLink("/account")}>{t("loginHere")}</Link>
       </p>
       <p>
         {t("alreadyHaveAccount")}{" "}

@@ -9,6 +9,7 @@ import firebaseManager, {
 import { buttonAttrs } from "@/app/util/styles";
 import usePathTranslation from "@/i18n/hook";
 
+import FavoritesBackup from "../favoritesBackup";
 import { Loading } from "../loading";
 import GoogleButton from "./googleButton";
 import { LoginData, UserDataForm } from "./util";
@@ -37,6 +38,7 @@ export default function LoginForm() {
         <button {...buttonAttrs} onClick={onLogout}>
           {t("logout")}
         </button>
+        <FavoritesBackup />
       </>
     );
   } else if (user === null) {
