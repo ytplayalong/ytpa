@@ -47,8 +47,11 @@ export default function FavoritesBackup() {
     }
     try {
       const { ids, unknown } = parseFavoritesFile(await file.text());
-      await firebaseManager.addFavorites(ids);
-      setMessage(t("favoritesImported", { num: ids.length, unknown }));
+      const { added, alreadyFavorites } =
+        await firebaseManager.addFavorites(ids);
+      setMessage(
+        t("favoritesImported", { num: added, existing: alreadyFavorites, unknown }),
+      );
     } catch (err) {
       console.log(err);
       setMessage(t("favoritesImportFailed"));
