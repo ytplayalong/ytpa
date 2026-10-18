@@ -40,7 +40,7 @@ export default function RegisterForm() {
       />
       <p>
         {t("alreadyHaveAccount")}{" "}
-        <Link href={getLink("/login")}>{t("loginHere")}</Link>
+        <Link href={getLink("/account")}>{t("loginHere")}</Link>
       </p>
     </>
   );

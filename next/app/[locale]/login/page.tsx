@@ -1,14 +1,8 @@
-import LoginForm from "@/app/components/forms/loginForm";
-import { containerInner } from "@/app/util/styles";
+import LoginRedirect from "@/app/components/loginRedirect";
 
+// The login page moved to /account, keep old links working.
 export default function Login() {
-  return (
-    <div className="container">
-      <div style={containerInner}>
-        <LoginForm />
-      </div>
-    </div>
-  );
+  return <LoginRedirect />;
 }
 
 export { getStaticLocaleParams as generateStaticParams } from "@/i18n";
