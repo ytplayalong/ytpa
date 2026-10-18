@@ -3,10 +3,12 @@ import {
   Auth,
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   onAuthStateChanged,
   sendEmailVerification,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   User,
 } from "firebase/auth";
@@ -136,6 +138,27 @@ class FirebaseManager {
       }
     } catch (error) {
       return { error: `Sign-in failed, error: ${error}` };
+    }
+    return { info: "Sucessfully signed-in." };
+  }
+
+  /** Log in with a Google account, a new user is created at the first login.
+   *
+   * Google accounts have a verified email address.
+   */
+  async signInWithGoogle(): Promise<{ error?: string; info?: string }> {
+    try {
+      await signInWithPopup(this.firebaseAuth, new GoogleAuthProvider());
+    } catch (error: any) {
+      // Closing the popup is no error
+      const ignored = [
+        "auth/popup-closed-by-user",
+        "auth/cancelled-popup-request",
+      ];
+      if (ignored.includes(error?.code)) {
+        return {};
+      }
+      return { error: `Google sign-in failed, error: ${error}` };
     }
     return { info: "Sucessfully signed-in." };
   }

@@ -11,6 +11,8 @@ export const RESSOURCES = {
       close: "Close",
       login: "Login",
       loginHere: "Log in here",
+      or: "or",
+      continueWithGoogle: "Continue with Google",
       loggedInAs: "Logged-in as",
       loginRequiredForPageAccess: "Login is required to access this page.",
       notLoggedIn: "Not logged-in.",
@@ -123,6 +125,8 @@ export const RESSOURCES = {
       close: "Cierrar",
       login: "Iniciar",
       loginHere: "Iniciar aqui",
+      or: "o",
+      continueWithGoogle: "Continuar con Google",
       loggedInAs: "Conectado como",
       loginRequiredForPageAccess:
         "Es necesario iniciar sesión para acceder a esta página.",
@@ -234,6 +238,8 @@ export const RESSOURCES = {
       close: "Schliessen",
       login: "Anmelden",
       loginHere: "Hier anmelden",
+      or: "oder",
+      continueWithGoogle: "Weiter mit Google",
       loggedInAs: "Eingeloggt als",
       loginRequiredForPageAccess:
         "Für den Zugriff auf diese Seite ist ein Login erforderlich.",

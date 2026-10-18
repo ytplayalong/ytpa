@@ -52,3 +52,13 @@ A user is an admin if there is a document with their uid as id in the Firestore
 collection `admins` (create it by hand in the Firebase console). The security
 rules in `firestore.rules` make sure that only admins can change or delete
 suggestions, they have to be deployed (copied to the Firebase console) by hand.
+
+## Login with a Google account
+
+The login and register pages have a "Continue with Google" button (Firebase
+Authentication with `signInWithPopup`). A new user is created automatically at
+the first login, Google accounts count as verified.
+
+Setup in the Firebase console (Authentication):
+- Sign-in method: enable the **Google** provider.
+- Settings -> Authorized domains: `ytpa.ch` (and `localhost` for development).

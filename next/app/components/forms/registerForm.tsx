@@ -5,6 +5,7 @@ import Link from "next/link";
 import firebaseManager from "@/app/firebase";
 import usePathTranslation from "@/i18n/hook";
 
+import GoogleButton from "./googleButton";
 import { FormFieldData, LoginData, UserDataForm } from "./util";
 
 /** New user registration form. */
@@ -38,6 +39,7 @@ export default function RegisterForm() {
         addForms={addForms}
         onSubmit={registerUser}
       />
+      <GoogleButton />
       <p>
         {t("alreadyHaveAccount")}{" "}
         <Link href={getLink("/login")}>{t("loginHere")}</Link>
