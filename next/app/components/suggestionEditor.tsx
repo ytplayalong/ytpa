@@ -2,18 +2,17 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { MdDelete, MdEdit } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
 import firebaseManager, {
   Suggestion,
-  SuggestionStatus,
   useIsAdmin,
 } from "../firebase";
-import { buttonAttrs, inputStyle } from "../util/styles";
+import { getButtonAttrs } from "../util/styles";
 import {
   findDuplicateGroups,
-  priorities,
   sortSuggestions,
   statusLabel,
   useAvailableScores,
@@ -27,7 +26,10 @@ import {
   wrapLinkedCell,
 } from "../util/tables";
 import { Loading } from "./loading";
+import SuggestionDialog, { SuggestionEdit } from "./suggestionDialog";
 import { useLoginRequired } from "./loginRequired";
+
+const iconButton = getButtonAttrs("40px");
 
 const formatDate = (s: Suggestion) =>
   s.createdAt ? new Date(s.createdAt.toMillis()).toLocaleDateString() : "";
@@ -40,6 +42,7 @@ export default function SuggestionEditor() {
   const getAvailable = useAvailableScores();
   const [suggestions, setSuggestions] = useState<Suggestion[] | null>(null);
   const [status, setStatus] = useState("");
+  const [editing, setEditing] = useState<Suggestion | null>(null);
 
   useEffect(() => {
     if (isAdmin) {
@@ -73,21 +76,16 @@ export default function SuggestionEditor() {
   const removeFromList = (ids: string[]) =>
     setSuggestions((prev) => prev!.filter((s) => !ids.includes(s.id)));
 
-  const changeStatus = async (s: Suggestion, value: string) => {
-    let status: SuggestionStatus | undefined;
-    if (value === "discarded") {
-      status = "discarded";
-    } else if (value !== "") {
-      status = Number.parseInt(value) as 1 | 2 | 3;
-    }
-    if (await firebaseManager.updateSuggestionStatus(s.id, status)) {
+  const saveEdit = async (edit: SuggestionEdit) => {
+    const ok = await firebaseManager.updateSuggestion(editing!.id, edit);
+    if (ok) {
       setSuggestions((prev) =>
-        prev!.map((el) => (el.id === s.id ? { ...el, status } : el)),
+        prev!.map((el) => (el.id === editing!.id ? { ...el, ...edit } : el)),
       );
+      setEditing(null);
       setStatus("");
-    } else {
-      setStatus(t("editFailed"));
     }
+    return ok;
   };
 
   const remove = async (s: Suggestion) => {
@@ -125,7 +123,7 @@ export default function SuggestionEditor() {
       <th style={{ width: "20%", ...thStyle }}>{t("artist")}</th>
       <th style={{ width: "14%", ...thStyle }}>{t("submittedBy")}</th>
       <th style={{ width: "12%", ...thStyle }}>{t("status")}</th>
-      <th style={{ width: "10%", ...thStyle }}></th>
+      <th style={{ width: "12%", ...thStyle }}></th>
     </>
   );
 
@@ -174,24 +172,27 @@ export default function SuggestionEditor() {
               {formatDate(s)}
             </td>
             <td style={tdStyle}>
-              <select
-                style={inputStyle}
-                value={s.status ?? ""}
-                onChange={(e) => changeStatus(s, e.target.value)}
-              >
-                <option value="">{statusLabel(t, undefined)}</option>
-                {[...priorities].reverse().map((p) => (
-                  <option key={p} value={p}>
-                    {statusLabel(t, p)}
-                  </option>
-                ))}
-                <option value="discarded">{statusLabel(t, "discarded")}</option>
-              </select>
+              {statusLabel(t, s.status)}
             </td>
             <td style={tdStyle}>
-              <button onClick={() => remove(s)} {...buttonAttrs}>
-                {t("delete")}
-              </button>
+              <div style={{ display: "flex", gap: "4px" }}>
+                <button
+                  onClick={() => setEditing(s)}
+                  title={t("edit")}
+                  aria-label={t("edit")}
+                  {...iconButton}
+                >
+                  <MdEdit size={20} />
+                </button>
+                <button
+                  onClick={() => remove(s)}
+                  title={t("delete")}
+                  aria-label={t("delete")}
+                  {...iconButton}
+                >
+                  <MdDelete size={20} />
+                </button>
+              </div>
             </td>
           </tr>
         );
@@ -207,13 +208,21 @@ export default function SuggestionEditor() {
       </p>
       {toRemove.length > 0 && (
         <p>
-          <button onClick={removeDuplicates} {...buttonAttrs}>
+          <button onClick={removeDuplicates} {...getButtonAttrs("120px")}>
             {t("removeDuplicates", { num: toRemove.length })}
           </button>
         </p>
       )}
       {status && <p>{status}</p>}
       <BasicTable header={header} body={body} />
+      {editing && (
+        <SuggestionDialog
+          key={editing.id}
+          suggestion={editing}
+          onSave={saveEdit}
+          onClose={() => setEditing(null)}
+        />
+      )}
     </>
   );
 }
