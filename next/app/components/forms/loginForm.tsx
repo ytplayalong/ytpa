@@ -10,6 +10,7 @@ import { buttonAttrs } from "@/app/util/styles";
 import usePathTranslation from "@/i18n/hook";
 
 import { Loading } from "../loading";
+import GoogleButton from "./googleButton";
 import { LoginData, UserDataForm } from "./util";
 
 /** New user registration form. */
@@ -43,6 +44,7 @@ export default function LoginForm() {
     return (
       <>
         <UserDataForm title={titleStr} initState={{}} onSubmit={loginUser} />
+        <GoogleButton />
         <div className="row" style={{ marginTop: "0.5em" }}>
           <div className="twocols">
             <p>
