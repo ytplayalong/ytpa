@@ -2,6 +2,7 @@
 
 import usePathTranslation from "@/i18n/hook";
 import ContactForm from "./forms/contactForm";
+import FavoritesBackup from "./favoritesBackup";
 import SettingsComp from "./settings";
 import Link from "next/link";
 import { useCurrentUser, useIsAdmin } from "../firebase";
@@ -23,6 +24,7 @@ const SettingPage = () => {
         <Link href={getLink(`/login`)}>{t("manageAccount")}</Link>
       </p>
       <SettingsComp />
+      <FavoritesBackup />
       <ContactForm />
     </>
   );

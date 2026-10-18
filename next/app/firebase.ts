@@ -257,6 +257,23 @@ class FirebaseManager {
     }
   }
 
+  /** Adds several favorites at once (no duplicates), e.g. for the import. */
+  async addFavorites(scoreIds: string[]) {
+    const userDocRef = this.getUserDoc();
+    const loadedDoc = await getDoc(userDocRef);
+    const currentList: string[] = loadedDoc.exists()
+      ? ((loadedDoc.data() as DbUserData).allFavorites ?? [])
+      : [];
+    const updatedData: DbUserData = {
+      allFavorites: Array.from(new Set([...currentList, ...scoreIds])),
+    };
+    if (loadedDoc.exists()) {
+      await updateDoc(userDocRef, updatedData);
+    } else {
+      await setDoc(userDocRef, updatedData);
+    }
+  }
+
   async getFavorites() {
     const userDocRef = this.getUserDoc();
     const loadedDoc = await getDoc(userDocRef);
