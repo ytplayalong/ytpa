@@ -41,3 +41,14 @@ audio files, found by the YouTube id in their name, e.g. `Song [k6bHErrAel4].mp3
 `python -m leadsheet.benchmark AUDIO_DIR`. It reports meter, key, chord and note
 accuracy per song (slow steps are cached, see `--cache`). The chord model
 parameters are in `leadsheet.analysis.TUNING`.
+
+## Suggestion editing (admins)
+
+Admins can set a status (new, priority 1-3 with 3 the highest, or discarded) and remove duplicate song suggestions on
+`/suggestions/edit` (linked from the suggestions page, only visible to admins).
+The suggestions page lists new ones first, then the prioritized and the discarded ones.
+
+A user is an admin if there is a document with their uid as id in the Firestore
+collection `admins` (create it by hand in the Firebase console). The security
+rules in `firestore.rules` make sure that only admins can change or delete
+suggestions, they have to be deployed (copied to the Firebase console) by hand.

@@ -13,6 +13,8 @@ import {
 import {
   addDoc,
   collection,
+  deleteDoc,
+  deleteField,
   doc,
   Firestore,
   getDoc,
@@ -38,6 +40,34 @@ const firebaseConfig = {
 
 type DbUserData = {
   allFavorites: string[];
+};
+
+/** Status of a suggestion set by admins: it is discarded or has a priority
+ * from 1 to 3 (3 is the highest). Suggestions without status are new.
+ */
+export type SuggestionStatus = "discarded" | 1 | 2 | 3;
+
+/** Reads the status from a document (also understands the old "priority"). */
+const readStatus = (data: any): SuggestionStatus | undefined => {
+  if (data.status === "discarded") {
+    return "discarded";
+  }
+  const num = data.status ?? data.priority;
+  if (typeof num === "number") {
+    return Math.min(3, Math.max(1, Math.round(num))) as 1 | 2 | 3;
+  }
+  return undefined;
+};
+
+/** A song suggestion as stored in the "suggestions" collection. */
+export type Suggestion = {
+  id: string;
+  name: string;
+  artist: string;
+  videoUrl: string; // YouTube video id
+  email?: string;
+  createdAt?: { toMillis: () => number };
+  status?: SuggestionStatus; // undefined: new
 };
 
 class FirebaseManager {
@@ -135,7 +165,10 @@ class FirebaseManager {
       const querySnapshot = await getDocs(
         collection(this.firestoreDb, "suggestions"),
       );
-      const all = querySnapshot.docs.map((el) => ({ id: el.id, ...el.data() }));
+      const all = querySnapshot.docs.map((el) => {
+        const data = el.data();
+        return { id: el.id, ...data, status: readStatus(data) } as Suggestion;
+      });
       return all;
     } catch (err) {
       console.log(err);
@@ -157,6 +190,49 @@ class FirebaseManager {
         email,
         createdAt: serverTimestamp(),
       });
+      return true;
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  }
+
+  /** Whether the current user is an admin, i.e. has a doc in "admins". */
+  async isAdmin() {
+    const user = this.currentUser();
+    if (!user?.emailVerified) {
+      return false;
+    }
+    try {
+      const adminDoc = await getDoc(doc(this.firestoreDb, "admins", user.uid));
+      return adminDoc.exists();
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  }
+
+  /** Sets the status of a suggestion, undefined makes it "new" (admins only). */
+  async updateSuggestionStatus(
+    id: string,
+    status: SuggestionStatus | undefined,
+  ) {
+    try {
+      await updateDoc(doc(this.firestoreDb, "suggestions", id), {
+        status: status === undefined ? deleteField() : status,
+        priority: deleteField(), // old name of the field
+      });
+      return true;
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  }
+
+  /** Deletes a suggestion (admins only). */
+  async deleteSuggestion(id: string) {
+    try {
+      await deleteDoc(doc(this.firestoreDb, "suggestions", id));
       return true;
     } catch (err) {
       console.log(err);
@@ -275,4 +351,33 @@ export const getCurrUsername = (user: User | null | undefined) => {
     }
   }
   return userName;
+};
+
+/** Hook that tells if the current user is an admin.
+ *
+ * Undefined while it is not yet determined.
+ */
+export const useIsAdmin = (user: User | null | undefined) => {
+  const [isAdmin, setIsAdmin] = useState<boolean | undefined>(undefined);
+
+  useEffect(() => {
+    if (user === undefined) {
+      return;
+    }
+    if (user === null) {
+      setIsAdmin(false);
+      return;
+    }
+    let cancelled = false;
+    firebaseManager.isAdmin().then((res) => {
+      if (!cancelled) {
+        setIsAdmin(res);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  return isAdmin;
 };

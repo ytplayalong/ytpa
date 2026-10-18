@@ -1,0 +1,43 @@
+// Firestore security rules (issue #2: suggestion editing by admins).
+//
+// These are not deployed automatically, copy them into the Firebase console
+// (Firestore Database -> Rules) and publish.
+//
+// Admins are users that have a document in the "admins" collection with their
+// uid as document id (create it by hand in the Firebase console, the content
+// does not matter, e.g. { "note": "admin" }).
+//
+// Everything that was set before is unchanged, only the parts marked with
+// "NEW" were added.
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // NEW: admins have a document in the "admins" collection.
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // NEW: users can only check if they themselves are admins, nobody can write
+    // (the documents are created in the Firebase console).
+    match /admins/{uid} {
+      allow get: if request.auth != null && request.auth.uid == uid;
+    }
+
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /suggestions/{docId} {
+      allow create: if request.auth != null
+                    && request.resource.data.email == request.auth.token.email;
+      allow read: if request.auth != null;
+
+      // NEW: only admins can change priorities and delete suggestions.
+      allow update, delete: if isAdmin();
+    }
+  }
+}
