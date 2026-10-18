@@ -212,13 +212,20 @@ class FirebaseManager {
     }
   }
 
-  /** Sets the status of a suggestion, undefined makes it "new" (admins only). */
-  async updateSuggestionStatus(
+  /** Changes title, artist, video and status of a suggestion (admins only). */
+  async updateSuggestion(
     id: string,
-    status: SuggestionStatus | undefined,
+    edit: {
+      name: string;
+      artist: string;
+      videoUrl: string;
+      status: SuggestionStatus | undefined;
+    },
   ) {
     try {
+      const { status, ...rest } = edit;
       await updateDoc(doc(this.firestoreDb, "suggestions", id), {
+        ...rest,
         status: status === undefined ? deleteField() : status,
         priority: deleteField(), // old name of the field
       });
