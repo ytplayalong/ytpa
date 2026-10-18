@@ -10,6 +10,8 @@ const fullW = 40000;
 const screenAnchorFactor = 0.3;
 const osmdId = "osmd";
 const baseHeight = 260;
+// Marker showing the current playback position, only in `npm run dev`.
+const showDebugMarker = process.env.NODE_ENV === "development";
 
 class MyOSMD extends OpenSheetMusicDisplay {
   setup() {
@@ -162,7 +164,7 @@ export const MovingSheet = (props: {
   getTime: () => Promise<number>;
 }) => {
   const [osmd, setOsmd] = useState<MyOSMD | null>(null);
-  const [currPos, setCurrPos] = useState({ x: 0, y: 0 });
+  const [currPos, setCurrPos] = useState({ x: 0, y: 0, t: 0 });
   const [ipOrNull, setIpOrNull] = useState<{
     ip: (n: number, fac: number) => number;
   } | null>(null);
@@ -249,8 +251,8 @@ export const MovingSheet = (props: {
         const elapsedSec = await getTime();
         const position = ipObj(elapsedSec, zoomFac);
         const posObj = settingsManager.isHorizontalMode()
-          ? { x: position, y: 0 }
-          : { x: 0, y: position };
+          ? { x: position, y: 0, t: elapsedSec }
+          : { x: 0, y: position, t: elapsedSec };
         setCurrPos(posObj);
       }, 20); // ms refresh.
 
@@ -263,8 +265,33 @@ export const MovingSheet = (props: {
   const componentHeight = settingsManager.isHorizontalMode()
     ? sheetHeigthPx * userZoom
     : 800;
+  const horizontal = settingsManager.isHorizontalMode();
+  const marker = showDebugMarker ? (
+    <div
+      style={{
+        position: "absolute",
+        pointerEvents: "none",
+        zIndex: 10,
+        background: "rgba(255, 0, 0, 0.7)",
+        ...(horizontal
+          ? {
+              top: 0,
+              bottom: 0,
+              left: `${screenAnchorFactor * window.innerWidth}px`,
+              width: "2px",
+            }
+          : { left: 0, right: 0, top: 0, height: "2px" }),
+      }}
+    >
+      <span style={{ color: "red", fontSize: "11px", marginLeft: "4px" }}>
+        {(currPos.t ?? 0).toFixed(2)}s
+      </span>
+    </div>
+  ) : null;
+
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden", position: "relative" }}>
+      {marker}
       <div
         id={osmdId}
         style={{

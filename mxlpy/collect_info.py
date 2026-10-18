@@ -25,7 +25,7 @@ def extract_info(xml: Path):
     used_part_ids = []
     for part in score_parts:
         part_id = part.attrib["id"]
-        name = part.find("part-name").text
+        name = part.findtext("part-name") or ""  # may be empty
         if "drum" not in name.lower():
             used_part_ids.append(part_id)
 
