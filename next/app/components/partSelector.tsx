@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { MdMoreVert } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
-import { DropdownComp } from "../util/dropdown";
 import {
   buttonAttrs,
   containerInner,
@@ -171,63 +170,55 @@ export const PartSelector = ({
       });
     };
 
-    // Only add part chooser dropdown if there are at least two parts.
+    // Octave selector
     const octToStr = (el: number) => (el > 0 ? `+${el}` : `${el}`);
-    const octTxt = t("octave");
-    const octTitle =
-      currOctave === 0 ? octTxt : `${octTxt}: ${octToStr(currOctave)}`;
-    const octaveOptions = allOctaves.map((el) => {
-      return {
-        name: octToStr(el),
-        onClick: () => setPart(currPartIdx, currPitch, el),
-        key: octToStr(el),
-      };
-    });
     const octaveChooser = (
-      <DropdownComp options={octaveOptions}>{octTitle}</DropdownComp>
+      <select
+        aria-label={t("octave")}
+        value={currOctave}
+        onChange={(e) =>
+          setPart(currPartIdx, currPitch, Number.parseInt(e.target.value))
+        }
+      >
+        {allOctaves.map((el) => (
+          <option key={el} value={el}>
+            {`${t("octave")}: ${octToStr(el)}`}
+          </option>
+        ))}
+      </select>
     );
 
-    // Pitch selector dropdown
-    const pitchSetter = (el: string) => setPart(currPartIdx, el, currOctave);
-    const pitchOptions = transposeKeys.map((el, idx) => {
-      return {
-        name: el,
-        onClick: () => pitchSetter(el),
-        key: el,
-      };
-    });
+    // Pitch selector
     const keyTxt = t("instrumentKeyShort");
     const pitchSelector = (
-      <DropdownComp
-        options={pitchOptions}
-      >{`${keyTxt}: ${currPitch}`}</DropdownComp>
+      <select
+        aria-label={t("instrumentKey")}
+        value={currPitch}
+        onChange={(e) => setPart(currPartIdx, e.target.value, currOctave)}
+      >
+        {transposeKeys.map((el) => (
+          <option key={el} value={el}>
+            {`${keyTxt}: ${el}`}
+          </option>
+        ))}
+      </select>
     );
 
-    // Add button that opens a dropdown with more options
-    // Especially adding the current piece to favorites.
-    const fo = fav.options[0];
-    const favOpt = {
-      ...fo,
-      onClick: () => fo.onClick(scoreInfo.videoId),
-      key: "addFav",
-    };
-    const butAtrs = getButtonAttrs("30px");
-    const faWrapper = (label: string, onClick: VoidFunction) => {
-      return (
-        <button onClick={onClick} {...butAtrs}>
-          <MdMoreVert />
-        </button>
-      );
-    };
+    // Button for adding the current piece to the favorites
+    const favOpt = fav.options[0];
     const addToFavButt = (
-      <DropdownComp options={[favOpt]} wrapper={faWrapper} alignRight={true}>
-        ...
-      </DropdownComp>
+      <button
+        onClick={() => favOpt.onClick(scoreInfo.videoId)}
+        title={favOpt.name}
+        aria-label={favOpt.name}
+        {...getButtonAttrs("40px")}
+      >
+        <MdFavoriteBorder size={20} />
+      </button>
     );
 
-    // (Part and) pitch selector dropdowns
     const partSelectorDD = (
-      <div style={{ ...flexCentered, flexWrap: "wrap" }}>
+      <div style={{ ...flexCentered, flexWrap: "wrap", gap: "0.5em" }}>
         {addToFavButt}
         {pitchSelector}
         {octaveChooser}

@@ -154,15 +154,15 @@ export default function SuggestionEditor() {
             <td style={tdStyle}>
               {s.name}
               {isNew && (
-                <b style={{ color: "#2a9d3c" }}> ({t("newSuggestion")})</b>
+                <b style={{ color: "var(--ok)" }}> ({t("newSuggestion")})</b>
               )}
               {getAvailable(s) && (
                 <Link href={getLink(`/piece?scoreId=${s.videoUrl}`)}>
-                  <b style={{ color: "#1f77b4" }}> ({t("availableSuggestion")})</b>
+                  <b style={{ color: "var(--info)" }}> ({t("availableSuggestion")})</b>
                 </Link>
               )}
               {duplicateIds.has(s.id) && (
-                <b style={{ color: "#d9534f" }}> ({t("duplicate")})</b>
+                <b style={{ color: "var(--danger)" }}> ({t("duplicate")})</b>
               )}
             </td>
             <td style={tdStyle}>{s.artist}</td>

@@ -1,7 +1,7 @@
 "use client";
 
 import firebaseManager, { useCurrentUser } from "@/app/firebase";
-import { buttonAttrs, inputStyle } from "@/app/util/styles";
+import { inputStyle, primaryButtonAttrs } from "@/app/util/styles";
 import usePathTranslation from "@/i18n/hook";
 
 import { useState } from "react";
@@ -54,7 +54,7 @@ export default function PwResetForm() {
         {emailComp}
 
         <div className="row" style={{ marginTop: "0.5em" }}>
-          <button type="submit" {...buttonAttrs}>
+          <button type="submit" {...primaryButtonAttrs}>
             {t("send")}
           </button>
           {status && <p>{status}</p>}

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { errorBackground, successBackground } from "@/app/util/colors";
 import usePathTranslation from "@/i18n/hook";
 
-import { buttonAttrs, inputStyle } from "../../util/styles";
+import { inputStyle, primaryButtonAttrs } from "../../util/styles";
 
 export const validateEmail = (email: string) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format validation
@@ -153,7 +153,7 @@ export function UserDataForm<AddStateT>(
         })}
 
         <div className="row" style={{ marginTop: "0.5em" }}>
-          <button type="submit" {...buttonAttrs}>
+          <button type="submit" {...primaryButtonAttrs}>
             {t("submit")}
           </button>
         </div>

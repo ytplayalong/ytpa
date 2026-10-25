@@ -3,7 +3,7 @@
 import cookie from "js-cookie";
 import React, { useEffect, useState } from "react";
 
-import { buttonAttrs, containerInner } from "../util/styles";
+import { containerInner, primaryButtonAttrs } from "../util/styles";
 
 const CookieConsentBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -30,9 +30,9 @@ const CookieConsentBanner = () => {
     position: "fixed",
     left: 0,
     right: 0,
-    backgroundColor: "#ffffffee",
-    backgroundSize: "100%",
+    backgroundColor: "color-mix(in srgb, var(--bg) 94%, transparent)",
     paddingTop: "5em",
+    zIndex: 2000,
   };
   return (
     <div style={bannerStyle}>
@@ -40,7 +40,7 @@ const CookieConsentBanner = () => {
         <div style={containerInner}>
           <p>This website uses cookies to improve your browsing experience.</p>
           <p>Please click Accept to continue.</p>
-          <button onClick={handleAccept} {...buttonAttrs}>
+          <button onClick={handleAccept} {...primaryButtonAttrs}>
             Accept
           </button>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { MdHeartBroken } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
@@ -92,7 +93,11 @@ const FavoritesNotNull = ({
   const { scores, sortInfo } = useProcessedScores(favoriteScores);
 
   const removeOptions = [
-    { name: t("favoritesRemove"), onClick: removeFromFavorites },
+    {
+      name: t("favoritesRemove"),
+      icon: <MdHeartBroken size={20} />,
+      onClick: removeFromFavorites,
+    },
   ];
 
   const favoriteScoreComp = (

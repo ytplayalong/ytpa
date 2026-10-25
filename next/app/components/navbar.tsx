@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import {
   MdAccountCircle,
   MdFavorite,
@@ -12,18 +11,11 @@ import {
   MdSettings,
 } from "react-icons/md";
 
-import { LANGUAGES } from "@/i18n";
-import { getFlag } from "@/i18n/flags";
+import { LANGUAGES, RESSOURCES } from "@/i18n";
 import usePathTranslation from "@/i18n/hook";
 
-import { Constants } from "../constants";
 import { getCurrUsername, useCurrentUser } from "../firebase";
-import {
-  buttonAttrsClass,
-  containerInnerLeftRight,
-  flexCentered,
-} from "../util/styles";
-import { ddContentStyle } from "../util/dropdown";
+import { containerInnerLeftRight, flexCentered } from "../util/styles";
 import useMounted from "../hooks/mounted";
 
 const home = { url: "/", name: "Home" };
@@ -48,14 +40,14 @@ const navbarLinks = [
     icon: <MdSettings {...iconProps} />,
     mobileShown: true,
   },
-].reverse();
+];
 export const defaultPageTitle = "YouTube Play-Along";
 
 const imgH = "45px";
 const padLeftRight = "14px";
 const padTopBot = "16px";
 const baseNavEl: React.CSSProperties = {
-  color: Constants.navTextCol,
+  color: "var(--fg)",
   padding: `${padLeftRight} ${padTopBot}`,
   textDecoration: "none",
   fontSize: "17px",
@@ -64,15 +56,12 @@ const baseNavEl: React.CSSProperties = {
 };
 const linkStyle: React.CSSProperties = {
   ...baseNavEl,
-  float: "right",
   cursor: "pointer",
   ...flexCentered,
 };
 
 const navStyle: React.CSSProperties = {
-  backgroundColor: Constants.navBGCol,
   padding: 0,
-  borderBottom: "1px solid #d8d8d8",
 };
 
 const headerStyle: React.CSSProperties = {
@@ -86,19 +75,7 @@ export default function NavigationBar() {
   const currentUser = useCurrentUser();
   const mounted = useMounted();
 
-  const [langDDShown, setLangDDShown] = useState(false);
-  const langDDRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!langDDShown) return;
-    const handler = (e: MouseEvent) => {
-      if (langDDRef.current && !langDDRef.current.contains(e.target as Node)) {
-        setLangDDShown(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [langDDShown]);
+  const router = useRouter();
 
   const currentActiveLink = navbarLinks.filter((el) => el.url === currentPage);
   const label =
@@ -116,10 +93,10 @@ export default function NavigationBar() {
       if (userName != null) {
         login.icon = <MdAccountCircle {...iconProps} />;
         login.key = userName;
-        return [login, ...navbarLinks];
+        return [...navbarLinks, login];
       }
     }
-    return [login, ...navbarLinks];
+    return [...navbarLinks, login];
   };
 
   const navLogo = (
@@ -127,83 +104,64 @@ export default function NavigationBar() {
       href={getLink(home.url)}
       style={{
         ...linkStyle,
-        float: "left",
         margin: 0,
         paddingLeft: 0,
         paddingRight: 0,
       }}
     >
-      <img src="/YTPALogo.svg" height={imgH} alt="Youtube Play Along logo" />
+      <img
+        className="logo"
+        src="/YTPALogo.svg"
+        height={imgH}
+        alt="Youtube Play Along logo"
+      />
     </Link>
   );
 
-  const ddItemAttrs = buttonAttrsClass({
-    textDecoration: "none",
-    borderRadius: 0,
-    backgroundColor: "#eee",
-  });
-
-  const ddElements = LANGUAGES.filter((loc) => currentLang !== loc).map(
-    (loc, idx, arr) => {
-      const link = "/" + loc + currentPage.slice(3);
-      const borderBottom = idx < arr.length - 1 ? "3px solid #ccc" : undefined;
-      return (
-        <Link
-          {...ddItemAttrs}
-          style={{ ...ddItemAttrs.style, borderBottom }}
-          href={link}
-          key={loc}
-        >
-          <>
-            <div style={{ marginRight: "0.5em" }}>{loc.toUpperCase()}</div>
-            {getFlag(loc)}
-          </>
-        </Link>
-      );
-    },
+  // Language selection
+  const langSelect = (
+    <div
+      className="lang-select"
+      style={{ ...baseNavEl, display: "flex", alignItems: "center" }}
+    >
+      <MdLanguage {...iconProps} className="hide-on-xs" />
+      <select
+        aria-label={t("language")}
+        title={(RESSOURCES as any)[currentLang].translation.langName}
+        value={currentLang}
+        onChange={(e) =>
+          router.push("/" + e.target.value + currentPage.slice(3))
+        }
+      >
+        {LANGUAGES.map((loc) => (
+          <option key={loc} value={loc}>
+            {loc.toUpperCase()}
+          </option>
+        ))}
+      </select>
+    </div>
   );
-  const contentStyle: React.CSSProperties = {
-    ...ddContentStyle,
-    display: langDDShown ? "block" : "none",
-  };
-  const ddClicked = () => setLangDDShown(!langDDShown);
-
-  const ddStyle: React.CSSProperties = {
-    float: "right",
-    ...baseNavEl,
-    cursor: "pointer",
-  };
 
   const newNav = (
     <nav className="container" style={navStyle}>
-      <div style={containerInnerLeftRight} className="clearfix">
+      <div
+        style={{
+          ...containerInnerLeftRight,
+          display: "flex",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
         {navLogo}
-        <div className="hide-on-mobile" style={{ ...baseNavEl, float: "left" }}>
+        <div className="hide-on-narrow" style={baseNavEl}>
           {label}
         </div>
-        <div className="hoverlink" style={ddStyle} ref={langDDRef}>
-          <div
-            onClick={ddClicked}
-            style={{ ...flexCentered, cursor: "pointer" }}
-          >
-            <MdLanguage {...iconProps} /> {getFlag(currentLang)} {"▾"}
-          </div>
-          <div
-            className="dropdown"
-            style={{
-              paddingTop: padLeftRight,
-              marginLeft: `-${padTopBot}`,
-            }}
-          >
-            <div style={contentStyle}>{ddElements}</div>
-          </div>
-        </div>
+        <div style={{ flex: 1 }} />
         {getLinks().map((el) => {
-          const backgroundColor =
-            el.url === currentPage
-              ? Constants.navActiveBGCol
-              : navStyle.backgroundColor;
-          let cName = "hoverlink";
+          let cName = "hoverlink nav-item";
+          if (el.url === currentPage) {
+            cName += " active";
+          }
           if (!el.mobileShown) {
             cName = `hide-on-mobile ${cName}`;
           }
@@ -212,16 +170,22 @@ export default function NavigationBar() {
               href={getLink(el.url)}
               key={el.url}
               className={cName}
-              style={{ ...linkStyle, backgroundColor }}
+              style={linkStyle}
+              aria-label={t(el.key)}
             >
               {el.icon}
-              {t(el.key)}
+              <span className="hide-on-xs">{t(el.key)}</span>
             </Link>
           );
         })}
+        {langSelect}
       </div>
     </nav>
   );
 
-  return <header style={headerStyle}>{newNav}</header>;
+  return (
+    <header className="navbar" style={headerStyle}>
+      {newNav}
+    </header>
+  );
 }

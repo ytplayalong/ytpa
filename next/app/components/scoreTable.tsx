@@ -1,10 +1,10 @@
-import { MdMoreVert } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
 import firebaseManager from "../firebase";
-import { useMultiDropDown } from "../util/dropdown";
 import useOverlay from "../util/overlay";
+import { getButtonAttrs } from "../util/styles";
 import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
 import {
   BasicTable,
@@ -18,6 +18,7 @@ import { usePaginatedList } from "../hooks/pagination";
 
 export type TableEntryOption = {
   name: string;
+  icon?: React.ReactNode;
   onClick: (scoreId: string) => void;
 };
 
@@ -31,7 +32,13 @@ export const useFavoriteOption = () => {
     }
     firebaseManager.addFavorite(scoreId);
   };
-  const options = [{ name: t("favoritesAdd"), onClick: addToFavorites }];
+  const options = [
+    {
+      name: t("favoritesAdd"),
+      icon: <MdFavoriteBorder size={20} />,
+      onClick: addToFavorites,
+    },
+  ];
   return { options, overlay: overlay.component };
 };
 
@@ -58,37 +65,27 @@ export const ScoreTable = ({
   );
 
   const definedOptions = options || [];
-  const optionDdItems = definedOptions.map((el) => {
-    return { key: el.name, ...el };
-  });
-  const ddWrapper = (el: React.ReactNode, onClick: any) => (
-    <div
-      onClick={onClick}
-      style={{
-        display: "flex",
-        height: tableRowHeight,
-        alignContent: "center",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      {el}
+  const optionButtons = (scoreId: string) => (
+    <div style={{ display: "flex", gap: "4px", justifyContent: "flex-end" }}>
+      {definedOptions.map((opt) => (
+        <button
+          key={opt.name}
+          onClick={() => opt.onClick(scoreId)}
+          title={opt.name}
+          aria-label={opt.name}
+          {...getButtonAttrs("40px")}
+        >
+          {opt.icon ?? opt.name}
+        </button>
+      ))}
     </div>
-  );
-  const baseElementStyle = { width: "100%" };
-  const sheetDD = useMultiDropDown(
-    <MdMoreVert />,
-    optionDdItems,
-    ddWrapper,
-    baseElementStyle,
-    true,
   );
 
   const hasOptions = definedOptions.length > 0;
   const imgColWidth = "10%";
-  const nameArtistColWidth = hasOptions ? "38%" : "40%";
+  const nameArtistColWidth = hasOptions ? "35%" : "40%";
   const keyColWidth = "10%";
-  const optionColWidth = "4%";
+  const optionColWidth = "9%";
 
   const tableHeaderSortable = sortBy.map((el) => {
     let ex = "";
@@ -132,7 +129,7 @@ export const ScoreTable = ({
     <>
       {currentChunk.map((el) => {
         const optionComp = hasOptions ? (
-          <td style={tdStyle}>{sheetDD(el.videoId)}</td>
+          <td style={tdStyle}>{optionButtons(el.videoId)}</td>
         ) : undefined;
 
         const link = getLink(`/piece?scoreId=${el.videoId}`);
