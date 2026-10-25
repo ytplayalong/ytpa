@@ -87,6 +87,11 @@ select {
   padding: 6px 10px;
   min-height: 2.5em;
 }
+option {
+  font: inherit;
+  background: var(--card);
+  color: var(--fg);
+}
 button:hover:not(:disabled),
 select:hover:not(:disabled),
 .btn:hover {
@@ -194,8 +199,11 @@ dialog h4 {
   font-weight: 600;
   font-size: 0.9em;
 }
-.table-wrap tbody tr {
+.table-wrap tbody td {
   background: var(--card);
+}
+.table-wrap tbody tr.hoverlink:hover td {
+  background: var(--hover);
 }
 .table-wrap tbody td:first-child {
   border-top-left-radius: var(--radius);
@@ -215,6 +223,7 @@ dialog h4 {
 .nav-item {
   color: var(--fg);
   text-decoration: none;
+  border-radius: var(--radius);
 }
 .nav-item.active {
   background-color: var(--hover);

@@ -44,15 +44,15 @@ const navbarLinks = [
 export const defaultPageTitle = "YouTube Play-Along";
 
 const imgH = "45px";
-const padLeftRight = "14px";
-const padTopBot = "16px";
+const padLeftRight = "16px";
 const baseNavEl: React.CSSProperties = {
   color: "var(--fg)",
-  padding: `${padLeftRight} ${padTopBot}`,
+  padding: `0 ${padLeftRight}`,
   textDecoration: "none",
   fontSize: "17px",
-  lineHeight: imgH,
   height: imgH,
+  display: "flex",
+  alignItems: "center", // vertically centered text
 };
 const linkStyle: React.CSSProperties = {
   ...baseNavEl,
@@ -61,7 +61,7 @@ const linkStyle: React.CSSProperties = {
 };
 
 const navStyle: React.CSSProperties = {
-  padding: 0,
+  padding: "10px 0", // height of the bar around the 45px high entries
 };
 
 const headerStyle: React.CSSProperties = {
