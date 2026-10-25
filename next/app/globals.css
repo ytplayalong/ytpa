@@ -17,7 +17,7 @@
   --info: #1f6fb4;
   --overlay: rgb(0 0 0 / 0.45);
   --shadow: 0 4px 14px rgb(0 0 0 / 0.18);
-  --radius: 8px;
+  --radius: 5px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -162,7 +162,7 @@ dialog {
   overflow-y: auto;
   padding: 0; /* the padding is in .dialog-body, so clicks on the dialog itself are backdrop clicks */
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 8px; /* dialog */
   background: var(--bg);
   color: var(--fg);
   box-shadow: var(--shadow);

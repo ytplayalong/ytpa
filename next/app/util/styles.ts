@@ -1,4 +1,4 @@
-export const borderRadius = "8px";
+export const borderRadius = "var(--radius)";
 
 // The colors and borders of buttons are defined in globals.css (.btn),
 // here is only the layout.
