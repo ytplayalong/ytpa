@@ -16,7 +16,7 @@ export default function PwResetForm() {
   const onPasswordReset = async () => {
     let userEmail = user?.email ?? email;
     let succ = false;
-    if (userEmail === null || userEmail === undefined) {
+    if (userEmail) {
       succ = await firebaseManager.resetPassword(userEmail);
     }
     if (succ) {
@@ -57,7 +57,7 @@ export default function PwResetForm() {
           <button type="submit" {...buttonAttrs}>
             {t("send")}
           </button>
-          {status && <p>{status}</p>}
+          {status && <p>{t(status)}</p>}
         </div>
       </form>
     </>
