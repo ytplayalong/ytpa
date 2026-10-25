@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { MdFavoriteBorder } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
@@ -21,7 +20,7 @@ import {
 } from "../util/util";
 import { Loading } from "./loading";
 import { MovingSheet } from "./movingSheet";
-import { useFavoriteOption } from "./scoreTable";
+import { resolveOption, useFavoriteOption } from "./scoreTable";
 import { settingsManager } from "./settings";
 
 type PartSelectorState = {
@@ -206,14 +205,15 @@ export const PartSelector = ({
 
     // Button for adding the current piece to the favorites
     const favOpt = fav.options[0];
+    const favInfo = resolveOption(favOpt, scoreInfo.videoId);
     const addToFavButt = (
       <button
         onClick={() => favOpt.onClick(scoreInfo.videoId)}
-        title={favOpt.name}
-        aria-label={favOpt.name}
+        title={favInfo.name}
+        aria-label={favInfo.name}
         {...getButtonAttrs("40px")}
       >
-        <MdFavoriteBorder size={20} />
+        {favInfo.icon}
       </button>
     );
 

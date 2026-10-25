@@ -151,7 +151,7 @@ textarea::placeholder {
 .hoverlink {
   transition: background-color 0.15s, border-color 0.15s;
 }
-.hoverlink:hover:not(button) {
+.hoverlink:hover:not(button):not(tr) {
   background-color: var(--hover) !important;
 }
 
