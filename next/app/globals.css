@@ -2,12 +2,12 @@
 /* Plain CSS, no framework. Light and dark theme follow the system setting. */
 :root {
   color-scheme: light dark;
-  --bg: #f5f6f8;
+  --bg: #ffffff; /* page */
   --fg: #1d2330;
-  --card: #ffffff;
+  --card: #f2f3f6; /* surfaces: navigation bar, table rows, buttons */
   --line: #c5cad6;
   --muted: #6b7385;
-  --hover: #e8ebf3;
+  --hover: #e4e7ee;
   --accent: #3b6fe0;
   --accent-fg: #ffffff;
   --error-bg: #fcd6d6;
@@ -128,7 +128,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea {
-  background: var(--card);
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 6px 10px;
@@ -163,7 +163,7 @@ dialog {
   padding: 0; /* the padding is in .dialog-body, so clicks on the dialog itself are backdrop clicks */
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: var(--card);
+  background: var(--bg);
   color: var(--fg);
   box-shadow: var(--shadow);
 }
@@ -248,6 +248,7 @@ dialog h4 {
 .sheet {
   background: #fff;
   color: #000;
+  border-block: 1px solid var(--line);
 }
 
 /** ------------------- Bootstrap-like container ------------------- **/
