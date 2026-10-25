@@ -68,7 +68,6 @@ const navStyle: React.CSSProperties = {
 };
 
 const headerStyle: React.CSSProperties = {
-  ...navStyle,
   zIndex: 100,
 };
 
