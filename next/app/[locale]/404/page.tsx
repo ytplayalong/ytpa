@@ -1,13 +1,7 @@
-import { containerInner } from "@/app/util/styles";
+import PageNotFound from "@/app/components/pageNotFound";
 
 export default function NotFound() {
-  return (
-    <div className="container">
-      <div style={containerInner}>
-        <h3>This page was not found.</h3>
-      </div>
-    </div>
-  );
+  return <PageNotFound />;
 }
 
 export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

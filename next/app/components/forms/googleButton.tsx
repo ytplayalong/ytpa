@@ -4,9 +4,11 @@ import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 import { errorBackground } from "@/app/util/colors";
-import firebaseManager from "@/app/firebase";
+import firebaseManager, { AuthResult } from "@/app/firebase";
 import { getButtonAttrs, inputStyle } from "@/app/util/styles";
 import usePathTranslation from "@/i18n/hook";
+
+import { messageText } from "./util";
 
 /** Button for logging in or registering with a Google account.
  *
@@ -14,14 +16,14 @@ import usePathTranslation from "@/i18n/hook";
  */
 export default function GoogleButton() {
   const { t } = usePathTranslation();
-  const [error, setError] = useState("");
+  const [error, setError] = useState<AuthResult>({});
   const [busy, setBusy] = useState(false);
 
   const onClick = async () => {
     setBusy(true);
     const res = await firebaseManager.signInWithGoogle();
     setBusy(false);
-    setError(res.error ?? "");
+    setError(res);
   };
 
   const btn = getButtonAttrs("220px");
@@ -38,7 +40,7 @@ export default function GoogleButton() {
         <FcGoogle size={22} />
         {t("continueWithGoogle")}
       </button>
-      {error && (
+      {error.error && (
         <div
           style={{
             backgroundColor: errorBackground,
@@ -46,7 +48,9 @@ export default function GoogleButton() {
             ...inputStyle,
           }}
         >
-          <p style={{ padding: 10, margin: 0 }}>{error}</p>
+          <p style={{ padding: 10, margin: 0 }}>
+            {messageText(t, error.error, error.detail)}
+          </p>
         </div>
       )}
     </>

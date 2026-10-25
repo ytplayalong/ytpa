@@ -115,7 +115,7 @@ export default function NavigationBar() {
         className="logo"
         src="/YTPALogo.svg"
         height={imgH}
-        alt="Youtube Play Along logo"
+        alt={t("logoAlt")}
       />
     </Link>
   );

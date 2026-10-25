@@ -55,9 +55,12 @@ export function useYtVideoSelector(
         )}&key=${API_KEY}`
       );
       const data = await res.json();
+      if (data.error) {
+        throw new Error(data.error.message); // e.g. key restrictions or quota
+      }
       setResults(data.items || []);
     } catch (err) {
-      setError(`YouTube search error: ${err}`);
+      setError(`${t("ytSearchError")}: ${err}`);
     }
     setLoading(false);
   };

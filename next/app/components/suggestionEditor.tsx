@@ -31,12 +31,14 @@ import { useLoginRequired } from "./loginRequired";
 
 const iconButton = getButtonAttrs("40px");
 
-const formatDate = (s: Suggestion) =>
-  s.createdAt ? new Date(s.createdAt.toMillis()).toLocaleDateString() : "";
+const formatDate = (s: Suggestion, locale: string) =>
+  s.createdAt
+    ? new Date(s.createdAt.toMillis()).toLocaleDateString(locale)
+    : "";
 
 /** Admin page for editing the song suggestions. */
 export default function SuggestionEditor() {
-  const { t, getLink } = usePathTranslation();
+  const { t, getLink, currentLang } = usePathTranslation();
   const loginRequired = useLoginRequired();
   const isAdmin = useIsAdmin(loginRequired.user);
   const getAvailable = useAvailableScores();
@@ -145,7 +147,7 @@ export default function SuggestionEditor() {
                 <img
                   height={tableRowHeight}
                   src={`https://img.youtube.com/vi/${s.videoUrl}/default.jpg`}
-                  alt={`YouTube thumbnail of ${s.name} by ${s.artist}`}
+                  alt={t("thumbnailAlt", { name: s.name, artist: s.artist })}
                 ></img>,
                 link,
                 true,
@@ -169,7 +171,7 @@ export default function SuggestionEditor() {
             <td style={{ ...tdStyle, fontSize: "0.8em" }}>
               {s.email}
               <br />
-              {formatDate(s)}
+              {formatDate(s, currentLang)}
             </td>
             <td style={tdStyle}>
               {statusLabel(t, s.status)}

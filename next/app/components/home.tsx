@@ -8,6 +8,7 @@ import { Trans } from "react-i18next";
 import usePathTranslation from "@/i18n/hook";
 
 import { fullScoreInfo, getRandomScore } from "../util/util";
+import { Loading } from "./loading";
 import { NewestScores } from "./recentScores";
 import { defaultPageTitle } from "./navbar";
 import useMounted from "../hooks/mounted";
@@ -53,7 +54,7 @@ const Home = () => {
       </div>
       <h4 style={{ marginTop: "3rem" }}>{t("allScores")}</h4>
       <p>{secondPar}</p>
-      <Suspense fallback={<div>Loading scores...</div>}>
+      <Suspense fallback={<Loading addComp={false} />}>
         <NewestScores />
       </Suspense>
       <p>{morePieces}</p>

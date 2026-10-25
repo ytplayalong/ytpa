@@ -12,14 +12,22 @@ const inter = Inter({
   fallback: ["system-ui", "sans-serif"],
 });
 
-export { baseMetadata as metadata } from "../util/meta";
+import { getMetadata, validLocale } from "../util/meta";
 
-export default function RootLayout({
+type LocaleParams = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: LocaleParams) {
+  return getMetadata((await params).locale);
+}
+
+export default async function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  params,
+}: Readonly<{ children: React.ReactNode } & LocaleParams>) {
   const currentYear = new Date().getFullYear();
+  const locale = validLocale((await params).locale);
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <link
           rel="apple-touch-icon"

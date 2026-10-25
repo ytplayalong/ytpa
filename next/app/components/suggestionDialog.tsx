@@ -147,7 +147,7 @@ export default function SuggestionDialog(props: {
           <img
             style={{ maxWidth: "100%" }}
             src={`https://img.youtube.com/vi/${videoUrl}/mqdefault.jpg`}
-            alt={`YouTube thumbnail of ${name} by ${artist}`}
+            alt={t("thumbnailAlt", { name, artist })}
           />
         </a>
         {videoInfo && (

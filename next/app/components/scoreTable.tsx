@@ -206,7 +206,7 @@ export const ScoreTable = ({
                 <img
                   height={tableRowHeight}
                   src={`https://img.youtube.com/vi/${el.videoId}/default.jpg`}
-                  alt={`YouTube thumbnail of ${el.name} by ${el.artist}`}
+                  alt={t("thumbnailAlt", { name: el.name, artist: el.artist })}
                 ></img>,
                 link,
               )}
