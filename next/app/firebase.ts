@@ -72,6 +72,34 @@ export type Suggestion = {
   status?: SuggestionStatus; // undefined: new
 };
 
+/** Result of a login or registration. `error` and `info` are keys of the
+ * translations, `detail` is the technical reason of an unexpected error.
+ */
+export type AuthResult = { error?: string; info?: string; detail?: string };
+
+const authErrorKeys: { [code: string]: string } = {
+  "auth/invalid-credential": "authInvalidCredential",
+  "auth/invalid-login-credentials": "authInvalidCredential",
+  "auth/wrong-password": "authInvalidCredential",
+  "auth/user-not-found": "authInvalidCredential",
+  "auth/invalid-email": "invalidEmail",
+  "auth/email-already-in-use": "authEmailInUse",
+  "auth/weak-password": "authWeakPassword",
+  "auth/too-many-requests": "authTooManyRequests",
+  "auth/network-request-failed": "authNetworkError",
+  "auth/popup-blocked": "authPopupBlocked",
+  "auth/unauthorized-domain": "authUnauthorizedDomain",
+};
+
+const authError = (error: any, fallbackKey: string): AuthResult => {
+  const code: string | undefined = error?.code;
+  const key = code ? authErrorKeys[code] : undefined;
+  if (key) {
+    return { error: key };
+  }
+  return { error: fallbackKey, detail: code ?? String(error) };
+};
+
 class FirebaseManager {
   private readonly firebaseAuth: Auth;
   private readonly firestoreDb: Firestore;
@@ -123,7 +151,7 @@ class FirebaseManager {
   }
 
   /** Sign-in a user by email and password. */
-  async signIn(email: string, password: string) {
+  async signIn(email: string, password: string): Promise<AuthResult> {
     try {
       const userCredential = await signInWithEmailAndPassword(
         this.firebaseAuth,
@@ -134,19 +162,19 @@ class FirebaseManager {
       // Check that email is verified
       const user = userCredential.user;
       if (!user.emailVerified) {
-        return { error: "Email not verified!" };
+        return { error: "authEmailNotVerified" };
       }
     } catch (error) {
-      return { error: `Sign-in failed, error: ${error}` };
+      return authError(error, "authFailed");
     }
-    return { info: "Sucessfully signed-in." };
+    return { info: "authSignedIn" };
   }
 
   /** Log in with a Google account, a new user is created at the first login.
    *
    * Google accounts have a verified email address.
    */
-  async signInWithGoogle(): Promise<{ error?: string; info?: string }> {
+  async signInWithGoogle(): Promise<AuthResult> {
     try {
       await signInWithPopup(this.firebaseAuth, new GoogleAuthProvider());
     } catch (error: any) {
@@ -158,13 +186,13 @@ class FirebaseManager {
       if (ignored.includes(error?.code)) {
         return {};
       }
-      return { error: `Google sign-in failed, error: ${error}` };
+      return authError(error, "authFailed");
     }
-    return { info: "Sucessfully signed-in." };
+    return { info: "authSignedIn" };
   }
 
   /** Create user account using email and password. */
-  async signUp(email: string, password: string) {
+  async signUp(email: string, password: string): Promise<AuthResult> {
     try {
       const userCredential = await createUserWithEmailAndPassword(
         this.firebaseAuth,
@@ -176,9 +204,9 @@ class FirebaseManager {
       const user = userCredential.user;
       await sendEmailVerification(user);
       console.log(`Success: Created user ${user.uid}!`);
-      return { info: "Created user account, verify your email and log in." };
+      return { info: "authAccountCreated" };
     } catch (error) {
-      return { error: `Sign-up failed, error: ${error}` };
+      return authError(error, "authSignUpFailed");
     }
   }
 

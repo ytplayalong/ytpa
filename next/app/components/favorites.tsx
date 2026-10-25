@@ -34,6 +34,7 @@ export const Favorites = () => {
 };
 
 const FavoritesNoTitle = () => {
+  const { t } = usePathTranslation();
   const loginRequired = useLoginRequired();
   const [favorites, setFavorites] = useState<FavoritesState>(initStatus);
 
@@ -62,7 +63,7 @@ const FavoritesNoTitle = () => {
   }
 
   if (favorites.favorites.length == 0) {
-    return <p>No favorites added yet</p>;
+    return <p>{t("noFavorites")}</p>;
   }
 
   const removeFromFavorites = async (scoreId: string) => {

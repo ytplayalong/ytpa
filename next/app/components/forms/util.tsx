@@ -10,10 +10,19 @@ export const validateEmail = (email: string) => {
   return emailRegex.test(email);
 };
 
+/** Message of a form: `error` and `info` are keys of the translations. */
 export type ResponseData = {
   error?: string;
   info?: string;
+  detail?: string;
 };
+
+/** Text of a message, with the technical detail if there is one. */
+export const messageText = (
+  t: (key: string) => string,
+  key: string,
+  detail?: string,
+) => (detail ? `${t(key)} (${detail})` : t(key));
 export type FormFieldData = {
   type: "password" | "text";
   name: string;
@@ -73,7 +82,7 @@ export function UserDataForm<AddStateT>(
 
     // Validate email before submission
     if (!validateEmail(formData.email)) {
-      setErrors({ error: "Please enter a valid email address." });
+      setErrors({ error: "invalidEmail" });
       return; // Stop submission if validation fails
     }
 
@@ -104,7 +113,9 @@ export function UserDataForm<AddStateT>(
           ...inputStyle,
         }}
       >
-        <h3 style={{ padding: 10 }}>{errors.error}</h3>
+        <h3 style={{ padding: 10 }}>
+          {messageText(t, errors.error, errors.detail)}
+        </h3>
       </div>
     );
   }
@@ -119,7 +130,7 @@ export function UserDataForm<AddStateT>(
           ...inputStyle,
         }}
       >
-        <h3 style={{ padding: 10 }}>{errors.info}</h3>
+        <h3 style={{ padding: 10 }}>{messageText(t, errors.info)}</h3>
       </div>
     );
   }

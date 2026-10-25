@@ -15,7 +15,7 @@ export default function ContactForm() {
   const { t } = usePathTranslation();
 
   if (state.succeeded) {
-    return <p>Thanks for your submission!</p>;
+    return <p>{t("contactThanks")}</p>;
   }
 
   const errorComp = state.errors ? (
@@ -39,7 +39,7 @@ export default function ContactForm() {
         <div className="row">
           <div className="twocols">
             <label htmlFor="name">{t("fullName")}</label>
-            <ValidationError prefix="Name" field="name" errors={state.errors} />
+            <ValidationError prefix={t("fullName")} field="name" errors={state.errors} />
           </div>
           <div className="twocols rightcol">
             <input style={inputStyle} type="text" name="name" id="name" />
@@ -50,7 +50,7 @@ export default function ContactForm() {
           <div className="twocols">
             <label htmlFor="email">{t("email")}</label>
             <ValidationError
-              prefix="Email"
+              prefix={t("email")}
               field="email"
               errors={state.errors}
             />
@@ -66,7 +66,7 @@ export default function ContactForm() {
               {t("message")}
             </label>
             <ValidationError
-              prefix="Message"
+              prefix={t("message")}
               field="message"
               errors={state.errors}
             />

@@ -3,9 +3,12 @@
 import cookie from "js-cookie";
 import React, { useEffect, useState } from "react";
 
+import usePathTranslation from "@/i18n/hook";
+
 import { containerInner, primaryButtonAttrs } from "../util/styles";
 
 const CookieConsentBanner = () => {
+  const { t } = usePathTranslation();
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
@@ -38,10 +41,10 @@ const CookieConsentBanner = () => {
     <div style={bannerStyle}>
       <div className="container">
         <div style={containerInner}>
-          <p>This website uses cookies to improve your browsing experience.</p>
-          <p>Please click Accept to continue.</p>
+          <p>{t("cookieText")}</p>
+          <p>{t("cookieAccept")}</p>
           <button onClick={handleAccept} {...primaryButtonAttrs}>
-            Accept
+            {t("accept")}
           </button>
         </div>
       </div>
