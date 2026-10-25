@@ -94,11 +94,12 @@ option {
 }
 button:hover:not(:disabled),
 select:hover:not(:disabled),
-.btn:hover {
+.btn:hover:not(:disabled) {
   border-color: var(--accent);
 }
 button:disabled,
-select:disabled {
+select:disabled,
+.btn:disabled {
   opacity: 0.5;
   cursor: default;
 }
@@ -108,7 +109,7 @@ button.primary {
   border-color: var(--accent);
   color: var(--accent-fg);
 }
-.btn.primary:hover,
+.btn.primary:hover:not(:disabled),
 button.primary:hover:not(:disabled) {
   filter: brightness(1.1);
 }
