@@ -61,7 +61,10 @@ const linkStyle: React.CSSProperties = {
 };
 
 const navStyle: React.CSSProperties = {
-  padding: "10px 0", // height of the bar around the 45px high entries
+  // Height of the bar around the 45px high entries. Only top and bottom, the
+  // sides are set by the container (same as the page content).
+  paddingTop: "10px",
+  paddingBottom: "10px",
 };
 
 const headerStyle: React.CSSProperties = {
@@ -122,7 +125,7 @@ export default function NavigationBar() {
   const langSelect = (
     <div
       className="lang-select"
-      style={{ ...baseNavEl, display: "flex", alignItems: "center" }}
+      style={{ ...baseNavEl, paddingRight: 0 }} // aligned with the page content
     >
       <MdLanguage {...iconProps} className="hide-on-xs" />
       <select
