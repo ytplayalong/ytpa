@@ -3,7 +3,7 @@
 import { useForm, ValidationError } from "@formspree/react";
 
 import { errorBackground } from "@/app/util/colors";
-import { inputStyle, primaryButtonAttrs } from "@/app/util/styles";
+import { buttonAttrs, inputStyle } from "@/app/util/styles";
 import usePathTranslation from "@/i18n/hook";
 
 /** Form spree contact form component.
@@ -85,7 +85,7 @@ export default function ContactForm() {
             type="submit"
             formMethod="POST"
             disabled={state.submitting}
-            {...primaryButtonAttrs}
+            {...buttonAttrs}
           >
             {t("submit")}
           </button>
