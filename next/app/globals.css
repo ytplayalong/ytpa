@@ -244,6 +244,12 @@ dialog h4 {
   gap: 0.3em;
 }
 
+/** ------------------- Embedded video ------------------- **/
+/* A block iframe has no gap below it, the clipping of the corners fits the video */
+.yt-embed iframe {
+  display: block;
+}
+
 /** ------------------- Sheet music ------------------- **/
 /* The notes are black, the sheet stays on white paper in the dark theme. */
 .sheet {

@@ -45,7 +45,10 @@ const YoutubePlayer = ({
   return (
     <div style={{ ...playerSizePx, margin: "auto" }}>
       <div style={containerInner}>
-        <div style={{ borderRadius: "var(--radius)", overflow: "hidden" }}>
+        <div
+          className="yt-embed"
+          style={{ borderRadius: "var(--radius)", overflow: "hidden" }}
+        >
           {yt}
         </div>
       </div>
