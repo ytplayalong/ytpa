@@ -77,6 +77,8 @@ export type Suggestion = {
  */
 export type AuthResult = { error?: string; info?: string; detail?: string };
 
+// Only the errors a user can do something about have their own message, all
+// others get the generic one with the code of the error as detail.
 const authErrorKeys: { [code: string]: string } = {
   "auth/invalid-credential": "authInvalidCredential",
   "auth/invalid-login-credentials": "authInvalidCredential",
@@ -84,11 +86,6 @@ const authErrorKeys: { [code: string]: string } = {
   "auth/user-not-found": "authInvalidCredential",
   "auth/invalid-email": "invalidEmail",
   "auth/email-already-in-use": "authEmailInUse",
-  "auth/weak-password": "authWeakPassword",
-  "auth/too-many-requests": "authTooManyRequests",
-  "auth/network-request-failed": "authNetworkError",
-  "auth/popup-blocked": "authPopupBlocked",
-  "auth/unauthorized-domain": "authUnauthorizedDomain",
 };
 
 const authError = (error: any, fallbackKey: string): AuthResult => {
@@ -206,7 +203,7 @@ class FirebaseManager {
       console.log(`Success: Created user ${user.uid}!`);
       return { info: "authAccountCreated" };
     } catch (error) {
-      return authError(error, "authSignUpFailed");
+      return authError(error, "authFailed");
     }
   }
 
