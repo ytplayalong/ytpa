@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import usePathTranslation from "@/i18n/hook";
 
 import Dialog from "../components/dialog";
-import { buttonAttrs } from "./styles";
+import { primaryButtonAttrs } from "./styles";
 
 /** Hook that provides a simple message dialog.
  *
@@ -25,7 +25,7 @@ const useOverlay = (msg: string) => {
         <Dialog onClose={handleClose}>
           <p style={{ marginTop: 0 }}>{msg}</p>
           <div className="dialog-buttons">
-            <button onClick={handleClose} {...buttonAttrs}>
+            <button onClick={handleClose} {...primaryButtonAttrs}>
               {t("close")}
             </button>
           </div>
