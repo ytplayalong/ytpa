@@ -63,8 +63,8 @@ const linkStyle: React.CSSProperties = {
 const navStyle: React.CSSProperties = {
   // Height of the bar around the 45px high entries. Only top and bottom, the
   // sides are set by the container (same as the page content).
-  paddingTop: "7px",
-  paddingBottom: "7px",
+  paddingTop: "13px",
+  paddingBottom: "13px",
 };
 
 const headerStyle: React.CSSProperties = {
