@@ -62,3 +62,12 @@ the first login, Google accounts count as verified.
 Setup in the Firebase console (Authentication):
 - Sign-in method: enable the **Google** provider.
 - Settings -> Authorized domains: `ytpa.ch` (and `localhost` for development).
+
+## Styling
+
+No UI framework, only plain CSS in `next/app/globals.css`: design tokens (CSS
+variables) for the light and dark theme (follows the system setting) and the
+styles of buttons, selects, inputs, dialogs and tables. Inline styles in the
+components use these variables (e.g. `var(--card)`), see `next/app/util/styles.ts`.
+Choices are native `<select>`s, dialogs are native `<dialog>`s (`Dialog` component).
+The sheet music stays on white paper in the dark theme.

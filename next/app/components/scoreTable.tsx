@@ -1,10 +1,11 @@
-import { MdMoreVert } from "react-icons/md";
+import { useEffect, useState } from "react";
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 
 import usePathTranslation from "@/i18n/hook";
 
-import firebaseManager from "../firebase";
-import { useMultiDropDown } from "../util/dropdown";
+import firebaseManager, { useCurrentUser } from "../firebase";
 import useOverlay from "../util/overlay";
+import { getButtonAttrs } from "../util/styles";
 import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
 import {
   BasicTable,
@@ -16,22 +17,87 @@ import {
 } from "../util/tables";
 import { usePaginatedList } from "../hooks/pagination";
 
+/** Option for a piece, the name and icon can depend on the piece. */
 export type TableEntryOption = {
-  name: string;
+  name: string | ((scoreId: string) => string);
+  icon?: React.ReactNode | ((scoreId: string) => React.ReactNode);
   onClick: (scoreId: string) => void;
 };
 
+/** Name and icon of an option for the given piece. */
+export const resolveOption = (opt: TableEntryOption, scoreId: string) => ({
+  name: typeof opt.name === "function" ? opt.name(scoreId) : opt.name,
+  icon: typeof opt.icon === "function" ? opt.icon(scoreId) : opt.icon,
+});
+
+/** Option for adding a piece to the favorites or removing it again.
+ *
+ * The icon shows if the piece is a favorite (filled heart).
+ */
 export const useFavoriteOption = () => {
   const { t } = usePathTranslation();
   const overlay = useOverlay(t("notLoggedIn"));
+  const user = useCurrentUser();
+  const [favorites, setFavorites] = useState<Set<string>>(new Set());
 
-  const addToFavorites = (scoreId: string) => {
+  useEffect(() => {
+    if (!user) {
+      setFavorites(new Set());
+      return;
+    }
+    let cancelled = false;
+    firebaseManager
+      .getFavorites()
+      .then((list) => !cancelled && setFavorites(new Set(list)))
+      .catch((err) => console.log(err));
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  const toggleFavorite = async (scoreId: string) => {
     if (!firebaseManager.userLoggedIn()) {
       overlay.open();
+      return;
     }
-    firebaseManager.addFavorite(scoreId);
+    const wasFavorite = favorites.has(scoreId);
+    const update = (isFavorite: boolean) =>
+      setFavorites((prev) => {
+        const next = new Set(prev);
+        if (isFavorite) {
+          next.add(scoreId);
+        } else {
+          next.delete(scoreId);
+        }
+        return next;
+      });
+
+    update(!wasFavorite); // Immediate feedback
+    try {
+      if (wasFavorite) {
+        await firebaseManager.removeFromFavorites(scoreId);
+      } else {
+        await firebaseManager.addFavorite(scoreId);
+      }
+    } catch (err) {
+      console.log(err);
+      update(wasFavorite); // Did not work, undo
+    }
   };
-  const options = [{ name: t("favoritesAdd"), onClick: addToFavorites }];
+
+  const options: TableEntryOption[] = [
+    {
+      name: (id) =>
+        favorites.has(id) ? t("favoritesRemove") : t("favoritesAdd"),
+      icon: (id) =>
+        favorites.has(id) ? (
+          <MdFavorite size={20} style={{ color: "var(--danger)" }} />
+        ) : (
+          <MdFavoriteBorder size={20} />
+        ),
+      onClick: toggleFavorite,
+    },
+  ];
   return { options, overlay: overlay.component };
 };
 
@@ -58,37 +124,30 @@ export const ScoreTable = ({
   );
 
   const definedOptions = options || [];
-  const optionDdItems = definedOptions.map((el) => {
-    return { key: el.name, ...el };
-  });
-  const ddWrapper = (el: React.ReactNode, onClick: any) => (
-    <div
-      onClick={onClick}
-      style={{
-        display: "flex",
-        height: tableRowHeight,
-        alignContent: "center",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      {el}
+  const optionButtons = (scoreId: string) => (
+    <div style={{ display: "flex", gap: "4px", justifyContent: "flex-end" }}>
+      {definedOptions.map((opt, idx) => {
+        const { name, icon } = resolveOption(opt, scoreId);
+        return (
+          <button
+            key={idx}
+            onClick={() => opt.onClick(scoreId)}
+            title={name}
+            aria-label={name}
+            {...getButtonAttrs("40px")}
+          >
+            {icon ?? name}
+          </button>
+        );
+      })}
     </div>
-  );
-  const baseElementStyle = { width: "100%" };
-  const sheetDD = useMultiDropDown(
-    <MdMoreVert />,
-    optionDdItems,
-    ddWrapper,
-    baseElementStyle,
-    true,
   );
 
   const hasOptions = definedOptions.length > 0;
   const imgColWidth = "10%";
-  const nameArtistColWidth = hasOptions ? "38%" : "40%";
+  const nameArtistColWidth = hasOptions ? "35%" : "40%";
   const keyColWidth = "10%";
-  const optionColWidth = "4%";
+  const optionColWidth = "9%";
 
   const tableHeaderSortable = sortBy.map((el) => {
     let ex = "";
@@ -132,7 +191,7 @@ export const ScoreTable = ({
     <>
       {currentChunk.map((el) => {
         const optionComp = hasOptions ? (
-          <td style={tdStyle}>{sheetDD(el.videoId)}</td>
+          <td style={tdStyle}>{optionButtons(el.videoId)}</td>
         ) : undefined;
 
         const link = getLink(`/piece?scoreId=${el.videoId}`);

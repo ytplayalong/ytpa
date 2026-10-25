@@ -5,7 +5,12 @@ import { MdCopyright } from "react-icons/md";
 import CookieConsentBanner from "@/app/components/cookie";
 import NavigationBar from "@/app/components/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+// The generic fallbacks are also used where the web font is not available,
+// e.g. in the popup of native selects (they would be shown in a serif font).
+const inter = Inter({
+  subsets: ["latin"],
+  fallback: ["system-ui", "sans-serif"],
+});
 
 export { baseMetadata as metadata } from "../util/meta";
 

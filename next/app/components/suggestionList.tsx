@@ -119,7 +119,7 @@ const SuggestListNoTitle = () => {
                 <>
                   {el.name}
                   {available && (
-                    <b style={{ color: "#1f77b4" }}> ({t("availableSuggestion")})</b>
+                    <b style={{ color: "var(--info)" }}> ({t("availableSuggestion")})</b>
                   )}
                 </>,
                 ytVideoLink,

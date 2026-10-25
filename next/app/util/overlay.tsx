@@ -2,57 +2,34 @@ import React, { useState } from "react";
 
 import usePathTranslation from "@/i18n/hook";
 
-import { buttonAttrs } from "./styles";
+import Dialog from "../components/dialog";
+import { primaryButtonAttrs } from "./styles";
 
-/** Hook that provides an overlay.
+/** Hook that provides a simple message dialog.
  *
- * It has a simple button that closes it.
+ * It has a button that closes it.
  *
- * Returns the component and a function that opens the overlay.
+ * Returns the component and a function that opens the dialog.
  */
 const useOverlay = (msg: string) => {
-  const [isVisible, setIsVisible] = useState(false); // State to toggle overlay visibility
+  const [isVisible, setIsVisible] = useState(false);
 
   const { t } = usePathTranslation();
 
-  const handleClose = () => {
-    setIsVisible(false); // Hides the overlay
-  };
-
+  const handleClose = () => setIsVisible(false);
   const open = () => setIsVisible(true);
 
   const component = (
     <>
       {isVisible && (
-        <div
-          style={{
-            position: "fixed", // Ensures overlay covers the entire screen
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.8)", // Semi-transparent background
-            display: "flex",
-            justifyContent: "center", // Centers content horizontally
-            alignItems: "center", // Centers content vertically
-            zIndex: 1000, // Ensures it's above other elements
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "white",
-              padding: "20px",
-              borderRadius: "10px",
-              textAlign: "center",
-              maxWidth: "300px",
-            }}
-          >
-            <p style={{ margin: "0 0 20px" }}>{msg}</p>
-            <button onClick={handleClose} {...buttonAttrs}>
+        <Dialog onClose={handleClose}>
+          <p style={{ marginTop: 0 }}>{msg}</p>
+          <div className="dialog-buttons">
+            <button onClick={handleClose} {...primaryButtonAttrs}>
               {t("close")}
             </button>
           </div>
-        </div>
+        </Dialog>
       )}
     </>
   );

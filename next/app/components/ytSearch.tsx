@@ -160,7 +160,12 @@ export function useYtVideoSelector(
             src={`https://www.youtube.com/embed/${videoId}`}
             title={title}
             allowFullScreen
-            style={{ border: 0, marginTop: "0.5em", marginBottom: "0.5em" }}
+            style={{
+              border: 0,
+              borderRadius: "var(--radius)",
+              marginTop: "0.5em",
+              marginBottom: "0.5em",
+            }}
           ></iframe>
         </>
       )}

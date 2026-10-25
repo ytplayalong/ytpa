@@ -17,7 +17,7 @@ const titleStyle: React.CSSProperties = {
   textAlign: "center",
   display: "inline-block",
   padding: "0.5rem 1rem",
-  borderRadius: "8px",
+  borderRadius: "var(--radius)",
   fontWeight: "bold",
   margin: "1rem", // optional spacing
 };

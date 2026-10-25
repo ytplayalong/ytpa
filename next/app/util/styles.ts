@@ -1,9 +1,8 @@
-import { buttonColor } from "./colors";
+export const borderRadius = "var(--radius)";
 
-export const borderRadius = "6px";
+// The colors and borders of buttons are defined in globals.css (.btn),
+// here is only the layout.
 const buttonStyle: React.CSSProperties = {
-  border: "none",
-  cursor: "pointer",
   padding: "0.5em",
   minWidth: "120px",
   height: "2.5em",
@@ -12,17 +11,20 @@ const buttonStyle: React.CSSProperties = {
   display: "flex",
   justifyContent: "center", // horizontal alignment
   alignItems: "center",
-  borderRadius,
-  backgroundColor: buttonColor,
 };
-// The button's hover color is defined in the CSS file
 
-export const buttonAttrs = { style: buttonStyle, className: "hoverlink btn" };
+export const buttonAttrs = { style: buttonStyle, className: "btn" };
 export const buttonAttrsClass = (style: object, className: string = "") => {
   return {
     style: { ...buttonStyle, ...style },
-    className: `hoverlink btn ${className}`,
+    className: `btn ${className}`.trim(),
   };
+};
+
+/** Highlighted button for the main action, e.g. submit. */
+export const primaryButtonAttrs = {
+  ...buttonAttrs,
+  className: "btn primary",
 };
 
 export const getButtonAttrs = (width: string) => {

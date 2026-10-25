@@ -1,3 +1,3 @@
-export const errorBackground = "#fcbbbb";
-export const successBackground = "#bdffce";
-export const buttonColor = "#d4d4d4";
+// Colors are defined in globals.css (light and dark theme).
+export const errorBackground = "var(--error-bg)";
+export const successBackground = "var(--success-bg)";

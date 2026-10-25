@@ -1,8 +1,9 @@
 "use client";
 
+import { useReducer } from "react";
+
 import usePathTranslation from "@/i18n/hook";
 
-import { useDropDown } from "../util/dropdown";
 import { FingerType, transposeKeys } from "../util/util";
 import useMounted from "../hooks/mounted";
 
@@ -112,54 +113,89 @@ export const twoColumns: React.CSSProperties = { float: "left", width: "50%" };
 // Setting manager singleton instance.
 export const settingsManager = new SettingsManager();
 
+type SettingOption = { name: string; onClick: VoidFunction; key: string };
+
+/** A labelled setting with a native select. */
+const SettingRow = (props: {
+  label: string;
+  options: SettingOption[];
+  current: string | null; // null until the stored setting is loaded
+  onChanged: VoidFunction;
+}) => {
+  const { label, options, current, onChanged } = props;
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        gap: "1em",
+        marginBottom: "0.4em",
+      }}
+    >
+      <label>{label}</label>
+      <select
+        aria-label={label}
+        style={{ minWidth: "10em" }}
+        value={current ?? options[0].key}
+        onChange={(e) => {
+          options.find((el) => el.key === e.target.value)?.onClick();
+          onChanged();
+        }}
+      >
+        {options.map((el) => (
+          <option key={el.key} value={el.key}>
+            {el.name}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
 const SettingsComp = () => {
   const { t } = usePathTranslation();
-
   const mounted = useMounted();
 
-  const keyOptions = settingsManager.getInstrumentKeyOptions();
-  const currKey = mounted ? settingsManager.getInstrumentKey() : null;
-  const keyDD = useDropDown(currKey, keyOptions);
+  // The settings are stored in the local storage, re-render after a change.
+  const [, rerender] = useReducer((n: number) => n + 1, 0);
+  const current = (getter: () => string | number) =>
+    mounted ? `${getter()}` : null;
 
-  const options = settingsManager.getClefOptions(t);
-  const currClefName = mounted ? t(settingsManager.getClef()) : null;
-  const clefDD = useDropDown(currClefName, options);
-
-  const fingerOptions = settingsManager.getFingeringOptions(t);
-  const currFingerName = mounted ? t(settingsManager.getFingering()) : null;
-  const fingerDD = useDropDown(currFingerName, fingerOptions);
-
-  const zoomOptions = settingsManager.getZoomOptions(t);
-  const currZoom = mounted ? settingsManager.getZoom() : null;
-  const zoomDD = useDropDown(currZoom, zoomOptions);
-
-  const sheetOptions = settingsManager.getSheetOptions(t);
-  const currSheetMode = mounted ? t(settingsManager.getSheetMode()) : null;
-  const sheetDD = useDropDown(currSheetMode, sheetOptions);
+  const rows = [
+    {
+      label: t("instrumentKey"),
+      options: settingsManager.getInstrumentKeyOptions(),
+      current: current(() => settingsManager.getInstrumentKey()),
+    },
+    {
+      label: t("clef"),
+      options: settingsManager.getClefOptions(t),
+      current: current(() => settingsManager.getClef()),
+    },
+    {
+      label: t("fingering"),
+      options: settingsManager.getFingeringOptions(t),
+      current: current(() => settingsManager.getFingering()),
+    },
+    {
+      label: t(settingsManager.scaleKey),
+      options: settingsManager.getZoomOptions(t),
+      current: current(() => settingsManager.getZoom()),
+    },
+    {
+      label: t(settingsManager.sheetModeKey),
+      options: settingsManager.getSheetOptions(t),
+      current: current(() => settingsManager.getSheetMode()),
+    },
+  ];
 
   return (
     <>
       <h4>{t("settingsTitle")}</h4>
-      <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="button-label">{t("instrumentKey")}</div>
-        <div className="button-button">{keyDD}</div>
-      </div>
-      <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="button-label">{t("clef")}</div>
-        <div className="button-button">{clefDD}</div>
-      </div>
-      <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="button-label">{t("fingering")}</div>
-        <div className="button-button">{fingerDD}</div>
-      </div>
-      <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="button-label">{t(settingsManager.scaleKey)}</div>
-        <div className="button-button">{zoomDD}</div>
-      </div>
-      <div className="row" style={{ marginBottom: "0.2em" }}>
-        <div className="button-label">{t(settingsManager.sheetModeKey)}</div>
-        <div className="button-button">{sheetDD}</div>
-      </div>
+      {rows.map((row) => (
+        <SettingRow key={row.label} {...row} onChanged={rerender} />
+      ))}
     </>
   );
 };

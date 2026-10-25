@@ -290,7 +290,7 @@ export const MovingSheet = (props: {
   ) : null;
 
   return (
-    <div style={{ overflow: "hidden", position: "relative" }}>
+    <div className="sheet" style={{ overflow: "hidden", position: "relative" }}>
       {marker}
       <div
         id={osmdId}
