@@ -1,14 +1,15 @@
 "use client";
 
-import { useSearchParams, usePathname } from "next/navigation";
-import { useState, useEffect, ReactNode } from "react";
-import { getButtonAttrs } from "../util/styles";
+import { usePathname,useSearchParams } from "next/navigation";
+import { ReactNode,useEffect, useState } from "react";
 import {
   MdFirstPage,
   MdLastPage,
   MdNavigateBefore,
   MdNavigateNext,
 } from "react-icons/md";
+
+import { getButtonAttrs } from "../util/styles";
 
 type UsePaginatedListResult<T> = {
   currentChunk: T[];

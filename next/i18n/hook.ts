@@ -1,9 +1,9 @@
-import { LANGUAGES, RESSOURCES, defaultLocale } from ".";
-
 import i18n from "i18next";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { initReactI18next, useTranslation } from "react-i18next";
+
+import { defaultLocale,LANGUAGES, RESSOURCES } from ".";
 
 i18n.use(initReactI18next).init({
   fallbackLng: defaultLocale,

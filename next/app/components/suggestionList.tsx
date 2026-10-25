@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useLoginRequired } from "./loginRequired";
 import Link from "next/link";
-import firebaseManager, { Suggestion, useIsAdmin } from "../firebase";
+import { useEffect, useState } from "react";
+
 import usePathTranslation from "@/i18n/hook";
+
+import firebaseManager, { Suggestion, useIsAdmin } from "../firebase";
 import { buttonAttrs } from "../util/styles";
 import {
   sortSuggestions,
@@ -12,7 +13,6 @@ import {
   statusLabel,
   useAvailableScores,
 } from "../util/suggestions";
-import { Loading } from "./loading";
 import {
   BasicTable,
   leftTdStyle,
@@ -21,8 +21,10 @@ import {
   thStyle,
   wrapLinkedCell,
 } from "../util/tables";
+import { Loading } from "./loading";
+import { useLoginRequired } from "./loginRequired";
 
-export default () => {
+const SuggestionList = () => {
   const { t, getLink } = usePathTranslation();
   const loginRequired = useLoginRequired();
   const isAdmin = useIsAdmin(loginRequired.user);
@@ -51,6 +53,8 @@ export default () => {
     </>
   );
 };
+
+export default SuggestionList;
 
 const SuggestListNoTitle = () => {
   const { t, getLink } = usePathTranslation();

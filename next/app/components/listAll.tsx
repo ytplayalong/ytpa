@@ -1,7 +1,7 @@
 "use client";
 
+import { usePathname,useSearchParams } from "next/navigation";
 import { Fragment, useState } from "react";
-import { useSearchParams, usePathname } from "next/navigation";
 
 import usePathTranslation from "@/i18n/hook";
 

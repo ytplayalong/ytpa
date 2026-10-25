@@ -71,3 +71,18 @@ styles of buttons, selects, inputs, dialogs and tables. Inline styles in the
 components use these variables (e.g. `var(--card)`), see `next/app/util/styles.ts`.
 Choices are native `<select>`s, dialogs are native `<dialog>`s (`Dialog` component).
 The sheet music stays on white paper in the dark theme.
+
+## Checks
+
+GitHub Actions (`.github/workflows/ci.yml`) runs on every push to `main` and on
+pull requests: ESLint, the type-check and the build of the web app, and a
+syntax check of the Python tools. To run the same checks locally:
+
+```bash
+cd next
+npm run check    # lint, typecheck and build, or one of them separately
+```
+
+TypeScript is installed twice on purpose (see `next/package.json`): `typescript`
+is the 6.0 package (`@typescript/typescript6`) that ESLint and Next.js need,
+`@typescript/native` is TypeScript 7 which provides the `tsc` command.

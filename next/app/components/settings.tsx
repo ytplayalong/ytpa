@@ -4,8 +4,8 @@ import { useReducer } from "react";
 
 import usePathTranslation from "@/i18n/hook";
 
-import { FingerType, transposeKeys } from "../util/util";
 import useMounted from "../hooks/mounted";
+import { FingerType, transposeKeys } from "../util/util";
 
 class SettingsManager {
   clefOptions = ["trebleClef", "bassClef"];

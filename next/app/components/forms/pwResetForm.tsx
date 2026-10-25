@@ -1,10 +1,10 @@
 "use client";
 
+import { useState } from "react";
+
 import firebaseManager, { useCurrentUser } from "@/app/firebase";
 import { buttonAttrs, inputStyle } from "@/app/util/styles";
 import usePathTranslation from "@/i18n/hook";
-
-import { useState } from "react";
 
 /** Password reset form. */
 export default function PwResetForm() {
@@ -14,7 +14,7 @@ export default function PwResetForm() {
   const [status, setStatus] = useState("");
 
   const onPasswordReset = async () => {
-    let userEmail = user?.email ?? email;
+    const userEmail = user?.email ?? email;
     let succ = false;
     if (userEmail) {
       succ = await firebaseManager.resetPassword(userEmail);

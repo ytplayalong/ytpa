@@ -62,7 +62,7 @@ const getInterpolator = (
 
     // Choose anchors, first bars of the lines
     let prevVal = 0;
-    let lineAnchors: [number, number][] = [[0, 0]];
+    const lineAnchors: [number, number][] = [[0, 0]];
     let yValBetter: number[] = [];
     measureYList.forEach((el, ct) => {
       if (isNaN(el)) {
@@ -105,7 +105,7 @@ const getInterpolator = (
   const secs: number[] = [];
   const xVals: number[] = [];
   for (let k = 0; k < nEntries - 1; ++k) {
-    let [nextSec, nextMeasIdx] = numEntries[k + 1];
+    const [nextSec, nextMeasIdx] = numEntries[k + 1];
     const nextX = measureXList[nextMeasIdx - 1];
     if (nextX === undefined) {
       continue;

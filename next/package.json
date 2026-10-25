@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm run build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out --nojekyll --cname ytpa.ch"
   },
@@ -29,9 +31,11 @@
     "@types/node": "^26",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "eslint": "^9",
+    "eslint-config-next": "^16.4.3",
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "gh-pages": "^6",
-    "typescript": "^7.0.2"
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }

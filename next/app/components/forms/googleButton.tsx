@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
-import { errorBackground } from "@/app/util/colors";
 import firebaseManager, { AuthResult } from "@/app/firebase";
+import { errorBackground } from "@/app/util/colors";
 import { getButtonAttrs, inputStyle } from "@/app/util/styles";
 import usePathTranslation from "@/i18n/hook";
 

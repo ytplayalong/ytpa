@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
+
 import usePathTranslation from "@/i18n/hook";
+
+import { useCurrentUser, useIsAdmin } from "../firebase";
 import ContactForm from "./forms/contactForm";
 import SettingsComp from "./settings";
-import Link from "next/link";
-import { useCurrentUser, useIsAdmin } from "../firebase";
 
 const SettingPage = () => {
   const { t, getLink } = usePathTranslation();
