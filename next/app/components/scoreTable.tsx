@@ -4,9 +4,9 @@ import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import usePathTranslation from "@/i18n/hook";
 
 import firebaseManager, { useCurrentUser } from "../firebase";
+import { usePaginatedList } from "../hooks/pagination";
 import useOverlay from "../util/overlay";
 import { getButtonAttrs } from "../util/styles";
-import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
 import {
   BasicTable,
   leftTdStyle,
@@ -15,7 +15,7 @@ import {
   thStyle,
   wrapLinkedCell,
 } from "../util/tables";
-import { usePaginatedList } from "../hooks/pagination";
+import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
 
 /** Option for a piece, the name and icon can depend on the piece. */
 export type TableEntryOption = {

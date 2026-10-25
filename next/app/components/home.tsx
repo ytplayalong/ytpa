@@ -7,11 +7,11 @@ import { Trans } from "react-i18next";
 
 import usePathTranslation from "@/i18n/hook";
 
+import useMounted from "../hooks/mounted";
 import { fullScoreInfo, getRandomScore } from "../util/util";
 import { Loading } from "./loading";
-import { NewestScores } from "./recentScores";
 import { defaultPageTitle } from "./navbar";
-import useMounted from "../hooks/mounted";
+import { NewestScores } from "./recentScores";
 
 const TRACKING_ID = "G-42SMWF6LRM";
 const titleStyle: React.CSSProperties = {

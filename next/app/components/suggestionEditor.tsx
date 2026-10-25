@@ -26,8 +26,8 @@ import {
   wrapLinkedCell,
 } from "../util/tables";
 import { Loading } from "./loading";
-import SuggestionDialog, { SuggestionEdit } from "./suggestionDialog";
 import { useLoginRequired } from "./loginRequired";
+import SuggestionDialog, { SuggestionEdit } from "./suggestionDialog";
 
 const iconButton = getButtonAttrs("40px");
 

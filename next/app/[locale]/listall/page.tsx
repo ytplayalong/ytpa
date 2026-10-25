@@ -1,7 +1,8 @@
+import { Suspense } from "react";
+
 import { ListScores } from "@/app/components/listAll";
 import { Loading } from "@/app/components/loading";
 import { containerInner } from "@/app/util/styles";
-import { Suspense } from "react";
 
 export default function ListAll() {
   return (

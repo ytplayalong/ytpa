@@ -1,7 +1,10 @@
 "use client";
 
-import { MdArrowBack } from "react-icons/md";
 import React, { useState } from "react";
+import { MdArrowBack } from "react-icons/md";
+
+import usePathTranslation from "@/i18n/hook";
+
 import { buttonAttrs, inputStyle } from "../util/styles";
 import {
   BasicTable,
@@ -10,7 +13,6 @@ import {
   tdStyle,
   thStyle,
 } from "../util/tables";
-import usePathTranslation from "@/i18n/hook";
 
 export interface YtSearchResult {
   id: {

@@ -15,8 +15,8 @@ import { LANGUAGES, RESSOURCES } from "@/i18n";
 import usePathTranslation from "@/i18n/hook";
 
 import { getCurrUsername, useCurrentUser } from "../firebase";
-import { containerInnerLeftRight, flexCentered } from "../util/styles";
 import useMounted from "../hooks/mounted";
+import { containerInnerLeftRight, flexCentered } from "../util/styles";
 
 const home = { url: "/", name: "Home" };
 const buttSize = 26;

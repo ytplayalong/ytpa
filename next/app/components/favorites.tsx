@@ -7,9 +7,9 @@ import usePathTranslation from "@/i18n/hook";
 
 import firebaseManager from "../firebase";
 import { fullScoreInfo } from "../util/util";
+import { useProcessedScores } from "./listAll";
 import { Loading } from "./loading";
 import { useLoginRequired } from "./loginRequired";
-import { useProcessedScores } from "./listAll";
 import { ScoreTable } from "./scoreTable";
 
 type FavoritesState = {
