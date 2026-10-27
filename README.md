@@ -86,3 +86,20 @@ npm run check    # lint, typecheck and build, or one of them separately
 TypeScript is installed twice on purpose (see `next/package.json`): `typescript`
 is the 6.0 package (`@typescript/typescript6`) that ESLint and Next.js need,
 `@typescript/native` is TypeScript 7 which provides the `tsc` command.
+
+## Cookies and third parties
+
+The banner at the bottom (`Cookie settings` in the footer opens it again) stores
+the decision in the cookie `cookieConsent` (`accepted` / `declined`, 1 year).
+The site can be used without deciding.
+
+| | accepted | declined / not decided |
+|---|---|---|
+| Google Analytics (home page views) | loaded | not loaded, `_ga` cookies removed |
+| YouTube video on the piece page | loaded directly | placeholder, loaded on click ("Load video") |
+
+The video is always embedded from the privacy-enhanced domain
+(`youtube-nocookie.com`). Not covered by the decision: settings in the
+local storage (needed for the function), the thumbnails from `img.youtube.com`
+in the lists, Firebase (login, favorites, suggestions) and Formspree (contact
+form) which are only used on request of the visitor.

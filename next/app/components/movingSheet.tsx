@@ -248,7 +248,7 @@ export const MovingSheet = (props: {
     if (ipOrNull !== null) {
       const ipObj = ipOrNull.ip;
       const interval = setInterval(async () => {
-        const elapsedSec = await getTime();
+        const elapsedSec = (await getTime()) ?? 0; // 0 as long as no video is loaded
         const position = ipObj(elapsedSec, zoomFac);
         const posObj = settingsManager.isHorizontalMode()
           ? { x: position, y: 0, t: elapsedSec }

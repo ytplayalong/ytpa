@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MdCopyright } from "react-icons/md";
 
 import CookieConsentBanner from "@/app/components/cookie";
+import CookieSettings from "@/app/components/cookieSettings";
 import NavigationBar from "@/app/components/navbar";
 
 // The generic fallbacks are also used where the web font is not available,
@@ -60,7 +61,7 @@ export default async function RootLayout({
               paddingBottom: "2em",
             }}
           >
-            <MdCopyright /> <Link href="/">YTPA.ch</Link> {currentYear}
+            <MdCopyright /> <Link href="/">YTPA.ch</Link> {currentYear} · <CookieSettings />
           </div>
         </div>
       </body>

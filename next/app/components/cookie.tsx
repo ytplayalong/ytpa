@@ -1,51 +1,49 @@
 "use client";
 
-import cookie from "js-cookie";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import usePathTranslation from "@/i18n/hook";
 
-import { containerInner, primaryButtonAttrs } from "../util/styles";
+import { setConsent, useConsent } from "../util/consent";
+import { buttonAttrs, primaryButtonAttrs } from "../util/styles";
 
+/** Banner at the bottom of the page where the visitor accepts or declines
+ * cookies. The page can be used without deciding.
+ */
 const CookieConsentBanner = () => {
   const { t } = usePathTranslation();
-  const [showBanner, setShowBanner] = useState(false);
+  const consent = useConsent();
 
-  useEffect(() => {
-    const consentCookie = cookie.get("cookieConsent");
-    if (!consentCookie) {
-      setShowBanner(true);
-    }
-  }, []);
-
-  const handleAccept = () => {
-    setShowBanner(false);
-    cookie.set("cookieConsent", "accepted", { expires: 365 });
-  };
-
-  if (!showBanner) {
+  if (consent !== "undecided") {
     return null;
   }
 
-  const bannerStyle: React.CSSProperties = {
-    width: "100%",
-    height: "100%",
-    position: "fixed",
-    left: 0,
-    right: 0,
-    backgroundColor: "color-mix(in srgb, var(--bg) 94%, transparent)",
-    paddingTop: "5em",
-    zIndex: 2000,
-  };
   return (
-    <div style={bannerStyle}>
+    <div
+      role="dialog"
+      aria-label={t("cookieSettings")}
+      style={{
+        position: "fixed",
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 2000,
+        background: "var(--card)",
+        borderTop: "1px solid var(--line)",
+        boxShadow: "var(--shadow)",
+      }}
+    >
       <div className="container">
-        <div style={containerInner}>
-          <p>{t("cookieText")}</p>
-          <p>{t("cookieAccept")}</p>
-          <button onClick={handleAccept} {...primaryButtonAttrs}>
-            {t("accept")}
-          </button>
+        <div style={{ padding: "12px 8px" }}>
+          <p style={{ margin: "0 0 0.8em" }}>{t("cookieText")}</p>
+          <div style={{ display: "flex", gap: "0.5em", flexWrap: "wrap" }}>
+            <button onClick={() => setConsent("declined")} {...buttonAttrs}>
+              {t("decline")}
+            </button>
+            <button onClick={() => setConsent("accepted")} {...primaryButtonAttrs}>
+              {t("accept")}
+            </button>
+          </div>
         </div>
       </div>
     </div>
