@@ -1,19 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense, useEffect } from "react";
-import ReactGA from "react-ga4";
+import { Suspense } from "react";
 import { Trans } from "react-i18next";
 
 import usePathTranslation from "@/i18n/hook";
 
+import { usePageview } from "../analytics";
 import useMounted from "../hooks/mounted";
 import { fullScoreInfo, getRandomScore } from "../util/util";
 import { Loading } from "./loading";
 import { defaultPageTitle } from "./navbar";
 import { NewestScores } from "./recentScores";
 
-const TRACKING_ID = "G-42SMWF6LRM";
 const titleStyle: React.CSSProperties = {
   textAlign: "center",
   display: "inline-block",
@@ -24,10 +23,7 @@ const titleStyle: React.CSSProperties = {
 };
 
 const Home = () => {
-  ReactGA.initialize(TRACKING_ID);
-  useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: globalThis.location.pathname });
-  }, []);
+  usePageview(); // Only counts if the visitor accepted cookies
 
   const nScores = fullScoreInfo.length;
   const { t, getLink } = usePathTranslation();
