@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,663,e=>{"use strict";var t=e.i(43476),r=e.i(18566),s=e.i(71645),u=e.i(56258);e.s(["To404",0,()=>{let{getLink:e}=(0,u.f)(),i=(0,r.usePathname)(),o=(0,r.useRouter)(),c=e("/404");return(0,s.useEffect)(()=>{i!==c&&o.replace(c)},[o,i,c]),(0,t.jsx)(t.Fragment,{})}])}]);
