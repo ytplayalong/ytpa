@@ -20,7 +20,8 @@ const usePathTranslation = () => {
 
   const usedLocale = LANGUAGES.includes(locale) ? locale : defaultLocale;
 
-  const getLink = (url: string) => "/" + locale + url;
+  // Links always use a valid language (the path of a wrong URL has none)
+  const getLink = (url: string) => "/" + usedLocale + url;
   return { t, i18n, getLink, currentLang: usedLocale };
 };
 export default usePathTranslation;
