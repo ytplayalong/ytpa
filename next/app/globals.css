@@ -216,6 +216,16 @@ dialog h4 {
   border-bottom-right-radius: var(--radius);
 }
 
+/* Text that is cut off with "..." after two lines (see clampText) */
+.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
 /** ------------------- Navigation bar ------------------- **/
 .navbar {
   background: var(--card);
@@ -236,6 +246,36 @@ dialog h4 {
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert(1);
+  }
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+button.nav-burger {
+  display: none; /* only on small screens */
+}
+/* Small screens: the links are in a menu below the bar, opened by the burger */
+@media (max-width: 991px) {
+  button.nav-burger {
+    display: inline-flex;
+  }
+  .nav-links {
+    display: none;
+    order: 99;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links .nav-item {
+    justify-content: flex-start !important;
+    width: 100%;
   }
 }
 .lang-select {
@@ -351,8 +391,9 @@ dialog h4 {
   }
 }
 
-/* For stuff that is not shown on narrow screens (navigation bar title) */
-@media (max-width: 991px) {
+/* For stuff that is not shown on narrow screens (navigation bar title), the
+   container is 960px wide below 1200px and the German texts are long. */
+@media (max-width: 1199px) {
   .hide-on-narrow {
     display: none !important;
   }
@@ -362,13 +403,5 @@ dialog h4 {
 @media (max-width: 575px) {
   .hide-on-xs {
     display: none !important;
-  }
-  /* Compact navigation bar with icons only */
-  .nav-item {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
-  .nav-item svg {
-    margin-right: 0 !important;
   }
 }

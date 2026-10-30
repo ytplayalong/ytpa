@@ -9,10 +9,12 @@ import useOverlay from "../util/overlay";
 import { getButtonAttrs } from "../util/styles";
 import {
   BasicTable,
-  leftTdStyle,
+  clampText,
   tableRowHeight,
   tdStyle,
   thStyle,
+  thumbTdStyle,
+  thumbThStyle,
   wrapLinkedCell,
 } from "../util/tables";
 import { intToKey, ScoreInfo, SortBy, sortBy } from "../util/util";
@@ -180,7 +182,7 @@ export const ScoreTable = ({
 
   const header = (
     <>
-      <th style={{ width: imgColWidth, ...thStyle }}></th>
+      <th style={{ width: imgColWidth, ...thumbThStyle }}></th>
       {tableHeaderSortable}
       <th style={{ width: keyColWidth, ...thStyle }}>{t("songKey")}</th>
       {optionsHeader}
@@ -201,7 +203,7 @@ export const ScoreTable = ({
             style={{ cursor: "pointer", height: tableRowHeight }}
             className="hoverlink"
           >
-            <td style={leftTdStyle}>
+            <td style={thumbTdStyle}>
               {wrapLinkedCell(
                 <img
                   height={tableRowHeight}
@@ -214,7 +216,7 @@ export const ScoreTable = ({
             {sortBy.map((field) => {
               return (
                 <td key={`td-${field}`} style={tdStyle}>
-                  {wrapLinkedCell(el[field]?.trim(), link)}
+                  {wrapLinkedCell(clampText(el[field]?.trim(), el[field]), link)}
                 </td>
               );
             })}

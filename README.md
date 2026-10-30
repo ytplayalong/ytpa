@@ -103,3 +103,13 @@ The video is always embedded from the privacy-enhanced domain
 local storage (needed for the function), the thumbnails from `img.youtube.com`
 in the lists, Firebase (login, favorites, suggestions) and Formspree (contact
 form) which are only used on request of the visitor.
+
+## Installable web app / offline
+
+`next/public/sw.js` (registered in the built site only) and
+`next/public/site.webmanifest` make the site installable ("Install app" in the
+settings, or the install option of the browser). Pages, scores and images of the
+own site that were opened once are kept in a cache (network first, so a
+new version is always used when online) and work offline. YouTube and Firebase
+are not touched, so the video and login need a connection. To invalidate all
+caches, change `VERSION` in `sw.js`.

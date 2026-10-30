@@ -15,10 +15,12 @@ import {
 } from "../util/suggestions";
 import {
   BasicTable,
-  leftTdStyle,
+  clampText,
   tableRowHeight,
   tdStyle,
   thStyle,
+  thumbTdStyle,
+  thumbThStyle,
   wrapLinkedCell,
 } from "../util/tables";
 import { Loading } from "./loading";
@@ -85,7 +87,7 @@ const SuggestListNoTitle = () => {
 
   const header = (
     <>
-      <th style={{ width: "15%", ...thStyle }}></th>
+      <th style={{ width: "15%", ...thumbThStyle }}></th>
       <th style={{ width: "35%", ...thStyle }}>{t("name")}</th>
       <th style={{ width: "30%", ...thStyle }}>{t("artist")}</th>
       <th style={{ width: "20%", ...thStyle }}>{t("status")}</th>
@@ -107,7 +109,7 @@ const SuggestListNoTitle = () => {
             style={{ cursor: "pointer", height: tableRowHeight }}
             className="hoverlink"
           >
-            <td style={leftTdStyle}>
+            <td style={thumbTdStyle}>
               {wrapLinkedCell(
                 <img
                   height={tableRowHeight}
@@ -120,18 +122,24 @@ const SuggestListNoTitle = () => {
             </td>
             <td style={tdStyle}>
               {wrapLinkedCell(
-                <>
-                  {el.name}
-                  {available && (
-                    <b style={{ color: "var(--info)" }}> ({t("availableSuggestion")})</b>
-                  )}
-                </>,
+                clampText(
+                  <>
+                    {el.name}
+                    {available && (
+                      <b style={{ color: "var(--info)" }}>
+                        {" "}
+                        ({t("availableSuggestion")})
+                      </b>
+                    )}
+                  </>,
+                  el.name,
+                ),
                 ytVideoLink,
                 newTab
               )}
             </td>
             <td style={tdStyle}>
-              {wrapLinkedCell(el.artist, ytVideoLink, newTab)}
+              {wrapLinkedCell(clampText(el.artist, el.artist), ytVideoLink, newTab)}
             </td>
             <td style={tdStyle}>
               {wrapLinkedCell(statusLabel(t, el.status), ytVideoLink, newTab)}

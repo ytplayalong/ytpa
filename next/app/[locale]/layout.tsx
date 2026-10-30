@@ -5,6 +5,7 @@ import { MdCopyright } from "react-icons/md";
 import CookieConsentBanner from "@/app/components/cookie";
 import CookieSettings from "@/app/components/cookieSettings";
 import NavigationBar from "@/app/components/navbar";
+import ServiceWorkerRegistration from "@/app/components/serviceWorker";
 
 // The generic fallbacks are also used where the web font is not available,
 // e.g. in the popup of native selects (they would be shown in a serif font).
@@ -50,6 +51,7 @@ export default async function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={inter.className} style={{ margin: 0, padding: 0 }}>
+        <ServiceWorkerRegistration />
         <CookieConsentBanner />
         <NavigationBar />
         {children}

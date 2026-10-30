@@ -1,6 +1,10 @@
 {
   "name": "YouTube Play-Along",
   "short_name": "YTPA",
+  "description": "Sheet music synchronized with YouTube videos for you to play along with your favorite musical instrument.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

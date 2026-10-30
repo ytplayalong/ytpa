@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   MdAccountCircle,
+  MdClose,
   MdFavorite,
   MdLanguage,
   MdList,
   MdLogin,
+  MdMenu,
   MdSettings,
 } from "react-icons/md";
 
@@ -26,19 +29,16 @@ const navbarLinks = [
     url: "/favorites",
     key: "favorites",
     icon: <MdFavorite {...iconProps} />,
-    mobileShown: true,
   },
   {
     url: "/listall",
     key: "allScores",
     icon: <MdList {...iconProps} />,
-    mobileShown: true,
   },
   {
     url: "/settings",
     key: "settingsTitle",
     icon: <MdSettings {...iconProps} />,
-    mobileShown: true,
   },
 ];
 export const defaultPageTitle = "YouTube Play-Along";
@@ -79,16 +79,27 @@ export default function NavigationBar() {
 
   const router = useRouter();
 
-  const currentActiveLink = navbarLinks.filter((el) => el.url === currentPage);
-  const label =
-    currentActiveLink.length > 0 ? currentActiveLink[0].key : defaultPageTitle;
+  // Menu of the small screens. It is open for the page it was opened on, so it
+  // closes by itself when another page is shown.
+  const [openOnPage, setOpenOnPage] = useState<string | null>(null);
+  const menuOpen = openOnPage === currentPage;
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpenOnPage(null);
+    globalThis.addEventListener("keydown", onKey);
+    return () => globalThis.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
+  // The path without the language, e.g. "/en/listall" -> "/listall"
+  const pagePath = currentPage.replace(/^\/[^/]+/, "") || "/";
+  const currentActiveLink = navbarLinks.find((el) => el.url === pagePath);
+  const label = currentActiveLink ? t(currentActiveLink.key) : defaultPageTitle;
 
   const getLinks = () => {
     const login = {
       url: "/account",
       key: "login",
       icon: <MdLogin {...iconProps} />,
-      mobileShown: false,
     };
     if (mounted) {
       const userName = getCurrUsername(currentUser);
@@ -159,28 +170,37 @@ export default function NavigationBar() {
           {label}
         </div>
         <div style={{ flex: 1 }} />
-        {getLinks().map((el) => {
-          let cName = "hoverlink nav-item";
-          if (el.url === currentPage) {
-            cName += " active";
-          }
-          if (!el.mobileShown) {
-            cName = `hide-on-mobile ${cName}`;
-          }
-          return (
-            <Link
-              href={getLink(el.url)}
-              key={el.url}
-              className={cName}
-              style={linkStyle}
-              aria-label={t(el.key)}
-            >
-              {el.icon}
-              <span className="hide-on-xs">{t(el.key)}</span>
-            </Link>
-          );
-        })}
+        <div id="nav-links" className={`nav-links${menuOpen ? " open" : ""}`}>
+          {getLinks().map((el) => {
+            let cName = "hoverlink nav-item";
+            if (el.url === pagePath) {
+              cName += " active";
+            }
+            return (
+              <Link
+                href={getLink(el.url)}
+                key={el.url}
+                className={cName}
+                style={linkStyle}
+                onClick={() => setOpenOnPage(null)}
+              >
+                {el.icon}
+                {t(el.key)}
+              </Link>
+            );
+          })}
+        </div>
         {langSelect}
+        <button
+          className="nav-burger icon-btn"
+          aria-label={t("menu")}
+          aria-expanded={menuOpen}
+          aria-controls="nav-links"
+          onClick={() => setOpenOnPage(menuOpen ? null : currentPage)}
+          style={{ height: imgH, width: imgH, padding: 0, marginRight: "-8px" }}
+        >
+          {menuOpen ? <MdClose size={28} /> : <MdMenu size={28} />}
+        </button>
       </div>
     </nav>
   );
