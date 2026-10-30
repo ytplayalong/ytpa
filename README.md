@@ -113,3 +113,22 @@ own site that were opened once are kept in a cache (network first, so a
 new version is always used when online) and work offline. YouTube and Firebase
 are not touched, so the video and login need a connection. To invalidate all
 caches, change `VERSION` in `sw.js`.
+
+## SEO and AI search (GEO)
+
+- `next/app/robots.ts`, `next/app/sitemap.ts` (all pages and all pieces in all
+  languages, with `hreflang` alternates), `next/public/llms.txt`. The domain is
+  `SITE_URL` in `next/app/util/meta.ts`.
+- Every page sets its title, description, canonical and `hreflang` links, Open
+  Graph / Twitter cards in its language with `generateMetadata =
+  pageMetadata({...})` (`next/app/util/meta.ts`). Pages without value for search
+  (account, settings, favorites, suggestions, ...) are `noindex`.
+- The piece page is the same page for all pieces (`?scoreId=`), so its title,
+  description, canonical and `hreflang` links are set on the client
+  (`next/app/components/pieceSeo.tsx`).
+- The lists are drawn on the client. While they load, the HTML contains a hidden
+  list of links to the pieces (`pieceLinks.tsx`), so that crawlers find them.
+- JSON-LD (`WebSite`, `Organization`) is in the layout.
+
+To do by hand after a deploy: add `https://ytpa.ch` to Google Search Console and
+Bing Webmaster Tools and submit `https://ytpa.ch/sitemap.xml`.

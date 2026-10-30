@@ -9,8 +9,8 @@ import usePathTranslation from "@/i18n/hook";
 import { usePageview } from "../analytics";
 import useMounted from "../hooks/mounted";
 import { fullScoreInfo, getRandomScore } from "../util/util";
-import { Loading } from "./loading";
 import { defaultPageTitle } from "./navbar";
+import { RecentPiecesFallback } from "./pieceLinks";
 import { NewestScores } from "./recentScores";
 
 const titleStyle: React.CSSProperties = {
@@ -50,7 +50,7 @@ const Home = () => {
       </div>
       <h4 style={{ marginTop: "3rem" }}>{t("allScores")}</h4>
       <p>{secondPar}</p>
-      <Suspense fallback={<Loading addComp={false} />}>
+      <Suspense fallback={<RecentPiecesFallback />}>
         <NewestScores />
       </Suspense>
       <p>{morePieces}</p>

@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/app/util/meta";
+
 import Home from "../components/home";
 import { containerInner } from "../util/styles";
 
@@ -10,5 +12,7 @@ export default function HomeComp() {
     </div>
   );
 }
+
+export const generateMetadata = pageMetadata({ path: "" });
 
 export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

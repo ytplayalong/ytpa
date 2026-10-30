@@ -1,0 +1,20 @@
+# YouTube Play-Along (YTPA)
+
+> Interactive sheet music synchronized with YouTube videos, for playing along with your own instrument. More than 700 pieces (pop, rock, folk, schlager, film music and more) in English, Spanish and German. The notes scroll in time with the video and can be transposed for C, B♭, E♭ and F instruments (e.g. trumpet, clarinet, saxophone, horn, trombone) with an octave and clef setting. Free to use.
+
+Each piece has the melody with chord symbols, the key, the time signature and a link to the YouTube video. The site contains no lyrics.
+
+## Main pages
+
+- [Home](https://ytpa.ch/en): recently added pieces
+- [All pieces](https://ytpa.ch/en/listall): search by title or artist, filter by key and time signature
+- [Spanish version](https://ytpa.ch/es), [German version](https://ytpa.ch/de): the same content in other languages
+
+## Pieces
+
+- Every piece is available at `https://ytpa.ch/{language}/piece?scoreId={YouTube video id}` (language: `en`, `es` or `de`)
+- [Sitemap with all pieces](https://ytpa.ch/sitemap.xml)
+
+## Other
+
+- [Source code and issues](https://github.com/ytplayalong/ytpa)

@@ -1,4 +1,5 @@
 import PwResetForm from "@/app/components/forms/pwResetForm";
+import { pageMetadata } from "@/app/util/meta";
 import { containerInner } from "@/app/util/styles";
 
 export default function PwReset() {
@@ -10,5 +11,7 @@ export default function PwReset() {
     </div>
   );
 }
+
+export const generateMetadata = pageMetadata({ path: "/pwreset", titleKey: "pwReset", noindex: true });
 
 export { getStaticLocaleParams as generateStaticParams } from "@/i18n";
