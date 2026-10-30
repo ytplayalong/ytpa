@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/app/util/meta";
 import { containerInner } from "@/app/util/styles";
 
 export default function Spotify() {
@@ -16,5 +17,7 @@ export default function Spotify() {
     </div>
   );
 }
+
+export const generateMetadata = pageMetadata({ path: "/spotify", noindex: true });
 
 export { getStaticLocaleParams as generateStaticParams } from "@/i18n";

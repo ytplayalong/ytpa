@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useYoutubePlayer } from "../util/player";
 import { fullScoreInfo,ScoreInfo } from "../util/util";
 import { PartSelector } from "./partSelector";
+import PieceSeo from "./pieceSeo";
 import { To404 } from "./to404";
 
 export const YtScore = (props: { scoreId: string }) => {
@@ -29,7 +30,12 @@ const FoundYtScore = ({ scoreInfo }: { scoreInfo: ScoreInfo }) => {
     <PartSelector scoreInfo={scoreInfo} player={player}></PartSelector>
   );
 
-  return partSel;
+  return (
+    <>
+      <PieceSeo scoreInfo={scoreInfo} />
+      {partSel}
+    </>
+  );
 };
 
 export const QueryScore = () => {

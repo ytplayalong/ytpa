@@ -20,6 +20,7 @@ import {
 } from "../util/util";
 import { Loading } from "./loading";
 import { MovingSheet } from "./movingSheet";
+import { pieceKeyText, pieceTimeText } from "./pieceSeo";
 import { resolveOption, useFavoriteOption } from "./scoreTable";
 import { settingsManager } from "./settings";
 
@@ -270,6 +271,10 @@ export const PartSelector = ({
           <h3>-</h3>
           <h3>{scoreInfo.artist}</h3>
         </div>
+        <p style={{ margin: "0 0 0.5em", textAlign: "center", color: "var(--muted)" }}>
+          {t("songKey")}: {pieceKeyText(scoreInfo)} · {t("timeSignature")}:{" "}
+          {pieceTimeText(scoreInfo)}
+        </p>
       </div>
     );
 
