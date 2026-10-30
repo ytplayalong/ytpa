@@ -6,6 +6,7 @@ import usePathTranslation from "@/i18n/hook";
 
 import { useCurrentUser, useIsAdmin } from "../firebase";
 import ContactForm from "./forms/contactForm";
+import InstallApp from "./installApp";
 import SettingsComp from "./settings";
 
 const SettingPage = () => {
@@ -13,6 +14,7 @@ const SettingPage = () => {
   const isAdmin = useIsAdmin(useCurrentUser());
   return (
     <>
+      <InstallApp />
       {isAdmin && (
         <p>
           <Link href={getLink(`/suggestions`)}>{t("suggestions")}</Link>

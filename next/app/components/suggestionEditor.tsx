@@ -19,10 +19,11 @@ import {
 } from "../util/suggestions";
 import {
   BasicTable,
-  leftTdStyle,
   tableRowHeight,
   tdStyle,
   thStyle,
+  thumbTdStyle,
+  thumbThStyle,
   wrapLinkedCell,
 } from "../util/tables";
 import { Loading } from "./loading";
@@ -120,7 +121,7 @@ export default function SuggestionEditor() {
 
   const header = (
     <>
-      <th style={{ width: "14%", ...thStyle }}></th>
+      <th style={{ width: "14%", ...thumbThStyle }}></th>
       <th style={{ width: "30%", ...thStyle }}>{t("name")}</th>
       <th style={{ width: "20%", ...thStyle }}>{t("artist")}</th>
       <th style={{ width: "14%", ...thStyle }}>{t("submittedBy")}</th>
@@ -142,7 +143,7 @@ export default function SuggestionEditor() {
               opacity: s.status === "discarded" ? 0.5 : 1,
             }}
           >
-            <td style={leftTdStyle}>
+            <td style={thumbTdStyle}>
               {wrapLinkedCell(
                 <img
                   height={tableRowHeight}
